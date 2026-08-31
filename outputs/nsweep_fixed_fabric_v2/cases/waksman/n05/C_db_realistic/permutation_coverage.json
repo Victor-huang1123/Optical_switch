@@ -1,0 +1,13 @@
+{
+  "assignment_failures": [],
+  "blocked_ports": [],
+  "fabric_edge_count": 21,
+  "fabric_path_failures": [],
+  "geometry_sha256": "c5b3e3a41d6d1e7d2a3f01ebc3e9e563f3abb9624474a6fe1ba97f7d10048947",
+  "passed": true,
+  "permutations_checked": 120,
+  "physical_fabric_routed_once": true,
+  "physical_model": "fixed_fabric",
+  "physical_routing_permutation_count": 0,
+  "topology_name": "waksman_5x5"
+}

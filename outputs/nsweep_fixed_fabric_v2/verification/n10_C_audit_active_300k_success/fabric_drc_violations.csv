@@ -1,0 +1,76 @@
+rule,edge_ids,message,x_um,y_um
+perpendicular_clearance,input:w0->waksman_10x10_s0_w0_1.in;input:w1->waksman_10x10_s0_w0_1.add,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),56.0,548.0
+perpendicular_clearance,input:w0->waksman_10x10_s0_w0_1.in;input:w1->waksman_10x10_s0_w0_1.add,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),288.0,516.0
+perpendicular_clearance,input:w0->waksman_10x10_s0_w0_1.in;input:w4->waksman_10x10_s0_w4_5.in,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),520.0,452.0
+perpendicular_clearance,input:w0->waksman_10x10_s0_w0_1.in;input:w2->waksman_10x10_s0_w2_3.in,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),1216.0,516.0
+perpendicular_clearance,input:w0->waksman_10x10_s0_w0_1.in;input:w1->waksman_10x10_s0_w0_1.add,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),1448.0,548.0
+perpendicular_clearance,input:w1->waksman_10x10_s0_w0_1.add;input:w2->waksman_10x10_s0_w2_3.in,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),288.0,508.0
+perpendicular_clearance,input:w1->waksman_10x10_s0_w0_1.add;input:w8->waksman_10x10_s0_w8_9.in,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),752.0,260.0
+perpendicular_clearance,input:w5->waksman_10x10_s0_w4_5.add;input:w6->waksman_10x10_s0_w6_7.in,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),1448.0,164.0
+perpendicular_clearance,input:w6->waksman_10x10_s0_w6_7.in;input:w7->waksman_10x10_s0_w6_7.add,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),56.0,164.0
+perpendicular_clearance,input:w8->waksman_10x10_s0_w8_9.in;input:w9->waksman_10x10_s0_w8_9.add,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),752.0,252.0
+perpendicular_clearance,input:w8->waksman_10x10_s0_w8_9.in;input:w9->waksman_10x10_s0_w8_9.add,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),56.0,36.0
+same_net_min_spacing,input:w1->waksman_10x10_s0_w0_1.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 7/12),55.0,542.0
+same_net_min_spacing,input:w1->waksman_10x10_s0_w0_1.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 7/13),57.0,542.0
+same_net_min_spacing,input:w1->waksman_10x10_s0_w0_1.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 8/12),45.0,542.0
+same_net_min_spacing,input:w1->waksman_10x10_s0_w0_1.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 9/12),45.0,542.0
+same_net_min_spacing,input:w1->waksman_10x10_s0_w0_1.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 71/86),1517.0,542.0
+same_net_min_spacing,input:w1->waksman_10x10_s0_w0_1.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 72/85),1512.0,542.0
+same_net_min_spacing,input:w1->waksman_10x10_s0_w0_1.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 72/86),1512.0,542.0
+same_net_min_spacing,input:w1->waksman_10x10_s0_w0_1.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 77/82),1447.0,542.0
+same_net_min_spacing,input:w1->waksman_10x10_s0_w0_1.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 77/83),1449.0,542.0
+same_net_min_spacing,input:w1->waksman_10x10_s0_w0_1.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 78/82),1437.0,542.0
+same_net_min_spacing,input:w1->waksman_10x10_s0_w0_1.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 79/82),1437.0,542.0
+same_net_min_spacing,input:w2->waksman_10x10_s0_w2_3.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 11/26),357.0,510.0
+same_net_min_spacing,input:w2->waksman_10x10_s0_w2_3.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 12/25),352.0,510.0
+same_net_min_spacing,input:w2->waksman_10x10_s0_w2_3.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 12/26),352.0,510.0
+same_net_min_spacing,input:w2->waksman_10x10_s0_w2_3.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 17/22),287.0,510.0
+same_net_min_spacing,input:w2->waksman_10x10_s0_w2_3.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 17/23),297.0,510.0
+same_net_min_spacing,input:w2->waksman_10x10_s0_w2_3.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 18/22),277.0,510.0
+same_net_min_spacing,input:w2->waksman_10x10_s0_w2_3.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 19/22),277.0,510.0
+same_net_min_spacing,input:w2->waksman_10x10_s0_w2_3.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 48/63),1285.0,510.0
+same_net_min_spacing,input:w2->waksman_10x10_s0_w2_3.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 49/62),1280.0,510.0
+same_net_min_spacing,input:w2->waksman_10x10_s0_w2_3.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 49/63),1280.0,510.0
+same_net_min_spacing,input:w2->waksman_10x10_s0_w2_3.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 54/59),1215.0,510.0
+same_net_min_spacing,input:w2->waksman_10x10_s0_w2_3.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 54/60),1217.0,510.0
+same_net_min_spacing,input:w2->waksman_10x10_s0_w2_3.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 55/59),1205.0,510.0
+same_net_min_spacing,input:w2->waksman_10x10_s0_w2_3.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 56/59),1205.0,510.0
+same_net_min_spacing,input:w4->waksman_10x10_s0_w4_5.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 28/33),519.0,446.0
+same_net_min_spacing,input:w4->waksman_10x10_s0_w4_5.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 28/34),521.0,446.0
+same_net_min_spacing,input:w4->waksman_10x10_s0_w4_5.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 29/33),509.0,446.0
+same_net_min_spacing,input:w4->waksman_10x10_s0_w4_5.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 30/33),509.0,446.0
+same_net_min_spacing,input:w4->waksman_10x10_s0_w4_5.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 36/41),1048.0,446.0
+same_net_min_spacing,input:w4->waksman_10x10_s0_w4_5.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 37/40),1053.0,446.0
+same_net_min_spacing,input:w4->waksman_10x10_s0_w4_5.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 37/41),1048.0,446.0
+same_net_min_spacing,input:w4->waksman_10x10_s0_w4_5.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 38/49),1072.0,418.0
+same_net_min_spacing,input:w4->waksman_10x10_s0_w4_5.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 39/49),1053.0,418.0
+same_net_min_spacing,input:w4->waksman_10x10_s0_w4_5.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 40/49),1053.0,418.0
+same_net_min_spacing,input:w7->waksman_10x10_s0_w6_7.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 7/12),55.0,158.0
+same_net_min_spacing,input:w7->waksman_10x10_s0_w6_7.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 7/13),57.0,158.0
+same_net_min_spacing,input:w7->waksman_10x10_s0_w6_7.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 8/12),45.0,158.0
+same_net_min_spacing,input:w7->waksman_10x10_s0_w6_7.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 9/12),45.0,158.0
+same_net_min_spacing,input:w7->waksman_10x10_s0_w6_7.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 15/20),352.0,190.0
+same_net_min_spacing,input:w7->waksman_10x10_s0_w6_7.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 16/19),357.0,190.0
+same_net_min_spacing,input:w7->waksman_10x10_s0_w6_7.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 16/20),352.0,190.0
+same_net_min_spacing,input:w7->waksman_10x10_s0_w6_7.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 29/41),589.0,254.0
+same_net_min_spacing,input:w7->waksman_10x10_s0_w6_7.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 30/40),584.0,254.0
+same_net_min_spacing,input:w7->waksman_10x10_s0_w6_7.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 30/41),584.0,254.0
+same_net_min_spacing,input:w7->waksman_10x10_s0_w6_7.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 44/56),1285.0,190.0
+same_net_min_spacing,input:w7->waksman_10x10_s0_w6_7.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 45/55),1280.0,190.0
+same_net_min_spacing,input:w7->waksman_10x10_s0_w6_7.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 45/56),1280.0,190.0
+same_net_min_spacing,input:w7->waksman_10x10_s0_w6_7.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 59/71),1517.0,158.0
+same_net_min_spacing,input:w7->waksman_10x10_s0_w6_7.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 60/70),1512.0,158.0
+same_net_min_spacing,input:w7->waksman_10x10_s0_w6_7.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 60/71),1512.0,158.0
+same_net_min_spacing,input:w8->waksman_10x10_s0_w8_9.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 12/24),821.0,318.0
+same_net_min_spacing,input:w8->waksman_10x10_s0_w8_9.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 13/23),816.0,318.0
+same_net_min_spacing,input:w8->waksman_10x10_s0_w8_9.in,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 13/24),816.0,318.0
+same_net_min_spacing,input:w9->waksman_10x10_s0_w8_9.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 1/16),125.0,30.0
+same_net_min_spacing,input:w9->waksman_10x10_s0_w8_9.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 2/15),120.0,30.0
+same_net_min_spacing,input:w9->waksman_10x10_s0_w8_9.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 2/16),120.0,30.0
+same_net_min_spacing,input:w9->waksman_10x10_s0_w8_9.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 7/12),55.0,30.0
+same_net_min_spacing,input:w9->waksman_10x10_s0_w8_9.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 7/13),57.0,30.0
+same_net_min_spacing,input:w9->waksman_10x10_s0_w8_9.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 8/12),45.0,30.0
+same_net_min_spacing,input:w9->waksman_10x10_s0_w8_9.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 9/12),45.0,30.0
+same_net_min_spacing,input:w9->waksman_10x10_s0_w8_9.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 17/29),821.0,254.0
+same_net_min_spacing,input:w9->waksman_10x10_s0_w8_9.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 18/28),816.0,254.0
+same_net_min_spacing,input:w9->waksman_10x10_s0_w8_9.add,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 18/29),816.0,254.0

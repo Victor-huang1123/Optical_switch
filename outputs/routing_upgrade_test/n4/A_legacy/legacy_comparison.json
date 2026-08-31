@@ -1,0 +1,5 @@
+{
+  "legacy_geometry_expected": true,
+  "routing_upgrade_config": "A_legacy",
+  "routing_upgrade_topology": "Waksman"
+}

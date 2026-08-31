@@ -1,0 +1,6 @@
+task10 relaxed bounded probe
+permutation=(2, 0, 5, 1, 3, 4)
+rules=max_astar_pops=4500, ripup_max_astar_pops=900
+routed=4/6 failed=2 drc=0 crossings=11
+I0->O2: cannot route padded_benes_8x8_s1_w0_2.th to padded_benes_8x8_s2_w0_4.in on physical grid: A* pop limit exceeded; soft_repeat=I1/repeated_crossing pair=I0-I1 at=(152.000,184.000) source=I0->I1@(48.000,238.000):(20.000,238.000)->(55.000,238.000)x(48.000,230.000)->(48.000,251.000) counters=port_access:20,window:211,same_net:121,crossing_candidate:21,crossing_budget:0,hard_reserved_crossing:0,soft_repeated_crossing:17,soft_reserved_crossing:0,reserved_spacing:71,segment:643,pops:4501,max_heap:380
+I2->O5: cannot route padded_benes_8x8_s1_w1_3.drop to padded_benes_8x8_s2_w3_7.in on physical grid: A* pop limit exceeded; soft_repeat=I3/repeated_crossing pair=I2-I3 at=(152.000,197.000) source=I2->I3@(55.000,144.000):(55.000,158.000)->(55.000,140.000)x(20.000,144.000)->(115.000,144.000) counters=port_access:36,window:252,same_net:108,crossing_candidate:23,crossing_budget:0,hard_reserved_crossing:0,soft_repeated_crossing:75,soft_reserved_crossing:0,reserved_spacing:80,segment:938,pops:4501,max_heap:429

@@ -1,0 +1,483 @@
+specification {
+  element person {
+    style {
+      shape person
+      color green
+    }
+  }
+
+  element softwareSystem {
+    style {
+      color indigo
+      opacity 12%
+      border solid
+    }
+  }
+
+  element module {
+    style {
+      shape component
+      color primary
+    }
+  }
+
+  element algorithm {
+    style {
+      shape component
+      color amber
+    }
+  }
+
+  element dataStore {
+    style {
+      shape storage
+      color green
+    }
+  }
+
+  element artifact {
+    style {
+      shape document
+      color gray
+    }
+  }
+}
+
+model {
+  engineer = person 'Researcher / Design Engineer' {
+    description 'Runs logical, physical, fixed-fabric, and N-sweep experiments and reviews reproducible evidence.'
+  }
+
+  experimentConfig = dataStore 'Experiment Configuration' {
+    technology 'YAML / CLI flags'
+    description 'Topology, sampling, placement, routing, calibration, and paper-run parameters.'
+    link ../../configs/paper_v1.yaml 'Paper-run example'
+    link ../../configs/nxn_worst_il_v2p2_hieffort.yaml 'N x N study example'
+  }
+
+  sParameterLibrary = dataStore 'MRR S-parameter Library' {
+    technology 'CSV'
+    description 'Measured optical response tables; ordinary CLI runs may use a mock fallback, while campaigns load them strictly.'
+  }
+
+  optimizer = softwareSystem 'MRR Switch Optimizer' {
+    description 'Layered Python package for topology synthesis, placement, manufacturable waveguide routing, optical verification, campaigns, and reports.'
+
+    core = module 'core — Domain & Topology' {
+      technology 'Python / frozen dataclasses'
+      description 'Stable device, topology, state, fabric-graph, and S-parameter domain layer.'
+
+      deviceModel = algorithm 'MRR Device Model' {
+        description 'Defines CellGeometry, ports, cell bounding boxes, transfer tables, and wire-to-port transitions.'
+        link ../../mrr_switch_optimizer/core/models.py 'models.py'
+      }
+
+      topology = algorithm 'RNB Topologies' {
+        description 'Builds padded Beneš, Waksman, and two Spanke-Beneš families with stage pairings, fixed permutations, paths, and blocked ports.'
+        link ../../mrr_switch_optimizer/core/topology.py 'topology.py'
+      }
+
+      stateAssignment = algorithm 'State Assignment Strategies' {
+        description 'Realizes permutations with LUT, constructive Beneš, Waksman, and Spanke-Beneš strategies and verifies the emitted states.'
+        link ../../mrr_switch_optimizer/core/state_assignment.py 'state_assignment.py'
+      }
+
+      fabricGraph = algorithm 'Immutable Fabric Graph' {
+        description 'Extracts stable FabricEdges and bus-connected FabricWaveguides; pass-through stages never create fictitious MRRs.'
+        link ../../mrr_switch_optimizer/core/fabric.py 'fabric.py'
+      }
+
+      sparams = algorithm 'S-parameter Loader' {
+        description 'Loads canonical CSV response tables with strict campaign mode and an explicit development fallback.'
+        link ../../mrr_switch_optimizer/core/sparams.py 'sparams.py'
+      }
+    }
+
+    placement = module 'placement — Cell Placement' {
+      technology 'Python / SciPy'
+      description 'Constructs geometry-owned nominal layouts and retains optional LP and simulated-annealing experiments.'
+
+      nominal = algorithm 'Nominal Layout' {
+        description 'Maps topology stages and physical wires to parameterized MRRCell coordinates.'
+        link ../../mrr_switch_optimizer/placement/layout.py 'layout.py'
+      }
+
+      optimizers = algorithm 'LP & SA Placement' {
+        description 'Explores constrained X placement and thermally feasible simulated annealing for legacy logical studies.'
+        link ../../mrr_switch_optimizer/placement/lp.py 'lp.py'
+        link ../../mrr_switch_optimizer/placement/sa.py 'sa.py'
+      }
+    }
+
+    routing = module 'routing — Physical Geometry' {
+      technology 'Deterministic template / A* / rip-up / DRC'
+      description 'Routes immutable fabric buses or legacy active paths through one shared, rule-aware geometry engine.'
+
+      octaveEnvelope = algorithm 'Octave Envelope' {
+        description 'Pins one physical canvas and parameterized cell geometry for each 4, 8, or 16-port radix octave.'
+        link ../../mrr_switch_optimizer/routing/envelope.py 'envelope.py'
+      }
+
+      fixedFabricRouter = algorithm 'Fixed-Fabric Router' {
+        description 'Routes every immutable FabricWaveguide once, preserves stable edge ownership, and accepts no permutation state.'
+        link ../../mrr_switch_optimizer/routing/fabric.py 'fabric.py'
+      }
+
+      deterministicTemplate = algorithm 'Beneš Template Emitter' {
+        description 'Emits deterministic, DRC-checked padded-Beneš geometry with predicted crossing-count gates and no A* calls.'
+        link ../../mrr_switch_optimizer/routing/benes_template_layout.py 'benes_template_layout.py'
+      }
+
+      physicalRouter = algorithm 'Shared Physical Router' {
+        description 'Orders requests, tries deterministic candidates and bounded beam/A* search, then performs rip-up and remediation.'
+        link ../../mrr_switch_optimizer/routing/physical.py 'physical.py'
+      }
+
+      portAccess = algorithm 'Port-access Planner' {
+        description 'Builds MRR stubs, escape segments, reserved access regions, and owner-aware legality guards.'
+        link ../../mrr_switch_optimizer/routing/port_access.py 'port_access.py'
+      }
+
+      gridSearch = algorithm 'Grid, A* & Occupancy' {
+        description 'Maintains sparse routing tracks, A* state, history costs, windows, obstacles, and occupied route segments.'
+        link ../../mrr_switch_optimizer/routing/grid.py 'grid.py'
+        link ../../mrr_switch_optimizer/routing/grid_router.py 'grid_router.py'
+        link ../../mrr_switch_optimizer/routing/route_grid.py 'route_grid.py'
+      }
+
+      crossingRules = algorithm 'Crossing Legality' {
+        description 'Classifies candidate crossings, protects endpoints and access lanes, and tracks per-owner budgets.'
+        link ../../mrr_switch_optimizer/routing/crossing.py 'crossing.py'
+      }
+
+      refinement = algorithm 'Route Refinement' {
+        description 'Extracts crossings, scores route sets, and applies post-route geometry refinement.'
+        link ../../mrr_switch_optimizer/routing/refinement.py 'refinement.py'
+      }
+
+      drc = algorithm 'Design Rule Check' {
+        description 'Checks spacing, obstacles, bends, self-conflicts, port access, and route-level legality.'
+        link ../../mrr_switch_optimizer/routing/drc.py 'drc.py'
+      }
+
+      straightening = algorithm 'Conservative Straightening' {
+        description 'Removes legal external jogs without rerouting, committing only non-increasing-loss, DRC-clean rewrites.'
+        link ../../mrr_switch_optimizer/routing/straighten.py 'straighten.py'
+      }
+    }
+
+    analysis = module 'analysis — Metrics & Proofs' {
+      technology 'Python / NumPy / SciPy / multiprocessing'
+      description 'Computes logical and physical optical metrics, exact coverage, certificates, calibration, and paper evidence.'
+
+      logicalMetrics = algorithm 'Logical Metrics & Surrogates' {
+        description 'Evaluates IL, SXR, wiring, crossings, activity, analytic priors, permutation datasets, and summary breakdowns.'
+        link ../../mrr_switch_optimizer/analysis/cost.py 'cost.py'
+        link ../../mrr_switch_optimizer/analysis/activity.py 'activity.py'
+        link ../../mrr_switch_optimizer/analysis/surrogate.py 'surrogate.py'
+        link ../../mrr_switch_optimizer/analysis/summary.py 'summary.py'
+      }
+
+      coverage = algorithm 'Permutation Coverage' {
+        description 'Exhaustively proves state assignments and active paths against the same immutable FabricGraph.'
+        link ../../mrr_switch_optimizer/analysis/fabric_coverage.py 'fabric_coverage.py'
+      }
+
+      fabricLoss = algorithm 'Fixed-Geometry Loss' {
+        description 'Composes routed edge geometry, crossings, bends, propagation, and MRR transitions without physical rerouting.'
+        link ../../mrr_switch_optimizer/analysis/fabric_loss.py 'fabric_loss.py'
+      }
+
+      nSweepProofs = algorithm 'N-sweep Exactness Cross-check' {
+        description 'Compares fork-parallel N! evaluation with directed path-space enumeration and emits verifiable worst-IL witnesses.'
+        link ../../mrr_switch_optimizer/analysis/nsweep.py 'nsweep.py'
+      }
+
+      calibration = algorithm 'Physical Calibration' {
+        description 'Fits and evaluates the ridge residual surrogate against physical path examples.'
+        link ../../mrr_switch_optimizer/analysis/calibration.py 'calibration.py'
+      }
+
+      paperArtifacts = algorithm 'Paper Artifact Builder' {
+        description 'Regenerates paper-facing tables and figures from structured experiment outputs.'
+        link ../../mrr_switch_optimizer/analysis/paper_figures.py 'paper_figures.py'
+      }
+    }
+
+    app = module 'app — Use-case Orchestration' {
+      technology 'Python / argparse'
+      description 'Owns executable workflows, campaign policy, provenance, and structured report writing.'
+
+      cli = algorithm 'Main CLI' {
+        description 'Dispatches logical matrix, paper, physical batch, calibration, fixed-fabric, and legacy comparison workflows.'
+        link ../../main.py 'main.py'
+        link ../../mrr_switch_optimizer/app/cli.py 'cli.py'
+      }
+
+      nSweepCampaign = algorithm 'Resumable N-sweep Campaign' {
+        description 'Routes matched octave envelopes, caches cases, audits DRC, cross-checks exact methods, and builds N=3..12 reports.'
+        link ../../mrr_switch_optimizer/app/nsweep_campaign.py 'nsweep_campaign.py'
+      }
+
+      reportWriters = algorithm 'CSV / JSON Report Writers' {
+        description 'Writes logical, physical, fixed-fabric, provenance, geometry-hash, and campaign evidence schemas.'
+        link ../../mrr_switch_optimizer/app/reports.py 'reports.py'
+        link ../../mrr_switch_optimizer/app/fabric_reports.py 'fabric_reports.py'
+      }
+    }
+
+    output = module 'output — Visualization' {
+      technology 'Matplotlib / Pillow'
+      description 'Renders logical paths, physical routes, immutable fabrics, debug overlays, CDFs, and GIFs.'
+
+      visualization = algorithm 'Visualization Renderer' {
+        description 'Consumes domain and route results but does not own experiment orchestration.'
+        link ../../mrr_switch_optimizer/output/visualize.py 'visualize.py'
+      }
+    }
+
+    scripts = module 'scripts — Standalone Diagnostics' {
+      technology 'Python executables'
+      description 'Archived validation, probe, crossing-scan, and offline-straightening tools kept outside the importable package.'
+      link ../../scripts/routing_upgrade_validation.py 'Routing validation'
+      link ../../scripts/task11_probe_artifacts.py 'Probe renderer'
+      link ../../scripts/crossing_scan_v2.py 'Crossing scan'
+      link ../../scripts/straighten_v2_offline.py 'Offline straightening'
+    }
+
+    tests = module 'tests — Regression & Acceptance Gates' {
+      technology 'pytest / golden artifacts'
+      description 'Protects topology, state assignment, package protocols, routing geometry hashes, DRC, fixed fabrics, N-sweep proofs, reports, and reproducibility.'
+      link ../../tests 'Test suite'
+    }
+  }
+
+  generatedArtifacts = artifact 'Generated Experiment Evidence' {
+    technology 'PNG / GIF / CSV / JSON / Pickle'
+    description 'Logical and physical metrics, layouts, immutable edge data, DRC, geometry hashes, coverage, worst-IL certificates, caches, tables, and figures.'
+    link ../../docs/schemas.md 'Published output schemas'
+  }
+
+  engineer -> optimizer.app.cli 'runs standard workflows'
+  engineer -> optimizer.app.nSweepCampaign 'runs resumable N-sweeps'
+  engineer -> generatedArtifacts 'reviews evidence'
+
+  optimizer.app -> experimentConfig 'reads parameters'
+  optimizer.app -> sParameterLibrary 'loads optical response data'
+  optimizer.app -> optimizer.core 'coordinates domain models'
+  optimizer.app -> optimizer.placement 'coordinates placement'
+  optimizer.app -> optimizer.routing 'coordinates physical routing'
+  optimizer.app -> optimizer.analysis 'coordinates evaluation and proofs'
+  optimizer.app -> optimizer.output 'requests visualizations'
+  optimizer.placement -> optimizer.core 'uses topology and device geometry'
+  optimizer.placement -> optimizer.analysis 'uses logical cost helpers for SA'
+  optimizer.routing -> optimizer.core 'uses topology, cells, and fabric ownership'
+  optimizer.routing -> optimizer.placement 'uses placed MRR cells and wire coordinates'
+  optimizer.analysis -> optimizer.core 'uses paths, states, S-parameters, and fabric edges'
+  optimizer.analysis -> optimizer.placement 'builds or consumes cell geometry'
+  optimizer.analysis -> optimizer.routing 'evaluates immutable routed geometry'
+  optimizer.output -> optimizer.core 'renders topology and state data'
+  optimizer.output -> optimizer.placement 'renders placed cells'
+  optimizer.output -> optimizer.routing 'renders route and DRC results'
+  optimizer.scripts -> optimizer.core 'constructs validation cases'
+  optimizer.scripts -> optimizer.routing 'probes and validates geometry'
+  optimizer.scripts -> optimizer.analysis 're-evaluates physical evidence'
+  optimizer.tests -> optimizer.core 'tests domain invariants'
+  optimizer.tests -> optimizer.placement 'tests layout behavior'
+  optimizer.tests -> optimizer.routing 'tests routing and DRC gates'
+  optimizer.tests -> optimizer.analysis 'tests exactness and metrics'
+  optimizer.tests -> optimizer.app 'tests CLI and reports'
+  optimizer.app -> generatedArtifacts 'writes structured outputs'
+  optimizer.output -> generatedArtifacts 'writes visual outputs'
+  optimizer.scripts -> generatedArtifacts 'writes diagnostic evidence'
+
+  optimizer.core.topology -> optimizer.core.deviceModel 'uses port transition rules'
+  optimizer.core.topology -> optimizer.core.stateAssignment 'delegates permutation realization'
+  optimizer.core.fabricGraph -> optimizer.core.topology 'extracts fixed connectivity'
+  optimizer.core.fabricGraph -> optimizer.core.deviceModel 'maps wires to MRR ports'
+  optimizer.core.sparams -> sParameterLibrary 'reads measured tables'
+
+  optimizer.placement.nominal -> optimizer.core.topology 'places topology stages'
+  optimizer.placement.nominal -> optimizer.core.deviceModel 'uses CellGeometry as source of truth'
+  optimizer.placement.optimizers -> optimizer.placement.nominal 'starts from nominal cells'
+  optimizer.placement.optimizers -> optimizer.analysis.logicalMetrics 'scores SA candidates'
+
+  optimizer.routing.octaveEnvelope -> optimizer.placement.nominal 'parameterizes matched canvases'
+  optimizer.routing.fixedFabricRouter -> optimizer.core.fabricGraph 'routes immutable waveguides'
+  optimizer.routing.fixedFabricRouter -> optimizer.routing.deterministicTemplate 'uses template mode for padded Beneš'
+  optimizer.routing.fixedFabricRouter -> optimizer.routing.physicalRouter 'uses A* mode and legacy adapter'
+  optimizer.routing.fixedFabricRouter -> optimizer.routing.straightening 'optionally removes legal jogs'
+  optimizer.routing.physicalRouter -> optimizer.routing.portAccess 'reserves ports and escape lanes'
+  optimizer.routing.physicalRouter -> optimizer.routing.gridSearch 'searches bounded candidates'
+  optimizer.routing.gridSearch -> optimizer.routing.crossingRules 'checks crossing candidates'
+  optimizer.routing.physicalRouter -> optimizer.routing.refinement 'scores and refines route sets'
+  optimizer.routing.physicalRouter -> optimizer.routing.drc 'validates completed routes'
+  optimizer.routing.deterministicTemplate -> optimizer.routing.drc 'checks emitted geometry'
+  optimizer.routing.straightening -> optimizer.routing.drc 'accepts only clean rewrites'
+
+  optimizer.app.cli -> optimizer.core.topology 'selects topology families'
+  optimizer.app.cli -> optimizer.core.stateAssignment 'realizes requested permutations'
+  optimizer.app.cli -> optimizer.core.fabricGraph 'builds fixed-fabric graphs'
+  optimizer.app.cli -> optimizer.placement 'builds or optimizes cells'
+  optimizer.app.cli -> optimizer.routing.fixedFabricRouter 'runs route-once mode'
+  optimizer.app.cli -> optimizer.routing.physicalRouter 'runs legacy physical batches'
+  optimizer.app.cli -> optimizer.analysis.logicalMetrics 'runs logical evaluation'
+  optimizer.app.cli -> optimizer.analysis.coverage 'verifies fixed-fabric paths'
+  optimizer.app.cli -> optimizer.analysis.fabricLoss 'computes worst physical IL'
+  optimizer.app.cli -> optimizer.analysis.calibration 'fits physical calibration'
+  optimizer.app.cli -> optimizer.analysis.paperArtifacts 'regenerates paper evidence'
+  optimizer.app.cli -> optimizer.app.reportWriters 'writes selected reports'
+  optimizer.app.cli -> optimizer.output.visualization 'renders requested layouts'
+
+  optimizer.app.nSweepCampaign -> optimizer.core.topology 'pins constructive strategies'
+  optimizer.app.nSweepCampaign -> optimizer.core.fabricGraph 'builds one graph per case'
+  optimizer.app.nSweepCampaign -> optimizer.routing.octaveEnvelope 'matches physical canvases by radix octave'
+  optimizer.app.nSweepCampaign -> optimizer.routing.fixedFabricRouter 'routes or reuses each cached geometry'
+  optimizer.app.nSweepCampaign -> optimizer.routing.drc 'runs campaign audits'
+  optimizer.app.nSweepCampaign -> optimizer.analysis.nSweepProofs 'cross-checks N! and path-space maxima'
+  optimizer.analysis.nSweepProofs -> optimizer.analysis.coverage 'returns exact coverage evidence'
+  optimizer.analysis.nSweepProofs -> optimizer.analysis.fabricLoss 'reuses edge-level loss composition'
+  optimizer.app.nSweepCampaign -> optimizer.app.reportWriters 'writes hashes, certificates, and metrics'
+  optimizer.app.nSweepCampaign -> optimizer.output.visualization 'renders cases and comparison charts'
+  optimizer.app.reportWriters -> generatedArtifacts 'serializes evidence'
+  optimizer.output.visualization -> generatedArtifacts 'renders evidence'
+}
+
+views {
+  view index {
+    title 'Optical Switch Optimizer — Architecture Overview'
+    description 'Primary package boundaries, external inputs, orchestration, and generated evidence.'
+
+    include engineer
+    include experimentConfig
+    include sParameterLibrary
+    include optimizer.core
+    include optimizer.placement
+    include optimizer.routing
+    include optimizer.analysis
+    include optimizer.app
+    include optimizer.output
+    include generatedArtifacts
+
+    autoLayout LeftRight 150 100
+  }
+
+  view package_map {
+    title 'Python Package Map — Refactored Boundaries'
+    description 'The current core, placement, routing, analysis, app, and output dependency directions, plus scripts and tests outside the package API.'
+
+    include optimizer.core
+    include optimizer.placement
+    include optimizer.routing
+    include optimizer.analysis
+    include optimizer.app
+    include optimizer.output
+    include optimizer.scripts
+    include optimizer.tests
+    include generatedArtifacts
+
+    autoLayout TopBottom 160 110
+  }
+
+  view optimization_pipeline {
+    title 'Standard CLI — Logical, Physical & Paper Workflows'
+    description 'The main CLI dispatches several workflows over the same topology, placement, routing, analysis, reporting, and visualization packages.'
+
+    include engineer
+    include experimentConfig
+    include sParameterLibrary
+    include optimizer.app.cli
+    include optimizer.core.*
+    include optimizer.placement.*
+    include optimizer.routing.fixedFabricRouter
+    include optimizer.routing.physicalRouter
+    include optimizer.analysis.logicalMetrics
+    include optimizer.analysis.coverage
+    include optimizer.analysis.fabricLoss
+    include optimizer.analysis.calibration
+    include optimizer.analysis.paperArtifacts
+    include optimizer.app.reportWriters
+    include optimizer.output.visualization
+    include generatedArtifacts
+
+    autoLayout LeftRight 130 90
+  }
+
+  view fixed_fabric_pipeline {
+    title 'Fixed Fabric — Route Once, Reconfigure by State'
+    description 'Topology and device geometry become one immutable edge-owned layout; permutations change only MRR states and are verified without rerouting.'
+
+    include engineer
+    include experimentConfig
+    include sParameterLibrary
+    include optimizer.app.cli
+    include optimizer.core.deviceModel
+    include optimizer.core.topology
+    include optimizer.core.stateAssignment
+    include optimizer.core.fabricGraph
+    include optimizer.placement.nominal
+    include optimizer.routing.fixedFabricRouter
+    include optimizer.routing.deterministicTemplate
+    include optimizer.routing.physicalRouter
+    include optimizer.routing.straightening
+    include optimizer.routing.drc
+    include optimizer.analysis.coverage
+    include optimizer.analysis.fabricLoss
+    include optimizer.app.reportWriters
+    include optimizer.output.visualization
+    include generatedArtifacts
+
+    autoLayout LeftRight 130 90
+  }
+
+  view nsweep_campaign {
+    title 'N-sweep Campaign — Matched Geometry & Exact Certificates'
+    description 'Resumable N=3..12 cases share octave envelopes, route one fabric, audit it, and require agreement between N! and path-space worst-IL methods.'
+
+    include engineer
+    include sParameterLibrary
+    include optimizer.app.nSweepCampaign
+    include optimizer.core.topology
+    include optimizer.core.fabricGraph
+    include optimizer.routing.octaveEnvelope
+    include optimizer.placement.nominal
+    include optimizer.routing.fixedFabricRouter
+    include optimizer.routing.deterministicTemplate
+    include optimizer.routing.physicalRouter
+    include optimizer.routing.straightening
+    include optimizer.routing.drc
+    include optimizer.analysis.nSweepProofs
+    include optimizer.analysis.coverage
+    include optimizer.analysis.fabricLoss
+    include optimizer.app.reportWriters
+    include optimizer.output.visualization
+    include generatedArtifacts
+
+    autoLayout LeftRight 130 90
+  }
+
+  view physical_routing of optimizer.routing {
+    title 'Waveguide Routing Internals'
+    description 'Fixed-fabric ownership selects deterministic template or shared A* routing, followed by refinement, DRC, and optional conservative straightening.'
+
+    include *
+
+    autoLayout LeftRight 120 90
+  }
+
+  view verification_surface {
+    title 'Verification Surface — Tests & Standalone Diagnostics'
+    description 'Regression tests guard package contracts and geometry gates; standalone scripts probe the same core, routing, and analysis layers without becoming library APIs.'
+
+    include optimizer.tests
+    include optimizer.scripts
+    include optimizer.core
+    include optimizer.placement
+    include optimizer.routing
+    include optimizer.analysis
+    include optimizer.app
+    include generatedArtifacts
+
+    autoLayout LeftRight 150 100
+  }
+}

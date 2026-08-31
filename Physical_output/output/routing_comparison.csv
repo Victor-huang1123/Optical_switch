@@ -1,0 +1,2 @@
+topology,mrr_count,stages,min_path_depth,max_path_depth,avg_path_depth,active_drop_states,total_wiring_um,logical_crossings,worst_il_db,avg_il_db,worst_sxr_db
+padded_benes_8x8,20,5,5,5,5.000,7,4466.000,12,4.2010,3.5686,4.4304

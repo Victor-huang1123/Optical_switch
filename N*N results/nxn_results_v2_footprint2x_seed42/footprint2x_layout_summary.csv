@@ -1,0 +1,4 @@
+topology,n_logical,permutation,route_status,paths,routed_paths,failed_paths,drc_violations,crossing_count,physical_wiring_um,topology_worst_il_db,physical_worst_il_db,stage_pitch_um,wire_pitch_um,x0_um,x_start_um,x_end_um,route_window_max_detour_tracks,local_repair_max_shift_tracks,grid_margin_tracks,max_astar_pops,runtime_s,first_failure,png
+padded_benes_8x8,7,3-6-2-4-0-5-1,routed,7,7,0,0,32,15423.716694,5.514960,8.331739,210.0,72.0,170.0,40.0,1150.000000,12,24,24,16000,36.431926,,layouts/padded_benes_8x8_n7_2x_3-6-2-4-0-5-1.png
+waksman_7x7,7,3-6-2-4-0-5-1,routed,7,7,0,0,38,14003.951227,5.124196,7.848017,210.0,72.0,170.0,40.0,1150.000000,12,24,24,16000,25.820248,,layouts/waksman_7x7_n7_2x_3-6-2-4-0-5-1.png
+spanke_benes_7x7,7,3-6-2-4-0-5-1,routed,7,7,0,0,29,23418.052988,9.063818,11.838367,210.0,72.0,170.0,40.0,2410.000000,12,24,24,16000,6.633913,,layouts/spanke_benes_7x7_n7_2x_3-6-2-4-0-5-1.png

@@ -1,0 +1,62 @@
+# N x N scaling workflow, N = 4..16.
+# Logical/surrogate metrics run for every N; physical routing attempts every N
+# with a small sample count (failures at large N are recorded as data rows).
+# Official outputs land under "N*N results/nxn_results_v1_seed42".
+seed: 42
+outdir: "N*N results"
+run_id: nxn_results_v1_seed42
+logical_matrix:
+  topology: all
+  n_values: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  train_samples:
+  eval_samples:
+breakeven:
+  enabled: true
+  topology: all
+  n_values: [6, 8]
+  crossing_loss_db_per_cross: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.8, 1.0, 1.5, 2.0]
+layout_gallery:
+  enabled: true
+  topology: all
+  n_values: [6, 7, 8]
+physical_batch:
+  enabled: true
+  topology: all
+  n_values: [4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  samples: 3
+  max_physical_n: 16
+  # --- routing space ---
+  # Hop route-window slack (bend_radius + min(local_repair, detour) * grid_pitch)
+  # stays at the legacy 37 um: A/B at N=6 showed widening it to 101 um flips
+  # Spanke-Benes from 3/3 routed to 0/3 (early nets consume space that later
+  # nets need in this sequential router) without improving overall routability.
+  route_window_max_detour_tracks: 4
+  local_repair_max_shift_tracks: 8
+  # Global grid headroom above/below the fabric: legacy 4 tracks (32 um) -> 12
+  # tracks (96 um). Verified neutral at N<=6 and gives the router real detour
+  # room at large N.
+  grid_margin_tracks: 12
+  # --- search budgets (bounded so no A* call can run forever) ---
+  # 8000/4000 reproduced the 20000/10000 outcomes at N<=6 exactly while
+  # cutting worst-case failure time; failures burn the full budget per hop.
+  max_astar_pops: 8000
+  ripup_max_astar_pops: 4000
+  max_ripup_passes: 3
+  # stop rip-up after 2 consecutive passes without score improvement
+  early_stop_stagnant_passes: 2
+  # --- loss model for *reported* physical IL ---
+  # A/B tested at N in {4,5}: loss_aware_cost=true routed fewer nets (9/12 vs
+  # 10/12) and ran ~6x slower than the um-denominated search cost, so the
+  # search keeps um penalties; these dB values only enter the reported IL.
+  loss_aware_cost: false
+  bend_loss_db_per_bend: 0.005
+  crossing_loss_db_per_cross: 0.1
+  # --- layout geometry (kept at legacy values for comparability) ---
+  stage_pitch_um: 105.0
+  wire_pitch_um: 36.0
+  x_start_um: 20.0
+  x_end_margin_um: 70.0
+calibration:
+  enabled: true
+  holdout_fraction: 0.4
+  ridge_lambda: 1.0e-6

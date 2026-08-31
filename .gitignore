@@ -10,3 +10,7 @@ __pycache__/
 venv/
 
 outputs/
+
+.claude/
+.vscode/
+archive/

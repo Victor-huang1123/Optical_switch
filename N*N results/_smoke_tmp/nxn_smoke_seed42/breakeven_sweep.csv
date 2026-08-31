@@ -1,0 +1,7 @@
+topology,n_logical,layer,seed,eval_mode,eval_perms,crossing_loss_db_per_cross,worst_il_db,worst_sxr_db
+padded_benes_4x4,4,logical,42,exhaustive,10,0.0,2.9354322285712184,5.516525444102916
+padded_benes_4x4,4,logical,42,exhaustive,10,0.5,4.435432228571218,4.016525444102916
+waksman_4x4,4,logical,42,exhaustive,10,0.0,2.9354322285712184,5.826867781502603
+waksman_4x4,4,logical,42,exhaustive,10,0.5,3.9354322285712184,4.826867781502601
+spanke_benes_4x4,4,logical,42,exhaustive,10,0.0,3.3394322285712184,4.899655180871968
+spanke_benes_4x4,4,logical,42,exhaustive,10,0.5,3.3394322285712184,4.899655180871968

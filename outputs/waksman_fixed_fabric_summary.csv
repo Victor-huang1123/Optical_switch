@@ -1,0 +1,4 @@
+topology,n_logical,n_physical,mrr_count,fabric_edge_count,layout_crossing_count,permutations_checked,worst_insertion_loss_db,worst_path_length_um,worst_permutation,worst_input_port,worst_output_port,failed_edge_count,drc_violation_count
+waksman_4x4,4,4,5,14,16,24,2.641890,1277.495559,"0-1-2-3",1,1,0,0
+waksman_6x6,6,6,11,28,36,720,4.166768,2025.451302,"0-1-2-3-4-5",3,3,0,0
+waksman_8x8,8,8,17,42,70,40320,5.017315,2426.575192,"0-3-2-4-1-5-6-7",1,3,0,0

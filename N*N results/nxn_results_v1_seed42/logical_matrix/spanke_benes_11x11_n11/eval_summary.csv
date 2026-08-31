@@ -1,0 +1,2 @@
+topology,layout,paths,worst_il_db,avg_il_db,il_p50_db,il_p90_db,il_p95_db,il_p99_db,worst_sxr_db,avg_sxr_db,sxr_p01_db,sxr_p05_db,sxr_violation_count,n_logical,n_physical,layer,seed,eval_mode,train_perms,eval_perms,n_mrr,n_stages,avg_crossing_count
+spanke_benes_11x11,default,3300,11.612107428570729,9.125585527885573,9.526797843752956,10.95677778419115,11.161060632825176,11.612107428570729,-8.601807471930917,-0.7937232224233185,-7.988502854047264,-6.421770551292493,3273,11,11,logical,42,sample,500,300,55,19,0.0

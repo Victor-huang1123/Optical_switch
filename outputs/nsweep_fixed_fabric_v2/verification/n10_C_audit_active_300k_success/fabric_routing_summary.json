@@ -1,0 +1,914 @@
+{
+  "blocked_ports": [],
+  "crossing_count": 104,
+  "drc_violation_count": 75,
+  "drc_violations": [
+    {
+      "edge_ids": [
+        "input:w0->waksman_10x10_s0_w0_1.in",
+        "input:w1->waksman_10x10_s0_w0_1.add"
+      ],
+      "location": [
+        56.0,
+        548.0
+      ],
+      "message": "perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um)",
+      "rule": "perpendicular_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w0->waksman_10x10_s0_w0_1.in",
+        "input:w1->waksman_10x10_s0_w0_1.add"
+      ],
+      "location": [
+        288.0,
+        516.0
+      ],
+      "message": "perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um)",
+      "rule": "perpendicular_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w0->waksman_10x10_s0_w0_1.in",
+        "input:w4->waksman_10x10_s0_w4_5.in"
+      ],
+      "location": [
+        520.0,
+        452.0
+      ],
+      "message": "perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um)",
+      "rule": "perpendicular_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w0->waksman_10x10_s0_w0_1.in",
+        "input:w2->waksman_10x10_s0_w2_3.in"
+      ],
+      "location": [
+        1216.0,
+        516.0
+      ],
+      "message": "perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um)",
+      "rule": "perpendicular_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w0->waksman_10x10_s0_w0_1.in",
+        "input:w1->waksman_10x10_s0_w0_1.add"
+      ],
+      "location": [
+        1448.0,
+        548.0
+      ],
+      "message": "perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um)",
+      "rule": "perpendicular_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w1->waksman_10x10_s0_w0_1.add",
+        "input:w2->waksman_10x10_s0_w2_3.in"
+      ],
+      "location": [
+        288.0,
+        508.0
+      ],
+      "message": "perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um)",
+      "rule": "perpendicular_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w1->waksman_10x10_s0_w0_1.add",
+        "input:w8->waksman_10x10_s0_w8_9.in"
+      ],
+      "location": [
+        752.0,
+        260.0
+      ],
+      "message": "perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um)",
+      "rule": "perpendicular_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w5->waksman_10x10_s0_w4_5.add",
+        "input:w6->waksman_10x10_s0_w6_7.in"
+      ],
+      "location": [
+        1448.0,
+        164.0
+      ],
+      "message": "perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um)",
+      "rule": "perpendicular_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w6->waksman_10x10_s0_w6_7.in",
+        "input:w7->waksman_10x10_s0_w6_7.add"
+      ],
+      "location": [
+        56.0,
+        164.0
+      ],
+      "message": "perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um)",
+      "rule": "perpendicular_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w8->waksman_10x10_s0_w8_9.in",
+        "input:w9->waksman_10x10_s0_w8_9.add"
+      ],
+      "location": [
+        752.0,
+        252.0
+      ],
+      "message": "perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um)",
+      "rule": "perpendicular_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w8->waksman_10x10_s0_w8_9.in",
+        "input:w9->waksman_10x10_s0_w8_9.add"
+      ],
+      "location": [
+        56.0,
+        36.0
+      ],
+      "message": "perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um)",
+      "rule": "perpendicular_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w1->waksman_10x10_s0_w0_1.add"
+      ],
+      "location": [
+        55.0,
+        542.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 7/12)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w1->waksman_10x10_s0_w0_1.add"
+      ],
+      "location": [
+        57.0,
+        542.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 7/13)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w1->waksman_10x10_s0_w0_1.add"
+      ],
+      "location": [
+        45.0,
+        542.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 8/12)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w1->waksman_10x10_s0_w0_1.add"
+      ],
+      "location": [
+        45.0,
+        542.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 9/12)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w1->waksman_10x10_s0_w0_1.add"
+      ],
+      "location": [
+        1517.0,
+        542.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 71/86)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w1->waksman_10x10_s0_w0_1.add"
+      ],
+      "location": [
+        1512.0,
+        542.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 72/85)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w1->waksman_10x10_s0_w0_1.add"
+      ],
+      "location": [
+        1512.0,
+        542.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 72/86)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w1->waksman_10x10_s0_w0_1.add"
+      ],
+      "location": [
+        1447.0,
+        542.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 77/82)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w1->waksman_10x10_s0_w0_1.add"
+      ],
+      "location": [
+        1449.0,
+        542.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 77/83)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w1->waksman_10x10_s0_w0_1.add"
+      ],
+      "location": [
+        1437.0,
+        542.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 78/82)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w1->waksman_10x10_s0_w0_1.add"
+      ],
+      "location": [
+        1437.0,
+        542.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 79/82)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w2->waksman_10x10_s0_w2_3.in"
+      ],
+      "location": [
+        357.0,
+        510.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 11/26)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w2->waksman_10x10_s0_w2_3.in"
+      ],
+      "location": [
+        352.0,
+        510.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 12/25)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w2->waksman_10x10_s0_w2_3.in"
+      ],
+      "location": [
+        352.0,
+        510.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 12/26)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w2->waksman_10x10_s0_w2_3.in"
+      ],
+      "location": [
+        287.0,
+        510.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 17/22)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w2->waksman_10x10_s0_w2_3.in"
+      ],
+      "location": [
+        297.0,
+        510.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 17/23)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w2->waksman_10x10_s0_w2_3.in"
+      ],
+      "location": [
+        277.0,
+        510.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 18/22)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w2->waksman_10x10_s0_w2_3.in"
+      ],
+      "location": [
+        277.0,
+        510.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 19/22)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w2->waksman_10x10_s0_w2_3.in"
+      ],
+      "location": [
+        1285.0,
+        510.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 48/63)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w2->waksman_10x10_s0_w2_3.in"
+      ],
+      "location": [
+        1280.0,
+        510.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 49/62)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w2->waksman_10x10_s0_w2_3.in"
+      ],
+      "location": [
+        1280.0,
+        510.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 49/63)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w2->waksman_10x10_s0_w2_3.in"
+      ],
+      "location": [
+        1215.0,
+        510.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 54/59)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w2->waksman_10x10_s0_w2_3.in"
+      ],
+      "location": [
+        1217.0,
+        510.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 54/60)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w2->waksman_10x10_s0_w2_3.in"
+      ],
+      "location": [
+        1205.0,
+        510.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 55/59)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w2->waksman_10x10_s0_w2_3.in"
+      ],
+      "location": [
+        1205.0,
+        510.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 56/59)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w4->waksman_10x10_s0_w4_5.in"
+      ],
+      "location": [
+        519.0,
+        446.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 28/33)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w4->waksman_10x10_s0_w4_5.in"
+      ],
+      "location": [
+        521.0,
+        446.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 28/34)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w4->waksman_10x10_s0_w4_5.in"
+      ],
+      "location": [
+        509.0,
+        446.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 29/33)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w4->waksman_10x10_s0_w4_5.in"
+      ],
+      "location": [
+        509.0,
+        446.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 30/33)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w4->waksman_10x10_s0_w4_5.in"
+      ],
+      "location": [
+        1048.0,
+        446.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 36/41)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w4->waksman_10x10_s0_w4_5.in"
+      ],
+      "location": [
+        1053.0,
+        446.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 37/40)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w4->waksman_10x10_s0_w4_5.in"
+      ],
+      "location": [
+        1048.0,
+        446.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 37/41)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w4->waksman_10x10_s0_w4_5.in"
+      ],
+      "location": [
+        1072.0,
+        418.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 38/49)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w4->waksman_10x10_s0_w4_5.in"
+      ],
+      "location": [
+        1053.0,
+        418.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 39/49)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w4->waksman_10x10_s0_w4_5.in"
+      ],
+      "location": [
+        1053.0,
+        418.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 40/49)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w7->waksman_10x10_s0_w6_7.add"
+      ],
+      "location": [
+        55.0,
+        158.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 7/12)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w7->waksman_10x10_s0_w6_7.add"
+      ],
+      "location": [
+        57.0,
+        158.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 7/13)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w7->waksman_10x10_s0_w6_7.add"
+      ],
+      "location": [
+        45.0,
+        158.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 8/12)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w7->waksman_10x10_s0_w6_7.add"
+      ],
+      "location": [
+        45.0,
+        158.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 9/12)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w7->waksman_10x10_s0_w6_7.add"
+      ],
+      "location": [
+        352.0,
+        190.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 15/20)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w7->waksman_10x10_s0_w6_7.add"
+      ],
+      "location": [
+        357.0,
+        190.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 16/19)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w7->waksman_10x10_s0_w6_7.add"
+      ],
+      "location": [
+        352.0,
+        190.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 16/20)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w7->waksman_10x10_s0_w6_7.add"
+      ],
+      "location": [
+        589.0,
+        254.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 29/41)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w7->waksman_10x10_s0_w6_7.add"
+      ],
+      "location": [
+        584.0,
+        254.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 30/40)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w7->waksman_10x10_s0_w6_7.add"
+      ],
+      "location": [
+        584.0,
+        254.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 30/41)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w7->waksman_10x10_s0_w6_7.add"
+      ],
+      "location": [
+        1285.0,
+        190.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 44/56)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w7->waksman_10x10_s0_w6_7.add"
+      ],
+      "location": [
+        1280.0,
+        190.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 45/55)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w7->waksman_10x10_s0_w6_7.add"
+      ],
+      "location": [
+        1280.0,
+        190.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 45/56)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w7->waksman_10x10_s0_w6_7.add"
+      ],
+      "location": [
+        1517.0,
+        158.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 59/71)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w7->waksman_10x10_s0_w6_7.add"
+      ],
+      "location": [
+        1512.0,
+        158.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 60/70)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w7->waksman_10x10_s0_w6_7.add"
+      ],
+      "location": [
+        1512.0,
+        158.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 60/71)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w8->waksman_10x10_s0_w8_9.in"
+      ],
+      "location": [
+        821.0,
+        318.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 12/24)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w8->waksman_10x10_s0_w8_9.in"
+      ],
+      "location": [
+        816.0,
+        318.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 13/23)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w8->waksman_10x10_s0_w8_9.in"
+      ],
+      "location": [
+        816.0,
+        318.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 13/24)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w9->waksman_10x10_s0_w8_9.add"
+      ],
+      "location": [
+        125.0,
+        30.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 1/16)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w9->waksman_10x10_s0_w8_9.add"
+      ],
+      "location": [
+        120.0,
+        30.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 2/15)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w9->waksman_10x10_s0_w8_9.add"
+      ],
+      "location": [
+        120.0,
+        30.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 2/16)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w9->waksman_10x10_s0_w8_9.add"
+      ],
+      "location": [
+        55.0,
+        30.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 7/12)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w9->waksman_10x10_s0_w8_9.add"
+      ],
+      "location": [
+        57.0,
+        30.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 7/13)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w9->waksman_10x10_s0_w8_9.add"
+      ],
+      "location": [
+        45.0,
+        30.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 8/12)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w9->waksman_10x10_s0_w8_9.add"
+      ],
+      "location": [
+        45.0,
+        30.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 9/12)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w9->waksman_10x10_s0_w8_9.add"
+      ],
+      "location": [
+        821.0,
+        254.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 17/29)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w9->waksman_10x10_s0_w8_9.add"
+      ],
+      "location": [
+        816.0,
+        254.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 18/28)",
+      "rule": "same_net_min_spacing"
+    },
+    {
+      "edge_ids": [
+        "input:w9->waksman_10x10_s0_w8_9.add"
+      ],
+      "location": [
+        816.0,
+        254.0
+      ],
+      "message": "non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 18/29)",
+      "rule": "same_net_min_spacing"
+    }
+  ],
+  "envelope_id": "octave-p16-bbox28x22-sp232-wp64-gp8-m20",
+  "fabric_edge_count": 60,
+  "failed_edge_count": 0,
+  "failed_edges": [],
+  "geometry_sha256": "5e4f6cf1f6f153f398e9e6f36a73a28bbf04e066675b29c8f2349115148b954c",
+  "n_logical": 10,
+  "n_physical": 10,
+  "routed_edge_count": 60,
+  "routing_stats": {
+    "astar_calls": 332,
+    "early_stopped": false,
+    "ripup_passes_executed": 6
+  },
+  "rules": {
+    "allow_crossings": true,
+    "astar_heuristic_weight": 1.0,
+    "backtrack_penalty_um": 80.0,
+    "bend_loss_db_per_bend": 0.005,
+    "bend_placement_penalty_db": 0.0,
+    "bend_radius_um": 5.0,
+    "capped_ripup_bounded_only": true,
+    "corridor_guide_mode": "soft",
+    "cost_model": "db",
+    "crossing_loss_db_per_cross": 0.1,
+    "crossing_penalty_um": 20.0,
+    "db_tie_breaker_scale": 0.05,
+    "drc_bend_radius_legality": true,
+    "drc_perpendicular_clearance": true,
+    "drc_same_net_min_spacing": true,
+    "early_stop_stagnant_passes": 0,
+    "enforce_bend_spacing": true,
+    "explicit_crossings": true,
+    "fallback_alternatives_per_hop": 2,
+    "fallback_beam_width": 0,
+    "future_crossing_reservation": false,
+    "grid_margin_tracks": 20,
+    "grid_merge_tol_um": 3.5,
+    "grid_pitch_um": 8.0,
+    "hairpin_penalty_um": 200.0,
+    "hard_crossing_budget": false,
+    "hard_reserved_crossing_reservation": false,
+    "hard_source_crossing_reservation": false,
+    "jog_penalty_db": 0.0,
+    "legalize_port_access": true,
+    "local_repair_max_shift_tracks": 8,
+    "loss_aware_cost": false,
+    "max_astar_pops": 300000,
+    "max_ripup_passes": 5,
+    "min_crossing_clearance_um": null,
+    "min_spacing_um": 4.0,
+    "mrr_keepout_um": 6.0,
+    "outward_repeated_crossing_scale": 0.25,
+    "port_access_runway_um": 10.0,
+    "port_approach_fallback": false,
+    "port_escape_um": 10.0,
+    "prop_loss_db_per_um": 0.0002,
+    "repeated_crossing_loss_db": 0.0,
+    "repeated_crossing_penalty_um": 400.0,
+    "ripup_max_astar_pops": null,
+    "ripup_order_candidate_limit": 1,
+    "ripup_route_budget": 4,
+    "route_order_beam_max_astar_pops": 2000,
+    "route_order_beam_width": 0,
+    "route_window_max_detour_tracks": 4,
+    "source_hint_bounded_only": true,
+    "strict_port_access": false,
+    "turn_guard_um": 16.0,
+    "turn_timing_penalty_um": 48.0
+  },
+  "status": "routed",
+  "topology": "waksman_10x10"
+}

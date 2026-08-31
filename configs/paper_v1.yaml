@@ -1,0 +1,29 @@
+seed: 42
+outdir: outputs
+run_id: paper_v1_seed42
+logical_matrix:
+  topology: all
+  n_values: [4, 6, 8, 16]
+  train_samples:
+  eval_samples:
+breakeven:
+  enabled: true
+  topology: all
+  n_values: [6, 8]
+  crossing_loss_db_per_cross: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.8, 1.0, 1.5, 2.0]
+layout_gallery:
+  enabled: true
+  topology: all
+  n_values: [6, 8]
+physical_batch:
+  enabled: true
+  topology: all
+  n_values: [4, 6, 8]
+  samples: 20
+  max_astar_pops: 5000
+  ripup_max_astar_pops: 2000
+  max_ripup_passes: 1
+calibration:
+  enabled: true
+  holdout_fraction: 0.4
+  ridge_lambda: 1.0e-6

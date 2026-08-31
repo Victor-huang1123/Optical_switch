@@ -1,0 +1,2 @@
+rule,net_id,message,x_um,y_um
+perpendicular_clearance,I1/I4,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),336.0,132.0

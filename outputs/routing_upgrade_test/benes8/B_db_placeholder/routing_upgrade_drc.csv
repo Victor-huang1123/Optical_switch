@@ -1,0 +1,9 @@
+rule,net_id,message,x_um,y_um
+perpendicular_clearance,I2/I5,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),336.0,196.0
+perpendicular_clearance,I3/I5,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),336.0,132.0
+perpendicular_clearance,I5/I6,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),336.0,188.0
+perpendicular_clearance,I5/I7,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),336.0,124.0
+same_net_min_spacing,I3,non-adjacent same-net segments do not exceed the required 4.000 um spacing (3.000 um; segments 11/22),176.0,314.5
+same_net_min_spacing,I3,non-adjacent same-net segments do not exceed the required 4.000 um spacing (3.000 um; segments 11/23),176.0,314.5
+same_net_min_spacing,I3,non-adjacent same-net segments do not exceed the required 4.000 um spacing (3.000 um; segments 12/22),176.0,314.5
+same_net_min_spacing,I3,non-adjacent same-net segments do not exceed the required 4.000 um spacing (3.000 um; segments 12/23),176.0,314.5

@@ -1,0 +1,5 @@
+rule,net_id,message,x_um,y_um
+same_net_min_spacing,I3,non-adjacent same-net segments do not exceed the required 4.000 um spacing (3.000 um; segments 11/22),176.0,314.5
+same_net_min_spacing,I3,non-adjacent same-net segments do not exceed the required 4.000 um spacing (3.000 um; segments 11/23),176.0,314.5
+same_net_min_spacing,I3,non-adjacent same-net segments do not exceed the required 4.000 um spacing (3.000 um; segments 12/22),176.0,314.5
+same_net_min_spacing,I3,non-adjacent same-net segments do not exceed the required 4.000 um spacing (3.000 um; segments 12/23),176.0,314.5

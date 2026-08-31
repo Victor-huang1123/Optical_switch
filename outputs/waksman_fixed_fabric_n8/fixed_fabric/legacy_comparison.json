@@ -1,0 +1,30 @@
+{
+  "comparison_permutation": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7
+  ],
+  "fixed_fabric": {
+    "crossings": 70,
+    "drc_violations": 0,
+    "failed_edges": 0,
+    "physical_route_runs": 1,
+    "routed_edges": 42,
+    "waveguides": 8
+  },
+  "legacy_active_path": {
+    "active_paths": 8,
+    "crossings": 70,
+    "drc_violations": 0,
+    "failed_paths": 0,
+    "physical_route_runs_per_permutation": 1,
+    "routed_paths": 8
+  },
+  "models_are_not_numerically_interchangeable": true,
+  "topology": "waksman_8x8"
+}

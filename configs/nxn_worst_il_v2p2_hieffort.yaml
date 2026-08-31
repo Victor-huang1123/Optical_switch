@@ -1,0 +1,52 @@
+# v2p2: HIGH-EFFORT physical routing companion to nxn_worst_il_v2p1.
+# Same protocol/seed/permutations as v2p1; only the routing search budgets
+# differ. Purpose: v2p1's bounded budgets leave padded Benes and Waksman
+# unroutable for N >= 8-9 (fully_routed_rate = 0), so the cross-topology
+# physical worst-IL comparison at large N has no data for two of the four
+# fabrics. Verified on failing v2p1 samples: these budgets rescue previously
+# unroutable Waksman/Benes attempts. Paper framing: v2p1 = fixed-effort
+# routability study, v2p2 = achievable-IL study.
+# Logical matrix / breakeven are identical to v2p1 (copy the logical_matrix
+# dir from the v2p1 run into this run dir before launching to skip ~20 min
+# of recompute; cells validate and resume).
+seed: 42
+outdir: "N*N results"
+run_id: nxn_worst_il_v2p2_hieffort_seed42
+logical_matrix:
+  topology: paper
+  n_values: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  train_samples: 0
+  eval_samples:
+  crossing_loss_db_per_cross: 0.1
+breakeven:
+  enabled: false
+layout_gallery:
+  enabled: false
+physical_batch:
+  enabled: true
+  topology: paper
+  n_values: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  samples: 10
+  full_enum_max_n: 5
+  max_physical_n: 16
+  # --- routing space (WIDER than v2p1: 8/16/16 vs 4/8/12) ---
+  route_window_max_detour_tracks: 8
+  local_repair_max_shift_tracks: 16
+  grid_margin_tracks: 16
+  # --- search budgets (5x pops, 2x passes, rip-up may reach bounded A*) ---
+  max_astar_pops: 40000
+  ripup_max_astar_pops: 20000
+  max_ripup_passes: 6
+  early_stop_stagnant_passes: 3
+  allow_ripup_astar: true
+  # --- loss model identical to v2p1 ---
+  loss_aware_cost: false
+  bend_loss_db_per_bend: 0.005
+  crossing_loss_db_per_cross: 0.1
+  # --- layout geometry identical to v2p1 ---
+  stage_pitch_um: 105.0
+  wire_pitch_um: 36.0
+  x_start_um: 20.0
+  x_end_margin_um: 70.0
+calibration:
+  enabled: false

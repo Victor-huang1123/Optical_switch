@@ -1,0 +1,62 @@
+rule,net_id,message,x_um,y_um
+perpendicular_clearance,I0/I1,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),56.0,292.0
+perpendicular_clearance,I0/I2,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),196.0,260.0
+perpendicular_clearance,I0/I2,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),534.0,260.0
+perpendicular_clearance,I0/I1,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),616.0,292.0
+perpendicular_clearance,I1/I2,perpendicular waveguides approach closer than 4.000 um without a true crossing (3.000 um),193.5,196.0
+perpendicular_clearance,I1/I4,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),336.0,132.0
+perpendicular_clearance,I1/I2,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),534.0,196.0
+perpendicular_clearance,I2/I3,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),534.0,188.0
+perpendicular_clearance,I2/I3,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),56.0,164.0
+perpendicular_clearance,I4/I5,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),336.0,124.0
+perpendicular_clearance,I4/I5,perpendicular waveguides approach closer than 4.000 um without a true crossing (2.000 um),56.0,36.0
+same_net_min_spacing,I1,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 1/16),125.0,286.0
+same_net_min_spacing,I1,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 2/15),120.0,286.0
+same_net_min_spacing,I1,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 2/16),120.0,286.0
+same_net_min_spacing,I1,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 7/12),55.0,286.0
+same_net_min_spacing,I1,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 7/13),57.0,286.0
+same_net_min_spacing,I1,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 8/12),45.0,286.0
+same_net_min_spacing,I1,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 9/12),45.0,286.0
+same_net_min_spacing,I1,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 47/62),685.0,286.0
+same_net_min_spacing,I1,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 48/61),680.0,286.0
+same_net_min_spacing,I1,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 48/62),680.0,286.0
+same_net_min_spacing,I1,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 53/58),615.0,286.0
+same_net_min_spacing,I1,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 53/59),617.0,286.0
+same_net_min_spacing,I1,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 54/58),605.0,286.0
+same_net_min_spacing,I1,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 55/58),605.0,286.0
+same_net_min_spacing,I2,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 19/25),195.0,254.0
+same_net_min_spacing,I2,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 19/26),197.0,254.0
+same_net_min_spacing,I2,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 20/25),185.0,254.0
+same_net_min_spacing,I2,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 21/24),176.0,254.0
+same_net_min_spacing,I2,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 21/25),176.0,254.0
+same_net_min_spacing,I2,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 28/34),533.0,254.0
+same_net_min_spacing,I2,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 29/32),545.0,254.0
+same_net_min_spacing,I2,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 29/33),535.0,254.0
+same_net_min_spacing,I2,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 29/34),533.0,254.0
+same_net_min_spacing,I3,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 1/16),125.0,158.0
+same_net_min_spacing,I3,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 2/15),120.0,158.0
+same_net_min_spacing,I3,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 2/16),120.0,158.0
+same_net_min_spacing,I3,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 7/12),55.0,158.0
+same_net_min_spacing,I3,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 7/13),57.0,158.0
+same_net_min_spacing,I3,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 8/12),45.0,158.0
+same_net_min_spacing,I3,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 9/12),45.0,158.0
+same_net_min_spacing,I3,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 41/46),680.0,158.0
+same_net_min_spacing,I3,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 42/45),685.0,158.0
+same_net_min_spacing,I3,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 42/46),680.0,158.0
+same_net_min_spacing,I4,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 12/24),405.0,190.0
+same_net_min_spacing,I4,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 13/23),400.0,190.0
+same_net_min_spacing,I4,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 13/24),400.0,190.0
+same_net_min_spacing,I5,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 1/16),125.0,30.0
+same_net_min_spacing,I5,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 2/15),120.0,30.0
+same_net_min_spacing,I5,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 2/16),120.0,30.0
+same_net_min_spacing,I5,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 7/12),55.0,30.0
+same_net_min_spacing,I5,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 7/13),57.0,30.0
+same_net_min_spacing,I5,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 8/12),45.0,30.0
+same_net_min_spacing,I5,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 9/12),45.0,30.0
+same_net_min_spacing,I5,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 17/32),405.0,126.0
+same_net_min_spacing,I5,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 18/31),400.0,126.0
+same_net_min_spacing,I5,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 18/32),400.0,126.0
+same_net_min_spacing,I5,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 23/28),335.0,126.0
+same_net_min_spacing,I5,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 23/29),345.0,126.0
+same_net_min_spacing,I5,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 24/28),325.0,126.0
+same_net_min_spacing,I5,non-adjacent same-net segments do not exceed the required 4.000 um spacing (4.000 um; segments 25/28),325.0,126.0

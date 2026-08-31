@@ -1,0 +1,3 @@
+probe,max_astar_pops,ripup_max_astar_pops,grid_merge_tol_um,nodes,x_tracks,y_tracks,routed,failed,drc,crossings,max_crossings_per_pair,failed_nets
+4500_900,4500,900,3.5,2988,83,36,6,0,0,38,4,
+4500_2400,4500,2400,3.5,2988,83,36,6,0,0,38,4,

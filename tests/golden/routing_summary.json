@@ -1,0 +1,257 @@
+[
+  {
+    "topology": "padded_benes_8x8",
+    "permutation": [
+      2,
+      0,
+      5,
+      1,
+      3,
+      4
+    ],
+    "mrr_count": 20,
+    "stages": 5,
+    "active_states": 7,
+    "total_states": 20,
+    "min_path_depth": 5,
+    "max_path_depth": 5,
+    "average_path_depth": 5.0,
+    "total_wiring_um": 4466.0,
+    "crossing_count": 12,
+    "worst_insertion_loss_db": 4.200960122794263,
+    "average_insertion_loss_db": 3.5685799937153795,
+    "worst_sxr_db": 4.430437634550203,
+    "path_metrics": [
+      {
+        "input_port": 0,
+        "output_port": 2,
+        "insertion_loss_db": 2.8508665313031627,
+        "sxr_db": 10.311550246445185,
+        "signal_power": 0.5186965350516661,
+        "leak_power": 0.04827900625,
+        "wiring_um": 627.0,
+        "mrr_loss_db": 1.5968665313031627
+      },
+      {
+        "input_port": 1,
+        "output_port": 0,
+        "insertion_loss_db": 2.970866531303163,
+        "sxr_db": 10.944387952155187,
+        "signal_power": 0.5045606144542395,
+        "leak_power": 0.0405951875,
+        "wiring_um": 687.0,
+        "mrr_loss_db": 1.5968665313031627
+      },
+      {
+        "input_port": 2,
+        "output_port": 5,
+        "insertion_loss_db": 4.136960122794263,
+        "sxr_db": 6.2554168739332505,
+        "signal_power": 0.38574827062227507,
+        "leak_power": 0.09136130625000001,
+        "wiring_um": 787.0,
+        "mrr_loss_db": 2.5629601227942627
+      },
+      {
+        "input_port": 3,
+        "output_port": 1,
+        "insertion_loss_db": 4.200960122794263,
+        "sxr_db": 4.430437634550203,
+        "signal_power": 0.38010535469117723,
+        "leak_power": 0.1370440625,
+        "wiring_um": 819.0,
+        "mrr_loss_db": 2.562960122794263
+      },
+      {
+        "input_port": 4,
+        "output_port": 3,
+        "insertion_loss_db": 4.136960122794263,
+        "sxr_db": 6.070587632484709,
+        "signal_power": 0.38574827062227496,
+        "leak_power": 0.09533343125000002,
+        "wiring_um": 787.0,
+        "mrr_loss_db": 2.562960122794263
+      },
+      {
+        "input_port": 5,
+        "output_port": 4,
+        "insertion_loss_db": 3.1148665313031625,
+        "sxr_db": 9.476948381069452,
+        "signal_power": 0.4881051016110395,
+        "leak_power": 0.055057756250000006,
+        "wiring_um": 759.0,
+        "mrr_loss_db": 1.5968665313031623
+      }
+    ]
+  },
+  {
+    "topology": "waksman_6x6",
+    "permutation": [
+      2,
+      0,
+      5,
+      1,
+      3,
+      4
+    ],
+    "mrr_count": 11,
+    "stages": 5,
+    "active_states": 7,
+    "total_states": 11,
+    "min_path_depth": 2,
+    "max_path_depth": 5,
+    "average_path_depth": 3.6666666666666665,
+    "total_wiring_um": 3866.0,
+    "crossing_count": 7,
+    "worst_insertion_loss_db": 3.698196175682741,
+    "average_insertion_loss_db": 3.2325769961485338,
+    "worst_sxr_db": 5.197087635122383,
+    "path_metrics": [
+      {
+        "input_port": 0,
+        "output_port": 2,
+        "insertion_loss_db": 2.8508665313031627,
+        "sxr_db": 10.106137278288605,
+        "signal_power": 0.5186965350516661,
+        "leak_power": 0.050617375,
+        "wiring_um": 627.0,
+        "mrr_loss_db": 1.5968665313031627
+      },
+      {
+        "input_port": 1,
+        "output_port": 0,
+        "insertion_loss_db": 3.6661961756827406,
+        "sxr_db": 5.676373245332396,
+        "signal_power": 0.4299128065970685,
+        "leak_power": 0.11634375000000001,
+        "wiring_um": 663.0,
+        "mrr_loss_db": 2.3401961756827405
+      },
+      {
+        "input_port": 2,
+        "output_port": 5,
+        "insertion_loss_db": 3.3354322285712183,
+        "sxr_db": 5.197087635122383,
+        "signal_power": 0.463934614913589,
+        "leak_power": 0.14020000000000002,
+        "wiring_um": 609.0,
+        "mrr_loss_db": 2.1174322285712184
+      },
+      {
+        "input_port": 3,
+        "output_port": 1,
+        "insertion_loss_db": 3.6101961756827405,
+        "sxr_db": 5.239109958827593,
+        "signal_power": 0.435492201570653,
+        "leak_power": 0.1303375,
+        "wiring_um": 635.0,
+        "mrr_loss_db": 2.3401961756827405
+      },
+      {
+        "input_port": 4,
+        "output_port": 3,
+        "insertion_loss_db": 3.698196175682741,
+        "sxr_db": 5.203106951550346,
+        "signal_power": 0.42675673365522215,
+        "leak_power": 0.12878630624999998,
+        "wiring_um": 679.0,
+        "mrr_loss_db": 2.340196175682741
+      },
+      {
+        "input_port": 5,
+        "output_port": 4,
+        "insertion_loss_db": 2.234574689968595,
+        "sxr_db": 10.538469232931853,
+        "signal_power": 0.5977815833222377,
+        "leak_power": 0.05280750000000001,
+        "wiring_um": 653.0,
+        "mrr_loss_db": 0.9285746899685949
+      }
+    ]
+  },
+  {
+    "topology": "spanke_benes_6x6",
+    "permutation": [
+      2,
+      0,
+      5,
+      1,
+      3,
+      4
+    ],
+    "mrr_count": 15,
+    "stages": 9,
+    "active_states": 5,
+    "total_states": 15,
+    "min_path_depth": 2,
+    "max_path_depth": 8,
+    "average_path_depth": 5.0,
+    "total_wiring_um": 6410.0,
+    "crossing_count": 0,
+    "worst_insertion_loss_db": 4.843441221271758,
+    "average_insertion_loss_db": 4.05556439513353,
+    "worst_sxr_db": 3.6671493936961834,
+    "path_metrics": [
+      {
+        "input_port": 0,
+        "output_port": 2,
+        "insertion_loss_db": 3.989913327048714,
+        "sxr_db": 7.005206691470592,
+        "signal_power": 0.3990328658552267,
+        "leak_power": 0.07952212890624999,
+        "wiring_um": 955.0,
+        "mrr_loss_db": 2.079913327048714
+      },
+      {
+        "input_port": 1,
+        "output_port": 0,
+        "insertion_loss_db": 4.5191583726377305,
+        "sxr_db": 7.6244781477762995,
+        "signal_power": 0.35325162044837094,
+        "leak_power": 0.061043067296874996,
+        "wiring_um": 1127.0,
+        "mrr_loss_db": 2.2651583726377305
+      },
+      {
+        "input_port": 2,
+        "output_port": 5,
+        "insertion_loss_db": 4.49019617568274,
+        "sxr_db": 3.6671493936961834,
+        "signal_power": 0.35561525466673793,
+        "leak_power": 0.15284999999999999,
+        "wiring_um": 1075.0,
+        "mrr_loss_db": 2.3401961756827405
+      },
+      {
+        "input_port": 3,
+        "output_port": 1,
+        "insertion_loss_db": 4.843441221271758,
+        "sxr_db": 5.353898960525201,
+        "signal_power": 0.3278354230584389,
+        "leak_power": 0.09555776463359375,
+        "wiring_um": 1159.0,
+        "mrr_loss_db": 2.5254412212717576
+      },
+      {
+        "input_port": 4,
+        "output_port": 3,
+        "insertion_loss_db": 3.52410258419164,
+        "sxr_db": 9.705871499415162,
+        "signal_power": 0.4442114426805965,
+        "leak_power": 0.047533806250000005,
+        "wiring_um": 1075.0,
+        "mrr_loss_db": 1.3741025841916399
+      },
+      {
+        "input_port": 5,
+        "output_port": 4,
+        "insertion_loss_db": 2.966574689968595,
+        "sxr_db": 11.381886033428877,
+        "signal_power": 0.505059484357059,
+        "leak_power": 0.03674125,
+        "wiring_um": 1019.0,
+        "mrr_loss_db": 0.9285746899685949
+      }
+    ]
+  }
+]

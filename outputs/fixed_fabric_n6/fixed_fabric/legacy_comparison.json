@@ -1,0 +1,28 @@
+{
+  "comparison_permutation": [
+    2,
+    0,
+    5,
+    1,
+    3,
+    4
+  ],
+  "fixed_fabric": {
+    "crossings": 78,
+    "drc_violations": 0,
+    "failed_edges": 0,
+    "physical_route_runs": 1,
+    "routed_edges": 48,
+    "waveguides": 8
+  },
+  "legacy_active_path": {
+    "active_paths": 6,
+    "crossings": 33,
+    "drc_violations": 0,
+    "failed_paths": 0,
+    "physical_route_runs_per_permutation": 1,
+    "routed_paths": 6
+  },
+  "models_are_not_numerically_interchangeable": true,
+  "topology": "padded_benes_8x8"
+}

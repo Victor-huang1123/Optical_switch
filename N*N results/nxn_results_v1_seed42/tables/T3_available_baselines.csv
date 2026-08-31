@@ -1,0 +1,85 @@
+topology,n_logical,ablation,metric,baseline_value,comparison_value,delta,notes
+padded_benes_8x8,6,logical_default,worst_il_db,5.095053714285364,,,logical layer default placement
+padded_benes_8x8,6,logical_default,worst_sxr_db,2.3735282106961817,,,logical layer default placement
+waksman_6x6,6,logical_default,worst_il_db,4.261242971428291,,,logical layer default placement
+waksman_6x6,6,logical_default,worst_sxr_db,3.104319734571331,,,logical layer default placement
+spanke_benes_6x6,6,logical_default,worst_il_db,5.703053714285364,,,logical layer default placement
+spanke_benes_6x6,6,logical_default,worst_sxr_db,0.3175461989942596,,,logical layer default placement
+padded_benes_16x16,9,surrogate_calibration,mae,3.337274571,0.270500462,-3.066774109,negative delta means calibrated MAE improved
+padded_benes_16x16,9,surrogate_calibration,kendall_tau,0.809523810,0.904761905,0.095238095,positive delta means calibrated ranking improved
+padded_benes_16x16,10,surrogate_calibration,mae,3.512510857,0.395562896,-3.116947961,negative delta means calibrated MAE improved
+padded_benes_16x16,10,surrogate_calibration,kendall_tau,0.619047619,0.714285714,0.095238095,positive delta means calibrated ranking improved
+padded_benes_16x16,11,surrogate_calibration,mae,3.297026625,0.187494669,-3.109531956,negative delta means calibrated MAE improved
+padded_benes_16x16,11,surrogate_calibration,kendall_tau,0.785714286,0.857142857,0.071428571,positive delta means calibrated ranking improved
+padded_benes_16x16,12,surrogate_calibration,mae,4.055190500,0.188420141,-3.866770359,negative delta means calibrated MAE improved
+padded_benes_16x16,12,surrogate_calibration,kendall_tau,0.500000000,0.928571429,0.428571429,positive delta means calibrated ranking improved
+padded_benes_16x16,13,surrogate_calibration,mae,3.775305500,0.327372369,-3.447933131,negative delta means calibrated MAE improved
+padded_benes_16x16,13,surrogate_calibration,kendall_tau,0.571428571,0.785714286,0.214285715,positive delta means calibrated ranking improved
+padded_benes_16x16,14,surrogate_calibration,mae,4.447445444,0.270884260,-4.176561184,negative delta means calibrated MAE improved
+padded_benes_16x16,14,surrogate_calibration,kendall_tau,0.555555556,0.833333333,0.277777777,positive delta means calibrated ranking improved
+padded_benes_16x16,15,surrogate_calibration,mae,4.056920400,0.302908955,-3.754011445,negative delta means calibrated MAE improved
+padded_benes_16x16,15,surrogate_calibration,kendall_tau,0.377777778,0.688888889,0.311111111,positive delta means calibrated ranking improved
+padded_benes_16x16,16,surrogate_calibration,mae,4.410407200,0.350567034,-4.059840166,negative delta means calibrated MAE improved
+padded_benes_16x16,16,surrogate_calibration,kendall_tau,0.511111111,0.822222222,0.311111111,positive delta means calibrated ranking improved
+padded_benes_4x4,4,surrogate_calibration,mae,1.604796250,0.195047977,-1.409748273,negative delta means calibrated MAE improved
+padded_benes_4x4,4,surrogate_calibration,kendall_tau,0.000000000,1.000000000,1.000000000,positive delta means calibrated ranking improved
+padded_benes_8x8,5,surrogate_calibration,mae,2.273692000,0.123961648,-2.149730352,negative delta means calibrated MAE improved
+padded_benes_8x8,5,surrogate_calibration,kendall_tau,0.800000000,1.000000000,0.200000000,positive delta means calibrated ranking improved
+padded_benes_8x8,6,surrogate_calibration,mae,2.668637000,0.112107527,-2.556529473,negative delta means calibrated MAE improved
+padded_benes_8x8,6,surrogate_calibration,kendall_tau,0.714285714,0.866666667,0.152380953,positive delta means calibrated ranking improved
+padded_benes_8x8,7,surrogate_calibration,mae,2.423848286,0.221682130,-2.202166156,negative delta means calibrated MAE improved
+padded_benes_8x8,7,surrogate_calibration,kendall_tau,0.523809524,0.809523810,0.285714286,positive delta means calibrated ranking improved
+padded_benes_8x8,8,surrogate_calibration,mae,2.842139143,0.241839384,-2.600299759,negative delta means calibrated MAE improved
+padded_benes_8x8,8,surrogate_calibration,kendall_tau,0.714285714,0.809523810,0.095238096,positive delta means calibrated ranking improved
+spanke_benes_10x10,10,surrogate_calibration,mae,3.491360000,0.046706890,-3.444653110,negative delta means calibrated MAE improved
+spanke_benes_10x10,10,surrogate_calibration,kendall_tau,0.757575758,0.969696970,0.212121212,positive delta means calibrated ranking improved
+spanke_benes_11x11,11,surrogate_calibration,mae,4.366784583,0.078404156,-4.288380427,negative delta means calibrated MAE improved
+spanke_benes_11x11,11,surrogate_calibration,kendall_tau,0.875000000,1.000000000,0.125000000,positive delta means calibrated ranking improved
+spanke_benes_12x12,12,surrogate_calibration,mae,4.397542214,0.073140152,-4.324402062,negative delta means calibrated MAE improved
+spanke_benes_12x12,12,surrogate_calibration,kendall_tau,0.563218391,0.978021978,0.414803587,positive delta means calibrated ranking improved
+spanke_benes_13x13,13,surrogate_calibration,mae,4.474421133,0.066386461,-4.408034672,negative delta means calibrated MAE improved
+spanke_benes_13x13,13,surrogate_calibration,kendall_tau,0.692307692,0.980952381,0.288644689,positive delta means calibrated ranking improved
+spanke_benes_14x14,14,surrogate_calibration,mae,4.295427000,0.049801720,-4.245625280,negative delta means calibrated MAE improved
+spanke_benes_14x14,14,surrogate_calibration,kendall_tau,0.747899160,0.983333333,0.235434173,positive delta means calibrated ranking improved
+spanke_benes_15x15,15,surrogate_calibration,mae,5.485567167,0.094702131,-5.390865036,negative delta means calibrated MAE improved
+spanke_benes_15x15,15,surrogate_calibration,kendall_tau,0.633986928,1.000000000,0.366013072,positive delta means calibrated ranking improved
+spanke_benes_16x16,16,surrogate_calibration,mae,5.913998895,0.058764668,-5.855234227,negative delta means calibrated MAE improved
+spanke_benes_16x16,16,surrogate_calibration,kendall_tau,0.668639053,1.000000000,0.331360947,positive delta means calibrated ranking improved
+spanke_benes_4x4,4,surrogate_calibration,mae,1.123787600,0.079599873,-1.044187727,negative delta means calibrated MAE improved
+spanke_benes_4x4,4,surrogate_calibration,kendall_tau,0.777777778,1.000000000,0.222222222,positive delta means calibrated ranking improved
+spanke_benes_5x5,5,surrogate_calibration,mae,1.460460333,0.057934226,-1.402526107,negative delta means calibrated MAE improved
+spanke_benes_5x5,5,surrogate_calibration,kendall_tau,0.866666667,1.000000000,0.133333333,positive delta means calibrated ranking improved
+spanke_benes_6x6,6,surrogate_calibration,mae,2.043969571,0.067771754,-1.976197817,negative delta means calibrated MAE improved
+spanke_benes_6x6,6,surrogate_calibration,kendall_tau,0.904761905,1.000000000,0.095238095,positive delta means calibrated ranking improved
+spanke_benes_7x7,7,surrogate_calibration,mae,2.316929125,0.051236840,-2.265692285,negative delta means calibrated MAE improved
+spanke_benes_7x7,7,surrogate_calibration,kendall_tau,0.500000000,1.000000000,0.500000000,positive delta means calibrated ranking improved
+spanke_benes_8x8,8,surrogate_calibration,mae,2.769468900,0.052477278,-2.716991622,negative delta means calibrated MAE improved
+spanke_benes_8x8,8,surrogate_calibration,kendall_tau,0.636363636,1.000000000,0.363636364,positive delta means calibrated ranking improved
+spanke_benes_9x9,9,surrogate_calibration,mae,3.303343545,0.054797650,-3.248545895,negative delta means calibrated MAE improved
+spanke_benes_9x9,9,surrogate_calibration,kendall_tau,0.444444444,1.000000000,0.555555556,positive delta means calibrated ranking improved
+waksman_10x10,10,surrogate_calibration,mae,2.891136875,0.224707464,-2.666429411,negative delta means calibrated MAE improved
+waksman_10x10,10,surrogate_calibration,kendall_tau,0.500000000,0.928571429,0.428571429,positive delta means calibrated ranking improved
+waksman_11x11,11,surrogate_calibration,mae,2.732788857,0.252164040,-2.480624817,negative delta means calibrated MAE improved
+waksman_11x11,11,surrogate_calibration,kendall_tau,0.300000000,0.904761905,0.604761905,positive delta means calibrated ranking improved
+waksman_12x12,12,surrogate_calibration,mae,3.568827500,0.331370100,-3.237457400,negative delta means calibrated MAE improved
+waksman_12x12,12,surrogate_calibration,kendall_tau,-0.071428571,0.857142857,0.928571428,positive delta means calibrated ranking improved
+waksman_13x13,13,surrogate_calibration,mae,2.809935222,0.170400044,-2.639535178,negative delta means calibrated MAE improved
+waksman_13x13,13,surrogate_calibration,kendall_tau,0.666666667,0.611111111,-0.055555556,positive delta means calibrated ranking improved
+waksman_14x14,14,surrogate_calibration,mae,3.898308667,0.317838646,-3.580470021,negative delta means calibrated MAE improved
+waksman_14x14,14,surrogate_calibration,kendall_tau,0.333333333,0.833333333,0.500000000,positive delta means calibrated ranking improved
+waksman_15x15,15,surrogate_calibration,mae,3.182792000,0.286339897,-2.896452103,negative delta means calibrated MAE improved
+waksman_15x15,15,surrogate_calibration,kendall_tau,0.714285714,0.785714286,0.071428572,positive delta means calibrated ranking improved
+waksman_16x16,16,surrogate_calibration,mae,3.336920273,0.228210591,-3.108709682,negative delta means calibrated MAE improved
+waksman_16x16,16,surrogate_calibration,kendall_tau,0.454545455,0.927272727,0.472727272,positive delta means calibrated ranking improved
+waksman_4x4,4,surrogate_calibration,mae,1.327178400,0.108346693,-1.218831707,negative delta means calibrated MAE improved
+waksman_4x4,4,surrogate_calibration,kendall_tau,0.000000000,0.600000000,0.600000000,positive delta means calibrated ranking improved
+waksman_5x5,5,surrogate_calibration,mae,1.616078200,0.294714808,-1.321363392,negative delta means calibrated MAE improved
+waksman_5x5,5,surrogate_calibration,kendall_tau,1.000000000,1.000000000,0.000000000,positive delta means calibrated ranking improved
+waksman_6x6,6,surrogate_calibration,mae,2.464625500,0.253647417,-2.210978083,negative delta means calibrated MAE improved
+waksman_6x6,6,surrogate_calibration,kendall_tau,0.714285714,0.866666667,0.152380953,positive delta means calibrated ranking improved
+waksman_7x7,7,surrogate_calibration,mae,2.617957286,0.129434716,-2.488522570,negative delta means calibrated MAE improved
+waksman_7x7,7,surrogate_calibration,kendall_tau,0.047619048,0.809523810,0.761904762,positive delta means calibrated ranking improved
+waksman_8x8,8,surrogate_calibration,mae,2.906402286,0.261319077,-2.645083209,negative delta means calibrated MAE improved
+waksman_8x8,8,surrogate_calibration,kendall_tau,0.444444444,0.904761905,0.460317461,positive delta means calibrated ranking improved
+waksman_9x9,9,surrogate_calibration,mae,2.514456000,0.221814356,-2.292641644,negative delta means calibrated MAE improved
+waksman_9x9,9,surrogate_calibration,kendall_tau,0.555555556,1.000000000,0.444444444,positive delta means calibrated ranking improved

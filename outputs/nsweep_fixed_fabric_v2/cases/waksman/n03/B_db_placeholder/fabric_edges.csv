@@ -1,0 +1,10 @@
+edge_id,waveguide_owner_edge_id,kind,source_endpoint,source_wire,source_blocked,target_endpoint,target_wire,target_blocked,source_stage,target_stage
+input:w0->waksman_3x3_s0_w0_1.in,input:w0->waksman_3x3_s0_w0_1.in,input,I0,0,False,waksman_3x3_s0_w0_1.in,0,False,,0
+input:w1->waksman_3x3_s0_w0_1.add,input:w1->waksman_3x3_s0_w0_1.add,input,I1,1,False,waksman_3x3_s0_w0_1.add,1,False,,0
+stage:0:w0:waksman_3x3_s0_w0_1.th->waksman_3x3_s1_w0_2.in:w0,input:w0->waksman_3x3_s0_w0_1.in,interstage,waksman_3x3_s0_w0_1.th,0,False,waksman_3x3_s1_w0_2.in,0,False,0,1
+input:w2->waksman_3x3_s1_w0_2.add,input:w2->waksman_3x3_s1_w0_2.add,input,I2,2,False,waksman_3x3_s1_w0_2.add,2,False,,1
+stage:1:w0:waksman_3x3_s1_w0_2.th->waksman_3x3_s2_w0_1.in:w0,input:w0->waksman_3x3_s0_w0_1.in,interstage,waksman_3x3_s1_w0_2.th,0,False,waksman_3x3_s2_w0_1.in,0,False,1,2
+stage:0:w1:waksman_3x3_s0_w0_1.drop->waksman_3x3_s2_w0_1.add:w1,input:w1->waksman_3x3_s0_w0_1.add,interstage,waksman_3x3_s0_w0_1.drop,1,False,waksman_3x3_s2_w0_1.add,1,False,0,2
+output:waksman_3x3_s2_w0_1.th->w0,input:w0->waksman_3x3_s0_w0_1.in,output,waksman_3x3_s2_w0_1.th,0,False,O0,0,False,2,
+output:waksman_3x3_s2_w0_1.drop->w1,input:w1->waksman_3x3_s0_w0_1.add,output,waksman_3x3_s2_w0_1.drop,1,False,O1,1,False,2,
+output:waksman_3x3_s1_w0_2.drop->w2,input:w2->waksman_3x3_s1_w0_2.add,output,waksman_3x3_s1_w0_2.drop,2,False,O2,2,False,1,

@@ -1,0 +1,87 @@
+[
+  {
+    "topology": "padded_benes_8x8",
+    "permutation": [
+      2,
+      0,
+      5,
+      1,
+      3,
+      4
+    ],
+    "mrr_count": 20,
+    "stages": 5,
+    "active_states": 7,
+    "total_states": 20,
+    "min_path_depth": 5,
+    "max_path_depth": 5,
+    "average_path_depth": 5.0,
+    "total_wiring_um": 4466.0,
+    "crossing_count": 12,
+    "worst_insertion_loss_db": 4.200960122794263,
+    "average_insertion_loss_db": 3.5685799937153795,
+    "worst_sxr_db": 4.430437634550203,
+    "path_metrics": [
+      {
+        "input_port": 0,
+        "output_port": 2,
+        "insertion_loss_db": 2.8508665313031627,
+        "sxr_db": 10.311550246445185,
+        "signal_power": 0.5186965350516661,
+        "leak_power": 0.04827900625,
+        "wiring_um": 627.0,
+        "mrr_loss_db": 1.5968665313031627
+      },
+      {
+        "input_port": 1,
+        "output_port": 0,
+        "insertion_loss_db": 2.970866531303163,
+        "sxr_db": 10.944387952155187,
+        "signal_power": 0.5045606144542395,
+        "leak_power": 0.0405951875,
+        "wiring_um": 687.0,
+        "mrr_loss_db": 1.5968665313031627
+      },
+      {
+        "input_port": 2,
+        "output_port": 5,
+        "insertion_loss_db": 4.136960122794263,
+        "sxr_db": 6.2554168739332505,
+        "signal_power": 0.38574827062227507,
+        "leak_power": 0.09136130625000001,
+        "wiring_um": 787.0,
+        "mrr_loss_db": 2.5629601227942627
+      },
+      {
+        "input_port": 3,
+        "output_port": 1,
+        "insertion_loss_db": 4.200960122794263,
+        "sxr_db": 4.430437634550203,
+        "signal_power": 0.38010535469117723,
+        "leak_power": 0.1370440625,
+        "wiring_um": 819.0,
+        "mrr_loss_db": 2.562960122794263
+      },
+      {
+        "input_port": 4,
+        "output_port": 3,
+        "insertion_loss_db": 4.136960122794263,
+        "sxr_db": 6.070587632484709,
+        "signal_power": 0.38574827062227496,
+        "leak_power": 0.09533343125000002,
+        "wiring_um": 787.0,
+        "mrr_loss_db": 2.562960122794263
+      },
+      {
+        "input_port": 5,
+        "output_port": 4,
+        "insertion_loss_db": 3.1148665313031625,
+        "sxr_db": 9.476948381069452,
+        "signal_power": 0.4881051016110395,
+        "leak_power": 0.055057756250000006,
+        "wiring_um": 759.0,
+        "mrr_loss_db": 1.5968665313031623
+      }
+    ]
+  }
+]

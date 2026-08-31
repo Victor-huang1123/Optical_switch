@@ -1,0 +1,153 @@
+{
+  "argv": [
+    "main.py",
+    "--paper-run",
+    "/tmp/jchuang-tmp/claude-1237/-home-jchuang/07be93e0-a4e2-4021-8bdf-4bccea6ff2a5/scratchpad/nxn_smoke_v1.yaml"
+  ],
+  "config": {
+    "breakeven": {
+      "crossing_loss_db_per_cross": [
+        0.0,
+        0.5
+      ],
+      "enabled": true,
+      "n_values": [
+        4
+      ],
+      "topology": "all"
+    },
+    "calibration": {
+      "enabled": true,
+      "holdout_fraction": 0.4,
+      "ridge_lambda": 1e-06
+    },
+    "layout_gallery": {
+      "enabled": true,
+      "n_values": [
+        4
+      ],
+      "topology": "all"
+    },
+    "logical_matrix": {
+      "eval_samples": null,
+      "n_values": [
+        4,
+        5
+      ],
+      "topology": "all",
+      "train_samples": null
+    },
+    "outdir": "N*N results/_smoke_tmp",
+    "physical_batch": {
+      "bend_loss_db_per_bend": 0.005,
+      "crossing_loss_db_per_cross": 0.1,
+      "early_stop_stagnant_passes": 2,
+      "enabled": true,
+      "grid_margin_tracks": 12,
+      "local_repair_max_shift_tracks": 16,
+      "loss_aware_cost": false,
+      "max_astar_pops": 20000,
+      "max_physical_n": 16,
+      "max_ripup_passes": 3,
+      "n_values": [
+        4,
+        5
+      ],
+      "ripup_max_astar_pops": 10000,
+      "route_window_max_detour_tracks": 12,
+      "samples": 2,
+      "stage_pitch_um": 105.0,
+      "topology": "all",
+      "wire_pitch_um": 36.0,
+      "x_end_margin_um": 70.0,
+      "x_start_um": 20.0
+    },
+    "run_id": "nxn_smoke2_seed42",
+    "seed": 42
+  },
+  "config_path": "/tmp/jchuang-tmp/claude-1237/-home-jchuang/07be93e0-a4e2-4021-8bdf-4bccea6ff2a5/scratchpad/nxn_smoke_v1.yaml",
+  "permutation_lists": [
+    {
+      "eval_count": 10,
+      "eval_sha256": "1dda3ac511f7d1496141c565d29c82daafa0399737cd6feef18ad9cb33f7bfab",
+      "mode": "exhaustive",
+      "n_logical": 4,
+      "train_count": 14,
+      "train_sha256": "5ed5ad3e0dda25eced402af4c6ada6762c9bfa01f7949b00c58e40acd55aa4c2"
+    },
+    {
+      "eval_count": 50,
+      "eval_sha256": "5071ba30425a4f2e3d8699b7d97c80bfdb8db656a0430fa576ce3ce77bdda19f",
+      "mode": "exhaustive",
+      "n_logical": 5,
+      "train_count": 70,
+      "train_sha256": "7229c4ed81429488a3776c9ce0396f6e7ffbaba809ea6db8e26605b0b1bfe4d5"
+    }
+  ],
+  "resolved": {
+    "breakeven": {
+      "crossing_loss_db_per_cross": [
+        0.0,
+        0.5
+      ],
+      "enabled": true,
+      "n_values": [
+        4
+      ],
+      "topology": "all"
+    },
+    "calibration": {
+      "enabled": true,
+      "holdout_fraction": 0.4,
+      "ridge_lambda": 1e-06
+    },
+    "layout_gallery": {
+      "enabled": true,
+      "n_values": [
+        4
+      ],
+      "topology": "all"
+    },
+    "matrix_eval_samples": null,
+    "matrix_n_values": [
+      4,
+      5
+    ],
+    "matrix_train_samples": null,
+    "perm_seed": 42,
+    "physical_batch": {
+      "bend_loss_db_per_bend": 0.005,
+      "crossing_loss_db_per_cross": 0.1,
+      "early_stop_stagnant_passes": 2,
+      "enabled": true,
+      "grid_margin_tracks": 12,
+      "local_repair_max_shift_tracks": 16,
+      "loss_aware_cost": false,
+      "max_astar_pops": 20000,
+      "max_physical_n": 16,
+      "max_ripup_passes": 3,
+      "n_values": [
+        4,
+        5
+      ],
+      "ripup_max_astar_pops": 10000,
+      "route_window_max_detour_tracks": 12,
+      "samples": 2,
+      "stage_pitch_um": 105.0,
+      "topology": "all",
+      "wire_pitch_um": 36.0,
+      "x_end_margin_um": 70.0,
+      "x_start_um": 20.0
+    },
+    "sa_seed": 0,
+    "split_seed": 42,
+    "topology": "all"
+  },
+  "timestamp": "2026-07-07T18:16:40",
+  "versions": {
+    "git_sha": "a7d107f31cbe4e4f37445ca27c1f8ce968a08ffc",
+    "package_version": "unknown",
+    "platform": "Linux-4.18.0-553.62.1.el8_10.x86_64-x86_64-with-glibc2.28",
+    "python": "3.11.13"
+  }
+}

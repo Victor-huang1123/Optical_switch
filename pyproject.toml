@@ -11,13 +11,14 @@ dependencies = [
     "matplotlib>=3.7",
     "numpy>=1.24",
     "PyYAML>=6.0",
+    "scipy>=1.10",
 ]
 
 [project.optional-dependencies]
 dev = ["pytest>=7", "mypy>=1.5"]
 
 [project.scripts]
-mrr-switch = "mrr_switch_optimizer.cli:main"
+mrr-switch = "mrr_switch_optimizer.app.cli:main"
 
 [tool.setuptools.packages.find]
 include = ["mrr_switch_optimizer*"]
@@ -25,3 +26,6 @@ include = ["mrr_switch_optimizer*"]
 [tool.mypy]
 strict = true
 ignore_missing_imports = false
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

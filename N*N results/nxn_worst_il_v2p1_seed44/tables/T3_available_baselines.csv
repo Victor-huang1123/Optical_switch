@@ -1,0 +1,9 @@
+topology,n_logical,ablation,metric,baseline_value,comparison_value,delta,notes
+padded_benes_8x8,6,logical_default,worst_il_db,3.2094972104364343,,,logical layer default placement
+padded_benes_8x8,6,logical_default,worst_sxr_db,12.159170955189229,,,logical layer default placement
+waksman_6x6,6,logical_default,worst_il_db,2.550831324345476,,,logical layer default placement
+waksman_6x6,6,logical_default,worst_sxr_db,12.259072429626363,,,logical layer default placement
+spanke_benes_6x6,6,logical_default,worst_il_db,2.690696383821858,,,logical layer default placement
+spanke_benes_6x6,6,logical_default,worst_sxr_db,9.652562691023569,,,logical layer default placement
+spanke_benes_rect_6x6,6,logical_default,worst_il_db,1.8637964183510098,,,logical layer default placement
+spanke_benes_rect_6x6,6,logical_default,worst_sxr_db,12.323927853899914,,,logical layer default placement

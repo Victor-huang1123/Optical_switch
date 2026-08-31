@@ -1,0 +1,399 @@
+{
+  "argv": [
+    "main.py",
+    "--paper-run",
+    "configs/nxn_worst_il_v2p1_seed43.yaml"
+  ],
+  "config": {
+    "breakeven": {
+      "crossing_loss_db_per_cross": [
+        0.0,
+        0.05,
+        0.1,
+        0.2,
+        0.3,
+        0.5,
+        1.0
+      ],
+      "enabled": true,
+      "n_values": [
+        4,
+        6,
+        8,
+        12,
+        16
+      ],
+      "topology": "paper"
+    },
+    "calibration": {
+      "enabled": false
+    },
+    "layout_gallery": {
+      "enabled": false
+    },
+    "logical_matrix": {
+      "crossing_loss_db_per_cross": 0.1,
+      "eval_samples": null,
+      "n_values": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "topology": "paper",
+      "train_samples": 0
+    },
+    "outdir": "N*N results",
+    "physical_batch": {
+      "bend_loss_db_per_bend": 0.005,
+      "crossing_loss_db_per_cross": 0.1,
+      "early_stop_stagnant_passes": 2,
+      "enabled": true,
+      "full_enum_max_n": 5,
+      "grid_margin_tracks": 12,
+      "local_repair_max_shift_tracks": 8,
+      "loss_aware_cost": false,
+      "max_astar_pops": 8000,
+      "max_physical_n": 16,
+      "max_ripup_passes": 3,
+      "n_values": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "ripup_max_astar_pops": 4000,
+      "route_window_max_detour_tracks": 4,
+      "samples": 10,
+      "stage_pitch_um": 105.0,
+      "topology": "paper",
+      "wire_pitch_um": 36.0,
+      "x_end_margin_um": 70.0,
+      "x_start_um": 20.0
+    },
+    "run_id": "nxn_worst_il_v2p1_seed43",
+    "seed": 43
+  },
+  "config_path": "configs/nxn_worst_il_v2p1_seed43.yaml",
+  "permutation_lists": [
+    {
+      "eval_count": 6,
+      "eval_sha256": "dca25c2b84dd7a04502c6d5449fe8b4bd30089b65abc30a34ba6b55dc3c8ec64",
+      "mode": "exhaustive",
+      "n_logical": 3,
+      "train_count": 0,
+      "train_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "eval_count": 24,
+      "eval_sha256": "25ceae75c938ff0051d4faa0cbf9221eedb531d40dc1c2e80618e39b79202acc",
+      "mode": "exhaustive",
+      "n_logical": 4,
+      "train_count": 0,
+      "train_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "eval_count": 120,
+      "eval_sha256": "ab01137fadac67322242e3a8f90e5b73791cda496f1ec718ccefaacdfd736bd3",
+      "mode": "exhaustive",
+      "n_logical": 5,
+      "train_count": 0,
+      "train_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "eval_count": 720,
+      "eval_sha256": "adcff90c49886e6b4113928134280315e7ae2ad6a875b7af6d0aa5c43e981614",
+      "mode": "exhaustive",
+      "n_logical": 6,
+      "train_count": 0,
+      "train_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "eval_count": 300,
+      "eval_sha256": "e439e59c4f409ba59c9497743856bf306b03030364e6a1e8929f38c6a12eb92c",
+      "mode": "sample",
+      "n_logical": 7,
+      "train_count": 0,
+      "train_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "eval_count": 300,
+      "eval_sha256": "c1bde7c410de5119a95158c6277cd7862612c3d948b537ef27c96531a159a0c6",
+      "mode": "sample",
+      "n_logical": 8,
+      "train_count": 0,
+      "train_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "eval_count": 300,
+      "eval_sha256": "2a361b44388464cfc9332d160e0349804799d2462beebe662dbe6d2ff162fc33",
+      "mode": "sample",
+      "n_logical": 9,
+      "train_count": 0,
+      "train_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "eval_count": 300,
+      "eval_sha256": "4f040e7d09d97f2d2b9d89cd4e0506132799352e79ebf497dd7560e4941ded84",
+      "mode": "sample",
+      "n_logical": 10,
+      "train_count": 0,
+      "train_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "eval_count": 300,
+      "eval_sha256": "ef631803f933dd7ad5d862f941d52da14a6980560e752067e430e033b3bdef32",
+      "mode": "sample",
+      "n_logical": 11,
+      "train_count": 0,
+      "train_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "eval_count": 300,
+      "eval_sha256": "f907f57faabd9a3381b41d9a1b3ac8cfc85898f1dc886d8de4af561ddb8b0737",
+      "mode": "sample",
+      "n_logical": 12,
+      "train_count": 0,
+      "train_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "eval_count": 300,
+      "eval_sha256": "e18ce790d38a9d78b9e008a3300ac866d77cb78fd39b8afcf3ae87df0e329659",
+      "mode": "sample",
+      "n_logical": 13,
+      "train_count": 0,
+      "train_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "eval_count": 300,
+      "eval_sha256": "983b16f61ec896bb93715a213466ea7ce70b986e354f5cd89d2902a982f01606",
+      "mode": "sample",
+      "n_logical": 14,
+      "train_count": 0,
+      "train_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "eval_count": 300,
+      "eval_sha256": "89608d587f79b0eb7cd73199d0f23d4f7ef4a4af2d7f212420729f9b700dfbc6",
+      "mode": "sample",
+      "n_logical": 15,
+      "train_count": 0,
+      "train_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "eval_count": 300,
+      "eval_sha256": "0be05530cb5a5e82279354d98b6b27d88073dea8669938472a1b501c263b59d3",
+      "mode": "sample",
+      "n_logical": 16,
+      "train_count": 0,
+      "train_sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    }
+  ],
+  "physical_permutation_lists": [
+    {
+      "attempt_count": 6,
+      "mode": "exhaustive",
+      "n_logical": 3,
+      "perm_sha256": "dca25c2b84dd7a04502c6d5449fe8b4bd30089b65abc30a34ba6b55dc3c8ec64"
+    },
+    {
+      "attempt_count": 24,
+      "mode": "exhaustive",
+      "n_logical": 4,
+      "perm_sha256": "25ceae75c938ff0051d4faa0cbf9221eedb531d40dc1c2e80618e39b79202acc"
+    },
+    {
+      "attempt_count": 120,
+      "mode": "exhaustive",
+      "n_logical": 5,
+      "perm_sha256": "ab01137fadac67322242e3a8f90e5b73791cda496f1ec718ccefaacdfd736bd3"
+    },
+    {
+      "attempt_count": 10,
+      "mode": "sample",
+      "n_logical": 6,
+      "perm_sha256": "d174494e0e3210d67a03a6f6195fe71f4576acb87432262a0ed4ff90f73f5833"
+    },
+    {
+      "attempt_count": 10,
+      "mode": "sample",
+      "n_logical": 7,
+      "perm_sha256": "a82afe20c79ed59579ffdc07d5f398da5488fea2e3a372c399e5d497707fac60"
+    },
+    {
+      "attempt_count": 10,
+      "mode": "sample",
+      "n_logical": 8,
+      "perm_sha256": "651c99610d7f2d1b0636721959f545a1c1b61e6ebb9a58099ca09d9289987e6a"
+    },
+    {
+      "attempt_count": 10,
+      "mode": "sample",
+      "n_logical": 9,
+      "perm_sha256": "34ca607cf190e7d29e1137dcab1cd365451e34d5acb0797f75d8975f1a9d497d"
+    },
+    {
+      "attempt_count": 10,
+      "mode": "sample",
+      "n_logical": 10,
+      "perm_sha256": "9cdcdb3daa20bd03ee3f6d318c7bb190291efab63117a4abbce1a5a87469724b"
+    },
+    {
+      "attempt_count": 10,
+      "mode": "sample",
+      "n_logical": 11,
+      "perm_sha256": "2fd016ac8cb306becce2d1250efd22bbe2ccc365bb70aca362892089d2bcb7b8"
+    },
+    {
+      "attempt_count": 10,
+      "mode": "sample",
+      "n_logical": 12,
+      "perm_sha256": "b3be9128d104c098ba77608eb092f269e0457e7e93e0e90eca21db72d47e1722"
+    },
+    {
+      "attempt_count": 10,
+      "mode": "sample",
+      "n_logical": 13,
+      "perm_sha256": "2b80469d04452ef21269aa8d23487eedc2f9624342d539f9b6ac273faae0f46f"
+    },
+    {
+      "attempt_count": 10,
+      "mode": "sample",
+      "n_logical": 14,
+      "perm_sha256": "f115fd128d6d09f2bda2764fd838edb5c298f4242e40c64ad218dc7aba6041a9"
+    },
+    {
+      "attempt_count": 10,
+      "mode": "sample",
+      "n_logical": 15,
+      "perm_sha256": "3b616bd9d323470666bfb465e89837882c6cf90b05a2b0a828ed9d22f16ceb33"
+    },
+    {
+      "attempt_count": 10,
+      "mode": "sample",
+      "n_logical": 16,
+      "perm_sha256": "ef08448284c6ed72c5522c57b42cf20d63d9bcd5770d2be6b769f435431ca265"
+    }
+  ],
+  "resolved": {
+    "breakeven": {
+      "crossing_loss_db_per_cross": [
+        0.0,
+        0.05,
+        0.1,
+        0.2,
+        0.3,
+        0.5,
+        1.0
+      ],
+      "enabled": true,
+      "n_values": [
+        4,
+        6,
+        8,
+        12,
+        16
+      ],
+      "topology": "paper"
+    },
+    "calibration": {
+      "enabled": false
+    },
+    "layout_gallery": {
+      "enabled": false
+    },
+    "matrix_eval_samples": null,
+    "matrix_n_values": [
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "matrix_train_samples": 0,
+    "perm_seed": 43,
+    "physical_batch": {
+      "bend_loss_db_per_bend": 0.005,
+      "crossing_loss_db_per_cross": 0.1,
+      "early_stop_stagnant_passes": 2,
+      "enabled": true,
+      "full_enum_max_n": 5,
+      "grid_margin_tracks": 12,
+      "local_repair_max_shift_tracks": 8,
+      "loss_aware_cost": false,
+      "max_astar_pops": 8000,
+      "max_physical_n": 16,
+      "max_ripup_passes": 3,
+      "n_values": [
+        3,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "ripup_max_astar_pops": 4000,
+      "route_window_max_detour_tracks": 4,
+      "samples": 10,
+      "stage_pitch_um": 105.0,
+      "topology": "paper",
+      "wire_pitch_um": 36.0,
+      "x_end_margin_um": 70.0,
+      "x_start_um": 20.0
+    },
+    "sa_seed": 0,
+    "split_seed": 43,
+    "topology": "paper"
+  },
+  "sparams": {
+    "channel_nm": 1550.0,
+    "library_dir": "/home/jchuang/Optical_switch/mrr_sparam_library",
+    "radius_um": 5.0,
+    "source": "library",
+    "wavelength_nm": 1550.0
+  },
+  "timestamp": "2026-07-15T17:13:10",
+  "versions": {
+    "git_sha": "a7d107f31cbe4e4f37445ca27c1f8ce968a08ffc",
+    "package_version": "unknown",
+    "platform": "Linux-4.18.0-553.62.1.el8_10.x86_64-x86_64-with-glibc2.28",
+    "python": "3.11.13"
+  }
+}
