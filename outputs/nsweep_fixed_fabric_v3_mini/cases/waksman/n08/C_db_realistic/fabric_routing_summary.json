@@ -1,0 +1,416 @@
+{
+  "blocked_ports": [],
+  "crossing_count": 64,
+  "drc_violation_count": 26,
+  "drc_violations": [
+    {
+      "edge_ids": [
+        "input:w0->waksman_8x8_s0_w0_1.in",
+        "input:w1->waksman_8x8_s0_w0_1.add"
+      ],
+      "location": [
+        57.0,
+        421.5
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=37.000,156.000,5.500,11.500 um; minimum=5.500 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w0->waksman_8x8_s0_w0_1.in",
+        "input:w1->waksman_8x8_s0_w0_1.add"
+      ],
+      "location": [
+        120.0,
+        421.5
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=100.000,93.000,11.500,5.500 um; minimum=5.500 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w0->waksman_8x8_s0_w0_1.in",
+        "input:w1->waksman_8x8_s0_w0_1.add"
+      ],
+      "location": [
+        729.0,
+        421.5
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=100.000,68.000,5.500,11.500 um; minimum=5.500 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w0->waksman_8x8_s0_w0_1.in",
+        "input:w1->waksman_8x8_s0_w0_1.add"
+      ],
+      "location": [
+        792.0,
+        421.5
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=163.000,5.000,11.500,5.500 um; minimum=5.000 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w0->waksman_8x8_s0_w0_1.in",
+        "input:w2->waksman_8x8_s0_w2_3.in"
+      ],
+      "location": [
+        225.0,
+        389.5
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=12.000,156.000,5.500,19.500 um; minimum=5.500 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w0->waksman_8x8_s0_w0_1.in",
+        "input:w2->waksman_8x8_s0_w2_3.in"
+      ],
+      "location": [
+        561.0,
+        389.5
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=100.000,68.000,5.500,19.500 um; minimum=5.500 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w0->waksman_8x8_s0_w0_1.in",
+        "input:w2->waksman_8x8_s0_w2_3.in"
+      ],
+      "location": [
+        624.0,
+        389.5
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=163.000,5.000,19.500,5.500 um; minimum=5.000 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w0->waksman_8x8_s0_w0_1.in",
+        "input:w4->waksman_8x8_s0_w4_5.in"
+      ],
+      "location": [
+        401.0,
+        325.5
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=20.000,60.000,5.500,11.500 um; minimum=5.500 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w1->waksman_8x8_s0_w0_1.add",
+        "input:w3->waksman_8x8_s0_w2_3.add"
+      ],
+      "location": [
+        225.0,
+        325.5
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=65.000,79.000,5.500,11.500 um; minimum=5.500 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w1->waksman_8x8_s0_w0_1.add",
+        "input:w3->waksman_8x8_s0_w2_3.add"
+      ],
+      "location": [
+        561.0,
+        325.5
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=89.000,236.000,5.500,11.500 um; minimum=5.500 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w1->waksman_8x8_s0_w0_1.add",
+        "input:w3->waksman_8x8_s0_w2_3.add"
+      ],
+      "location": [
+        617.0,
+        325.5
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=145.000,180.000,11.500,5.500 um; minimum=5.500 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w1->waksman_8x8_s0_w0_1.add",
+        "input:w5->waksman_8x8_s0_w4_5.add"
+      ],
+      "location": [
+        456.0,
+        261.5
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=152.000,16.000,19.500,5.500 um; minimum=5.500 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w2->waksman_8x8_s0_w2_3.in",
+        "input:w3->waksman_8x8_s0_w2_3.add"
+      ],
+      "location": [
+        233.0,
+        337.0
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=43.500,22.000,8.000,87.000 um; minimum=8.000 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w2->waksman_8x8_s0_w2_3.in",
+        "input:w3->waksman_8x8_s0_w2_3.add"
+      ],
+      "location": [
+        569.0,
+        337.0
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=139.500,22.000,8.000,48.000 um; minimum=8.000 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w2->waksman_8x8_s0_w2_3.in",
+        "input:w3->waksman_8x8_s0_w2_3.add"
+      ],
+      "location": [
+        624.0,
+        320.0
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=17.000,26.500,7.000,168.000 um; minimum=7.000 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w2->waksman_8x8_s0_w2_3.in",
+        "input:w3->waksman_8x8_s0_w2_3.add"
+      ],
+      "location": [
+        57.0,
+        293.5
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=37.000,176.000,5.500,19.500 um; minimum=5.500 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w2->waksman_8x8_s0_w2_3.in",
+        "input:w3->waksman_8x8_s0_w2_3.add"
+      ],
+      "location": [
+        120.0,
+        293.5
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=100.000,113.000,19.500,5.500 um; minimum=5.500 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w2->waksman_8x8_s0_w2_3.in",
+        "input:w3->waksman_8x8_s0_w2_3.add"
+      ],
+      "location": [
+        792.0,
+        293.5
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=168.000,5.000,26.500,5.500 um; minimum=5.000 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w2->waksman_8x8_s0_w2_3.in",
+        "input:w4->waksman_8x8_s0_w4_5.in"
+      ],
+      "location": [
+        393.0,
+        320.0
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=89.000,103.000,25.000,8.000 um; minimum=8.000 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w3->waksman_8x8_s0_w2_3.add",
+        "input:w4->waksman_8x8_s0_w4_5.in"
+      ],
+      "location": [
+        456.0,
+        133.5
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=136.000,179.000,75.500,5.500 um; minimum=5.500 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w4->waksman_8x8_s0_w4_5.in",
+        "input:w5->waksman_8x8_s0_w4_5.add"
+      ],
+      "location": [
+        57.0,
+        165.5
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=37.000,156.000,5.500,19.500 um; minimum=5.500 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w4->waksman_8x8_s0_w4_5.in",
+        "input:w5->waksman_8x8_s0_w4_5.add"
+      ],
+      "location": [
+        120.0,
+        165.5
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=100.000,93.000,19.500,5.500 um; minimum=5.500 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w4->waksman_8x8_s0_w4_5.in",
+        "input:w5->waksman_8x8_s0_w4_5.add"
+      ],
+      "location": [
+        729.0,
+        165.5
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=89.000,68.000,5.500,19.500 um; minimum=5.500 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w4->waksman_8x8_s0_w4_5.in",
+        "input:w5->waksman_8x8_s0_w4_5.add"
+      ],
+      "location": [
+        792.0,
+        165.5
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=152.000,5.000,19.500,5.500 um; minimum=5.000 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w5->waksman_8x8_s0_w4_5.add",
+        "input:w7->waksman_8x8_s0_w6_7.add"
+      ],
+      "location": [
+        225.0,
+        69.5
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=81.000,216.000,5.500,11.500 um; minimum=5.500 um)",
+      "rule": "crossing_clearance"
+    },
+    {
+      "edge_ids": [
+        "input:w5->waksman_8x8_s0_w4_5.add",
+        "input:w7->waksman_8x8_s0_w6_7.add"
+      ],
+      "location": [
+        288.0,
+        69.5
+      ],
+      "message": "crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=144.000,153.000,11.500,5.500 um; minimum=5.500 um)",
+      "rule": "crossing_clearance"
+    }
+  ],
+  "envelope_id": "octave-p8-bbox28x22-dy5p5-w450-sp168-wp64-gp8-m20",
+  "fabric_edge_count": 42,
+  "failed_edge_count": 4,
+  "failed_edges": [
+    {
+      "edge_id": "input:w6->waksman_8x8_s0_w6_7.in",
+      "message": "cannot route I6->O6 with bounded multi-hop fallback at waksman_8x8_s2_w2_6.drop->O6: cannot route waksman_8x8_s2_w2_6.drop to O6 on physical grid: blocked by port access (port_access_overlap_foreign); candidate=(393.000,133.500)->(381.000,133.500) region=I3/waksman_8x8_s2_w3_7.in:(405.000,133.500)->(381.000,133.500); soft_repeat=I2/repeated_crossing pair=I2-I6 at=(393.000,231.000) source=I6->I2@(393.000,239.000):(393.000,239.000)->(401.000,239.000)x(393.000,409.000)->(393.000,217.000) counters=port_access:66,window:847,same_net:1536,crossing_candidate:135,crossing_budget:0,hard_reserved_crossing:0,soft_repeated_crossing:724,soft_reserved_crossing:0,reserved_spacing:187,segment:2033,pops:10220,max_heap:224"
+    },
+    {
+      "edge_id": "stage:0:w6:waksman_8x8_s0_w6_7.th->waksman_8x8_s1_w4_6.add:w6",
+      "message": "cannot route I6->O6 with bounded multi-hop fallback at waksman_8x8_s2_w2_6.drop->O6: cannot route waksman_8x8_s2_w2_6.drop to O6 on physical grid: blocked by port access (port_access_overlap_foreign); candidate=(393.000,133.500)->(381.000,133.500) region=I3/waksman_8x8_s2_w3_7.in:(405.000,133.500)->(381.000,133.500); soft_repeat=I2/repeated_crossing pair=I2-I6 at=(393.000,231.000) source=I6->I2@(393.000,239.000):(393.000,239.000)->(401.000,239.000)x(393.000,409.000)->(393.000,217.000) counters=port_access:66,window:847,same_net:1536,crossing_candidate:135,crossing_budget:0,hard_reserved_crossing:0,soft_repeated_crossing:724,soft_reserved_crossing:0,reserved_spacing:187,segment:2033,pops:10220,max_heap:224"
+    },
+    {
+      "edge_id": "stage:1:w6:waksman_8x8_s1_w4_6.drop->waksman_8x8_s2_w2_6.add:w6",
+      "message": "cannot route I6->O6 with bounded multi-hop fallback at waksman_8x8_s2_w2_6.drop->O6: cannot route waksman_8x8_s2_w2_6.drop to O6 on physical grid: blocked by port access (port_access_overlap_foreign); candidate=(393.000,133.500)->(381.000,133.500) region=I3/waksman_8x8_s2_w3_7.in:(405.000,133.500)->(381.000,133.500); soft_repeat=I2/repeated_crossing pair=I2-I6 at=(393.000,231.000) source=I6->I2@(393.000,239.000):(393.000,239.000)->(401.000,239.000)x(393.000,409.000)->(393.000,217.000) counters=port_access:66,window:847,same_net:1536,crossing_candidate:135,crossing_budget:0,hard_reserved_crossing:0,soft_repeated_crossing:724,soft_reserved_crossing:0,reserved_spacing:187,segment:2033,pops:10220,max_heap:224"
+    },
+    {
+      "edge_id": "output:waksman_8x8_s2_w2_6.drop->w6",
+      "message": "cannot route I6->O6 with bounded multi-hop fallback at waksman_8x8_s2_w2_6.drop->O6: cannot route waksman_8x8_s2_w2_6.drop to O6 on physical grid: blocked by port access (port_access_overlap_foreign); candidate=(393.000,133.500)->(381.000,133.500) region=I3/waksman_8x8_s2_w3_7.in:(405.000,133.500)->(381.000,133.500); soft_repeat=I2/repeated_crossing pair=I2-I6 at=(393.000,231.000) source=I6->I2@(393.000,239.000):(393.000,239.000)->(401.000,239.000)x(393.000,409.000)->(393.000,217.000) counters=port_access:66,window:847,same_net:1536,crossing_candidate:135,crossing_budget:0,hard_reserved_crossing:0,soft_repeated_crossing:724,soft_reserved_crossing:0,reserved_spacing:187,segment:2033,pops:10220,max_heap:224"
+    }
+  ],
+  "failure_class": "port_access_overlap_foreign",
+  "failure_signature": "I6->O6:final_hop=waksman_8x8_s2_w2_6.drop->O6:foreign_region=I3/waksman_8x8_s2_w3_7.in:pops=10220",
+  "geometry_sha256": "2a66c314f23e8385d213fc342cca7e2b0ff26b391a85df834520c6d431edfdce",
+  "layout_mode": "astar",
+  "max_astar_pops_rung": 300000,
+  "n_logical": 8,
+  "n_physical": 8,
+  "remediation": "none",
+  "routed_edge_count": 38,
+  "routing_stats": {
+    "astar_calls": 386,
+    "early_stopped": false,
+    "ripup_passes_executed": 6
+  },
+  "rules": {
+    "allow_crossings": true,
+    "astar_heuristic_weight": 1.0,
+    "backtrack_penalty_um": 80.0,
+    "bend_loss_db_per_bend": 0.005,
+    "bend_placement_penalty_db": 0.0,
+    "bend_radius_um": 5.0,
+    "capped_ripup_bounded_only": true,
+    "corridor_guide_mode": "soft",
+    "cost_model": "db",
+    "crossing_loss_db_per_cross": 0.1,
+    "crossing_penalty_um": 20.0,
+    "db_tie_breaker_scale": 0.05,
+    "drc_bend_radius_legality": true,
+    "drc_perpendicular_clearance": false,
+    "drc_same_net_min_spacing": false,
+    "early_stop_stagnant_passes": 0,
+    "enforce_bend_spacing": true,
+    "explicit_crossings": true,
+    "fallback_alternatives_per_hop": 2,
+    "fallback_beam_width": 0,
+    "future_crossing_reservation": false,
+    "grid_margin_tracks": 20,
+    "grid_merge_tol_um": 3.5,
+    "grid_pitch_um": 8.0,
+    "hairpin_penalty_um": 200.0,
+    "hard_crossing_budget": false,
+    "hard_reserved_crossing_reservation": false,
+    "hard_source_crossing_reservation": false,
+    "jog_penalty_db": 0.0,
+    "legalize_port_access": true,
+    "local_repair_max_shift_tracks": 8,
+    "loss_aware_cost": false,
+    "max_astar_pops": 300000,
+    "max_ripup_passes": 5,
+    "min_crossing_clearance_um": 10.0,
+    "min_spacing_um": 4.0,
+    "mrr_keepout_um": 6.0,
+    "outward_repeated_crossing_scale": 0.25,
+    "physical_turn_guard": false,
+    "port_access_runway_um": 10.0,
+    "port_approach_fallback": false,
+    "port_escape_um": 10.0,
+    "prop_loss_db_per_um": 0.0002,
+    "remediation_window_expansion": false,
+    "repeated_crossing_loss_db": 0.0,
+    "repeated_crossing_penalty_um": 400.0,
+    "ripup_max_astar_pops": null,
+    "ripup_order_candidate_limit": 1,
+    "ripup_route_budget": 4,
+    "route_order_beam_max_astar_pops": 2000,
+    "route_order_beam_width": 0,
+    "route_window_max_detour_tracks": 4,
+    "source_hint_bounded_only": true,
+    "strict_port_access": false,
+    "turn_guard_um": 16.0,
+    "turn_timing_penalty_um": 48.0,
+    "waveguide_width_um": 0.45
+  },
+  "status": "route_failed",
+  "topology": "waksman_8x8",
+  "window_expansion_tracks": 0
+}

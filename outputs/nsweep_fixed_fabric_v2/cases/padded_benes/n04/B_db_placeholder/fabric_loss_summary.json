@@ -1,0 +1,28 @@
+{
+  "bend_loss_db_per_bend": 0.0,
+  "crossing_loss_db_per_cross": 0.0,
+  "fabric_edge_count": 16,
+  "mrr_count": 6,
+  "n_logical": 4,
+  "n_physical": 4,
+  "paths_checked": 96,
+  "permutations_checked": 24,
+  "prop_loss_db_per_um": 0.002,
+  "topology_name": "padded_benes_4x4",
+  "worst_bend_count": 20,
+  "worst_bend_loss_db": 0.0,
+  "worst_crossing_count": 7,
+  "worst_crossing_loss_db": 0.0,
+  "worst_input_port": 1,
+  "worst_insertion_loss_db": 2.482391003011744,
+  "worst_mrr_loss_db": 0.10623173765276467,
+  "worst_output_port": 3,
+  "worst_path_length_um": 1188.0796326794896,
+  "worst_permutation": [
+    0,
+    3,
+    1,
+    2
+  ],
+  "worst_propagation_loss_db": 2.376159265358979
+}

@@ -1,0 +1,46 @@
+# N x N physical routing + worst insertion loss sweep, N = 3..16.
+# Beneš + Waksman only ("main"). N <= 5 routes ALL n! permutations
+# (full_enum_max_n); N >= 6 samples 10 permutations per N. Worst IL is
+# aggregated over fully routed attempts only (see physical_worst_il_vs_n.csv);
+# failures at large N are recorded as routability data rows.
+# Official outputs land under "N*N results/nxn_worst_il_v2_seed42".
+seed: 42
+outdir: "N*N results"
+run_id: nxn_worst_il_v2_seed42
+logical_matrix:
+  topology: main
+  n_values: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  train_samples:
+  eval_samples:
+breakeven:
+  enabled: false
+layout_gallery:
+  enabled: false
+physical_batch:
+  enabled: true
+  topology: main
+  n_values: [3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16]
+  samples: 10
+  full_enum_max_n: 5
+  max_physical_n: 16
+  # --- routing space (kept identical to nxn_results_v1 for comparability) ---
+  route_window_max_detour_tracks: 4
+  local_repair_max_shift_tracks: 8
+  grid_margin_tracks: 12
+  # --- search budgets (bounded so no A* call can run forever) ---
+  max_astar_pops: 8000
+  ripup_max_astar_pops: 4000
+  max_ripup_passes: 3
+  early_stop_stagnant_passes: 2
+  # --- loss model for *reported* physical IL ---
+  loss_aware_cost: false
+  bend_loss_db_per_bend: 0.005
+  crossing_loss_db_per_cross: 0.1
+  # --- layout geometry (kept at legacy values; x_start/x_end_margin must stay
+  # at 20/70 so the worst-IL layout re-render reproduces the batch routes) ---
+  stage_pitch_um: 105.0
+  wire_pitch_um: 36.0
+  x_start_um: 20.0
+  x_end_margin_um: 70.0
+calibration:
+  enabled: false

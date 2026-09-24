@@ -1,0 +1,37 @@
+{
+  "baseline_id": "e_695b5f4fafd4",
+  "dominance": "Within identical cut-boundary signature, compare each labeled internal edge L_lb, bend_lb and wrap excess. Keep equal profiles. No scalar pruning.",
+  "dp_minima_match_full_space_for_all_objectives": true,
+  "dp_root_survivors": 576,
+  "dp_states": 104,
+  "dp_unique_root_geometries": 576,
+  "elapsed_seconds": 17.03690650104545,
+  "greedy_id": "e_e398f7682f2b",
+  "objectives": {
+    "A": "sum estimated edge dB",
+    "B": "maximum BAR logical-wire chain estimated edge dB",
+    "C": "total facing/wrap excess length um",
+    "D": "maximum source-stage sum(stage_span * estimated edge dB)",
+    "E": "A/42+B+0.002*C/42+D/8",
+    "F": "production path-space/witness proxy BFS WIL; exact optimal-assignment proxy also reported"
+  },
+  "ordered_stages": [
+    "N4 validation",
+    "N6 validation",
+    "N8 certificate",
+    "all DP/proxy/random/greedy work",
+    "routing queue frozen"
+  ],
+  "pareto_max": 9,
+  "pareto_mean": 5.923076923076923,
+  "proxy_crossing_lower_bound": "omitted: no reliable decomposition",
+  "random_draws": 100,
+  "ranking_tie_rule": "Round objective and F secondary scores to 12 decimal places, then candidate ID; avoids summation roundoff determining ties.",
+  "raw_design_space": 1024,
+  "routing_calls_during_stage1": 0,
+  "routing_candidates": 24,
+  "status": "complete",
+  "total_raw_dp_entries": 1064,
+  "total_retained_dp_entries": 616,
+  "unique_geometries": 1024
+}

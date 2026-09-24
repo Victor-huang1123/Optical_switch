@@ -1,0 +1,2776 @@
+{
+  "method": "strategy-relative directed-path enumeration + witness proof",
+  "path_rank_table": [
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.4864633792340336,
+      "output_port": 5,
+      "proof": "random witness (4 tries)",
+      "rank": 1,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        0,
+        3,
+        4,
+        5,
+        6,
+        1
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.486463379234033,
+      "output_port": 3,
+      "proof": "random witness (1 tries)",
+      "rank": 2,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        6,
+        3,
+        5,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.4751304361885533,
+      "output_port": 5,
+      "proof": "random witness (2 tries)",
+      "rank": 3,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        1,
+        6,
+        4,
+        3,
+        5,
+        2
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.454612450632171,
+      "output_port": 1,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1,padded_benes_8x8_s1_w1_3",
+      "rank": 4,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.449679507586692,
+      "output_port": 3,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1,padded_benes_8x8_s1_w1_3",
+      "rank": 5,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.443279507586692,
+      "output_port": 3,
+      "proof": "random witness (1 tries)",
+      "rank": 6,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        6,
+        4,
+        3,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.4432795075866913,
+      "output_port": 1,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w1_3",
+      "rank": 7,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.438346564541213,
+      "output_port": 3,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w1_3",
+      "rank": 8,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.418447250881374,
+      "output_port": 2,
+      "proof": "random witness (1 tries)",
+      "rank": 9,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        4,
+        2,
+        3,
+        6,
+        5,
+        1
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.3865963222795123,
+      "output_port": 3,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w0_2",
+      "rank": 10,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.3865963222795123,
+      "output_port": 4,
+      "proof": "random witness (3 tries)",
+      "rank": 11,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        3,
+        0,
+        2,
+        4,
+        1,
+        5
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.386596322279512,
+      "output_port": 6,
+      "proof": "random witness (15 tries)",
+      "rank": 12,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        4,
+        3,
+        5,
+        2,
+        0,
+        6
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.3752633792340334,
+      "output_port": 2,
+      "proof": "random witness (1 tries)",
+      "rank": 13,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        3,
+        5,
+        2,
+        0,
+        6,
+        4
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.375263379234033,
+      "output_port": 4,
+      "proof": "random witness (3 tries)",
+      "rank": 14,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        2,
+        5,
+        1,
+        6,
+        4,
+        3
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.3737963222795124,
+      "output_port": 5,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1",
+      "rank": 15,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.3688633792340337,
+      "output_port": 6,
+      "proof": "random witness (1 tries)",
+      "rank": 16,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        1,
+        6,
+        2,
+        4,
+        3,
+        0
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.3624633792340335,
+      "output_port": 5,
+      "proof": "random witness (1 tries)",
+      "rank": 17,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        5,
+        1,
+        0,
+        2,
+        4,
+        6
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.35474539367765,
+      "output_port": 0,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1,padded_benes_8x8_s1_w1_3",
+      "rank": 18,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.3498124506321716,
+      "output_port": 2,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1,padded_benes_8x8_s1_w1_3",
+      "rank": 19,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.3498124506321707,
+      "output_port": 6,
+      "proof": "random witness (2 tries)",
+      "rank": 20,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        3,
+        1,
+        5,
+        6,
+        2,
+        0
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.3434124506321714,
+      "output_port": 3,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1,padded_benes_8x8_s1_w0_2",
+      "rank": 21,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.343412450632171,
+      "output_port": 0,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w1_3",
+      "rank": 22,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.3384795075866918,
+      "output_port": 2,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w1_3",
+      "rank": 23,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.3384795075866918,
+      "output_port": 6,
+      "proof": "random witness (2 tries)",
+      "rank": 24,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        3,
+        2,
+        0,
+        1,
+        6,
+        4
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.325679507586692,
+      "output_port": 6,
+      "proof": "random witness (2 tries)",
+      "rank": 25,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        5,
+        1,
+        6,
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.325679507586692,
+      "output_port": 5,
+      "proof": "random witness (4 tries)",
+      "rank": 26,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        0,
+        6,
+        1,
+        4,
+        3,
+        5
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.3256795075866914,
+      "output_port": 1,
+      "proof": "random witness (4 tries)",
+      "rank": 27,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        4,
+        1,
+        6,
+        3,
+        2,
+        5
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.320746564541213,
+      "output_port": 3,
+      "proof": "random witness (1 tries)",
+      "rank": 28,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        4,
+        3,
+        6,
+        1,
+        5,
+        0
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.318580193926854,
+      "output_port": 2,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w0_2",
+      "rank": 29,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.318580193926854,
+      "output_port": 6,
+      "proof": "random witness (7 tries)",
+      "rank": 30,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        3,
+        4,
+        2,
+        6,
+        1,
+        5
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.3143465645412133,
+      "output_port": 1,
+      "proof": "random witness (2 tries)",
+      "rank": 31,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        4,
+        0,
+        1,
+        2,
+        5,
+        3
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.3094136214957333,
+      "output_port": 3,
+      "proof": "random witness (5 tries)",
+      "rank": 32,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        6,
+        2,
+        3,
+        1,
+        5,
+        4
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.308079507586692,
+      "output_port": 3,
+      "proof": "random witness (4 tries)",
+      "rank": 33,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        2,
+        5,
+        6,
+        4,
+        1,
+        3
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.275396322279512,
+      "output_port": 2,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1,padded_benes_8x8_s1_w0_2",
+      "rank": 34,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.275396322279512,
+      "output_port": 1,
+      "proof": "random witness (1 tries)",
+      "rank": 35,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        2,
+        1,
+        6,
+        4,
+        5,
+        0
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.275396322279512,
+      "output_port": 5,
+      "proof": "random witness (4 tries)",
+      "rank": 36,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        0,
+        2,
+        6,
+        4,
+        1,
+        5
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.2753963222795117,
+      "output_port": 6,
+      "proof": "random witness (2 tries)",
+      "rank": 37,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        0,
+        4,
+        1,
+        3,
+        6,
+        5
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.2739292653249916,
+      "output_port": 4,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1",
+      "rank": 38,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.2689963222795124,
+      "output_port": 6,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w0_2",
+      "rank": 39,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.2625963222795122,
+      "output_port": 4,
+      "proof": "random witness (1 tries)",
+      "rank": 40,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        4,
+        3,
+        5,
+        1,
+        2,
+        6
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.2625963222795122,
+      "output_port": 1,
+      "proof": "random witness (3 tries)",
+      "rank": 41,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        4,
+        5,
+        3,
+        1,
+        2,
+        6
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.2512633792340333,
+      "output_port": 1,
+      "proof": "random witness (1 tries)",
+      "rank": 42,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        5,
+        3,
+        4,
+        0,
+        1,
+        6
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.2400633792340336,
+      "output_port": 2,
+      "proof": "random witness (3 tries)",
+      "rank": 43,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        0,
+        6,
+        5,
+        4,
+        3,
+        2
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.23714539367765,
+      "output_port": 6,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1",
+      "rank": 44,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.2322124506321708,
+      "output_port": 1,
+      "proof": "random witness (4 tries)",
+      "rank": 45,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        5,
+        2,
+        1,
+        6,
+        4,
+        0
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.2258124506321715,
+      "output_port": 6,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1,padded_benes_8x8_s1_w0_2",
+      "rank": 46,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.2258124506321715,
+      "output_port": 4,
+      "proof": "random witness (9 tries)",
+      "rank": 47,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        1,
+        5,
+        6,
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.225812450632171,
+      "output_port": 6,
+      "proof": "random witness (1 tries)",
+      "rank": 48,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        6,
+        5,
+        0,
+        4,
+        2,
+        1
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.225812450632171,
+      "output_port": 0,
+      "proof": "random witness (3 tries)",
+      "rank": 49,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        5,
+        0,
+        4,
+        3,
+        6,
+        1
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.2258124506321706,
+      "output_port": 5,
+      "proof": "random witness (1 tries)",
+      "rank": 50,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        1,
+        5,
+        6,
+        0,
+        4,
+        2
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.2258124506321706,
+      "output_port": 3,
+      "proof": "random witness (4 tries)",
+      "rank": 51,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        5,
+        2,
+        6,
+        3,
+        4,
+        0
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.2223304361885536,
+      "output_port": 6,
+      "proof": "random witness (1 tries)",
+      "rank": 52,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        2,
+        5,
+        0,
+        4,
+        1,
+        6
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.220879507586692,
+      "output_port": 2,
+      "proof": "random witness (4 tries)",
+      "rank": 53,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        6,
+        2,
+        5,
+        0,
+        4,
+        1
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.2144795075866917,
+      "output_port": 0,
+      "proof": "random witness (2 tries)",
+      "rank": 54,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        4,
+        2,
+        0,
+        6,
+        3,
+        5
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.214479507586691,
+      "output_port": 3,
+      "proof": "random witness (2 tries)",
+      "rank": 55,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        5,
+        0,
+        4,
+        1,
+        3,
+        6
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.2130124506321716,
+      "output_port": 5,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w1_3",
+      "rank": 56,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.2095465645412125,
+      "output_port": 2,
+      "proof": "random witness (2 tries)",
+      "rank": 57,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        4,
+        3,
+        2,
+        6,
+        5,
+        1
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.208212450632171,
+      "output_port": 3,
+      "proof": "random witness (4 tries)",
+      "rank": 58,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        1,
+        2,
+        6,
+        3,
+        4,
+        5
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.207380193926854,
+      "output_port": 0,
+      "proof": "random witness (2 tries)",
+      "rank": 59,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        2,
+        0,
+        1,
+        3,
+        5,
+        4
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.207380193926854,
+      "output_port": 4,
+      "proof": "random witness (2 tries)",
+      "rank": 60,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        2,
+        6,
+        1,
+        0,
+        5,
+        4
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.2073801939268534,
+      "output_port": 5,
+      "proof": "random witness (1 tries)",
+      "rank": 61,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        0,
+        6,
+        4,
+        5,
+        2,
+        1
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.2050285789848303,
+      "output_port": 5,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1,padded_benes_8x8_s1_w1_3",
+      "rank": 62,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.2016795075866917,
+      "output_port": 5,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w1_3",
+      "rank": 63,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.1936956359393505,
+      "output_port": 5,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w1_3",
+      "rank": 64,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.18902857898483,
+      "output_port": 6,
+      "proof": "deterministic completion exhausted 720 leaves",
+      "rank": 65,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.1826285789848296,
+      "output_port": 5,
+      "proof": "random witness (2 tries)",
+      "rank": 66,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        4,
+        0,
+        5,
+        2,
+        6,
+        1
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.181780193926854,
+      "output_port": 1,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1",
+      "rank": 67,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.1755292653249914,
+      "output_port": 1,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w0_2",
+      "rank": 68,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.1704472508813737,
+      "output_port": 1,
+      "proof": "random witness (1 tries)",
+      "rank": 69,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        1,
+        3,
+        5,
+        4,
+        0,
+        6
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.1650285789848303,
+      "output_port": 3,
+      "proof": "random witness (3 tries)",
+      "rank": 70,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        2,
+        5,
+        6,
+        4,
+        3,
+        1
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.164196322279512,
+      "output_port": 5,
+      "proof": "random witness (5 tries)",
+      "rank": 71,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        6,
+        2,
+        0,
+        3,
+        5,
+        4
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.1641963222795115,
+      "output_port": 0,
+      "proof": "random witness (3 tries)",
+      "rank": 72,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        1,
+        5,
+        0,
+        3,
+        6,
+        2
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.162729265324992,
+      "output_port": 0,
+      "proof": "random witness (8 tries)",
+      "rank": 73,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        5,
+        2,
+        1,
+        0,
+        6,
+        4
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.157796322279512,
+      "output_port": 4,
+      "proof": "random witness (1 tries)",
+      "rank": 74,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        5,
+        4,
+        0,
+        1,
+        2,
+        6
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.151396322279512,
+      "output_port": 0,
+      "proof": "random witness (1 tries)",
+      "rank": 75,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        4,
+        2,
+        6,
+        1,
+        0,
+        5
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.144996322279512,
+      "output_port": 3,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1",
+      "rank": 76,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.1401963222795124,
+      "output_port": 2,
+      "proof": "random witness (2 tries)",
+      "rank": 77,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        6,
+        4,
+        3,
+        2,
+        1,
+        5
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.1393640655741946,
+      "output_port": 4,
+      "proof": "random witness (1 tries)",
+      "rank": 78,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        0,
+        2,
+        5,
+        4,
+        3,
+        6
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.1336633792340334,
+      "output_port": 3,
+      "proof": "random witness (1 tries)",
+      "rank": 79,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        3,
+        1,
+        0,
+        5,
+        6,
+        2
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.13234539367765,
+      "output_port": 1,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1,padded_benes_8x8_s1_w0_2",
+      "rank": 80,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.1259453936776502,
+      "output_port": 5,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w0_2",
+      "rank": 81,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.1259453936776502,
+      "output_port": 2,
+      "proof": "random witness (5 tries)",
+      "rank": 82,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        5,
+        4,
+        1,
+        2,
+        0,
+        3
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.1224633792340333,
+      "output_port": 6,
+      "proof": "random witness (1 tries)",
+      "rank": 83,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        2,
+        3,
+        0,
+        6,
+        4,
+        1
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.114612450632171,
+      "output_port": 4,
+      "proof": "random witness (2 tries)",
+      "rank": 84,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        5,
+        3,
+        4,
+        2,
+        0,
+        1
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.114612450632171,
+      "output_port": 2,
+      "proof": "random witness (2 tries)",
+      "rank": 85,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        4,
+        6,
+        3,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.1131453936776508,
+      "output_port": 4,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w1_3",
+      "rank": 86,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.107513136972332,
+      "output_port": 0,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w0_2",
+      "rank": 87,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.1051615220303095,
+      "output_port": 4,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1,padded_benes_8x8_s1_w1_3",
+      "rank": 88,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.1018124506321714,
+      "output_port": 4,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w1_3",
+      "rank": 89,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.1018124506321714,
+      "output_port": 1,
+      "proof": "random witness (4 tries)",
+      "rank": 90,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        6,
+        2,
+        3,
+        4,
+        5,
+        1
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.1002285789848303,
+      "output_port": 6,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1,padded_benes_8x8_s1_w1_3",
+      "rank": 91,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.0970124506321715,
+      "output_port": 2,
+      "proof": "random witness (20 tries)",
+      "rank": 92,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        6,
+        5,
+        0,
+        4,
+        2,
+        3
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.097012450632171,
+      "output_port": 1,
+      "proof": "random witness (3 tries)",
+      "rank": 93,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        4,
+        6,
+        3,
+        2,
+        0,
+        1
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.0961801939268536,
+      "output_port": 4,
+      "proof": "random witness (2 tries)",
+      "rank": 94,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        5,
+        1,
+        6,
+        0,
+        4,
+        3
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.0938285789848297,
+      "output_port": 4,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w1_3",
+      "rank": 95,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.088895635939351,
+      "output_port": 6,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w1_3",
+      "rank": 96,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.0827615220303093,
+      "output_port": 5,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1,padded_benes_8x8_s1_w0_2",
+      "rank": 97,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.0819131369723327,
+      "output_port": 0,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1",
+      "rank": 98,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.079279507586692,
+      "output_port": 6,
+      "proof": "random witness (12 tries)",
+      "rank": 99,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        1,
+        2,
+        5,
+        3,
+        6,
+        0
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.079279507586692,
+      "output_port": 5,
+      "proof": "random witness (3 tries)",
+      "rank": 100,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        0,
+        2,
+        4,
+        6,
+        3,
+        5
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.076361522030309,
+      "output_port": 6,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w1_3",
+      "rank": 101,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.0762285789848303,
+      "output_port": 1,
+      "proof": "random witness (1 tries)",
+      "rank": 102,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        3,
+        4,
+        6,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.0760956359393505,
+      "output_port": 5,
+      "proof": "random witness (1 tries)",
+      "rank": 103,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        3,
+        5,
+        2,
+        4,
+        1,
+        6
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.0739292653249914,
+      "output_port": 6,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w0_2",
+      "rank": 104,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.071295635939351,
+      "output_port": 3,
+      "proof": "random witness (1 tries)",
+      "rank": 105,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        0,
+        4,
+        2,
+        3,
+        6,
+        1
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.0705801939268533,
+      "output_port": 0,
+      "proof": "random witness (1 tries)",
+      "rank": 106,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        0,
+        2,
+        4,
+        1,
+        3,
+        6
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.06502857898483,
+      "output_port": 3,
+      "proof": "random witness (1 tries)",
+      "rank": 107,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        6,
+        0,
+        4,
+        5,
+        2,
+        3
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.0650285789848297,
+      "output_port": 6,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w1_3",
+      "rank": 108,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.0648956359393504,
+      "output_port": 1,
+      "proof": "random witness (2 tries)",
+      "rank": 109,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        3,
+        0,
+        5,
+        2,
+        1,
+        6
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.064762692893871,
+      "output_port": 5,
+      "proof": "random witness (2 tries)",
+      "rank": 110,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        0,
+        4,
+        5,
+        3,
+        1,
+        6
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.064329265324991,
+      "output_port": 0,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1,padded_benes_8x8_s1_w0_2",
+      "rank": 111,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.0599626928938712,
+      "output_port": 3,
+      "proof": "random witness (3 tries)",
+      "rank": 112,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        1,
+        6,
+        4,
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.0579292653249914,
+      "output_port": 4,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w0_2",
+      "rank": 113,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.0451292653249915,
+      "output_port": 2,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1",
+      "rank": 114,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.033796322279512,
+      "output_port": 2,
+      "proof": "random witness (1 tries)",
+      "rank": 115,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        2,
+        1,
+        4,
+        5,
+        0,
+        6
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.0307453936776505,
+      "output_port": 6,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w0_2",
+      "rank": 116,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.03074539367765,
+      "output_port": 3,
+      "proof": "random witness (2 tries)",
+      "rank": 117,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        2,
+        1,
+        4,
+        5,
+        0,
+        3
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.0289963222795118,
+      "output_port": 0,
+      "proof": "random witness (4 tries)",
+      "rank": 118,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        1,
+        5,
+        6,
+        4,
+        3,
+        0
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.020996322279512,
+      "output_port": 1,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w1_3",
+      "rank": 119,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.0147453936776505,
+      "output_port": 4,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1,padded_benes_8x8_s1_w0_2",
+      "rank": 120,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.0112633792340335,
+      "output_port": 4,
+      "proof": "random witness (1 tries)",
+      "rank": 121,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        1,
+        5,
+        0,
+        6,
+        2,
+        4
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.0096633792340333,
+      "output_port": 1,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w1_3",
+      "rank": 122,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.005913136972332,
+      "output_port": 6,
+      "proof": "random witness (1 tries)",
+      "rank": 123,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        0,
+        3,
+        5,
+        1,
+        4,
+        2
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.0019453936776506,
+      "output_port": 0,
+      "proof": "random witness (8 tries)",
+      "rank": 124,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        4,
+        3,
+        1,
+        6,
+        5,
+        0
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 1.99714539367765,
+      "output_port": 1,
+      "proof": "random witness (7 tries)",
+      "rank": 125,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        0,
+        6,
+        4,
+        1,
+        3,
+        5
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 1.9842124506321708,
+      "output_port": 3,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w1_3",
+      "rank": 126,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 1.9794124506321706,
+      "output_port": 5,
+      "proof": "random witness (1 tries)",
+      "rank": 127,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        3,
+        0,
+        1,
+        5,
+        4,
+        2
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 1.9763615220303095,
+      "output_port": 0,
+      "proof": "random witness (1 tries)",
+      "rank": 128,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        2,
+        6,
+        3,
+        0,
+        5,
+        4
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 1.9762285789848297,
+      "output_port": 4,
+      "proof": "random witness (3 tries)",
+      "rank": 129,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        3,
+        4,
+        2,
+        1,
+        6,
+        0
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 1.9728795075866914,
+      "output_port": 3,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w1_3",
+      "rank": 130,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 1.9714285789848303,
+      "output_port": 2,
+      "proof": "random witness (2 tries)",
+      "rank": 131,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        1,
+        4,
+        0,
+        2,
+        5,
+        6
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 1.971295635939351,
+      "output_port": 6,
+      "proof": "random witness (6 tries)",
+      "rank": 132,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        1,
+        6,
+        5,
+        4,
+        0,
+        2
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 1.9651615220303094,
+      "output_port": 2,
+      "proof": "random witness (13 tries)",
+      "rank": 133,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        4,
+        5,
+        1,
+        6,
+        0,
+        2
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 1.9650285789848296,
+      "output_port": 0,
+      "proof": "random witness (1 tries)",
+      "rank": 134,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        3,
+        1,
+        5,
+        6,
+        0,
+        2
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 1.9648956359393506,
+      "output_port": 4,
+      "proof": "random witness (4 tries)",
+      "rank": 135,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        3,
+        6,
+        4,
+        5,
+        0,
+        1
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 1.9627292653249917,
+      "output_port": 5,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w0_2",
+      "rank": 136,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 1.9627292653249913,
+      "output_port": 6,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1",
+      "rank": 137,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 1.9627292653249913,
+      "output_port": 3,
+      "proof": "random witness (1 tries)",
+      "rank": 138,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        2,
+        1,
+        0,
+        3,
+        5,
+        6
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 1.9627292653249913,
+      "output_port": 2,
+      "proof": "random witness (8 tries)",
+      "rank": 139,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        5,
+        0,
+        1,
+        3,
+        4,
+        2
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 1.9600956359393509,
+      "output_port": 2,
+      "proof": "random witness (4 tries)",
+      "rank": 140,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        0,
+        3,
+        4,
+        5,
+        2,
+        1
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 1.9599626928938716,
+      "output_port": 6,
+      "proof": "random witness (1 tries)",
+      "rank": 141,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        2,
+        0,
+        6,
+        4,
+        1,
+        5
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 1.9539615220303093,
+      "output_port": 1,
+      "proof": "random witness (7 tries)",
+      "rank": 142,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        6,
+        4,
+        2,
+        5,
+        1,
+        0
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 1.9472956359393505,
+      "output_port": 1,
+      "proof": "random witness (1 tries)",
+      "rank": 143,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        6,
+        5,
+        3,
+        0,
+        2,
+        1
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 1.9423626928938715,
+      "output_port": 3,
+      "proof": "random witness (2 tries)",
+      "rank": 144,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        1,
+        5,
+        4,
+        2,
+        6,
+        3
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 1.9362285789848297,
+      "output_port": 5,
+      "proof": "random witness (45 tries)",
+      "rank": 145,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        4,
+        2,
+        0,
+        1,
+        5,
+        3
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 1.9291292653249914,
+      "output_port": 0,
+      "proof": "random witness (4 tries)",
+      "rank": 146,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        4,
+        1,
+        6,
+        0,
+        2,
+        5
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 1.9211292653249918,
+      "output_port": 0,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w1_3",
+      "rank": 147,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 1.9195453936776508,
+      "output_port": 5,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w0_2",
+      "rank": 148,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 1.9195453936776503,
+      "output_port": 3,
+      "proof": "random witness (5 tries)",
+      "rank": 149,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        2,
+        6,
+        5,
+        0,
+        3,
+        1
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 1.9113963222795118,
+      "output_port": 4,
+      "proof": "random witness (9 tries)",
+      "rank": 150,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        2,
+        1,
+        3,
+        4,
+        5,
+        0
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 1.9097963222795122,
+      "output_port": 0,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w1_3",
+      "rank": 151,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 1.8947131369723327,
+      "output_port": 5,
+      "proof": "random witness (1 tries)",
+      "rank": 152,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        1,
+        3,
+        2,
+        0,
+        6,
+        4
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 1.8947131369723327,
+      "output_port": 4,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w0_2",
+      "rank": 153,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 1.8947131369723322,
+      "output_port": 2,
+      "proof": "random witness (2 tries)",
+      "rank": 154,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        1,
+        4,
+        0,
+        2,
+        6,
+        3
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 1.8859453936776507,
+      "output_port": 0,
+      "proof": "random witness (2 tries)",
+      "rank": 155,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        4,
+        6,
+        5,
+        2,
+        0,
+        1
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 1.8843453936776502,
+      "output_port": 2,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w1_3",
+      "rank": 156,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 1.8730124506321708,
+      "output_port": 2,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w1_3",
+      "rank": 157,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 1.868212450632171,
+      "output_port": 4,
+      "proof": "random witness (13 tries)",
+      "rank": 158,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        5,
+        3,
+        1,
+        2,
+        4,
+        0
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 1.8584956359393505,
+      "output_port": 5,
+      "proof": "random witness (15 tries)",
+      "rank": 159,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        6,
+        0,
+        3,
+        5,
+        1,
+        2
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 1.851529265324992,
+      "output_port": 5,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1",
+      "rank": 160,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 1.851529265324992,
+      "output_port": 4,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w0_2",
+      "rank": 161,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 1.851529265324992,
+      "output_port": 1,
+      "proof": "random witness (1 tries)",
+      "rank": 162,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        0,
+        3,
+        5,
+        2,
+        6,
+        1
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 1.8515292653249915,
+      "output_port": 2,
+      "proof": "random witness (2 tries)",
+      "rank": 163,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        3,
+        4,
+        0,
+        1,
+        2,
+        5
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 1.8474285789848297,
+      "output_port": 0,
+      "proof": "random witness (2 tries)",
+      "rank": 164,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        6,
+        4,
+        3,
+        5,
+        2,
+        0
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 1.8471626928938711,
+      "output_port": 5,
+      "proof": "random witness (4 tries)",
+      "rank": 165,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        6,
+        3,
+        2,
+        4,
+        5,
+        0
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 1.842495635939351,
+      "output_port": 2,
+      "proof": "random witness (1 tries)",
+      "rank": 166,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        5,
+        6,
+        1,
+        3,
+        0,
+        2
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 1.826697008619674,
+      "output_port": 4,
+      "proof": "random witness (1 tries)",
+      "rank": 167,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        2,
+        3,
+        5,
+        6,
+        0,
+        1
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 1.7835131369723327,
+      "output_port": 4,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1",
+      "rank": 168,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 1.7835131369723327,
+      "output_port": 1,
+      "proof": "random witness (1 tries)",
+      "rank": 169,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        2,
+        4,
+        6,
+        1,
+        0,
+        3
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 1.7835131369723327,
+      "output_port": 0,
+      "proof": "random witness (20 tries)",
+      "rank": 170,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        3,
+        2,
+        1,
+        5,
+        4,
+        0
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 1.7586285789848297,
+      "output_port": 4,
+      "proof": "random witness (3 tries)",
+      "rank": 171,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        6,
+        1,
+        3,
+        4,
+        2,
+        0
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 1.753695635939351,
+      "output_port": 6,
+      "proof": "random witness (9 tries)",
+      "rank": 172,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        5,
+        2,
+        4,
+        6,
+        3,
+        0
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 1.7499292653249912,
+      "output_port": 3,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w0_2",
+      "rank": 173,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 1.7472956359393503,
+      "output_port": 4,
+      "proof": "random witness (1 tries)",
+      "rank": 174,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        6,
+        5,
+        1,
+        0,
+        4,
+        3
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 1.7423626928938714,
+      "output_port": 6,
+      "proof": "random witness (2 tries)",
+      "rank": 175,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        5,
+        0,
+        4,
+        1,
+        6,
+        3
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 1.7403292653249918,
+      "output_port": 1,
+      "proof": "random witness (1 tries)",
+      "rank": 176,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        2,
+        0,
+        3,
+        6,
+        1,
+        4
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 1.7295626928938708,
+      "output_port": 5,
+      "proof": "random witness (3 tries)",
+      "rank": 177,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        6,
+        4,
+        2,
+        0,
+        3,
+        5
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 1.7154970086196744,
+      "output_port": 0,
+      "proof": "random witness (1 tries)",
+      "rank": 178,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        5,
+        4,
+        1,
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 1.7067453936776498,
+      "output_port": 3,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w0_2",
+      "rank": 179,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 1.6819131369723328,
+      "output_port": 3,
+      "proof": "random witness (1 tries)",
+      "rank": 180,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        6,
+        4,
+        1,
+        0,
+        5,
+        2
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 1.6819131369723324,
+      "output_port": 2,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w0_2",
+      "rank": 181,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 1.6723131369723327,
+      "output_port": 0,
+      "proof": "random witness (5 tries)",
+      "rank": 182,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        1,
+        2,
+        6,
+        5,
+        0,
+        3
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 1.6387292653249912,
+      "output_port": 3,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1",
+      "rank": 183,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 1.638729265324991,
+      "output_port": 2,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w0_2",
+      "rank": 184,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 1.6296956359393504,
+      "output_port": 4,
+      "proof": "random witness (1 tries)",
+      "rank": 185,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        6,
+        5,
+        1,
+        3,
+        2,
+        4
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 1.6247626928938714,
+      "output_port": 6,
+      "proof": "deterministic completion exhausted 720 leaves",
+      "rank": 186,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 1.6138970086196742,
+      "output_port": 2,
+      "proof": "random witness (1 tries)",
+      "rank": 187,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        5,
+        4,
+        0,
+        6,
+        3,
+        1
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 1.5707131369723326,
+      "output_port": 1,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w0_2",
+      "rank": 188,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 1.5707131369723322,
+      "output_port": 2,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1",
+      "rank": 189,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 1.5275292653249917,
+      "output_port": 1,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w0_2",
+      "rank": 190,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 1.5026970086196743,
+      "output_port": 0,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w0_2",
+      "rank": 191,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 1.5026970086196738,
+      "output_port": 1,
+      "proof": "random witness (1 tries)",
+      "rank": 192,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        3,
+        4,
+        5,
+        2,
+        6,
+        0
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 1.4595131369723326,
+      "output_port": 1,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1",
+      "rank": 193,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 1.4595131369723326,
+      "output_port": 0,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s1_w0_2",
+      "rank": 194,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 1.4346808802670146,
+      "output_port": 0,
+      "proof": "random witness (1 tries)",
+      "rank": 195,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        3,
+        4,
+        2,
+        5,
+        1,
+        6
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 1.3914970086196743,
+      "output_port": 0,
+      "proof": "strategy-recursion prune: forced-bar padded_benes_8x8_s0_w0_1",
+      "rank": 196,
+      "realizable": false,
+      "witness_permutation": null
+    }
+  ],
+  "unrealizable_proofs_count": 72,
+  "witness_permutation": [
+    2,
+    0,
+    3,
+    4,
+    5,
+    6,
+    1
+  ],
+  "worst_il_db": 2.4864633792340336,
+  "worst_io_pair": [
+    4,
+    5
+  ]
+}

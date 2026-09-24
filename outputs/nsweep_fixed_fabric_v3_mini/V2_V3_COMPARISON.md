@@ -1,0 +1,20 @@
+# Phase 5 v2-vs-v3 mini comparison
+
+WIL delta is v3 minus v2, so negative is better. V2 crossing-clearance is disabled by design; v3 template counts are hard-gated and v3 A* counts are measurement-only. The failed n8/C bend and crossing totals describe the retained partial route and are not full-fabric comparisons.
+
+| Topology | N | Config | Status v2 -> v3 | WIL dB v2 -> v3 (delta) | Bends v2 -> v3 | Crossings v2 -> v3 | Crossing clearance v2 / v3 | Same/perp v2 -> v3 | Diagnosis |
+|---|---:|:---:|---|---:|---:|---:|---|---:|---|
+| waksman | 4 | B_db_placeholder | complete -> complete | 2.487851 -> 2.585851 (+0.098000) | 39 -> 39 | 14 -> 14 | disabled (legacy tier) / audit-only (2) | 0/0 -> 0/1 | A*-B WIL cost 0.098000 dB; clearance counts are measurement-only. |
+| waksman | 4 | C_db_realistic | complete -> complete | 1.349836 -> 0.720030 (-0.629806) | 67 -> 31 | 16 -> 4 | disabled (legacy tier) / audit-only (0) | 32/6 -> 5/2 | A*-C WIL gain 0.629806 dB with 36 fewer bends; clearance counts are measurement-only. |
+| padded_benes | 4 | B_db_placeholder | complete -> complete | 2.482391 -> 2.512391 (+0.030000) | 56 -> 56 | 14 -> 14 | disabled (legacy tier) / hard-gate all-clear (0) | 0/0 -> 0/0 | Template hard-gate all-clear; WIL cost 0.030000 dB under v3 internal propagation geometry. |
+| padded_benes | 4 | C_db_realistic | complete -> complete | 1.191964 -> 1.193164 (+0.001200) | 56 -> 56 | 14 -> 14 | disabled (legacy tier) / hard-gate all-clear (0) | 0/0 -> 0/0 | Template hard-gate all-clear; WIL cost 0.001200 dB under v3 internal propagation geometry. |
+| waksman | 6 | B_db_placeholder | complete -> complete | 4.023357 -> 4.043649 (+0.020292) | 82 -> 78 | 30 -> 28 | disabled (legacy tier) / audit-only (2) | 0/1 -> 1/2 | A*-B WIL cost 0.020292 dB; clearance counts are measurement-only. |
+| waksman | 6 | C_db_realistic | complete -> complete | 2.277754 -> 1.637784 (-0.639971) | 126 -> 73 | 32 -> 16 | disabled (legacy tier) / audit-only (1) | 52/9 -> 11/4 | A*-C WIL gain 0.639971 dB with 53 fewer bends; clearance counts are measurement-only. |
+| padded_benes | 6 | B_db_placeholder | complete -> complete | 4.396152 -> 4.438152 (+0.042000) | 176 -> 176 | 60 -> 60 | disabled (legacy tier) / hard-gate all-clear (0) | 0/0 -> 0/0 | Template hard-gate all-clear; WIL cost 0.042000 dB under v3 internal propagation geometry. |
+| padded_benes | 6 | C_db_realistic | complete -> complete | 2.486463 -> 2.487663 (+0.001200) | 176 -> 176 | 60 -> 60 | disabled (legacy tier) / hard-gate all-clear (0) | 0/0 -> 0/0 | Template hard-gate all-clear; WIL cost 0.001200 dB under v3 internal propagation geometry. |
+| waksman | 8 | B_db_placeholder | complete -> complete | 4.927447 -> 4.906407 (-0.021041) | 137 -> 127 | 68 -> 56 | disabled (legacy tier) / audit-only (7) | 7/0 -> 5/0 | A*-B WIL gain 0.021041 dB; clearance counts are measurement-only. |
+| waksman | 8 | C_db_realistic | complete -> route_failed | 3.798421 -> — (—) | 218 -> 189 (partial) | 88 -> 64 (partial) | disabled (legacy tier) / audit-only (26) | 93/23 -> 0/18 | V3-GEOMETRY REGRESSION: routable in v2 (WIL 3.798421 dB), but v3 I6->O6 is blocked on its final hop by the wider foreign I3 port-access region (port_access_overlap_foreign; frontier exhausted at 10,220 pops, not budget-limited). |
+| padded_benes | 8 | B_db_placeholder | complete -> complete | 4.524152 -> 4.574819 (+0.050667) | 176 -> 176 | 60 -> 60 | disabled (legacy tier) / hard-gate all-clear (0) | 0/0 -> 0/0 | Template hard-gate all-clear; WIL cost 0.050667 dB under v3 internal propagation geometry. |
+| padded_benes | 8 | C_db_realistic | complete -> complete | 2.486463 -> 2.487663 (+0.001200) | 176 -> 176 | 60 -> 60 | disabled (legacy tier) / hard-gate all-clear (0) | 0/0 -> 0/0 | Template hard-gate all-clear; WIL cost 0.001200 dB under v3 internal propagation geometry. |
+
+Inventory: 12/12 cases accounted for; 11 complete and one ruled `route_failed`. Every completed case has exact dual-method agreement and zero coverage failures.

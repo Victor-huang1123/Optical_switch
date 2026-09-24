@@ -1,0 +1,35 @@
+{
+  "audit": {
+    "bend_radius_legality": 0,
+    "crossing_clearance": 0,
+    "legacy_drc": 0,
+    "perpendicular_clearance": 6,
+    "same_net_min_spacing": 0
+  },
+  "bend_count": 140,
+  "drc_violations": [],
+  "failed_edges": [
+    {
+      "edge_id": "input:w7->waksman_8x8_s0_w6_7.add",
+      "message": "cannot route I7->O7 with bounded multi-hop fallback at waksman_8x8_s2_w3_7.drop->O7: cannot route waksman_8x8_s2_w3_7.drop to O7 on physical grid; same_net_samples=same_net_touch at=(381.000,103.000) prior=(200.000,103.000)->(472.000,103.000) | same_net_touch at=(393.000,103.000) prior=(200.000,103.000)->(472.000,103.000) | same_net_touch at=(393.000,122.500) prior=(405.000,122.500)->(391.000,122.500) counters=port_access:0,window:0,same_net:20,crossing_candidate:2,crossing_budget:0,hard_reserved_crossing:0,soft_repeated_crossing:0,soft_reserved_crossing:0,reserved_spacing:0,segment:5,pops:15,max_heap:4"
+    },
+    {
+      "edge_id": "stage:0:w7:waksman_8x8_s0_w6_7.drop->waksman_8x8_s1_w5_7.add:w7",
+      "message": "cannot route I7->O7 with bounded multi-hop fallback at waksman_8x8_s2_w3_7.drop->O7: cannot route waksman_8x8_s2_w3_7.drop to O7 on physical grid; same_net_samples=same_net_touch at=(381.000,103.000) prior=(200.000,103.000)->(472.000,103.000) | same_net_touch at=(393.000,103.000) prior=(200.000,103.000)->(472.000,103.000) | same_net_touch at=(393.000,122.500) prior=(405.000,122.500)->(391.000,122.500) counters=port_access:0,window:0,same_net:20,crossing_candidate:2,crossing_budget:0,hard_reserved_crossing:0,soft_repeated_crossing:0,soft_reserved_crossing:0,reserved_spacing:0,segment:5,pops:15,max_heap:4"
+    },
+    {
+      "edge_id": "stage:1:w7:waksman_8x8_s1_w5_7.drop->waksman_8x8_s2_w3_7.add:w7",
+      "message": "cannot route I7->O7 with bounded multi-hop fallback at waksman_8x8_s2_w3_7.drop->O7: cannot route waksman_8x8_s2_w3_7.drop to O7 on physical grid; same_net_samples=same_net_touch at=(381.000,103.000) prior=(200.000,103.000)->(472.000,103.000) | same_net_touch at=(393.000,103.000) prior=(200.000,103.000)->(472.000,103.000) | same_net_touch at=(393.000,122.500) prior=(405.000,122.500)->(391.000,122.500) counters=port_access:0,window:0,same_net:20,crossing_candidate:2,crossing_budget:0,hard_reserved_crossing:0,soft_repeated_crossing:0,soft_reserved_crossing:0,reserved_spacing:0,segment:5,pops:15,max_heap:4"
+    },
+    {
+      "edge_id": "output:waksman_8x8_s2_w3_7.drop->w7",
+      "message": "cannot route I7->O7 with bounded multi-hop fallback at waksman_8x8_s2_w3_7.drop->O7: cannot route waksman_8x8_s2_w3_7.drop to O7 on physical grid; same_net_samples=same_net_touch at=(381.000,103.000) prior=(200.000,103.000)->(472.000,103.000) | same_net_touch at=(393.000,103.000) prior=(200.000,103.000)->(472.000,103.000) | same_net_touch at=(393.000,122.500) prior=(405.000,122.500)->(391.000,122.500) counters=port_access:0,window:0,same_net:20,crossing_candidate:2,crossing_budget:0,hard_reserved_crossing:0,soft_repeated_crossing:0,soft_reserved_crossing:0,reserved_spacing:0,segment:5,pops:15,max_heap:4"
+    }
+  ],
+  "geometry_sha256": "92ce6830bb1a1c72e703296530180e7a1f5df109ffae9374e1d693609511b819",
+  "physical_crossings": 56,
+  "route_calls": 1,
+  "route_success": false,
+  "routing_runtime": 1702.0802283030935,
+  "total_length_um": 13074.557428756429
+}

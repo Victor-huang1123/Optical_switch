@@ -1,0 +1,16 @@
+{
+  "assignment_failures": [],
+  "blocked_ports": [
+    6,
+    7
+  ],
+  "fabric_edge_count": 48,
+  "fabric_path_failures": [],
+  "geometry_sha256": "a1745199b1ca415d1a0a45e6c251a43b7e7c89bcdcc1126962cfbfd7ab8155eb",
+  "passed": true,
+  "permutations_checked": 720,
+  "physical_fabric_routed_once": true,
+  "physical_model": "fixed_fabric",
+  "physical_routing_permutation_count": 0,
+  "topology_name": "padded_benes_8x8"
+}

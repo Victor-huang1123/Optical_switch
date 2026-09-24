@@ -1,0 +1,12 @@
+{
+  "astar_crossings": 62,
+  "astar_drc": 0,
+  "astar_failed_edges": 0,
+  "astar_max_pops_rung": 30000,
+  "astar_wall_s": 75.01515986095183,
+  "config": "C_db_realistic",
+  "template_crossings": 60,
+  "template_dominates_or_ties": true,
+  "template_drc": 0,
+  "template_failed_edges": 0
+}

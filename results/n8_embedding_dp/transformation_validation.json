@@ -1,0 +1,316 @@
+[
+  {
+    "N": 4,
+    "all_passed": true,
+    "exhaustive_port_level_checks": 384,
+    "nodes": [
+      {
+        "input_side_SEs": [
+          "waksman_4x4_s0_w0_1",
+          "waksman_4x4_s0_w2_3"
+        ],
+        "local_choices": [
+          "normal",
+          "swap_children",
+          "mirror_y",
+          "swap_children+mirror_y"
+        ],
+        "logical_wires": [
+          0,
+          1,
+          2,
+          3
+        ],
+        "lower_child": "root.L",
+        "node_id": "root",
+        "output_side_SEs": [
+          "waksman_4x4_s2_w0_1"
+        ],
+        "physical_wire_y_locations": {
+          "0": 192.0,
+          "1": 128.0,
+          "2": 64.0,
+          "3": 0.0
+        },
+        "selected_embedding": "normal",
+        "size": 4,
+        "stage_range": [
+          0,
+          2
+        ],
+        "upper_child": "root.U"
+      },
+      {
+        "input_side_SEs": [
+          "waksman_4x4_s1_w0_2"
+        ],
+        "local_choices": [
+          "normal",
+          "mirror_y"
+        ],
+        "logical_wires": [
+          0,
+          2
+        ],
+        "lower_child": null,
+        "node_id": "root.U",
+        "output_side_SEs": [],
+        "physical_wire_y_locations": {
+          "0": 192.0,
+          "2": 64.0
+        },
+        "selected_embedding": "normal",
+        "size": 2,
+        "stage_range": [
+          1,
+          1
+        ],
+        "upper_child": null
+      },
+      {
+        "input_side_SEs": [
+          "waksman_4x4_s1_w1_3"
+        ],
+        "local_choices": [
+          "normal",
+          "mirror_y"
+        ],
+        "logical_wires": [
+          1,
+          3
+        ],
+        "lower_child": null,
+        "node_id": "root.L",
+        "output_side_SEs": [],
+        "physical_wire_y_locations": {
+          "1": 128.0,
+          "3": 0.0
+        },
+        "selected_embedding": "normal",
+        "size": 2,
+        "stage_range": [
+          1,
+          1
+        ],
+        "upper_child": null
+      }
+    ],
+    "permutations_per_variant": 24,
+    "stage_pairs_unchanged": true,
+    "state_bit_remapping": "identity",
+    "variants": 16
+  },
+  {
+    "N": 6,
+    "all_passed": true,
+    "exhaustive_port_level_checks": 46080,
+    "nodes": [
+      {
+        "input_side_SEs": [
+          "waksman_6x6_s0_w0_1",
+          "waksman_6x6_s0_w2_3",
+          "waksman_6x6_s0_w4_5"
+        ],
+        "local_choices": [
+          "normal",
+          "swap_children",
+          "mirror_y",
+          "swap_children+mirror_y"
+        ],
+        "logical_wires": [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5
+        ],
+        "lower_child": "root.L",
+        "node_id": "root",
+        "output_side_SEs": [
+          "waksman_6x6_s4_w0_1",
+          "waksman_6x6_s4_w2_3"
+        ],
+        "physical_wire_y_locations": {
+          "0": 320.0,
+          "1": 256.0,
+          "2": 192.0,
+          "3": 128.0,
+          "4": 64.0,
+          "5": 0.0
+        },
+        "selected_embedding": "normal",
+        "size": 6,
+        "stage_range": [
+          0,
+          4
+        ],
+        "upper_child": "root.U"
+      },
+      {
+        "input_side_SEs": [
+          "waksman_6x6_s1_w0_2"
+        ],
+        "local_choices": [
+          "normal",
+          "mirror_y"
+        ],
+        "logical_wires": [
+          0,
+          2,
+          4
+        ],
+        "lower_child": "root.U.L",
+        "node_id": "root.U",
+        "output_side_SEs": [
+          "waksman_6x6_s3_w0_2"
+        ],
+        "physical_wire_y_locations": {
+          "0": 320.0,
+          "2": 192.0,
+          "4": 64.0
+        },
+        "selected_embedding": "normal",
+        "size": 3,
+        "stage_range": [
+          1,
+          3
+        ],
+        "upper_child": "root.U.U"
+      },
+      {
+        "input_side_SEs": [
+          "waksman_6x6_s2_w0_4"
+        ],
+        "local_choices": [
+          "normal",
+          "mirror_y"
+        ],
+        "logical_wires": [
+          0,
+          4
+        ],
+        "lower_child": null,
+        "node_id": "root.U.U",
+        "output_side_SEs": [],
+        "physical_wire_y_locations": {
+          "0": 320.0,
+          "4": 64.0
+        },
+        "selected_embedding": "normal",
+        "size": 2,
+        "stage_range": [
+          2,
+          2
+        ],
+        "upper_child": null
+      },
+      {
+        "input_side_SEs": [],
+        "local_choices": [
+          "normal"
+        ],
+        "logical_wires": [
+          2
+        ],
+        "lower_child": null,
+        "node_id": "root.U.L",
+        "output_side_SEs": [],
+        "physical_wire_y_locations": {
+          "2": 192.0
+        },
+        "selected_embedding": "normal",
+        "size": 1,
+        "stage_range": [
+          2,
+          1
+        ],
+        "upper_child": null
+      },
+      {
+        "input_side_SEs": [
+          "waksman_6x6_s1_w1_3"
+        ],
+        "local_choices": [
+          "normal",
+          "mirror_y"
+        ],
+        "logical_wires": [
+          1,
+          3,
+          5
+        ],
+        "lower_child": "root.L.L",
+        "node_id": "root.L",
+        "output_side_SEs": [
+          "waksman_6x6_s3_w1_3"
+        ],
+        "physical_wire_y_locations": {
+          "1": 256.0,
+          "3": 128.0,
+          "5": 0.0
+        },
+        "selected_embedding": "normal",
+        "size": 3,
+        "stage_range": [
+          1,
+          3
+        ],
+        "upper_child": "root.L.U"
+      },
+      {
+        "input_side_SEs": [
+          "waksman_6x6_s2_w1_5"
+        ],
+        "local_choices": [
+          "normal",
+          "mirror_y"
+        ],
+        "logical_wires": [
+          1,
+          5
+        ],
+        "lower_child": null,
+        "node_id": "root.L.U",
+        "output_side_SEs": [],
+        "physical_wire_y_locations": {
+          "1": 256.0,
+          "5": 0.0
+        },
+        "selected_embedding": "normal",
+        "size": 2,
+        "stage_range": [
+          2,
+          2
+        ],
+        "upper_child": null
+      },
+      {
+        "input_side_SEs": [],
+        "local_choices": [
+          "normal"
+        ],
+        "logical_wires": [
+          3
+        ],
+        "lower_child": null,
+        "node_id": "root.L.L",
+        "output_side_SEs": [],
+        "physical_wire_y_locations": {
+          "3": 128.0
+        },
+        "selected_embedding": "normal",
+        "size": 1,
+        "stage_range": [
+          2,
+          1
+        ],
+        "upper_child": null
+      }
+    ],
+    "permutations_per_variant": 720,
+    "stage_pairs_unchanged": true,
+    "state_bit_remapping": "identity",
+    "variants": 64
+  }
+]

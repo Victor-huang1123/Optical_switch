@@ -1,0 +1,13 @@
+topology,n_logical,ablation,metric,baseline_value,comparison_value,delta,notes
+padded_benes_4x4,4,surrogate_calibration,mae,1.377911667,0.100064648,-1.277847019,negative delta means calibrated MAE improved
+padded_benes_4x4,4,surrogate_calibration,kendall_tau,1.000000000,1.000000000,0.000000000,positive delta means calibrated ranking improved
+padded_benes_8x8,5,surrogate_calibration,mae,2.236991250,0.121400910,-2.115590340,negative delta means calibrated MAE improved
+padded_benes_8x8,5,surrogate_calibration,kendall_tau,1.000000000,0.666666667,-0.333333333,positive delta means calibrated ranking improved
+spanke_benes_4x4,4,surrogate_calibration,mae,1.050537333,0.045998747,-1.004538586,negative delta means calibrated MAE improved
+spanke_benes_4x4,4,surrogate_calibration,kendall_tau,1.000000000,1.000000000,0.000000000,positive delta means calibrated ranking improved
+spanke_benes_5x5,5,surrogate_calibration,mae,1.378026500,0.237258247,-1.140768253,negative delta means calibrated MAE improved
+spanke_benes_5x5,5,surrogate_calibration,kendall_tau,1.000000000,1.000000000,0.000000000,positive delta means calibrated ranking improved
+waksman_4x4,4,surrogate_calibration,mae,1.072259667,0.346781767,-0.725477900,negative delta means calibrated MAE improved
+waksman_4x4,4,surrogate_calibration,kendall_tau,1.000000000,0.333333333,-0.666666667,positive delta means calibrated ranking improved
+waksman_5x5,5,surrogate_calibration,mae,1.735150750,0.214816468,-1.520334282,negative delta means calibrated MAE improved
+waksman_5x5,5,surrogate_calibration,kendall_tau,0.333333333,1.000000000,0.666666667,positive delta means calibrated ranking improved

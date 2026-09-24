@@ -1,0 +1,18 @@
+{
+  "audit": {
+    "bend_radius_legality": 0,
+    "crossing_clearance": 0,
+    "legacy_drc": 0,
+    "perpendicular_clearance": 0,
+    "same_net_min_spacing": 5
+  },
+  "bend_count": 129,
+  "drc_violations": [],
+  "failed_edges": [],
+  "geometry_sha256": "5a67bc1635a61649f589fe024bb44f7be0d01b4606e60df39d053f9839b77427",
+  "physical_crossings": 54,
+  "route_calls": 1,
+  "route_success": true,
+  "routing_runtime": 901.7634975078981,
+  "total_length_um": 14422.16363078271
+}

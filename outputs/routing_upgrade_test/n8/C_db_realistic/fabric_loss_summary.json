@@ -1,0 +1,32 @@
+{
+  "bend_loss_db_per_bend": 0.005,
+  "crossing_loss_db_per_cross": 0.1,
+  "fabric_edge_count": 42,
+  "mrr_count": 17,
+  "n_logical": 8,
+  "n_physical": 8,
+  "paths_checked": 322560,
+  "permutations_checked": 40320,
+  "prop_loss_db_per_um": 0.0002,
+  "topology_name": "waksman_8x8",
+  "worst_bend_count": 38,
+  "worst_bend_loss_db": 0.19,
+  "worst_crossing_count": 32,
+  "worst_crossing_loss_db": 3.2,
+  "worst_input_port": 6,
+  "worst_insertion_loss_db": 3.9760212059855453,
+  "worst_mrr_loss_db": 0.154530945567339,
+  "worst_output_port": 5,
+  "worst_path_length_um": 2157.45130209103,
+  "worst_permutation": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    6,
+    5,
+    7
+  ],
+  "worst_propagation_loss_db": 0.431490260418206
+}

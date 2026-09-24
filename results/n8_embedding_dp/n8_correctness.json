@@ -1,0 +1,17 @@
+{
+  "M": 17,
+  "all_lut_rows_and_cached_state_paths_verified": true,
+  "bfs_assignments_verified": 40320,
+  "input_hashes": {
+    "path_catalog.json": "02dede7856879ea72d5fb7d3d5f392f991c868f8923575b4715ae7873bf2b994",
+    "permutation_summary.csv": "45bbb91dce22bff1ae06c8181581cfd7218698592f8a1a76fbbc76207522b773",
+    "state_lut.csv": "31efa0cce1a126fa4eb33901e111634b6bafc44b41e823c41c9f38a1f7f9088b",
+    "state_path_losses.npz": "13c9bfeecb281218c6c659275d2fcb5be84e7bf21619ada04282ff8ca8b389a4",
+    "worst_sets.json": "98490643cbe27c3c6ebd309bab28f9ec727a8c4b5359a5e13f93c162cbfa6f42"
+  },
+  "missing": [],
+  "per_candidate_certificate": "Identical stage_pairs, named port graph, S-table and state bits; exhaustive certificate transfers by identity.",
+  "permutations": 40320,
+  "states": 131072,
+  "sum_multiplicities": 131072
+}

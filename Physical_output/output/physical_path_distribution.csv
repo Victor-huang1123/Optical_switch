@@ -1,0 +1,7 @@
+topology,layout,permutation,input_port,output_port,route_status,failure_reason,physical_wiring_um,bend_count,crossing_count,physical_il_db,topology_il_db,il_delta_db,topology_wiring_um,wiring_delta_um,mrr_loss_db,sxr_db
+padded_benes_8x8,default,2-0-5-1-3-4,0,2,routed,,896.955743,14,11,3.390778,2.850867,0.539911,627.000000,269.955743,1.596867,10.311550
+padded_benes_8x8,default,2-0-5-1-3-4,1,0,routed,,1124.809725,15,10,3.846486,2.970867,0.875619,687.000000,437.809725,1.596867,10.944388
+padded_benes_8x8,default,2-0-5-1-3-4,2,5,routed,,1906.765467,29,9,6.376491,4.136960,2.239531,787.000000,1119.765467,2.562960,6.255417
+padded_benes_8x8,default,2-0-5-1-3-4,3,1,routed,,1512.911486,28,12,5.588783,4.200960,1.387823,819.000000,693.911486,2.562960,4.430438
+padded_benes_8x8,default,2-0-5-1-3-4,4,3,routed,,1894.473431,31,12,6.351907,4.136960,2.214947,787.000000,1107.473431,2.562960,6.070588
+padded_benes_8x8,default,2-0-5-1-3-4,5,4,routed,,1232.225651,19,14,4.061318,3.114867,0.946451,759.000000,473.225651,1.596867,9.476948

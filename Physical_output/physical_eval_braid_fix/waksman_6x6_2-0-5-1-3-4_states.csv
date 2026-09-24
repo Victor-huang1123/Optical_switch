@@ -1,0 +1,12 @@
+mrr_id,state,meaning
+waksman_6x6_s0_w0_1,0,through/bar
+waksman_6x6_s0_w2_3,1,drop/cross
+waksman_6x6_s0_w4_5,1,drop/cross
+waksman_6x6_s1_w0_2,0,through/bar
+waksman_6x6_s1_w1_3,1,drop/cross
+waksman_6x6_s2_w0_4,0,through/bar
+waksman_6x6_s2_w1_5,1,drop/cross
+waksman_6x6_s3_w0_2,1,drop/cross
+waksman_6x6_s3_w1_3,1,drop/cross
+waksman_6x6_s4_w0_1,1,drop/cross
+waksman_6x6_s4_w2_3,0,through/bar

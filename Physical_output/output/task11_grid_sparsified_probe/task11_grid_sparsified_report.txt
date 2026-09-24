@@ -1,0 +1,14 @@
+Task 11 grid sparsification probe
+permutation=(2, 0, 5, 1, 3, 4)
+baseline_nodes=12726
+current_nodes=2988 (76.5% reduction)
+x_tracks=83 y_tracks=36 x_min_gap=4.000 y_min_gap=6.000 x_median_gap=8.000 y_median_gap=8.000
+subpitch_gaps(<4um): x=0 y=0
+
+Probe 4500_900
+rules=max_astar_pops=4500, ripup_max_astar_pops=900, grid_merge_tol_um=3.5
+routed=6 failed=0 drc=0 crossings=38 max_crossings_per_pair=4
+
+Probe 4500_2400
+rules=max_astar_pops=4500, ripup_max_astar_pops=2400, grid_merge_tol_um=3.5
+routed=6 failed=0 drc=0 crossings=38 max_crossings_per_pair=4

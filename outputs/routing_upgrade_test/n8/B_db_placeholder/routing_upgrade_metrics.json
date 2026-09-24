@@ -1,0 +1,22 @@
+{
+  "bend_pairs_lt_2r": 0,
+  "bend_radius_legality_count": 0,
+  "config": "B_db_placeholder",
+  "failed_edges": 0,
+  "geometry_sha256": "b45c2e1ddb5e8f8964644f2beae872a7b02a079962e5d8b716b851587be842e7",
+  "min_cross_net_perpendicular_clearance_um": 4.0,
+  "min_same_net_spacing_um": 3.0,
+  "n_logical": 8,
+  "old_drc_count": 0,
+  "perpendicular_clearance_count": 0,
+  "png_path": "outputs/routing_upgrade_test/n8/B_db_placeholder/fixed_fabric_layout.png",
+  "routed_edges": 42,
+  "same_net_min_spacing_count": 4,
+  "topology": "Waksman",
+  "total_crossings": 70,
+  "total_route_length_um": 13424.433538952582,
+  "wall_clock_s": 46.278469151002355,
+  "worst_insertion_loss_db": 4.575739459285832,
+  "worst_path_crossings": 21,
+  "worst_path_length_um": 2205.787595947438
+}

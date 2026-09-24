@@ -1,0 +1,14 @@
+/home/jchuang/.config/matplotlib is not a writable directory
+Matplotlib created a temporary cache directory at /tmp/jchuang-tmp/matplotlib-e9tbf2ra because there was an issue with the default path (/home/jchuang/.config/matplotlib); it is highly recommended to set the MPLCONFIGDIR environment variable to a writable directory, in particular to speed up the import of Matplotlib and to better support multiprocessing.
+Sections 1–2: N=8, M=17, 2^M=131072, N!=40320
+Sections 3–4: all 131072 states enumerated once; coverage 40320/40320; multiplicity {1: 8192, 2: 14336, 4: 12288, 5: 2048, 8: 2816, 16: 512, 32: 128}
+Section 5: all 40320 official BFS assignments verified.
+Section 6: starting the single fixed-fabric route (may take about 16 minutes).
+Section 6: geometry accepted, hash=5a67bc1635a61649f589fe024bb44f7be0d01b4606e60df39d053f9839b77427; audit={'legacy_drc': 0, 'same_net_min_spacing': 5, 'perpendicular_clearance': 0, 'crossing_clearance': 0, 'bend_radius_legality': 0}
+Section 6: 32768/131072 assignments evaluated on the same fabric.
+Section 6: 65536/131072 assignments evaluated on the same fabric.
+Section 6: 98304/131072 assignments evaluated on the same fabric.
+Section 6: 131072/131072 assignments evaluated on the same fabric.
+Sections 7–8: exact minima and ordered tie-breaking complete; all WIL inequalities passed.
+Section 9: read-only recursion/GF(2) instrumentation complete; baseline states unchanged.
+Sections 15–18: COMPLETE in 948.58 s; BFS optimal 60.362103%; mean/max delta 0.112998700848/0.835873930249 dB.

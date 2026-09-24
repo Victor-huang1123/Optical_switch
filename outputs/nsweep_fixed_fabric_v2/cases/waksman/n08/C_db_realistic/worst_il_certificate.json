@@ -1,0 +1,3189 @@
+{
+  "method": "strategy-relative directed-path enumeration + witness proof",
+  "path_rank_table": [
+    {
+      "input_port": 6,
+      "insertion_loss_db": 3.7984212059855453,
+      "output_port": 5,
+      "proof": "random witness (2 tries)",
+      "rank": 1,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        2,
+        0,
+        3,
+        7,
+        6,
+        5,
+        4
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 3.7807466702864767,
+      "output_port": 5,
+      "proof": "random witness (1 tries)",
+      "rank": 2,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        7,
+        6,
+        0,
+        5,
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 3.7692429309142024,
+      "output_port": 5,
+      "proof": "random witness (1 tries)",
+      "rank": 3,
+      "realizable": true,
+      "witness_permutation": [
+        7,
+        4,
+        0,
+        2,
+        1,
+        5,
+        6,
+        3
+      ]
+    },
+    {
+      "input_port": 7,
+      "insertion_loss_db": 3.755066538011409,
+      "output_port": 5,
+      "proof": "random witness (4 tries)",
+      "rank": 4,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        7,
+        4,
+        6,
+        2,
+        0,
+        1,
+        5
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 3.6803510959989123,
+      "output_port": 4,
+      "proof": "random witness (3 tries)",
+      "rank": 5,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        1,
+        2,
+        5,
+        7,
+        0,
+        4,
+        3
+      ]
+    },
+    {
+      "input_port": 7,
+      "insertion_loss_db": 3.6369964280247764,
+      "output_port": 4,
+      "proof": "random witness (1 tries)",
+      "rank": 6,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        6,
+        7,
+        2,
+        3,
+        0,
+        1,
+        4
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 3.6308256316979812,
+      "output_port": 4,
+      "proof": "random witness (8 tries)",
+      "rank": 7,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        2,
+        7,
+        5,
+        4,
+        6,
+        1,
+        0
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 3.6193218923257073,
+      "output_port": 4,
+      "proof": "random witness (2 tries)",
+      "rank": 8,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        7,
+        3,
+        2,
+        1,
+        4,
+        0,
+        5
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 3.6180212059855457,
+      "output_port": 5,
+      "proof": "random witness (4 tries)",
+      "rank": 9,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        2,
+        7,
+        0,
+        1,
+        4,
+        5,
+        6
+      ]
+    },
+    {
+      "input_port": 7,
+      "insertion_loss_db": 3.6065174666132718,
+      "output_port": 5,
+      "proof": "random witness (1 tries)",
+      "rank": 10,
+      "realizable": true,
+      "witness_permutation": [
+        7,
+        3,
+        1,
+        6,
+        0,
+        2,
+        4,
+        5
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.565467603129708,
+      "output_port": 2,
+      "proof": "random witness (4 tries)",
+      "rank": 11,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        0,
+        2,
+        3,
+        6,
+        1,
+        5,
+        7
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 3.5620005461751876,
+      "output_port": 2,
+      "proof": "random witness (2 tries)",
+      "rank": 12,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        6,
+        7,
+        0,
+        4,
+        5,
+        2,
+        3
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 3.524005077632887,
+      "output_port": 5,
+      "proof": "random witness (1 tries)",
+      "rank": 13,
+      "realizable": true,
+      "witness_permutation": [
+        7,
+        3,
+        1,
+        4,
+        5,
+        0,
+        6,
+        2
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.5221129351555724,
+      "output_port": 2,
+      "proof": "random witness (1 tries)",
+      "rank": 14,
+      "realizable": true,
+      "witness_permutation": [
+        7,
+        1,
+        0,
+        2,
+        3,
+        6,
+        4,
+        5
+      ]
+    },
+    {
+      "input_port": 7,
+      "insertion_loss_db": 3.518645878201051,
+      "output_port": 2,
+      "proof": "random witness (1 tries)",
+      "rank": 15,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        7,
+        6,
+        0,
+        4,
+        3,
+        5,
+        2
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.515542138828777,
+      "output_port": 3,
+      "proof": "random witness (2 tries)",
+      "rank": 16,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        5,
+        3,
+        0,
+        2,
+        6,
+        7,
+        1
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 3.512075081874256,
+      "output_port": 3,
+      "proof": "random witness (1 tries)",
+      "rank": 17,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        5,
+        6,
+        2,
+        7,
+        1,
+        3,
+        4
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 3.4806504096587503,
+      "output_port": 5,
+      "proof": "random witness (8 tries)",
+      "rank": 18,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        3,
+        6,
+        2,
+        7,
+        5,
+        1,
+        4
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.4721874708546405,
+      "output_port": 3,
+      "proof": "random witness (1 tries)",
+      "rank": 19,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        2,
+        0,
+        3,
+        7,
+        1,
+        5,
+        6
+      ]
+    },
+    {
+      "input_port": 7,
+      "insertion_loss_db": 3.4687204139001198,
+      "output_port": 3,
+      "proof": "random witness (2 tries)",
+      "rank": 20,
+      "realizable": true,
+      "witness_permutation": [
+        7,
+        6,
+        4,
+        1,
+        2,
+        0,
+        5,
+        3
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 3.46810016739705,
+      "output_port": 4,
+      "proof": "random witness (3 tries)",
+      "rank": 21,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        1,
+        7,
+        2,
+        3,
+        5,
+        4,
+        0
+      ]
+    },
+    {
+      "input_port": 7,
+      "insertion_loss_db": 3.456596428024776,
+      "output_port": 4,
+      "proof": "random witness (1 tries)",
+      "rank": 22,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        3,
+        7,
+        2,
+        0,
+        5,
+        6,
+        4
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 3.4059349676462536,
+      "output_port": 4,
+      "proof": "random witness (1 tries)",
+      "rank": 23,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        5,
+        7,
+        3,
+        4,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 3.3625802996721177,
+      "output_port": 4,
+      "proof": "random witness (3 tries)",
+      "rank": 24,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        6,
+        1,
+        5,
+        7,
+        4,
+        3,
+        2
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 3.2592005461751876,
+      "output_port": 2,
+      "proof": "random witness (1 tries)",
+      "rank": 25,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        0,
+        3,
+        5,
+        1,
+        7,
+        4,
+        6
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 3.258479613331956,
+      "output_port": 5,
+      "proof": "random witness (1 tries)",
+      "rank": 26,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        6,
+        1,
+        0,
+        2,
+        7,
+        4,
+        3
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 3.2557334892206664,
+      "output_port": 2,
+      "proof": "random witness (4 tries)",
+      "rank": 27,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        6,
+        0,
+        7,
+        2,
+        1,
+        4,
+        5
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 3.2515905238867537,
+      "output_port": 2,
+      "proof": "random witness (8 tries)",
+      "rank": 28,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        7,
+        6,
+        1,
+        2,
+        0,
+        5,
+        4
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 3.2469758739596815,
+      "output_port": 5,
+      "proof": "random witness (2 tries)",
+      "rank": 29,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        5,
+        2,
+        0,
+        1,
+        6,
+        3,
+        7
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 3.2400867845144794,
+      "output_port": 2,
+      "proof": "random witness (3 tries)",
+      "rank": 30,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        6,
+        5,
+        7,
+        0,
+        2,
+        3,
+        4
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 3.2335159881876847,
+      "output_port": 3,
+      "proof": "random witness (1 tries)",
+      "rank": 31,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        1,
+        7,
+        4,
+        3,
+        6,
+        2,
+        5
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 3.2220122488154104,
+      "output_port": 3,
+      "proof": "random witness (1 tries)",
+      "rank": 32,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        7,
+        1,
+        6,
+        5,
+        3,
+        4,
+        0
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 3.2158458782010513,
+      "output_port": 2,
+      "proof": "random witness (12 tries)",
+      "rank": 33,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        2,
+        4,
+        5,
+        3,
+        6,
+        7,
+        0
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 3.2123788212465305,
+      "output_port": 2,
+      "proof": "random witness (11 tries)",
+      "rank": 34,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        6,
+        0,
+        1,
+        7,
+        2,
+        4,
+        3
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 3.2092750818742566,
+      "output_port": 3,
+      "proof": "random witness (2 tries)",
+      "rank": 35,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        7,
+        4,
+        2,
+        1,
+        0,
+        6,
+        5
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 3.2063743955340946,
+      "output_port": 2,
+      "proof": "random witness (6 tries)",
+      "rank": 36,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        1,
+        5,
+        4,
+        7,
+        3,
+        0,
+        6
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 3.205808024919736,
+      "output_port": 3,
+      "proof": "random witness (1 tries)",
+      "rank": 37,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        0,
+        6,
+        1,
+        3,
+        7,
+        5,
+        4
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 3.1948706561618208,
+      "output_port": 2,
+      "proof": "random witness (1 tries)",
+      "rank": 38,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        2,
+        6,
+        5,
+        7,
+        0,
+        1,
+        4
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.1899042855474615,
+      "output_port": 1,
+      "proof": "random witness (1 tries)",
+      "rank": 39,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        0,
+        1,
+        7,
+        4,
+        3,
+        6,
+        5
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 3.1882998598350256,
+      "output_port": 3,
+      "proof": "random witness (5 tries)",
+      "rank": 40,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        5,
+        0,
+        4,
+        7,
+        2,
+        6,
+        1
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 3.1864372285929403,
+      "output_port": 1,
+      "proof": "random witness (2 tries)",
+      "rank": 41,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        4,
+        6,
+        2,
+        3,
+        7,
+        1,
+        0
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 3.176796120462752,
+      "output_port": 3,
+      "proof": "random witness (4 tries)",
+      "rank": 42,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        3,
+        6,
+        5,
+        4,
+        7,
+        0,
+        1
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 3.1659204139001202,
+      "output_port": 3,
+      "proof": "random witness (1 tries)",
+      "rank": 43,
+      "realizable": true,
+      "witness_permutation": [
+        7,
+        3,
+        2,
+        5,
+        6,
+        0,
+        4,
+        1
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 3.1624533569455995,
+      "output_port": 3,
+      "proof": "random witness (18 tries)",
+      "rank": 44,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        4,
+        6,
+        7,
+        1,
+        3,
+        5,
+        2
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.146549617573325,
+      "output_port": 1,
+      "proof": "random witness (2 tries)",
+      "rank": 45,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        0,
+        5,
+        1,
+        3,
+        2,
+        7,
+        6
+      ]
+    },
+    {
+      "input_port": 7,
+      "insertion_loss_db": 3.1430825606188044,
+      "output_port": 1,
+      "proof": "random witness (3 tries)",
+      "rank": 46,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        0,
+        5,
+        3,
+        4,
+        7,
+        2,
+        1
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 3.1207159881876843,
+      "output_port": 2,
+      "proof": "random witness (2 tries)",
+      "rank": 47,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        7,
+        0,
+        3,
+        5,
+        1,
+        2,
+        6
+      ]
+    },
+    {
+      "input_port": 7,
+      "insertion_loss_db": 3.1092122488154104,
+      "output_port": 2,
+      "proof": "random witness (2 tries)",
+      "rank": 48,
+      "realizable": true,
+      "witness_permutation": [
+        7,
+        0,
+        1,
+        4,
+        5,
+        3,
+        6,
+        2
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 3.1085585747434603,
+      "output_port": 4,
+      "proof": "random witness (10 tries)",
+      "rank": 49,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        1,
+        6,
+        0,
+        3,
+        5,
+        7,
+        2
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 3.1026414524886152,
+      "output_port": 3,
+      "proof": "random witness (2 tries)",
+      "rank": 50,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        7,
+        5,
+        0,
+        4,
+        6,
+        3,
+        1
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.098954149031025,
+      "output_port": 5,
+      "proof": "random witness (2 tries)",
+      "rank": 51,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        6,
+        5,
+        0,
+        1,
+        3,
+        4,
+        7
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 3.0970548353711864,
+      "output_port": 4,
+      "proof": "random witness (2 tries)",
+      "rank": 52,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        4,
+        5,
+        1,
+        3,
+        2,
+        6,
+        7
+      ]
+    },
+    {
+      "input_port": 7,
+      "insertion_loss_db": 3.091137713116342,
+      "output_port": 3,
+      "proof": "random witness (5 tries)",
+      "rank": 53,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        5,
+        7,
+        6,
+        0,
+        4,
+        2,
+        3
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.087450409658751,
+      "output_port": 5,
+      "proof": "random witness (1 tries)",
+      "rank": 54,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        4,
+        6,
+        5,
+        2,
+        1,
+        0,
+        7
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.0786998598350257,
+      "output_port": 2,
+      "proof": "random witness (5 tries)",
+      "rank": 55,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        4,
+        2,
+        5,
+        6,
+        0,
+        1,
+        7
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.0750341755608286,
+      "output_port": 0,
+      "proof": "random witness (4 tries)",
+      "rank": 56,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        7,
+        0,
+        1,
+        4,
+        3,
+        2,
+        6
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 3.071567118606307,
+      "output_port": 0,
+      "proof": "random witness (3 tries)",
+      "rank": 57,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        6,
+        7,
+        3,
+        4,
+        1,
+        0,
+        5
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.0671961204627514,
+      "output_port": 2,
+      "proof": "random witness (1 tries)",
+      "rank": 58,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        0,
+        4,
+        2,
+        6,
+        7,
+        1,
+        5
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 3.0662664322661457,
+      "output_port": 2,
+      "proof": "random witness (5 tries)",
+      "rank": 59,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        0,
+        5,
+        7,
+        4,
+        6,
+        2,
+        3
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.060625324135957,
+      "output_port": 3,
+      "proof": "random witness (4 tries)",
+      "rank": 60,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        1,
+        3,
+        0,
+        5,
+        7,
+        2,
+        4
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.0491215847636823,
+      "output_port": 3,
+      "proof": "random witness (5 tries)",
+      "rank": 61,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        4,
+        5,
+        3,
+        0,
+        1,
+        2,
+        7
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.031679507586692,
+      "output_port": 0,
+      "proof": "random witness (2 tries)",
+      "rank": 62,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        4,
+        7,
+        0,
+        6,
+        5,
+        1,
+        3
+      ]
+    },
+    {
+      "input_port": 7,
+      "insertion_loss_db": 3.028212450632171,
+      "output_port": 0,
+      "proof": "random witness (9 tries)",
+      "rank": 63,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        6,
+        1,
+        4,
+        7,
+        3,
+        2,
+        0
+      ]
+    },
+    {
+      "input_port": 7,
+      "insertion_loss_db": 3.02291176429201,
+      "output_port": 2,
+      "proof": "random witness (3 tries)",
+      "rank": 64,
+      "realizable": true,
+      "witness_permutation": [
+        7,
+        1,
+        5,
+        3,
+        4,
+        6,
+        0,
+        2
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 3.020336542252779,
+      "output_port": 1,
+      "proof": "random witness (5 tries)",
+      "rank": 65,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        7,
+        4,
+        3,
+        1,
+        6,
+        5,
+        0
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 3.0163409679652142,
+      "output_port": 3,
+      "proof": "random witness (6 tries)",
+      "rank": 66,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        2,
+        7,
+        5,
+        4,
+        6,
+        3,
+        1
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 3.0088328028805043,
+      "output_port": 1,
+      "proof": "random witness (5 tries)",
+      "rank": 67,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        0,
+        3,
+        7,
+        4,
+        1,
+        6,
+        5
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.97512041390012,
+      "output_port": 1,
+      "proof": "random witness (8 tries)",
+      "rank": 68,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        6,
+        3,
+        4,
+        2,
+        5,
+        7,
+        0
+      ]
+    },
+    {
+      "input_port": 7,
+      "insertion_loss_db": 2.9729862999910788,
+      "output_port": 3,
+      "proof": "random witness (18 tries)",
+      "rank": 69,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        1,
+        5,
+        2,
+        0,
+        6,
+        7,
+        3
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.963616674527845,
+      "output_port": 1,
+      "proof": "random witness (13 tries)",
+      "rank": 70,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        1,
+        4,
+        6,
+        3,
+        0,
+        5,
+        7
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.9594271101235687,
+      "output_port": 6,
+      "proof": "random witness (1 tries)",
+      "rank": 71,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        7,
+        1,
+        0,
+        4,
+        2,
+        6,
+        3
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.9585657459259833,
+      "output_port": 2,
+      "proof": "random witness (3 tries)",
+      "rank": 72,
+      "realizable": true,
+      "witness_permutation": [
+        7,
+        4,
+        5,
+        1,
+        2,
+        6,
+        0,
+        3
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.94903311044253,
+      "output_port": 4,
+      "proof": "random witness (1 tries)",
+      "rank": 73,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        6,
+        4,
+        1,
+        7,
+        5,
+        0,
+        3
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.9470620065537094,
+      "output_port": 2,
+      "proof": "random witness (3 tries)",
+      "rank": 74,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        6,
+        0,
+        7,
+        3,
+        2,
+        4,
+        1
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.9404912102269147,
+      "output_port": 3,
+      "proof": "random witness (2 tries)",
+      "rank": 75,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        5,
+        7,
+        6,
+        3,
+        4,
+        0,
+        1
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.937529371070255,
+      "output_port": 4,
+      "proof": "random witness (1 tries)",
+      "rank": 76,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        7,
+        3,
+        4,
+        1,
+        2,
+        6,
+        0
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.931043238476227,
+      "output_port": 6,
+      "proof": "random witness (1 tries)",
+      "rank": 77,
+      "realizable": true,
+      "witness_permutation": [
+        7,
+        2,
+        6,
+        0,
+        5,
+        3,
+        4,
+        1
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.92898747085464,
+      "output_port": 3,
+      "proof": "random witness (5 tries)",
+      "rank": 78,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        1,
+        5,
+        7,
+        2,
+        3,
+        0,
+        6
+      ]
+    },
+    {
+      "input_port": 7,
+      "insertion_loss_db": 2.9160724421494324,
+      "output_port": 6,
+      "proof": "random witness (1 tries)",
+      "rank": 79,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        5,
+        2,
+        0,
+        7,
+        1,
+        3,
+        6
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.8894620065537095,
+      "output_port": 1,
+      "proof": "random witness (5 tries)",
+      "rank": 80,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        2,
+        7,
+        5,
+        6,
+        4,
+        1,
+        3
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.887688570502091,
+      "output_port": 6,
+      "proof": "random witness (1 tries)",
+      "rank": 81,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        7,
+        0,
+        6,
+        3,
+        5,
+        1,
+        2
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.8836372285929404,
+      "output_port": 1,
+      "proof": "random witness (7 tries)",
+      "rank": 82,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        5,
+        4,
+        2,
+        3,
+        0,
+        7,
+        6
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.8801701716384196,
+      "output_port": 1,
+      "proof": "random witness (5 tries)",
+      "rank": 83,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        4,
+        2,
+        6,
+        1,
+        0,
+        7,
+        5
+      ]
+    },
+    {
+      "input_port": 7,
+      "insertion_loss_db": 2.877958267181435,
+      "output_port": 1,
+      "proof": "random witness (1 tries)",
+      "rank": 84,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        7,
+        6,
+        2,
+        4,
+        5,
+        0,
+        1
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.8736155036642836,
+      "output_port": 0,
+      "proof": "random witness (2 tries)",
+      "rank": 85,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        7,
+        6,
+        2,
+        0,
+        3,
+        1,
+        4
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.862111764292009,
+      "output_port": 0,
+      "proof": "random witness (7 tries)",
+      "rank": 86,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        7,
+        5,
+        2,
+        6,
+        0,
+        4,
+        1
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.8614125563774344,
+      "output_port": 5,
+      "proof": "random witness (1 tries)",
+      "rank": 87,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        2,
+        5,
+        7,
+        3,
+        6,
+        4,
+        1
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.84744587820105,
+      "output_port": 1,
+      "proof": "random witness (3 tries)",
+      "rank": 88,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        4,
+        1,
+        5,
+        3,
+        0,
+        7,
+        2
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.840282560618804,
+      "output_port": 1,
+      "proof": "random witness (3 tries)",
+      "rank": 89,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        1,
+        4,
+        7,
+        2,
+        5,
+        0,
+        6
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.8368155036642837,
+      "output_port": 1,
+      "proof": "random witness (2 tries)",
+      "rank": 90,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        0,
+        7,
+        6,
+        4,
+        1,
+        5,
+        3
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.835942138828777,
+      "output_port": 1,
+      "proof": "random witness (4 tries)",
+      "rank": 91,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        2,
+        6,
+        1,
+        0,
+        4,
+        7,
+        5
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.8283993753116246,
+      "output_port": 0,
+      "proof": "random witness (12 tries)",
+      "rank": 92,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        2,
+        5,
+        1,
+        7,
+        4,
+        6,
+        3
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.818057888403299,
+      "output_port": 5,
+      "proof": "random witness (3 tries)",
+      "rank": 93,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        2,
+        7,
+        5,
+        6,
+        1,
+        3,
+        4
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.81689563593935,
+      "output_port": 0,
+      "proof": "random witness (4 tries)",
+      "rank": 94,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        0,
+        4,
+        6,
+        1,
+        3,
+        5,
+        7
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.795840281625053,
+      "output_port": 2,
+      "proof": "random witness (8 tries)",
+      "rank": 95,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        4,
+        0,
+        3,
+        7,
+        1,
+        2,
+        5
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.7918503039134865,
+      "output_port": 2,
+      "proof": "random witness (1 tries)",
+      "rank": 96,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        4,
+        1,
+        6,
+        2,
+        7,
+        3,
+        0
+      ]
+    },
+    {
+      "input_port": 7,
+      "insertion_loss_db": 2.7843365422527784,
+      "output_port": 2,
+      "proof": "random witness (12 tries)",
+      "rank": 97,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        1,
+        5,
+        4,
+        3,
+        7,
+        6,
+        2
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.777765745925984,
+      "output_port": 3,
+      "proof": "random witness (5 tries)",
+      "rank": 98,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        6,
+        4,
+        2,
+        7,
+        5,
+        3,
+        1
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.7687671186063065,
+      "output_port": 0,
+      "proof": "random witness (5 tries)",
+      "rank": 99,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        7,
+        1,
+        4,
+        2,
+        3,
+        6,
+        5
+      ]
+    },
+    {
+      "input_port": 7,
+      "insertion_loss_db": 2.7662620065537094,
+      "output_port": 3,
+      "proof": "random witness (4 tries)",
+      "rank": 100,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        6,
+        5,
+        0,
+        2,
+        7,
+        4,
+        3
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.765300061651786,
+      "output_port": 0,
+      "proof": "random witness (1 tries)",
+      "rank": 101,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        1,
+        6,
+        5,
+        0,
+        7,
+        2,
+        4
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.7591626928938715,
+      "output_port": 1,
+      "proof": "random witness (1 tries)",
+      "rank": 102,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        5,
+        0,
+        2,
+        1,
+        4,
+        3,
+        7
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.74849563593935,
+      "output_port": 2,
+      "proof": "random witness (3 tries)",
+      "rank": 103,
+      "realizable": true,
+      "witness_permutation": [
+        7,
+        4,
+        3,
+        6,
+        0,
+        2,
+        5,
+        1
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.7476589535215976,
+      "output_port": 1,
+      "proof": "random witness (4 tries)",
+      "rank": 104,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        6,
+        3,
+        2,
+        4,
+        1,
+        7,
+        0
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.743342446390802,
+      "output_port": 4,
+      "proof": "random witness (1 tries)",
+      "rank": 105,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        5,
+        4,
+        2,
+        0,
+        6,
+        7,
+        3
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.742740967965214,
+      "output_port": 0,
+      "proof": "random witness (1 tries)",
+      "rank": 106,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        5,
+        1,
+        7,
+        2,
+        6,
+        0,
+        4
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.7419248396125555,
+      "output_port": 3,
+      "proof": "random witness (1 tries)",
+      "rank": 107,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        4,
+        7,
+        1,
+        3,
+        0,
+        6,
+        5
+      ]
+    },
+    {
+      "input_port": 7,
+      "insertion_loss_db": 2.7312372285929403,
+      "output_port": 0,
+      "proof": "random witness (2 tries)",
+      "rank": 108,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        5,
+        3,
+        7,
+        2,
+        1,
+        6,
+        0
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.7254124506321706,
+      "output_port": 0,
+      "proof": "random witness (36 tries)",
+      "rank": 109,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        0,
+        5,
+        4,
+        6,
+        1,
+        7,
+        2
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.722554043285761,
+      "output_port": 1,
+      "proof": "random witness (4 tries)",
+      "rank": 110,
+      "realizable": true,
+      "witness_permutation": [
+        7,
+        4,
+        3,
+        2,
+        0,
+        6,
+        1,
+        5
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.7219453936776503,
+      "output_port": 0,
+      "proof": "random witness (7 tries)",
+      "rank": 111,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        1,
+        6,
+        4,
+        3,
+        0,
+        5,
+        7
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.7007248396125556,
+      "output_port": 0,
+      "proof": "random witness (1 tries)",
+      "rank": 112,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        5,
+        0,
+        6,
+        2,
+        4,
+        7,
+        1
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.699987778416666,
+      "output_port": 4,
+      "proof": "random witness (3 tries)",
+      "rank": 113,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        6,
+        2,
+        4,
+        5,
+        1,
+        3,
+        7
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.6985701716384196,
+      "output_port": 3,
+      "proof": "random witness (3 tries)",
+      "rank": 114,
+      "realizable": true,
+      "witness_permutation": [
+        7,
+        0,
+        2,
+        5,
+        1,
+        3,
+        6,
+        4
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.6892211002402817,
+      "output_port": 0,
+      "proof": "random witness (2 tries)",
+      "rank": 115,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        5,
+        1,
+        0,
+        6,
+        7,
+        2,
+        4
+      ]
+    },
+    {
+      "input_port": 7,
+      "insertion_loss_db": 2.679199375311625,
+      "output_port": 1,
+      "proof": "random witness (2 tries)",
+      "rank": 116,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        2,
+        5,
+        0,
+        4,
+        6,
+        7,
+        1
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.6531600531690476,
+      "output_port": 6,
+      "proof": "random witness (1 tries)",
+      "rank": 117,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        3,
+        2,
+        5,
+        6,
+        1,
+        7,
+        4
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.6247761815217063,
+      "output_port": 6,
+      "proof": "random witness (1 tries)",
+      "rank": 118,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        5,
+        0,
+        7,
+        4,
+        1,
+        3,
+        2
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.6124416543053766,
+      "output_port": 0,
+      "proof": "random witness (2 tries)",
+      "rank": 119,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        1,
+        6,
+        4,
+        0,
+        5,
+        2,
+        7
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.6098053851949112,
+      "output_port": 6,
+      "proof": "random witness (1 tries)",
+      "rank": 120,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        0,
+        7,
+        2,
+        1,
+        6,
+        3,
+        4
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.6076839332991275,
+      "output_port": 0,
+      "proof": "random witness (5 tries)",
+      "rank": 121,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        2,
+        3,
+        4,
+        6,
+        1,
+        0,
+        7
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.6009379149331022,
+      "output_port": 0,
+      "proof": "random witness (1 tries)",
+      "rank": 122,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        5,
+        1,
+        3,
+        6,
+        0,
+        2,
+        7
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.596437228592941,
+      "output_port": 1,
+      "proof": "random witness (10 tries)",
+      "rank": 123,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        4,
+        0,
+        2,
+        7,
+        5,
+        1,
+        3
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.5869964280247757,
+      "output_port": 5,
+      "proof": "random witness (1 tries)",
+      "rank": 124,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        3,
+        2,
+        1,
+        0,
+        7,
+        4,
+        6
+      ]
+    },
+    {
+      "input_port": 7,
+      "insertion_loss_db": 2.584933489220666,
+      "output_port": 1,
+      "proof": "random witness (13 tries)",
+      "rank": 125,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        0,
+        1
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.5814215135475704,
+      "output_port": 6,
+      "proof": "random witness (1 tries)",
+      "rank": 126,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        6,
+        1,
+        4,
+        5,
+        7,
+        0,
+        3
+      ]
+    },
+    {
+      "input_port": 7,
+      "insertion_loss_db": 2.5643292653249916,
+      "output_port": 0,
+      "proof": "random witness (10 tries)",
+      "rank": 127,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        3,
+        2,
+        1,
+        6,
+        4,
+        7,
+        0
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.5627177741752964,
+      "output_port": 7,
+      "proof": "random witness (1 tries)",
+      "rank": 128,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        0,
+        6,
+        3,
+        7,
+        5,
+        1,
+        2
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.551214034803022,
+      "output_port": 7,
+      "proof": "random witness (1 tries)",
+      "rank": 129,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        3,
+        0,
+        4,
+        1,
+        7,
+        2,
+        6
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.54364176005064,
+      "output_port": 5,
+      "proof": "random witness (1 tries)",
+      "rank": 130,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        5,
+        3,
+        1,
+        7,
+        0,
+        4,
+        6
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.4856507172207754,
+      "output_port": 7,
+      "proof": "random witness (1 tries)",
+      "rank": 131,
+      "realizable": true,
+      "witness_permutation": [
+        7,
+        1,
+        6,
+        5,
+        4,
+        2,
+        0,
+        3
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.4741469778485015,
+      "output_port": 7,
+      "proof": "random witness (1 tries)",
+      "rank": 132,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        7,
+        3,
+        0,
+        2,
+        4,
+        6,
+        1
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.468926318038143,
+      "output_port": 4,
+      "proof": "random witness (1 tries)",
+      "rank": 133,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        5,
+        6,
+        1,
+        0,
+        2,
+        7,
+        3
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.4681496175733253,
+      "output_port": 2,
+      "proof": "random witness (5 tries)",
+      "rank": 134,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        6,
+        7,
+        0,
+        3,
+        5,
+        4,
+        1
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.4566458782010514,
+      "output_port": 2,
+      "proof": "random witness (1 tries)",
+      "rank": 135,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        2,
+        3,
+        0,
+        7,
+        5,
+        1,
+        4
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.450075081874256,
+      "output_port": 3,
+      "proof": "random witness (7 tries)",
+      "rank": 136,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        4,
+        2,
+        7,
+        6,
+        1,
+        0,
+        5
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.4497161900044455,
+      "output_port": 0,
+      "proof": "random witness (3 tries)",
+      "rank": 137,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        2,
+        6,
+        4,
+        7,
+        1,
+        0,
+        3
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.448137914933102,
+      "output_port": 1,
+      "proof": "random witness (4 tries)",
+      "rank": 138,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        2,
+        0,
+        5,
+        1,
+        7,
+        4,
+        3
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.4385713425019824,
+      "output_port": 3,
+      "proof": "random witness (2 tries)",
+      "rank": 139,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        3,
+        7,
+        0,
+        4,
+        6,
+        2,
+        1
+      ]
+    },
+    {
+      "input_port": 7,
+      "insertion_loss_db": 2.4382124506321716,
+      "output_port": 0,
+      "proof": "random witness (2 tries)",
+      "rank": 140,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        2,
+        6,
+        4,
+        5,
+        7,
+        3,
+        0
+      ]
+    },
+    {
+      "input_port": 6,
+      "insertion_loss_db": 2.431843238476227,
+      "output_port": 7,
+      "proof": "random witness (1 tries)",
+      "rank": 141,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        6,
+        4,
+        5,
+        3,
+        1,
+        7,
+        0
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.4255716500640068,
+      "output_port": 4,
+      "proof": "random witness (4 tries)",
+      "rank": 142,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        4,
+        5,
+        6,
+        7,
+        0,
+        3,
+        1
+      ]
+    },
+    {
+      "input_port": 7,
+      "insertion_loss_db": 2.420339499103953,
+      "output_port": 7,
+      "proof": "random witness (1 tries)",
+      "rank": 143,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        0,
+        2,
+        6,
+        4,
+        5,
+        1,
+        7
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.4047832469589663,
+      "output_port": 1,
+      "proof": "random witness (7 tries)",
+      "rank": 144,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        2,
+        0,
+        4,
+        7,
+        1,
+        6,
+        3
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.3579761815217064,
+      "output_port": 7,
+      "proof": "random witness (1 tries)",
+      "rank": 145,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        1,
+        7,
+        3,
+        5,
+        0,
+        4,
+        6
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.346472442149432,
+      "output_port": 7,
+      "proof": "random witness (1 tries)",
+      "rank": 146,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        3,
+        4,
+        7,
+        2,
+        5,
+        1,
+        0
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.3332678049464692,
+      "output_port": 0,
+      "proof": "random witness (6 tries)",
+      "rank": 147,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        4,
+        7,
+        5,
+        0,
+        3,
+        1,
+        2
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.308624153272394,
+      "output_port": 2,
+      "proof": "random witness (1 tries)",
+      "rank": 148,
+      "realizable": true,
+      "witness_permutation": [
+        7,
+        4,
+        2,
+        1,
+        5,
+        3,
+        0,
+        6
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.29712041390012,
+      "output_port": 2,
+      "proof": "random witness (3 tries)",
+      "rank": 149,
+      "realizable": true,
+      "witness_permutation": [
+        7,
+        6,
+        0,
+        2,
+        1,
+        5,
+        4,
+        3
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.290549617573325,
+      "output_port": 3,
+      "proof": "random witness (1 tries)",
+      "rank": 150,
+      "realizable": true,
+      "witness_permutation": [
+        7,
+        2,
+        3,
+        1,
+        6,
+        5,
+        4,
+        0
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.289913136972333,
+      "output_port": 0,
+      "proof": "random witness (9 tries)",
+      "rank": 151,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        7,
+        3,
+        5,
+        2,
+        0,
+        6,
+        1
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.2790458782010505,
+      "output_port": 3,
+      "proof": "random witness (10 tries)",
+      "rank": 152,
+      "realizable": true,
+      "witness_permutation": [
+        7,
+        5,
+        2,
+        3,
+        0,
+        1,
+        4,
+        6
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.268746564541213,
+      "output_port": 1,
+      "proof": "random witness (4 tries)",
+      "rank": 153,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        5,
+        0,
+        7,
+        2,
+        3,
+        4,
+        6
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.2572428251689383,
+      "output_port": 1,
+      "proof": "random witness (3 tries)",
+      "rank": 154,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        1,
+        7,
+        5,
+        6,
+        4,
+        2,
+        0
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.1611087112598963,
+      "output_port": 2,
+      "proof": "random witness (15 tries)",
+      "rank": 155,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        5,
+        2,
+        1,
+        3,
+        0,
+        4,
+        7
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.122025525952717,
+      "output_port": 0,
+      "proof": "random witness (5 tries)",
+      "rank": 156,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        4,
+        2,
+        1,
+        6,
+        5,
+        7,
+        3
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.1177540432857604,
+      "output_port": 2,
+      "proof": "random witness (6 tries)",
+      "rank": 157,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        3,
+        0,
+        2,
+        5,
+        7,
+        1,
+        4
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.1111832469589658,
+      "output_port": 3,
+      "proof": "random witness (3 tries)",
+      "rank": 158,
+      "realizable": true,
+      "witness_permutation": [
+        7,
+        6,
+        3,
+        1,
+        2,
+        0,
+        5,
+        4
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.110521786580443,
+      "output_port": 0,
+      "proof": "random witness (1 tries)",
+      "rank": 159,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        0,
+        4,
+        7,
+        3,
+        6,
+        1,
+        5
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.1092211002402816,
+      "output_port": 1,
+      "proof": "random witness (18 tries)",
+      "rank": 160,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        7,
+        1,
+        5,
+        3,
+        6,
+        2,
+        4
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.0977173608680078,
+      "output_port": 1,
+      "proof": "random witness (1 tries)",
+      "rank": 161,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        7,
+        6,
+        1,
+        2,
+        0,
+        4,
+        5
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 2.0678285789848294,
+      "output_port": 3,
+      "proof": "random witness (18 tries)",
+      "rank": 162,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        2,
+        0,
+        3,
+        5,
+        1,
+        4,
+        7
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 1.9625000616517867,
+      "output_port": 0,
+      "proof": "random witness (1 tries)",
+      "rank": 163,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        7,
+        0,
+        6,
+        2,
+        5,
+        1,
+        3
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 1.9509963222795124,
+      "output_port": 0,
+      "proof": "random witness (6 tries)",
+      "rank": 164,
+      "realizable": true,
+      "witness_permutation": [
+        7,
+        6,
+        4,
+        0,
+        3,
+        5,
+        1,
+        2
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 1.8866925829072385,
+      "output_port": 2,
+      "proof": "random witness (1 tries)",
+      "rank": 165,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        1,
+        6,
+        4,
+        7,
+        0,
+        5,
+        3
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 1.8433379149331017,
+      "output_port": 2,
+      "proof": "random witness (3 tries)",
+      "rank": 166,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        2,
+        6,
+        0,
+        3,
+        1,
+        7,
+        4
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 1.8367671186063073,
+      "output_port": 3,
+      "proof": "random witness (4 tries)",
+      "rank": 167,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        7,
+        1,
+        6,
+        2,
+        5,
+        0,
+        4
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 1.8173963222795124,
+      "output_port": 1,
+      "proof": "random witness (2 tries)",
+      "rank": 168,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        6,
+        1,
+        5,
+        4,
+        0,
+        2,
+        7
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 1.7934124506321707,
+      "output_port": 3,
+      "proof": "random witness (7 tries)",
+      "rank": 169,
+      "realizable": true,
+      "witness_permutation": [
+        7,
+        3,
+        0,
+        2,
+        1,
+        4,
+        6,
+        5
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 1.7740416543053765,
+      "output_port": 1,
+      "proof": "random witness (20 tries)",
+      "rank": 170,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        6,
+        4,
+        1,
+        2,
+        3,
+        7,
+        5
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 1.7025262122928795,
+      "output_port": 0,
+      "proof": "random witness (11 tries)",
+      "rank": 171,
+      "realizable": true,
+      "witness_permutation": [
+        6,
+        1,
+        0,
+        3,
+        2,
+        4,
+        5,
+        7
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 1.659171544318743,
+      "output_port": 0,
+      "proof": "random witness (8 tries)",
+      "rank": 172,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        6,
+        3,
+        0,
+        2,
+        4,
+        7,
+        5
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 1.5429801939268533,
+      "output_port": 1,
+      "proof": "random witness (5 tries)",
+      "rank": 173,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        2,
+        4,
+        3,
+        7,
+        5,
+        0,
+        6
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 1.4996255259527174,
+      "output_port": 1,
+      "proof": "random witness (2 tries)",
+      "rank": 174,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        1,
+        7,
+        3,
+        4,
+        5,
+        0,
+        6
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 1.4281100839402199,
+      "output_port": 0,
+      "proof": "random witness (2 tries)",
+      "rank": 175,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        4,
+        2,
+        1,
+        3,
+        5,
+        7,
+        6
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 1.3847554159660844,
+      "output_port": 0,
+      "proof": "random witness (2 tries)",
+      "rank": 176,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        0,
+        1,
+        6,
+        7,
+        3,
+        2,
+        4
+      ]
+    }
+  ],
+  "unrealizable_proofs_count": 0,
+  "witness_permutation": [
+    1,
+    2,
+    0,
+    3,
+    7,
+    6,
+    5,
+    4
+  ],
+  "worst_il_db": 3.7984212059855453,
+  "worst_io_pair": [
+    6,
+    5
+  ]
+}

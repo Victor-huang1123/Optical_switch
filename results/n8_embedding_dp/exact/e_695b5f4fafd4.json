@@ -1,0 +1,283 @@
+{
+  "all_131072_states_evaluated": true,
+  "all_40320_permutations_evaluated": true,
+  "all_former_BFS_worst_below_reference_count": 480,
+  "bfs_quantiles": {
+    "median": 4.826237198448586,
+    "p90": 5.093320181939005,
+    "p99": 5.181320181939005
+  },
+  "candidate_id": "e_695b5f4fafd4",
+  "geometry_sha256": "5a67bc1635a61649f589fe024bb44f7be0d01b4606e60df39d053f9839b77427",
+  "geometry_unchanged": true,
+  "global_wil_bfs_db": 5.181320181939005,
+  "global_wil_opt_assignment_db": 5.181320181939005,
+  "optimal_quantiles": {
+    "median": 4.684405345376791,
+    "p90": 5.077612218671056,
+    "p99": 5.181320181939005
+  },
+  "production_BFS_witness": {
+    "enumerated_paths": 176,
+    "path_rank_table": [
+      {
+        "input_port": 5,
+        "insertion_loss_db": 5.181320181939005,
+        "output_port": 3,
+        "proof": "random witness (1 tries)",
+        "rank": 1,
+        "realizable": true,
+        "witness_permutation": [
+          2,
+          7,
+          1,
+          6,
+          5,
+          3,
+          4,
+          0
+        ]
+      }
+    ],
+    "realizable_paths": 1,
+    "unrealizable_paths": 0,
+    "wall_clock_s": 0.005482107866555452,
+    "witness_permutation": [
+      2,
+      7,
+      1,
+      6,
+      5,
+      3,
+      4,
+      0
+    ],
+    "worst_insertion_loss_db": 5.181320181939005,
+    "worst_loss": {
+      "bend_count": 28,
+      "bend_loss_db": 0.0,
+      "crossing_count": 10,
+      "crossing_loss_db": 0.0,
+      "insertion_loss_db": 5.181320181939005,
+      "mrr_loss_db": 0.18349721043643463,
+      "path_length_um": 2498.911485751285,
+      "propagation_loss_db": 4.99782297150257
+    },
+    "worst_path": {
+      "input_port": 5,
+      "output_port": 3,
+      "steps": [
+        {
+          "in_port": "add",
+          "mrr_id": "waksman_8x8_s0_w4_5",
+          "out_port": "drop",
+          "pair": [
+            4,
+            5
+          ],
+          "stage": 0,
+          "state": 0,
+          "wire_in": 5,
+          "wire_out": 5
+        },
+        {
+          "in_port": "in",
+          "mrr_id": "waksman_8x8_s1_w5_7",
+          "out_port": "drop",
+          "pair": [
+            5,
+            7
+          ],
+          "stage": 1,
+          "state": 1,
+          "wire_in": 5,
+          "wire_out": 7
+        },
+        {
+          "in_port": "add",
+          "mrr_id": "waksman_8x8_s2_w3_7",
+          "out_port": "th",
+          "pair": [
+            3,
+            7
+          ],
+          "stage": 2,
+          "state": 1,
+          "wire_in": 7,
+          "wire_out": 3
+        },
+        {
+          "in_port": "add",
+          "mrr_id": "waksman_8x8_s3_w1_3",
+          "out_port": "drop",
+          "pair": [
+            1,
+            3
+          ],
+          "stage": 3,
+          "state": 0,
+          "wire_in": 3,
+          "wire_out": 3
+        },
+        {
+          "in_port": "add",
+          "mrr_id": "waksman_8x8_s4_w2_3",
+          "out_port": "drop",
+          "pair": [
+            2,
+            3
+          ],
+          "stage": 4,
+          "state": 0,
+          "wire_in": 3,
+          "wire_out": 3
+        }
+      ]
+    }
+  },
+  "unique_worst_set": {
+    "improved_count": 0,
+    "maximum_improvement_db": 0.0,
+    "mean_improvement_db": 0.0,
+    "new_maximum_db": 5.181320181939005,
+    "reference_comparisons": {
+      "prior_bfs": {
+        "improved_count": 0,
+        "maximum_improvement_db": 0.0,
+        "mean_improvement_db": 0.0,
+        "minimum_improvement_db": 0.0,
+        "unchanged_count": 256,
+        "worsened_count": 0
+      },
+      "prior_opt_assignment": {
+        "improved_count": 0,
+        "maximum_improvement_db": 0.0,
+        "mean_improvement_db": 0.0,
+        "minimum_improvement_db": 0.0,
+        "unchanged_count": 256,
+        "worsened_count": 0
+      }
+    },
+    "size": 256,
+    "still_at_5_181320181939005_db": 256
+  },
+  "worst_baseline_set": {
+    "improved_count": 0,
+    "maximum_improvement_db": 0.0,
+    "mean_improvement_db": 0.0,
+    "new_maximum_db": 5.181320181939005,
+    "reference_comparisons": {
+      "prior_bfs": {
+        "improved_count": 480,
+        "maximum_improvement_db": 0.8013341139090402,
+        "mean_improvement_db": 0.16847988464103408,
+        "minimum_improvement_db": 0.0,
+        "unchanged_count": 528,
+        "worsened_count": 0
+      },
+      "prior_opt_assignment": {
+        "improved_count": 0,
+        "maximum_improvement_db": 0.0,
+        "mean_improvement_db": 0.0,
+        "minimum_improvement_db": 0.0,
+        "unchanged_count": 1008,
+        "worsened_count": 0
+      }
+    },
+    "size": 1008,
+    "still_at_5_181320181939005_db": 528
+  },
+  "worst_input": 5,
+  "worst_path": {
+    "input_port": 5,
+    "output_port": 3,
+    "steps": [
+      {
+        "in_port": "add",
+        "mrr_id": "waksman_8x8_s0_w4_5",
+        "out_port": "drop",
+        "pair": [
+          4,
+          5
+        ],
+        "stage": 0,
+        "state": 0,
+        "wire_in": 5,
+        "wire_out": 5
+      },
+      {
+        "in_port": "in",
+        "mrr_id": "waksman_8x8_s1_w5_7",
+        "out_port": "drop",
+        "pair": [
+          5,
+          7
+        ],
+        "stage": 1,
+        "state": 1,
+        "wire_in": 5,
+        "wire_out": 7
+      },
+      {
+        "in_port": "add",
+        "mrr_id": "waksman_8x8_s2_w3_7",
+        "out_port": "th",
+        "pair": [
+          3,
+          7
+        ],
+        "stage": 2,
+        "state": 1,
+        "wire_in": 7,
+        "wire_out": 3
+      },
+      {
+        "in_port": "add",
+        "mrr_id": "waksman_8x8_s3_w1_3",
+        "out_port": "drop",
+        "pair": [
+          1,
+          3
+        ],
+        "stage": 3,
+        "state": 0,
+        "wire_in": 3,
+        "wire_out": 3
+      },
+      {
+        "in_port": "add",
+        "mrr_id": "waksman_8x8_s4_w2_3",
+        "out_port": "drop",
+        "pair": [
+          2,
+          3
+        ],
+        "stage": 4,
+        "state": 0,
+        "wire_in": 3,
+        "wire_out": 3
+      }
+    ]
+  },
+  "worst_path_loss": {
+    "bend_count": 28,
+    "bend_loss_db": 0.0,
+    "crossing_count": 10,
+    "crossing_loss_db": 0.0,
+    "insertion_loss_db": 5.181320181939005,
+    "mrr_loss_db": 0.18349721043643463,
+    "path_length_um": 2498.911485751285,
+    "propagation_loss_db": 4.99782297150257
+  },
+  "worst_permutation": [
+    0,
+    1,
+    2,
+    7,
+    4,
+    3,
+    5,
+    6
+  ],
+  "worst_state_id": 2184
+}

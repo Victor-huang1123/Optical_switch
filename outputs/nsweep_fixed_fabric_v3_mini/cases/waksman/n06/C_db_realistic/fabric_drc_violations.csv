@@ -1,0 +1,2 @@
+rule,edge_ids,message,x_um,y_um
+crossing_clearance,input:w1->waksman_6x6_s0_w0_1.add;input:w3->waksman_6x6_s0_w2_3.add,"crossing arms do not provide the required straight edge clearance (10.000 um centerline-equivalent; effective centerline threshold=9.550 um) (arms=137.000,31.000,19.500,5.500 um; minimum=5.500 um)",441.0,133.5

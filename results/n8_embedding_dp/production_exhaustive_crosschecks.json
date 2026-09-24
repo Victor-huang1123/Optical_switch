@@ -1,0 +1,74 @@
+[
+  {
+    "absolute_difference_db": 0.0,
+    "cached_global_bfs_db": 5.181320181939005,
+    "candidate_id": "e_695b5f4fafd4",
+    "paths_checked": 5760,
+    "permutations_checked": 720,
+    "prefix": [
+      0,
+      1
+    ],
+    "production_global_bfs_db": 5.181320181939005
+  },
+  {
+    "absolute_difference_db": 0.0,
+    "cached_global_bfs_db": 5.094069051520382,
+    "candidate_id": "e_695b5f4fafd4",
+    "paths_checked": 5760,
+    "permutations_checked": 720,
+    "prefix": [
+      3,
+      7
+    ],
+    "production_global_bfs_db": 5.094069051520382
+  },
+  {
+    "absolute_difference_db": 0.0,
+    "cached_global_bfs_db": 5.181320181939005,
+    "candidate_id": "e_695b5f4fafd4",
+    "paths_checked": 5760,
+    "permutations_checked": 720,
+    "prefix": [
+      7,
+      6
+    ],
+    "production_global_bfs_db": 5.181320181939005
+  },
+  {
+    "absolute_difference_db": 0.0,
+    "cached_global_bfs_db": 4.682069051520382,
+    "candidate_id": "e_1a30e83a0382",
+    "paths_checked": 5760,
+    "permutations_checked": 720,
+    "prefix": [
+      0,
+      1
+    ],
+    "production_global_bfs_db": 4.682069051520382
+  },
+  {
+    "absolute_difference_db": 0.0,
+    "cached_global_bfs_db": 4.699529235180638,
+    "candidate_id": "e_1a30e83a0382",
+    "paths_checked": 5760,
+    "permutations_checked": 720,
+    "prefix": [
+      3,
+      7
+    ],
+    "production_global_bfs_db": 4.699529235180638
+  },
+  {
+    "absolute_difference_db": 0.0,
+    "cached_global_bfs_db": 4.699529235180638,
+    "candidate_id": "e_1a30e83a0382",
+    "paths_checked": 5760,
+    "permutations_checked": 720,
+    "prefix": [
+      7,
+      6
+    ],
+    "production_global_bfs_db": 4.699529235180638
+  }
+]

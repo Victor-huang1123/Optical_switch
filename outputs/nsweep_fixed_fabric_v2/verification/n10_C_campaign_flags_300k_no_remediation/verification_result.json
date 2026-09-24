@@ -1,0 +1,43 @@
+{
+  "astar_calls": 311,
+  "audit": {
+    "bend_radius_legality": 0,
+    "legacy_drc": 0,
+    "perpendicular_clearance": 20,
+    "same_net_min_spacing": 99
+  },
+  "failed_edge_payload": [
+    {
+      "edge_id": "input:w4->waksman_10x10_s0_w4_5.in",
+      "message": "cannot route I4->O4 with bounded multi-hop fallback at waksman_10x10_s4_w0_4.drop->waksman_10x10_s5_w4_6.in: cannot route waksman_10x10_s4_w0_4.drop to waksman_10x10_s5_w4_6.in on physical grid; same_net_samples=same_net_touch at=(968.000,444.000) prior=(968.000,448.000)->(968.000,416.000) | same_net_touch at=(973.000,448.000) prior=(993.000,448.000)->(968.000,448.000) | same_net_touch at=(968.000,431.000) prior=(968.000,448.000)->(968.000,416.000) counters=port_access:0,window:0,same_net:63,crossing_candidate:0,crossing_budget:0,hard_reserved_crossing:0,soft_repeated_crossing:0,soft_reserved_crossing:0,reserved_spacing:0,segment:20,pops:92,max_heap:30"
+    },
+    {
+      "edge_id": "stage:0:w4:waksman_10x10_s0_w4_5.th->waksman_10x10_s1_w4_6.in:w4",
+      "message": "cannot route I4->O4 with bounded multi-hop fallback at waksman_10x10_s4_w0_4.drop->waksman_10x10_s5_w4_6.in: cannot route waksman_10x10_s4_w0_4.drop to waksman_10x10_s5_w4_6.in on physical grid; same_net_samples=same_net_touch at=(968.000,444.000) prior=(968.000,448.000)->(968.000,416.000) | same_net_touch at=(973.000,448.000) prior=(993.000,448.000)->(968.000,448.000) | same_net_touch at=(968.000,431.000) prior=(968.000,448.000)->(968.000,416.000) counters=port_access:0,window:0,same_net:63,crossing_candidate:0,crossing_budget:0,hard_reserved_crossing:0,soft_repeated_crossing:0,soft_reserved_crossing:0,reserved_spacing:0,segment:20,pops:92,max_heap:30"
+    },
+    {
+      "edge_id": "stage:1:w4:waksman_10x10_s1_w4_6.th->waksman_10x10_s2_w0_4.add:w4",
+      "message": "cannot route I4->O4 with bounded multi-hop fallback at waksman_10x10_s4_w0_4.drop->waksman_10x10_s5_w4_6.in: cannot route waksman_10x10_s4_w0_4.drop to waksman_10x10_s5_w4_6.in on physical grid; same_net_samples=same_net_touch at=(968.000,444.000) prior=(968.000,448.000)->(968.000,416.000) | same_net_touch at=(973.000,448.000) prior=(993.000,448.000)->(968.000,448.000) | same_net_touch at=(968.000,431.000) prior=(968.000,448.000)->(968.000,416.000) counters=port_access:0,window:0,same_net:63,crossing_candidate:0,crossing_budget:0,hard_reserved_crossing:0,soft_repeated_crossing:0,soft_reserved_crossing:0,reserved_spacing:0,segment:20,pops:92,max_heap:30"
+    },
+    {
+      "edge_id": "stage:2:w4:waksman_10x10_s2_w0_4.drop->waksman_10x10_s4_w0_4.add:w4",
+      "message": "cannot route I4->O4 with bounded multi-hop fallback at waksman_10x10_s4_w0_4.drop->waksman_10x10_s5_w4_6.in: cannot route waksman_10x10_s4_w0_4.drop to waksman_10x10_s5_w4_6.in on physical grid; same_net_samples=same_net_touch at=(968.000,444.000) prior=(968.000,448.000)->(968.000,416.000) | same_net_touch at=(973.000,448.000) prior=(993.000,448.000)->(968.000,448.000) | same_net_touch at=(968.000,431.000) prior=(968.000,448.000)->(968.000,416.000) counters=port_access:0,window:0,same_net:63,crossing_candidate:0,crossing_budget:0,hard_reserved_crossing:0,soft_repeated_crossing:0,soft_reserved_crossing:0,reserved_spacing:0,segment:20,pops:92,max_heap:30"
+    },
+    {
+      "edge_id": "stage:4:w4:waksman_10x10_s4_w0_4.drop->waksman_10x10_s5_w4_6.in:w4",
+      "message": "cannot route I4->O4 with bounded multi-hop fallback at waksman_10x10_s4_w0_4.drop->waksman_10x10_s5_w4_6.in: cannot route waksman_10x10_s4_w0_4.drop to waksman_10x10_s5_w4_6.in on physical grid; same_net_samples=same_net_touch at=(968.000,444.000) prior=(968.000,448.000)->(968.000,416.000) | same_net_touch at=(973.000,448.000) prior=(993.000,448.000)->(968.000,448.000) | same_net_touch at=(968.000,431.000) prior=(968.000,448.000)->(968.000,416.000) counters=port_access:0,window:0,same_net:63,crossing_candidate:0,crossing_budget:0,hard_reserved_crossing:0,soft_repeated_crossing:0,soft_reserved_crossing:0,reserved_spacing:0,segment:20,pops:92,max_heap:30"
+    },
+    {
+      "edge_id": "stage:5:w4:waksman_10x10_s5_w4_6.th->waksman_10x10_s6_w4_5.in:w4",
+      "message": "cannot route I4->O4 with bounded multi-hop fallback at waksman_10x10_s4_w0_4.drop->waksman_10x10_s5_w4_6.in: cannot route waksman_10x10_s4_w0_4.drop to waksman_10x10_s5_w4_6.in on physical grid; same_net_samples=same_net_touch at=(968.000,444.000) prior=(968.000,448.000)->(968.000,416.000) | same_net_touch at=(973.000,448.000) prior=(993.000,448.000)->(968.000,448.000) | same_net_touch at=(968.000,431.000) prior=(968.000,448.000)->(968.000,416.000) counters=port_access:0,window:0,same_net:63,crossing_candidate:0,crossing_budget:0,hard_reserved_crossing:0,soft_repeated_crossing:0,soft_reserved_crossing:0,reserved_spacing:0,segment:20,pops:92,max_heap:30"
+    },
+    {
+      "edge_id": "output:waksman_10x10_s6_w4_5.th->w4",
+      "message": "cannot route I4->O4 with bounded multi-hop fallback at waksman_10x10_s4_w0_4.drop->waksman_10x10_s5_w4_6.in: cannot route waksman_10x10_s4_w0_4.drop to waksman_10x10_s5_w4_6.in on physical grid; same_net_samples=same_net_touch at=(968.000,444.000) prior=(968.000,448.000)->(968.000,416.000) | same_net_touch at=(973.000,448.000) prior=(993.000,448.000)->(968.000,448.000) | same_net_touch at=(968.000,431.000) prior=(968.000,448.000)->(968.000,416.000) counters=port_access:0,window:0,same_net:63,crossing_candidate:0,crossing_budget:0,hard_reserved_crossing:0,soft_repeated_crossing:0,soft_reserved_crossing:0,reserved_spacing:0,segment:20,pops:92,max_heap:30"
+    }
+  ],
+  "failed_edges": 7,
+  "pass": false,
+  "remediation_events": [],
+  "route_wall_s": 3736.99489132897
+}

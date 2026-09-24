@@ -1,0 +1,7 @@
+topology,n_logical,n_physical,n_mrr,n_stages
+padded_benes_4x4,4,4,6,3
+waksman_4x4,4,4,5,3
+spanke_benes_4x4,4,4,6,5
+padded_benes_8x8,5,8,20,5
+waksman_5x5,5,5,8,5
+spanke_benes_5x5,5,5,10,7

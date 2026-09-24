@@ -12,13 +12,14 @@ Single source of truth. All implementation must conform to the sections below.
 W = 1,  λ = λ₀                              (single wavelength, space-division)
 s_i ∈ {0, 1}                               (0 = through/detuned, 1 = drop/resonant)
 Unidirectional propagation (input → output)
-θ_i = 0                                    (no MRR rotation, v1)
+θ_i = 0                                    (no MRR rotation, v2)
 No process variation; no thermal coupling beyond hard spacing constraint
 No device-level BO; MRR cells from fixed library L_MRR
-N_logical = 6;  both topologies run in parallel
+N_logical is parameterized; topologies are padded Beneš, Waksman, and Spanke-Beneš
+Physical routing claims are bounded to N_physical <= 8 for v2
 ```
 
-These assumptions are locked for v1. Extensions (WDM, process variation, rotation) go to future work and must be flagged `# FUTURE` in code.
+These assumptions are locked for v2. Extensions (WDM, process variation, rotation, N=16 physical routing) go to future work and must be flagged `# FUTURE` in code.
 
 ---
 
@@ -64,12 +65,12 @@ Mock data is acceptable for v1. Pipeline correctness takes priority over calibra
 
 ## §2 Topology Abstraction Layer
 
-Both topologies implement the same interface. This is the foundation of contribution 4.
+All supported topologies implement the same interface. This is the foundation of the topology-agnostic evaluation layer.
 
 ```python
 class RNBTopology:
-    N_logical:  int    # active port count  (6)
-    N_physical: int    # actual port count  (8 for Padded Beneš, 6 for SB)
+    N_logical:  int    # active port count
+    N_physical: int    # actual port count  (padded for Padded Beneš)
     n_MRR:      int    # total MRR count
     n_stages:   int    # worst-case path depth
 
@@ -79,26 +80,48 @@ class RNBTopology:
     def has_native_crossings(self) -> bool: ...
 ```
 
-### §2a — Padded 8×8 Beneš
+### §2a — Padded Beneš
 
 ```text
-N_logical = 6,  N_physical = 8
-n_MRR    = (N_physical/2) × (2·log₂(N_physical)−1) = 4×5 = 20
-n_stages = 2·log₂(8)−1 = 5
-Blocked:  input ports {6,7}, output ports {6,7}
+N_logical is parameterized
+N_physical = P = 2^ceil(log₂(N_logical))
+n_MRR    = (P/2) × (2·log₂(P)−1)
+n_stages = 2·log₂(P)−1
+Blocked:  input/output ports {N_logical..P−1}
 Routing:  standard recursive Beneš looping algorithm
 has_native_crossings = True
 ```
 
-### §2b — Native 6×6 Spanke–Beneš
+Default v2 smoke case remains `N_logical = 6`, `N_physical = 8`,
+`n_MRR = 20`, `n_stages = 5`.
+
+### §2b — Native Spanke–Beneš
 
 ```text
-N_logical = N_physical = 6
-n_MRR    = N(N−1)/2 = 15
-n_stages = 2N−3 = 9
-Routing:  planar n-stage construction
+N_logical is parameterized
+N_physical = N_logical
+n_MRR    = N(N−1)/2
+n_stages = 2N−3
+Routing:  planar odd/even transposition construction
 has_native_crossings = False
 ```
+
+Default v2 smoke case remains `N_logical = N_physical = 6`,
+`n_MRR = 15`, `n_stages = 9`.
+
+### §2c — Waksman
+
+```text
+N_logical is parameterized
+N_physical = N_logical
+n_MRR    = sum(len(stage_pairs))
+n_stages = len(stage_pairs)
+Routing:  recursive Waksman state assignment over the generated stage tree
+has_native_crossings = True
+```
+
+Default v2 smoke case remains `N_logical = N_physical = 6`,
+`n_MRR = 11`, `n_stages = 5`.
 
 ---
 
@@ -441,4 +464,162 @@ Validation:
   "Uncalibrated analytic surrogate" baseline omitted (kills main claim)
   Breakeven analysis missing from topology comparison
   Π_eval permutations used during training
+```
+
+---
+
+## §14 Physical Router — Waveguide-Aware Routing Constraints
+
+This section specifies correctness requirements for the Manhattan A\* physical router
+(`router.py`). All items below are **hard requirements** for DRC-clean, physically
+fabricable layouts.
+
+---
+
+### §14.1 Root Causes of Routing Failures
+
+Two distinct failure modes arise when multiple routes share an inter-stage corridor:
+
+**Failure A — Touching-corner (T-junction DRC violation)**
+One route's A\* segment passes through the INTERIOR of another route's bend point
+(waypoint). This creates a T-junction: one endpoint of route A lands on the interior
+of route B, or vice versa. The DRC rule `touching_corner` fires.
+
+Root cause: A\* routes sequentially. Route B does not know that route A will place a
+bend at a specific x-column. Both routes independently choose nearby x-columns for
+their bends, and one ends up passing through the other's corner.
+
+**Failure B — Corridor knot (rectangular loop)**
+Route A turns too late in the corridor (bend close to the right-side cell column).
+Route A's horizontal output segment then blocks route B from travelling along the same
+y-level. Route B must detour: travel past route A's bend, turn, come back, forming a
+rectangular loop with route A. This also manifests as `touching_corner` at the corners
+of the rectangle, and produces routes with excessive bend count.
+
+Root cause: A\* minimises Manhattan distance independently per route. Without knowledge
+of later routes, route A freely selects a late bend position that maximally blocks the
+corridor for route B.
+
+---
+
+### §14.2 Port-Aware Corridor Staggering
+
+**Principle:** In each inter-stage corridor, routes whose y-destination is lower should
+make their vertical transition EARLIER (smaller x); routes whose y-destination is higher
+should transition LATER (larger x). This is the Manhattan routing analogue of VLSI
+dogleg ordering.
+
+**Why this fixes Failure B:**
+After staggering, no route's horizontal output segment overlaps the vertical transition
+zone of any other route in the same corridor. Routes cross each other's y-levels cleanly
+without one blocking the other's path.
+
+**Implementation — occupied bend points in `_route_physical_order`:**
+
+Before routing each net, accumulate the intermediate waypoints (bend points) of all
+already-routed nets into a set `occupied_bends`. Pass this set as additional
+`forbidden_points` for the current net's A\* calls.
+
+```python
+occupied_bends: set[Point] = set()
+
+for path in order:
+    net_forbidden = (forbidden_points_by_input or {}).get(path.input_port, set())
+    route = _route_one_path(
+        ...,
+        forbidden_points=net_forbidden | occupied_bends,
+    )
+    routes.append(route)
+    occupied.extend(route.external_segments)
+    occupied.extend(route.local_segments)
+    # Register this route's bend points (intermediate waypoints only, not src/dst)
+    occupied_bends.update(route.waypoints[1:-1])
+```
+
+**Effect on A\*:** When the current net's A\* proposes a segment whose interior contains
+a point in `occupied_bends`, `_segment_hits_forbidden_point` returns True and the
+segment is blocked. The A\* naturally finds a path that bends at a different x-column —
+the "advance the turn point" behaviour described in §14.3.
+
+**Scope:** `occupied_bends` is rebuilt fresh each routing pass (each call to
+`_route_physical_order`). It covers only the **external** waypoints (inter-stage
+corridor bends), not local cell-internal segment points.
+
+**Interaction with `allowed_touch_points`:** The A\* for each segment already passes
+`allowed_touch_points=(src, dst)`. Cell escape points are always the src or dst of an
+A\* call, so they are always in `allowed_touch_points` and are never blocked even if
+they coincidentally appear in `occupied_bends`.
+
+---
+
+### §14.3 A\* Backtrack Interpretation
+
+The "backtrack to last turn point, advance forward, re-turn" behaviour described
+informally maps directly onto the standard A\* mechanism once §14.2 is in place:
+
+- Blocking a segment that passes through an occupied bend → that A\* branch is pruned.
+- The A\* heap contains alternative branches that bent at EARLIER or LATER x-columns.
+- The branch with a bend at a free x-column is the lowest-cost surviving path.
+
+No explicit backtracking logic or state machine is needed. The A\* handles it
+implicitly through the priority queue.
+
+---
+
+### §14.4 Minimum Bend-to-Bend Distance (Hard Block)
+
+**Physical constraint:** A waveguide executing two consecutive 90° bends requires a
+minimum straight segment between them equal to `2 × bend_radius_um` (≈ 10 μm for
+`bend_radius_um = 5 μm`). A bend separation smaller than this causes the two bend
+arcs to physically overlap — the layout is unfabricable.
+
+**Current gap:** `turn_guard_um = 16 μm` protects the distance from the segment src/dst
+to the first/last bend, but does NOT enforce minimum distance between two consecutive
+bends in the MIDDLE of a route. The `same_net_hairpin` penalty (200 μm) discourages
+but does NOT hard-block close bends on the same net.
+
+**Grid pitch hazard:** `grid_pitch_um = 8 μm` < `2 × bend_radius_um = 10 μm`. A
+one-grid-step jog has only 8 μm between its two bends — physically invalid.
+
+**Required fix — track last bend in A\* state or post-filter:**
+
+Option A (A\* state extension): Extend the A\* state to `(x, y, direction,
+last_bend_x, last_bend_y)`. When a new direction change is proposed, check:
+`_manhattan(current_point, last_bend) >= 2 * bend_radius_um`. If not, block the
+transition. This is a hard block, not a penalty.
+
+Option B (post-route hard validation): After constructing the waypoint list, scan
+consecutive bend-to-bend distances. If any pair is closer than `2 × bend_radius_um`,
+raise `RoutingError` so the route is marked failed and rip-up is triggered.
+
+Option B is simpler to implement and preferred for v1. Add validation in
+`_route_one_path` immediately after assembling `points`.
+
+**Relationship to §14.2:** Port-aware staggering (§14.2) largely eliminates the
+conditions that force A\* into small jogs. §14.4 is the safety net for residual cases.
+
+---
+
+### §14.5 Red Flags for Physical Routing
+
+```text
+Occupied bends:
+  occupied_bends rebuilt only once per topology run, not per routing pass
+  occupied_bends includes local (cell-internal) segment waypoints
+  allowed_touch_points not set to (src, dst) when forbidden_points is non-empty
+
+Minimum bend distance:
+  Same-net hairpin penalty used as a substitute for a hard bend-distance block
+  Minimum distance enforced only near src/dst, not between consecutive mid-route bends
+  grid_pitch_um increased without re-verifying 2*bend_radius_um < grid_pitch_um
+
+Port-aware staggering:
+  All routes in a corridor get the same x-slot (staggering not applied)
+  Staggering applied globally instead of per corridor
+  Routes re-routed in rip-up pass without rebuilding occupied_bends from scratch
+
+General:
+  touching_corner DRC violations accepted as "acceptable crossings"
+  Small jog (< 2*bend_radius_um bend-to-bend) present in final routed layout
+  Rectangular loop (knot) pattern present between two routes in the same corridor
 ```

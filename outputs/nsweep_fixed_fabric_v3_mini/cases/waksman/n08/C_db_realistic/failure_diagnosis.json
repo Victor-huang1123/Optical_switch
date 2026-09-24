@@ -1,0 +1,14 @@
+{
+  "blocked_hop": "waksman_8x8_s2_w2_6.drop->O6",
+  "blocked_net": "I6->O6",
+  "budget_limited": false,
+  "diagnosis": "v3 geometry regression: routable with legacy v2 port geometry; final I6->O6 hop is blocked by the wider v3 foreign I3 port-access region",
+  "failure_class": "port_access_overlap_foreign",
+  "failure_signature": "I6->O6:final_hop=waksman_8x8_s2_w2_6.drop->O6:foreign_region=I3/waksman_8x8_s2_w3_7.in:pops=10220",
+  "foreign_port_access_owner": "I3",
+  "foreign_port_access_region": "waksman_8x8_s2_w3_7.in",
+  "frontier_pops": 10220,
+  "status": "route_failed",
+  "v2_status": "complete",
+  "v2_worst_il_db": 3.7984212059855453
+}

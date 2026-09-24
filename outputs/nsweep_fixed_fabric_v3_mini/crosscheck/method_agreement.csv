@@ -1,0 +1,12 @@
+topology,N,config,worst_il_exhaustive_db,worst_il_path_db,equal,gap_db
+padded_benes,4,B_db_placeholder,2.5123910030117442,2.5123910030117442,True,0.0
+waksman,4,B_db_placeholder,2.5858511866719995,2.5858511866719995,True,0.0
+padded_benes,4,C_db_realistic,1.193164478881483,1.193164478881483,True,0.0
+waksman,4,C_db_realistic,0.7200303649724418,0.7200303649724418,True,0.0
+padded_benes,6,B_db_placeholder,4.438152035010802,4.438152035010802,True,0.0
+waksman,6,B_db_placeholder,4.043649304612891,4.043649304612891,True,0.0
+padded_benes,6,C_db_realistic,2.4876633792340335,2.4876633792340335,True,0.0
+waksman,6,C_db_realistic,1.6377835545209907,1.6377835545209907,True,0.0
+padded_benes,8,B_db_placeholder,4.574819091965323,4.574819091965323,True,0.0
+waksman,8,B_db_placeholder,4.906406516240353,4.906406516240353,True,0.0
+padded_benes,8,C_db_realistic,2.4876633792340335,2.4876633792340335,True,0.0

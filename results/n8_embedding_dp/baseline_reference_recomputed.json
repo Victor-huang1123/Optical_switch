@@ -1,0 +1,17 @@
+{
+  "all_permutation_optima_match_previous": true,
+  "bfs_quantiles": [
+    4.826237198448586,
+    5.093320181939005,
+    5.181320181939005
+  ],
+  "evaluator": "current analysis.fabric_loss._evaluate_path_loss",
+  "global_wil_bfs_db": 5.181320181939005,
+  "global_wil_opt_assignment_db": 5.181320181939005,
+  "opt_quantiles": [
+    4.684405345376791,
+    5.077612218671056,
+    5.181320181939005
+  ],
+  "source": "previous experiment frozen baseline geometry"
+}

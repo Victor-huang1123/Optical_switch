@@ -1,0 +1,218 @@
+[
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": 1,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(501.000,572.000)->(501.000,247.000) window=(440.000,1122.000,490.000,662.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 3
+  },
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": -1,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(501.000,572.000)->(501.000,247.000) window=(440.000,1122.000,490.000,662.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 3
+  },
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": 2,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(493.000,572.000)->(493.000,247.000) window=(432.000,1130.000,482.000,670.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 4
+  },
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": -2,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(493.000,572.000)->(493.000,247.000) window=(432.000,1130.000,482.000,670.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 4
+  },
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": 1,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(501.000,572.000)->(501.000,721.000) window=(432.000,1130.000,482.000,670.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 3
+  },
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": -1,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(501.000,572.000)->(501.000,721.000) window=(432.000,1130.000,482.000,670.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 3
+  },
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": 2,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(493.000,572.000)->(493.000,721.000) window=(424.000,1138.000,474.000,678.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 4
+  },
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": -2,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(493.000,572.000)->(493.000,721.000) window=(424.000,1138.000,474.000,678.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 4
+  },
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": 1,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(501.000,572.000)->(501.000,721.000) window=(424.000,1138.000,474.000,678.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 3
+  },
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": -1,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(501.000,572.000)->(501.000,721.000) window=(424.000,1138.000,474.000,678.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 3
+  },
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": 2,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(493.000,572.000)->(493.000,721.000) window=(416.000,1146.000,466.000,686.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 4
+  },
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": -2,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(493.000,572.000)->(493.000,721.000) window=(416.000,1146.000,466.000,686.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 4
+  },
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": 1,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(501.000,572.000)->(501.000,721.000) window=(416.000,1146.000,466.000,686.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 3
+  },
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": -1,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(501.000,572.000)->(501.000,721.000) window=(416.000,1146.000,466.000,686.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 3
+  },
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": 2,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(493.000,572.000)->(493.000,721.000) window=(408.000,1154.000,458.000,694.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 4
+  },
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": -2,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(493.000,572.000)->(493.000,721.000) window=(408.000,1154.000,458.000,694.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 4
+  },
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": 1,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(501.000,572.000)->(501.000,721.000) window=(408.000,1154.000,458.000,694.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 3
+  },
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": -1,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(501.000,572.000)->(501.000,721.000) window=(408.000,1154.000,458.000,694.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 3
+  },
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": 2,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(493.000,572.000)->(493.000,721.000) window=(400.000,1162.000,450.000,702.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 4
+  },
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": -2,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(493.000,572.000)->(493.000,721.000) window=(400.000,1162.000,450.000,702.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 4
+  },
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": 1,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(501.000,572.000)->(501.000,721.000) window=(400.000,1162.000,450.000,702.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 3
+  },
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": -1,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(501.000,572.000)->(501.000,721.000) window=(400.000,1162.000,450.000,702.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 3
+  },
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": 2,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(493.000,572.000)->(493.000,721.000) window=(392.000,1170.000,442.000,710.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 4
+  },
+  {
+    "displaced_hop_index": 3,
+    "displacement_tracks": -2,
+    "error": "cannot route I4->O4 with bounded multi-hop fallback at waksman_12x12_s2_w0_4.drop->waksman_12x12_s4_w0_4.add: riser-displaced deterministic hop candidate outside route window: segment=(493.000,572.000)->(493.000,721.000) window=(392.000,1170.000,442.000,710.000)",
+    "input_port": 4,
+    "status": "failed",
+    "trigger_hop_index": 4,
+    "window_expansion_tracks": 4
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "N": 10,
+  "astar_calls": 26,
+  "bend_radius_legality": 0,
+  "bends": 189,
+  "config": "B_db_placeholder",
+  "crossing_clearance": 0,
+  "crossings": 106,
+  "distinct_crossing_pairs": 32,
+  "eval_error": null,
+  "explicit_crossings": true,
+  "failed_edges": 0,
+  "legacy_drc": 0,
+  "max_pair_multiplicity": 6,
+  "perpendicular_clearance": 1,
+  "pops": 100000,
+  "route_wall_s": 270.05293415719643,
+  "same_net_min_spacing": 0,
+  "topology": "waksman",
+  "worst_il_db": 7.017118299879896
+}

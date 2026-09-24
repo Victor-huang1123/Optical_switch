@@ -1,0 +1,22 @@
+{
+  "bend_pairs_lt_2r": 0,
+  "bend_radius_legality_count": 0,
+  "config": "C_db_realistic",
+  "failed_edges": 0,
+  "geometry_sha256": "3f044ddee6dd3e94f0ec4836ac183ac463971bf47a685df0860aa47d59d7534d",
+  "min_cross_net_perpendicular_clearance_um": 4.0,
+  "min_same_net_spacing_um": 3.0,
+  "n_logical": 8,
+  "old_drc_count": 0,
+  "perpendicular_clearance_count": 5,
+  "png_path": "outputs/routing_upgrade_test/benes8/C_db_realistic/fixed_fabric_layout.png",
+  "routed_edges": 48,
+  "same_net_min_spacing_count": 14,
+  "topology": "Padded Bene\u0161",
+  "total_crossings": 62,
+  "total_route_length_um": 14996.446785945534,
+  "wall_clock_s": 64.55194090299483,
+  "worst_insertion_loss_db": 2.5266925829072386,
+  "worst_path_crossings": 18,
+  "worst_path_length_um": 2237.641577581413
+}

@@ -1,0 +1,68 @@
+§4: N=4: 16 composed embeddings × 24 permutations PASS
+§4: N=6: 64 composed embeddings × 720 permutations PASS
+§21: N=8 131072 LUT states / path rows and all 40320 BFS assignments verified.
+§9–10 DP root.U.U N=2: 2 raw, 2 retained, 2 boundary states
+§9–10 DP root.U.L N=2: 2 raw, 2 retained, 2 boundary states
+§9–10 DP root.U N=4: 16 raw, 16 retained, 16 boundary states
+§9–10 DP root.L.U N=2: 2 raw, 2 retained, 2 boundary states
+§9–10 DP root.L.L N=2: 2 raw, 2 retained, 2 boundary states
+§9–10 DP root.L N=4: 16 raw, 16 retained, 16 boundary states
+§9–10 DP root N=8: 1024 raw, 576 retained, 64 boundary states
+§7–8 proxy 64/1024; 64 unique geometries; F=5.126329064
+§7–8 proxy 128/1024; 128 unique geometries; F=5.126329064
+§7–8 proxy 192/1024; 192 unique geometries; F=5.126329064
+§7–8 proxy 256/1024; 256 unique geometries; F=5.126329064
+§7–8 proxy 320/1024; 320 unique geometries; F=5.126329064
+§7–8 proxy 384/1024; 384 unique geometries; F=5.126329064
+§7–8 proxy 448/1024; 448 unique geometries; F=5.126329064
+§7–8 proxy 512/1024; 512 unique geometries; F=5.126329064
+§7–8 proxy 576/1024; 576 unique geometries; F=6.619077933
+§7–8 proxy 640/1024; 640 unique geometries; F=6.619077933
+§7–8 proxy 704/1024; 704 unique geometries; F=6.619077933
+§7–8 proxy 768/1024; 768 unique geometries; F=6.619077933
+§7–8 proxy 832/1024; 832 unique geometries; F=6.619077933
+§7–8 proxy 896/1024; 896 unique geometries; F=6.619077933
+§7–8 proxy 960/1024; 960 unique geometries; F=6.619077933
+§7–8 proxy 1024/1024; 1024 unique geometries; F=6.619077933
+STAGE 1 COMPLETE: 1024 geometries; 24 queued routes. No A* called.
+Traceback (most recent call last):
+  File "/home/jchuang/Optical_switch/experiments/n8_waksman_embedding_dp.py", line 753, in <module>
+    main()
+  File "/home/jchuang/Optical_switch/experiments/n8_waksman_embedding_dp.py", line 736, in main
+    from n8_embedding_dp_report import report
+ModuleNotFoundError: No module named 'n8_embedding_dp_report'
+§9–10 DP root.U.U N=2: 2 raw, 2 retained, 2 boundary states
+§9–10 DP root.U.L N=2: 2 raw, 2 retained, 2 boundary states
+§9–10 DP root.U N=4: 16 raw, 16 retained, 16 boundary states
+§9–10 DP root.L.U N=2: 2 raw, 2 retained, 2 boundary states
+§9–10 DP root.L.L N=2: 2 raw, 2 retained, 2 boundary states
+§9–10 DP root.L N=4: 16 raw, 16 retained, 16 boundary states
+§9–10 DP root N=8: 1024 raw, 576 retained, 64 boundary states
+§7–8 proxy 64/1024; 64 unique geometries; F=5.126329064
+§7–8 proxy 128/1024; 128 unique geometries; F=5.126329064
+§7–8 proxy 192/1024; 192 unique geometries; F=5.126329064
+§7–8 proxy 256/1024; 256 unique geometries; F=5.126329064
+§7–8 proxy 320/1024; 320 unique geometries; F=5.126329064
+§7–8 proxy 384/1024; 384 unique geometries; F=5.126329064
+§7–8 proxy 448/1024; 448 unique geometries; F=5.126329064
+§7–8 proxy 512/1024; 512 unique geometries; F=5.126329064
+§7–8 proxy 576/1024; 576 unique geometries; F=6.619077933
+§7–8 proxy 640/1024; 640 unique geometries; F=6.619077933
+§7–8 proxy 704/1024; 704 unique geometries; F=6.619077933
+§7–8 proxy 768/1024; 768 unique geometries; F=6.619077933
+§7–8 proxy 832/1024; 832 unique geometries; F=6.619077933
+§7–8 proxy 896/1024; 896 unique geometries; F=6.619077933
+§7–8 proxy 960/1024; 960 unique geometries; F=6.619077933
+§7–8 proxy 1024/1024; 1024 unique geometries; F=6.619077933
+STAGE 1 COMPLETE: 1024 geometries; 24 queued routes. No A* called.
+STAGE 2 route 1/24: e_695b5f4fafd4 baseline/F
+ROUTE ROW FLUSHED e_695b5f4fafd4: success=True, 901.8s
+STAGE 2 route 2/24: e_2dc7ec51ea33 DP/A
+ROUTE ROW FLUSHED e_2dc7ec51ea33: success=False, 1702.1s
+STAGE 2 route 3/24: e_1a30e83a0382 DP/B
+ROUTE ROW FLUSHED e_1a30e83a0382: success=True, 298.5s
+STAGE 2 route 4/24: e_86a531d2390c DP/D
+STAGE 3 e_695b5f4fafd4: GLOBAL_WIL_OPT_ASSIGN=5.181320181939005; unique worst improved=0/256
+STAGE 3 e_1a30e83a0382: GLOBAL_WIL_OPT_ASSIGN=4.699529235180638; unique worst improved=256/256
+FINAL AUDIT PASS: protected hashes, frozen selection, single routing calls, identical rules, production evaluator crosschecks.
+FINAL AUDIT PASS: protected hashes, frozen selection, single routing calls, identical rules, production evaluator crosschecks.

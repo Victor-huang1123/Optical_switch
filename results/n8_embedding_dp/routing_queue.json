@@ -1,0 +1,146 @@
+[
+  {
+    "candidate_id": "e_695b5f4fafd4",
+    "dp_objective": "F",
+    "method": "baseline",
+    "priority": 1
+  },
+  {
+    "candidate_id": "e_2dc7ec51ea33",
+    "dp_objective": "A",
+    "method": "DP",
+    "priority": 2
+  },
+  {
+    "candidate_id": "e_1a30e83a0382",
+    "dp_objective": "B",
+    "method": "DP",
+    "priority": 2
+  },
+  {
+    "candidate_id": "e_86a531d2390c",
+    "dp_objective": "D",
+    "method": "DP",
+    "priority": 2
+  },
+  {
+    "candidate_id": "e_d0112ac00b04",
+    "dp_objective": "E",
+    "method": "DP",
+    "priority": 2
+  },
+  {
+    "candidate_id": "e_4a7af52980b9",
+    "dp_objective": "F",
+    "method": "DP",
+    "priority": 3
+  },
+  {
+    "candidate_id": "e_88f1d4a39899",
+    "dp_objective": "F",
+    "method": "DP",
+    "priority": 3
+  },
+  {
+    "candidate_id": "e_e398f7682f2b",
+    "dp_objective": "A",
+    "method": "greedy",
+    "priority": 4
+  },
+  {
+    "candidate_id": "e_1f075749476e",
+    "dp_objective": "F",
+    "method": "random_best",
+    "priority": 5
+  },
+  {
+    "candidate_id": "e_3afbd6fad098",
+    "dp_objective": "F",
+    "method": "random_best",
+    "priority": 5
+  },
+  {
+    "candidate_id": "e_b3b2b769ff12",
+    "dp_objective": "F",
+    "method": "random_median",
+    "priority": 5
+  },
+  {
+    "candidate_id": "e_e447f56aaabf",
+    "dp_objective": "F",
+    "method": "random_median",
+    "priority": 5
+  },
+  {
+    "candidate_id": "e_f91d4aa39080",
+    "dp_objective": "F",
+    "method": "random_median",
+    "priority": 5
+  },
+  {
+    "candidate_id": "e_b5af2e93a35b",
+    "dp_objective": "D",
+    "method": "DP",
+    "priority": 6
+  },
+  {
+    "candidate_id": "e_192058a57085",
+    "dp_objective": "A",
+    "method": "DP",
+    "priority": 6
+  },
+  {
+    "candidate_id": "e_db5005cd442a",
+    "dp_objective": "D",
+    "method": "DP",
+    "priority": 6
+  },
+  {
+    "candidate_id": "e_9b7a0f998e0e",
+    "dp_objective": "E",
+    "method": "DP",
+    "priority": 6
+  },
+  {
+    "candidate_id": "e_424e628c4496",
+    "dp_objective": "D",
+    "method": "DP",
+    "priority": 6
+  },
+  {
+    "candidate_id": "e_f2177bc058a9",
+    "dp_objective": "E",
+    "method": "DP",
+    "priority": 6
+  },
+  {
+    "candidate_id": "e_b2d37370151e",
+    "dp_objective": "A",
+    "method": "DP",
+    "priority": 6
+  },
+  {
+    "candidate_id": "e_cb05c13d043b",
+    "dp_objective": "B",
+    "method": "DP",
+    "priority": 6
+  },
+  {
+    "candidate_id": "e_be35b10a4c1c",
+    "dp_objective": "D",
+    "method": "DP",
+    "priority": 6
+  },
+  {
+    "candidate_id": "e_b1ab39d6d92b",
+    "dp_objective": "A",
+    "method": "DP",
+    "priority": 6
+  },
+  {
+    "candidate_id": "e_f99795b9d563",
+    "dp_objective": "B",
+    "method": "DP",
+    "priority": 6
+  }
+]

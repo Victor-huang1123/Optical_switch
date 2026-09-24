@@ -1,0 +1,17 @@
+edge_id,kind,source,target,source_blocked,target_blocked
+input:w0->padded_benes_4x4_s0_w0_1.in,input,I0,padded_benes_4x4_s0_w0_1.in,False,False
+input:w1->padded_benes_4x4_s0_w0_1.add,input,I1,padded_benes_4x4_s0_w0_1.add,False,False
+input:w2->padded_benes_4x4_s0_w2_3.in,input,I2,padded_benes_4x4_s0_w2_3.in,False,False
+input:w3->padded_benes_4x4_s0_w2_3.add,input,I3,padded_benes_4x4_s0_w2_3.add,False,False
+stage:0:w0:padded_benes_4x4_s0_w0_1.th->padded_benes_4x4_s1_w0_2.in:w0,interstage,padded_benes_4x4_s0_w0_1.th,padded_benes_4x4_s1_w0_2.in,False,False
+stage:0:w1:padded_benes_4x4_s0_w0_1.drop->padded_benes_4x4_s1_w1_3.in:w1,interstage,padded_benes_4x4_s0_w0_1.drop,padded_benes_4x4_s1_w1_3.in,False,False
+stage:0:w2:padded_benes_4x4_s0_w2_3.th->padded_benes_4x4_s1_w0_2.add:w2,interstage,padded_benes_4x4_s0_w2_3.th,padded_benes_4x4_s1_w0_2.add,False,False
+stage:0:w3:padded_benes_4x4_s0_w2_3.drop->padded_benes_4x4_s1_w1_3.add:w3,interstage,padded_benes_4x4_s0_w2_3.drop,padded_benes_4x4_s1_w1_3.add,False,False
+stage:1:w0:padded_benes_4x4_s1_w0_2.th->padded_benes_4x4_s2_w0_1.in:w0,interstage,padded_benes_4x4_s1_w0_2.th,padded_benes_4x4_s2_w0_1.in,False,False
+stage:1:w1:padded_benes_4x4_s1_w1_3.th->padded_benes_4x4_s2_w0_1.add:w1,interstage,padded_benes_4x4_s1_w1_3.th,padded_benes_4x4_s2_w0_1.add,False,False
+stage:1:w2:padded_benes_4x4_s1_w0_2.drop->padded_benes_4x4_s2_w2_3.in:w2,interstage,padded_benes_4x4_s1_w0_2.drop,padded_benes_4x4_s2_w2_3.in,False,False
+stage:1:w3:padded_benes_4x4_s1_w1_3.drop->padded_benes_4x4_s2_w2_3.add:w3,interstage,padded_benes_4x4_s1_w1_3.drop,padded_benes_4x4_s2_w2_3.add,False,False
+output:padded_benes_4x4_s2_w0_1.th->w0,output,padded_benes_4x4_s2_w0_1.th,O0,False,False
+output:padded_benes_4x4_s2_w0_1.drop->w1,output,padded_benes_4x4_s2_w0_1.drop,O1,False,False
+output:padded_benes_4x4_s2_w2_3.th->w2,output,padded_benes_4x4_s2_w2_3.th,O2,False,False
+output:padded_benes_4x4_s2_w2_3.drop->w3,output,padded_benes_4x4_s2_w2_3.drop,O3,False,False

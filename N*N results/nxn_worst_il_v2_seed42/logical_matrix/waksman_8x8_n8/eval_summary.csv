@@ -1,0 +1,2 @@
+topology,layout,paths,worst_il_db,avg_il_db,il_p50_db,il_p90_db,il_p95_db,il_p99_db,worst_sxr_db,avg_sxr_db,sxr_p01_db,sxr_p05_db,sxr_violation_count,n_logical,n_physical,layer,seed,eval_mode,train_perms,eval_perms,n_mrr,n_stages,avg_crossing_count
+waksman_8x8,default,2400,5.095053714285364,3.312158538108615,3.2988665313031627,4.136960122794263,4.468006918539814,4.644006918539814,1.521981611229267,8.04880966165763,2.828384832963429,3.3201499935007686,2400,8,8,logical,42,sample,500,300,17,5,19.776666666666667

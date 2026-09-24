@@ -1,0 +1,3 @@
+{
+  "traceback": "Traceback (most recent call last):\n  File \"/home/jchuang/Optical_switch/experiments/n8_waksman_embedding_dp.py\", line 736, in main\n    from n8_embedding_dp_report import report\nModuleNotFoundError: No module named 'n8_embedding_dp_report'\n"
+}
