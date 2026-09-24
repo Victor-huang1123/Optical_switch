@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import subprocess
 import sys
+from dataclasses import replace
 from functools import lru_cache
 
 import matplotlib
@@ -99,7 +100,11 @@ from mrr_switch_optimizer.routing.physical import (
     route_physical_design,
     route_physical_paths,
 )
-from mrr_switch_optimizer.routing.route_grid import RouteGrid
+from mrr_switch_optimizer.routing.route_grid import (
+    CrossingFootprint,
+    RouteGrid,
+    crossing_footprint_conflict,
+)
 from mrr_switch_optimizer.routing.grid import (
     _astar_route,
     _insert_track,
@@ -117,6 +122,7 @@ from mrr_switch_optimizer.routing.port_access import (
     PortAccessRegion,
     _mrr_internal_points,
     _port_escape_point,
+    _port_route_point,
     _port_stub_point,
     _port_stub_segment,
     build_port_access_plan,
@@ -1348,6 +1354,51 @@ def test_port_access_overlap_is_owner_aware_and_blocks_external_astar() -> None:
     assert port_access_conflict(overlap, None, rules) is None
 
 
+def test_reserved_region_escalation_opens_only_foreign_outer_half() -> None:
+    plan, _region = _single_region_plan(owner=3)
+    foreign = PortAccessLegality(plan, current_net_id=7)
+    owner = PortAccessLegality(plan, current_net_id=3)
+    escalated = RoutingRules(
+        allow_foreign_outer_runway_transit=True,
+        strict_port_access=True,
+    )
+
+    outer_overlap = ((-14.0, 0.0), (-10.0, 0.0))
+    inner_overlap = ((-6.0, 0.0), (0.0, 0.0))
+    outer_crossing = ((-10.0, -10.0), (-10.0, 10.0))
+    inner_crossing = ((-3.0, -10.0), (-3.0, 10.0))
+
+    assert port_access_conflict(outer_overlap, foreign, escalated) is None
+    assert port_access_conflict(outer_crossing, foreign, escalated) is None
+    assert port_access_conflict(inner_overlap, foreign, escalated) == "port_access_overlap_foreign"
+    assert port_access_conflict(inner_crossing, foreign, escalated) == "port_access_crossing_foreign"
+    assert port_access_conflict(outer_overlap, owner, escalated) == "port_access_overlap_owner"
+
+
+def test_reserved_region_stage_two_staggers_add_drop_runway_one_track() -> None:
+    topology = WaksmanTopology()
+    cell = next(iter(build_cells(topology, MOCK_S_TABLE).values()))
+    base = RoutingRules(
+        grid_pitch_um=8.0,
+        legalize_port_access=True,
+        port_access_stagger_tracks=0,
+    )
+    staggered = replace(base, port_access_stagger_tracks=1)
+
+    for port in ("add", "drop"):
+        base_point = _port_route_point(cell, port, base, 2.0)
+        staggered_point = _port_route_point(cell, port, staggered, 2.0)
+        assert abs(staggered_point[0] - base_point[0]) == 8.0
+
+    for port in ("in", "th"):
+        assert _port_route_point(cell, port, base, 2.0) == _port_route_point(
+            cell,
+            port,
+            staggered,
+            2.0,
+        )
+
+
 def test_strict_port_access_rejects_non_owner_t_touch_but_not_owner() -> None:
     # A vertical wire whose endpoint lands on the interior of the corridor is a
     # T-touch (end-block), not a crossing.
@@ -1785,6 +1836,72 @@ def test_crossing_candidate_relaxes_default_clearance_only() -> None:
     assert relaxed is not None
     assert relaxed.location == (4.0, 0.0)
     assert strict is None
+
+
+def test_crossing_candidate_uses_merged_arms_on_both_nets() -> None:
+    rules = RoutingRules()
+    grid = RouteGrid((0.0, 4.0, 10.0, 20.0), (-20.0, -4.0, 0.0, 4.0, 20.0))
+    grid.mark_route(
+        1,
+        (
+            ((0.0, 0.0), (4.0, 0.0)),
+            ((4.0, 0.0), (20.0, 0.0)),
+        ),
+    )
+    crossing_rule = CrossingRule(
+        min_clearance_um=10.0,
+        candidate_entry_point=(10.0, -20.0),
+        defer_candidate_exit=True,
+    )
+
+    candidate = legal_crossing_candidate(
+        ((10.0, -4.0), (10.0, 4.0)),
+        grid,
+        rules,
+        owner_input=2,
+        crossing_rule=crossing_rule,
+        candidate_arm_segment=((10.0, -20.0), (10.0, 4.0)),
+    )
+
+    assert candidate is not None
+    assert candidate.crossed_segment == ((0.0, 0.0), (20.0, 0.0))
+    assert candidate.segment == ((10.0, -20.0), (10.0, 4.0))
+    assert legal_crossing_candidate(
+        ((10.0, -4.0), (10.0, 4.0)),
+        grid,
+        rules,
+        owner_input=2,
+        crossing_rule=replace(
+            crossing_rule,
+            candidate_entry_point=(10.0, -8.0),
+        ),
+        candidate_arm_segment=((10.0, -8.0), (10.0, 4.0)),
+    ) is None
+
+
+def test_crossing_footprint_permits_only_registered_through_arms() -> None:
+    footprint = CrossingFootprint(
+        location=(20.0, 20.0),
+        side_um=10.0,
+        horizontal_owner=1,
+        vertical_owner=2,
+    )
+
+    assert not crossing_footprint_conflict(
+        ((0.0, 20.0), (40.0, 20.0)), footprint, owner_input=1
+    )
+    assert not crossing_footprint_conflict(
+        ((20.0, 0.0), (20.0, 40.0)), footprint, owner_input=2
+    )
+    assert crossing_footprint_conflict(
+        ((0.0, 22.0), (40.0, 22.0)), footprint, owner_input=1
+    )
+    assert crossing_footprint_conflict(
+        ((20.0, 0.0), (20.0, 40.0)), footprint, owner_input=3
+    )
+    assert crossing_footprint_conflict(
+        ((0.0, 20.0), (20.0, 20.0)), footprint, owner_input=2
+    )
 
 
 def test_crossing_budget_rejects_second_crossing_between_same_pair() -> None:

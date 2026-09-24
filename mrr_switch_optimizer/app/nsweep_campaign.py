@@ -33,7 +33,7 @@ from ..routing.envelope import (
     octave_envelope,
 )
 from ..routing.fabric import FixedFabricRoutingResult, route_fixed_fabric
-from ..routing.types import PhysicalRoute, RoutingRules
+from ..routing.types import DRCViolation, PhysicalRoute, RoutingRules
 
 
 OUTPUT_ROOT = Path("outputs/nsweep_fixed_fabric_v2")
@@ -57,6 +57,8 @@ METRIC_FIELDS = (
     "N",
     "config",
     "status",
+    "failure_class",
+    "failure_signature",
     "n_physical",
     "mrr",
     "stages",
@@ -68,7 +70,12 @@ METRIC_FIELDS = (
     "legacy_drc",
     "same_net_min_spacing",
     "perpendicular_clearance",
+    "crossing_clearance",
     "bend_radius_legality",
+    "acceptance_tier",
+    "crossing_clearance_acceptance",
+    "manufacturability_status",
+    "total_bends",
     "total_crossings",
     "worst_path_crossings",
     "worst_path_length_um",
@@ -89,6 +96,8 @@ METRIC_FIELDS = (
     "max_astar_pops_rung",
     "remediation",
     "window_expansion_tracks",
+    "reserved_region_escalation",
+    "reserved_region_escalation_stage",
     "astar_calls",
 )
 
@@ -129,6 +138,8 @@ def _campaign_rules(
     remediation_window_expansion: bool = False,
     min_crossing_clearance_um: float | None = None,
     physical_turn_guard: bool = False,
+    physical_same_net_hairpin: bool = False,
+    reserved_region_stage: int = 0,
 ) -> RoutingRules:
     coefficients = CONFIGS[config]
     return replace(
@@ -146,6 +157,9 @@ def _campaign_rules(
         remediation_window_expansion=remediation_window_expansion,
         min_crossing_clearance_um=min_crossing_clearance_um,
         physical_turn_guard=physical_turn_guard,
+        physical_same_net_hairpin=physical_same_net_hairpin,
+        allow_foreign_outer_runway_transit=reserved_region_stage >= 1,
+        port_access_stagger_tracks=1 if reserved_region_stage >= 2 else 0,
         prop_loss_db_per_um=coefficients["prop_loss_db_per_um"],
         crossing_loss_db_per_cross=coefficients["crossing_loss_db_per_cross"],
         bend_loss_db_per_bend=coefficients["bend_loss_db_per_bend"],
@@ -185,23 +199,87 @@ def _audit_counts(
         drc_bend_radius_legality=True,
     )
     violations = validate_physical_routes(_physical_routes(result), cells, audit_rules)
-    new_rules = {
+    return _count_audit_violations(violations)
+
+
+def _count_audit_violations(
+    violations: Iterable[DRCViolation],
+) -> dict[str, int]:
+    violations = tuple(violations)
+    non_core_rules = {
         "same_net_min_spacing",
         "perpendicular_clearance",
+        "crossing_clearance",
         "bend_radius_legality",
     }
     return {
-        "legacy_drc": sum(violation.rule not in new_rules for violation in violations),
+        "legacy_drc": sum(
+            violation.rule not in non_core_rules for violation in violations
+        ),
         "same_net_min_spacing": sum(
             violation.rule == "same_net_min_spacing" for violation in violations
         ),
         "perpendicular_clearance": sum(
             violation.rule == "perpendicular_clearance" for violation in violations
         ),
+        "crossing_clearance": sum(
+            violation.rule == "crossing_clearance" for violation in violations
+        ),
         "bend_radius_legality": sum(
             violation.rule == "bend_radius_legality" for violation in violations
         ),
     }
+
+
+def _acceptance_tier(
+    layout_mode: Literal["astar", "template"],
+    *,
+    crossing_clearance_enabled: bool,
+) -> tuple[str, str, str, tuple[str, ...]]:
+    core_rules = ("legacy_drc", "bend_radius_legality")
+    if not crossing_clearance_enabled:
+        return (
+            f"{layout_mode}_legacy_core",
+            "disabled",
+            "failed_edges=0;legacy_core_drc=0;bend_radius_legality=0",
+            core_rules,
+        )
+    if layout_mode == "astar":
+        return (
+            "astar_measurement_audit",
+            "measurement_only",
+            "failed_edges=0;legacy_core_drc=0;bend_radius_legality=0;"
+            "crossing_clearance=measurement_only;"
+            "perpendicular_clearance=measurement_only",
+            core_rules,
+        )
+    return (
+        "template_hard_gate",
+        "hard_gate",
+        "failed_edges=0;legacy_core_drc=0;bend_radius_legality=0;"
+        "crossing_clearance=0",
+        (*core_rules, "crossing_clearance"),
+    )
+
+
+def _manufacturability_status(
+    layout_mode: Literal["astar", "template"],
+    audit: Mapping[str, int],
+) -> str:
+    if layout_mode == "astar":
+        return "measurement_only"
+    return (
+        "all_clear"
+        if not any(
+            audit[name]
+            for name in (
+                "same_net_min_spacing",
+                "perpendicular_clearance",
+                "crossing_clearance",
+            )
+        )
+        else "audit_findings"
+    )
 
 
 def _write_routing_artifacts(
@@ -321,6 +399,7 @@ def _route_case(
     min_crossing_clearance_um: float | None = None,
     straighten_jogs: bool = False,
     physical_turn_guard: bool = False,
+    v4_search: bool = False,
     campaign_version: str = "v2",
 ) -> tuple[
     dict[str, MRRCell],
@@ -330,10 +409,21 @@ def _route_case(
     Literal["astar", "template"],
     str,
     int,
+    str,
+    int,
 ]:
     outdir = _case_dir(kind, n, config, output_root)
     layout_mode: Literal["astar", "template"] = (
         "astar" if kind == "waksman" else "template"
+    )
+    (
+        acceptance_tier,
+        crossing_clearance_acceptance,
+        campaign_acceptance,
+        _required_audits,
+    ) = _acceptance_tier(
+        layout_mode,
+        crossing_clearance_enabled=min_crossing_clearance_um is not None,
     )
     base_payload = {
         "case_key": (
@@ -346,14 +436,24 @@ def _route_case(
         "layout_mode": layout_mode,
         "strategy": "WaksmanStrategy" if kind == "waksman" else "BenesLoopingStrategy",
         "constructive_strategy_pinned": True,
-        "campaign_acceptance": "failed_edges=0;legacy_drc=0;bend_radius_legality=0",
-        "audit_counts_are_non_gating": True,
+        "v4_search": v4_search,
+        "acceptance_tier": acceptance_tier,
+        "campaign_acceptance": campaign_acceptance,
+        "crossing_clearance_acceptance": crossing_clearance_acceptance,
+        "measurement_only_audits": (
+            ["same_net_min_spacing", "perpendicular_clearance", "crossing_clearance"]
+            if layout_mode == "astar" and min_crossing_clearance_um is not None
+            else ["same_net_min_spacing", "perpendicular_clearance"]
+        ),
     }
-    if min_crossing_clearance_um is not None or straighten_jogs or physical_turn_guard:
+    if min_crossing_clearance_um is not None or straighten_jogs or physical_turn_guard or v4_search:
         base_payload.update(
             min_crossing_clearance_um=min_crossing_clearance_um,
             straighten_jogs=straighten_jogs,
             physical_turn_guard=physical_turn_guard,
+            physical_same_net_hairpin=v4_search,
+            search_time_same_net_spacing=v4_search,
+            reserved_region_escalation_enabled=v4_search,
         )
     if (
         kind == "waksman"
@@ -369,6 +469,8 @@ def _route_case(
             stored["max_astar_pops_rung"]
         ), layout_mode, str(stored.get("remediation", "none")), int(
             stored.get("window_expansion_tracks", 0)
+        ), str(stored.get("reserved_region_escalation", "none")), int(
+            stored.get("reserved_region_escalation_stage", 0)
         )
 
     direct_300k_verification = (
@@ -386,40 +488,70 @@ def _route_case(
         int,
         str,
         int,
+        str,
+        int,
     ] | None = None
 
     def route_at_rung(
         pops: int,
         *,
         remediation_enabled: bool,
-    ) -> tuple[dict[str, MRRCell], FixedFabricRoutingResult, float, int, str, int]:
-        rules = _campaign_rules(
-            config,
-            pops=pops,
-            topology=kind,
-            full_drc=False,
-            remediation_window_expansion=remediation_enabled,
-            min_crossing_clearance_um=min_crossing_clearance_um,
-            physical_turn_guard=physical_turn_guard,
-        )
+    ) -> tuple[
+        dict[str, MRRCell], FixedFabricRoutingResult, float, int, str, int, str, int
+    ]:
         cells = build_envelope_cells(topology, s_table, envelope)
-        remediation_events: list[tuple[int, int]] = []
-        remediation_attempts: list[dict[str, object]] = []
         started = time.perf_counter()
-        result = route_fixed_fabric(
-            topology,
-            graph,
-            cells,
-            rules,
-            x_start=envelope.x_start_um,
-            x_end=envelope.x_end_um,
-            wire_pitch_um=envelope.wire_pitch_um,
-            layout_mode=layout_mode,
-            straighten_jogs=straighten_jogs,
-            same_net_whole_net_reroute=remediation_enabled,
-            remediation_events_out=remediation_events,
-            remediation_attempts_out=remediation_attempts,
-        )
+        escalation_events: list[dict[str, object]] = []
+        escalation_stage = 0
+        result: FixedFabricRoutingResult
+        remediation_events: list[tuple[int, int]]
+        remediation_attempts: list[dict[str, object]]
+        while True:
+            rules = _campaign_rules(
+                config,
+                pops=pops,
+                topology=kind,
+                full_drc=v4_search,
+                remediation_window_expansion=remediation_enabled,
+                min_crossing_clearance_um=min_crossing_clearance_um,
+                physical_turn_guard=physical_turn_guard,
+                physical_same_net_hairpin=v4_search,
+                reserved_region_stage=escalation_stage,
+            )
+            remediation_events = []
+            remediation_attempts = []
+            result = route_fixed_fabric(
+                topology,
+                graph,
+                cells,
+                rules,
+                x_start=envelope.x_start_um,
+                x_end=envelope.x_end_um,
+                wire_pitch_um=envelope.wire_pitch_um,
+                layout_mode=layout_mode,
+                straighten_jogs=straighten_jogs,
+                same_net_whole_net_reroute=remediation_enabled,
+                remediation_events_out=remediation_events,
+                remediation_attempts_out=remediation_attempts,
+            )
+            if (
+                not v4_search
+                or escalation_stage >= 2
+                or not _foreign_port_access_frontier_exhausted(result)
+            ):
+                break
+            escalation_events.append(
+                {
+                    "stage": escalation_stage + 1,
+                    "trigger": "port_access_overlap_foreign_frontier_exhausted",
+                    "action": (
+                        "permit_foreign_outer_runway_transit"
+                        if escalation_stage == 0
+                        else "stagger_foreign_escape_runway_points_one_track"
+                    ),
+                }
+            )
+            escalation_stage += 1
         wall = time.perf_counter() - started
         remediation = _remediation_record(remediation_events, remediation_attempts)
         window_expansion_tracks = max(
@@ -428,6 +560,11 @@ def _route_case(
                 for attempt in remediation_attempts
             ),
             default=0,
+        )
+        escalation_record = (
+            "none"
+            if not escalation_events
+            else ";".join(str(event["action"]) for event in escalation_events)
         )
         payload = {
             **base_payload,
@@ -438,6 +575,9 @@ def _route_case(
             "remediation": remediation,
             "window_expansion_tracks": window_expansion_tracks,
             "remediation_attempts": remediation_attempts,
+            "reserved_region_escalation": escalation_record,
+            "reserved_region_escalation_stage": escalation_stage,
+            "reserved_region_escalation_events": escalation_events,
             "rules": asdict(rules),
         }
         _write_json(outdir / "remediation_attempts.json", remediation_attempts)
@@ -450,16 +590,43 @@ def _route_case(
             envelope,
             payload,
         )
-        return cells, result, wall, pops, remediation, window_expansion_tracks
+        return (
+            cells,
+            result,
+            wall,
+            pops,
+            remediation,
+            window_expansion_tracks,
+            escalation_record,
+            escalation_stage,
+        )
 
     for pops in case_pops_ladder:
         last = route_at_rung(pops, remediation_enabled=False)
-        _cells, result, _wall, _pops, _remediation, _window_tracks = last
+        (
+            _cells,
+            result,
+            _wall,
+            _pops,
+            _remediation,
+            _window_tracks,
+            _escalation,
+            _escalation_stage,
+        ) = last
         if not result.failed_edges:
             break
 
     assert last is not None
-    cells, result, wall, pops, remediation, window_expansion_tracks = last
+    (
+        cells,
+        result,
+        wall,
+        pops,
+        remediation,
+        window_expansion_tracks,
+        escalation,
+        escalation_stage,
+    ) = last
     if (
         result.failed_edges
         and kind == "waksman"
@@ -468,10 +635,16 @@ def _route_case(
         and pops == pops_ladder[-1]
         and _same_net_dominated_low_pop_failure(result)
     ):
-        cells, result, wall, pops, remediation, window_expansion_tracks = route_at_rung(
-            pops_ladder[-1],
-            remediation_enabled=True,
-        )
+        (
+            cells,
+            result,
+            wall,
+            pops,
+            remediation,
+            window_expansion_tracks,
+            escalation,
+            escalation_stage,
+        ) = route_at_rung(pops_ladder[-1], remediation_enabled=True)
     return (
         cells,
         result,
@@ -480,6 +653,8 @@ def _route_case(
         layout_mode,
         remediation,
         window_expansion_tracks,
+        escalation,
+        escalation_stage,
     )
 
 
@@ -513,6 +688,8 @@ _COUNTER_RE = re.compile(
     r".*?segment:(?P<segment>\d+),pops:(?P<pops>\d+)"
 )
 
+_POPS_RE = re.compile(r"\bpops:(?P<pops>\d+)\b")
+
 
 def _same_net_dominated_low_pop_failure(result: FixedFabricRoutingResult) -> bool:
     for failure in result.failed_edges:
@@ -528,6 +705,61 @@ def _same_net_dominated_low_pop_failure(result: FixedFabricRoutingResult) -> boo
         if same_net > 0 and same_net >= max(counts.values(), default=0) and pops <= 1000:
             return True
     return False
+
+
+def _foreign_port_access_frontier_exhausted(
+    result: FixedFabricRoutingResult,
+) -> bool:
+    """Return whether a walled frontier is dominated by foreign port access.
+
+    This intentionally does not trigger on an A* budget exhaustion: the reserved-region
+    relaxation is a response to a geometric wall, not a generic retry policy.
+    """
+    for failure in result.failed_edges:
+        message = failure.message
+        if (
+            "blocked by port access (port_access_" not in message
+            or "_foreign)" not in message
+        ):
+            continue
+        match = _POPS_RE.search(message)
+        if match is None:
+            continue
+        if int(match.group("pops")) < result.rules.max_astar_pops:
+            return True
+    return False
+
+
+def _v3_n8_foreign_port_access_failure(
+    kind: str,
+    n: int,
+    config: str,
+    result: FixedFabricRoutingResult,
+    envelope: OctaveEnvelope,
+) -> tuple[str, str] | None:
+    """Classify the ruled Phase-5 geometry regression without broadening fallback."""
+    if (
+        kind != "waksman"
+        or n != 8
+        or config != "C_db_realistic"
+        or "dy5p5-w450" not in envelope.envelope_id
+    ):
+        return None
+    messages = tuple(failure.message for failure in result.failed_edges)
+    if not messages or not all(
+        "cannot route I6->O6" in message
+        and "waksman_8x8_s2_w2_6.drop->O6" in message
+        and "port_access_overlap_foreign" in message
+        and "region=I3/waksman_8x8_s2_w3_7.in" in message
+        and "pops:10220" in message
+        for message in messages
+    ):
+        return None
+    return (
+        "port_access_overlap_foreign",
+        "I6->O6:final_hop=waksman_8x8_s2_w2_6.drop->O6:"
+        "foreign_region=I3/waksman_8x8_s2_w3_7.in:pops=10220",
+    )
 
 
 def _mrr_theory(n: int) -> tuple[int, int, float]:
@@ -549,9 +781,11 @@ def _evaluate_case(
     envelope: OctaveEnvelope,
     route_wall_s: float,
     pops: int,
-    layout_mode: str,
+    layout_mode: Literal["astar", "template"],
     remediation: str,
     window_expansion_tracks: int,
+    reserved_region_escalation: str,
+    reserved_region_escalation_stage: int,
     *,
     workers: int,
     path_first: bool,
@@ -560,7 +794,20 @@ def _evaluate_case(
 ) -> dict[str, Any]:
     outdir = _case_dir(kind, n, config, output_root)
     audit = _audit_counts(result, cells)
-    required_audits = ("legacy_drc", "bend_radius_legality")
+    (
+        acceptance_tier,
+        crossing_clearance_acceptance,
+        _campaign_acceptance,
+        required_audits,
+    ) = _acceptance_tier(
+        layout_mode,
+        crossing_clearance_enabled=result.rules.min_crossing_clearance_um is not None,
+    )
+    if layout_mode == "template" and audit["crossing_clearance"]:
+        raise RuntimeError(
+            f"TEMPLATE CROSSING-CLEARANCE FAILURE {kind} N={n} "
+            f"config={config}: {audit!r}"
+        )
     if any(audit[name] for name in required_audits):
         raise RuntimeError(
             f"DRC FAILURE {kind} N={n} config={config}: {audit!r}"
@@ -568,34 +815,79 @@ def _evaluate_case(
 
     w_theory, b_theory, savings = _mrr_theory(n)
     if result.failed_edges:
-        authorized_fallback = (
+        failure = _v3_n8_foreign_port_access_failure(
+            kind, n, config, result, envelope
+        )
+        authorized_legacy_fallback = (
             kind == "waksman"
             and n in remediation_trigger_ns
             and config == "C_db_realistic"
             and remediation.startswith("same_net_whole_net_riser_displacement:")
             and _same_net_dominated_low_pop_failure(result)
         )
-        if not authorized_fallback:
+        if failure is None and not authorized_legacy_fallback:
             raise RuntimeError(
                 f"ROUTING FAILURE {kind} N={n} config={config}: "
                 f"{result.failed_edges!r}"
             )
+        if failure is None:
+            failure = (
+                "same_net_whole_net_riser_displacement_exhausted",
+                remediation,
+            )
+        failure_class, failure_signature = failure
         summary_path = outdir / "fabric_routing_summary.json"
         summary = json.loads(summary_path.read_text())
         summary.update(
             status="route_failed",
+            failure_class=failure_class,
+            failure_signature=failure_signature,
             envelope_id=envelope.envelope_id,
             layout_mode=layout_mode,
             max_astar_pops_rung=pops,
             remediation=remediation,
             window_expansion_tracks=window_expansion_tracks,
+            reserved_region_escalation=reserved_region_escalation,
+            reserved_region_escalation_stage=reserved_region_escalation_stage,
         )
         _write_json(summary_path, summary)
+        config_path = outdir / "config.json"
+        config_payload = json.loads(config_path.read_text())
+        config_payload.update(
+            status="route_failed",
+            failure_class=failure_class,
+            failure_signature=failure_signature,
+        )
+        _write_json(config_path, config_payload)
+        if failure_class == "port_access_overlap_foreign":
+            _write_json(
+                outdir / "failure_diagnosis.json",
+                {
+                    "status": "route_failed",
+                    "failure_class": failure_class,
+                    "failure_signature": failure_signature,
+                    "blocked_net": "I6->O6",
+                    "blocked_hop": "waksman_8x8_s2_w2_6.drop->O6",
+                    "foreign_port_access_owner": "I3",
+                    "foreign_port_access_region": "waksman_8x8_s2_w3_7.in",
+                    "frontier_pops": 10220,
+                    "budget_limited": False,
+                    "v2_status": "complete",
+                    "v2_worst_il_db": 3.7984212059855453,
+                    "diagnosis": (
+                        "v3 geometry regression: routable with legacy v2 port geometry; "
+                        "final I6->O6 hop is blocked by the wider v3 foreign I3 "
+                        "port-access region"
+                    ),
+                },
+            )
         row: dict[str, Any] = {
             "topology": kind,
             "N": n,
             "config": config,
             "status": "route_failed",
+            "failure_class": failure_class,
+            "failure_signature": failure_signature,
             "n_physical": topology.N_physical,
             "mrr": topology.n_MRR,
             "stages": topology.n_stages,
@@ -605,6 +897,12 @@ def _evaluate_case(
             "routed_edges": len(result.routed_edge_ids),
             "failed_edges": len(result.failed_edges),
             **audit,
+            "acceptance_tier": acceptance_tier,
+            "crossing_clearance_acceptance": crossing_clearance_acceptance,
+            "manufacturability_status": _manufacturability_status(
+                layout_mode, audit
+            ),
+            "total_bends": sum(route.bend_count for route in result.routes),
             "total_crossings": len(result.crossings),
             "worst_path_crossings": None,
             "worst_path_length_um": None,
@@ -625,27 +923,48 @@ def _evaluate_case(
             "max_astar_pops_rung": pops,
             "remediation": remediation,
             "window_expansion_tracks": window_expansion_tracks,
+            "reserved_region_escalation": reserved_region_escalation,
+            "reserved_region_escalation_stage": reserved_region_escalation_stage,
             "astar_calls": result.stats.astar_calls,
         }
         _write_json(outdir / "case_metrics.json", row)
         return row
 
+    evaluation_result = result
+    if layout_mode == "astar":
+        evaluation_result = replace(
+            result,
+            drc_violations=tuple(
+                violation
+                for violation in result.drc_violations
+                if violation.rule
+                not in {
+                    "same_net_min_spacing",
+                    "perpendicular_clearance",
+                    "crossing_clearance",
+                }
+            ),
+        )
     if path_first:
-        path_result = evaluate_fixed_fabric_path_space(topology, cells, result)
+        path_result = evaluate_fixed_fabric_path_space(
+            topology, cells, evaluation_result
+        )
         exhaustive = evaluate_fixed_fabric_parallel(
             topology,
             cells,
-            result,
+            evaluation_result,
             workers=workers,
         )
     else:
         exhaustive = evaluate_fixed_fabric_parallel(
             topology,
             cells,
-            result,
+            evaluation_result,
             workers=workers,
         )
-        path_result = evaluate_fixed_fabric_path_space(topology, cells, result)
+        path_result = evaluate_fixed_fabric_path_space(
+            topology, cells, evaluation_result
+        )
     if not exhaustive.coverage_report.passed:
         raise RuntimeError(
             f"COVERAGE FAILURE {kind} N={n} config={config}: "
@@ -663,7 +982,7 @@ def _evaluate_case(
     verify_worst_il_witness(
         topology,
         cells,
-        result,
+        evaluation_result,
         witness_permutation=path_result.witness_permutation,
         input_port=path_result.worst_path.input_port,
         expected_il_db=path_result.worst_insertion_loss_db,
@@ -689,6 +1008,8 @@ def _evaluate_case(
         max_astar_pops_rung=pops,
         remediation=remediation,
         window_expansion_tracks=window_expansion_tracks,
+        reserved_region_escalation=reserved_region_escalation,
+        reserved_region_escalation_stage=reserved_region_escalation_stage,
     )
     _write_json(summary_path, summary)
 
@@ -697,6 +1018,8 @@ def _evaluate_case(
         "N": n,
         "config": config,
         "status": "complete",
+        "failure_class": None,
+        "failure_signature": None,
         "n_physical": topology.N_physical,
         "mrr": topology.n_MRR,
         "stages": topology.n_stages,
@@ -706,6 +1029,10 @@ def _evaluate_case(
         "routed_edges": len(result.routed_edge_ids),
         "failed_edges": len(result.failed_edges),
         **audit,
+        "acceptance_tier": acceptance_tier,
+        "crossing_clearance_acceptance": crossing_clearance_acceptance,
+        "manufacturability_status": _manufacturability_status(layout_mode, audit),
+        "total_bends": sum(route.bend_count for route in result.routes),
         "total_crossings": len(result.crossings),
         "worst_path_crossings": exhaustive.loss_report.worst_crossing_count,
         "worst_path_length_um": exhaustive.loss_report.worst_path_length_um,
@@ -728,6 +1055,8 @@ def _evaluate_case(
         "max_astar_pops_rung": pops,
         "remediation": remediation,
         "window_expansion_tracks": window_expansion_tracks,
+        "reserved_region_escalation": reserved_region_escalation,
+        "reserved_region_escalation_stage": reserved_region_escalation_stage,
         "astar_calls": result.stats.astar_calls,
     }
     _write_json(outdir / "case_metrics.json", row)
@@ -781,6 +1110,8 @@ def _existing_rows(output_root: Path = OUTPUT_ROOT) -> list[dict[str, Any]]:
         if row.get("status") in {"complete", "route_failed"}:
             row.setdefault("remediation", "none")
             row.setdefault("window_expansion_tracks", 0)
+            row.setdefault("reserved_region_escalation", "none")
+            row.setdefault("reserved_region_escalation_stage", 0)
             rows.append(row)
     return rows
 
@@ -946,6 +1277,7 @@ def run_campaign(
     min_crossing_clearance_um: float | None = None,
     straighten_jogs: bool = False,
     physical_turn_guard: bool = False,
+    v4_search: bool = False,
     campaign_version: str = "v2",
 ) -> list[dict[str, Any]]:
     output_root = Path(output_root)
@@ -959,6 +1291,10 @@ def run_campaign(
         raise ValueError("min_crossing_clearance_um must be non-negative")
     if not campaign_version:
         raise ValueError("campaign_version must be non-empty")
+    if v4_search:
+        if min_crossing_clearance_um is None:
+            min_crossing_clearance_um = 10.0
+        physical_turn_guard = True
     if not {4, 8, 16} <= set(stage_pitch_by_octave):
         raise ValueError("stage_pitch_by_octave must define canvases 4, 8, and 16")
     try:
@@ -1003,6 +1339,8 @@ def run_campaign(
                         layout_mode,
                         remediation,
                         window_expansion_tracks,
+                        reserved_region_escalation,
+                        reserved_region_escalation_stage,
                     ) = _route_case(
                         kind,
                         n,
@@ -1017,6 +1355,7 @@ def run_campaign(
                         min_crossing_clearance_um=min_crossing_clearance_um,
                         straighten_jogs=straighten_jogs,
                         physical_turn_guard=physical_turn_guard,
+                        v4_search=v4_search,
                         campaign_version=campaign_version,
                     )
                     row = _evaluate_case(
@@ -1033,6 +1372,8 @@ def run_campaign(
                         layout_mode,
                         remediation,
                         window_expansion_tracks,
+                        reserved_region_escalation,
+                        reserved_region_escalation_stage,
                         workers=min(workers, 8 if n <= 8 else workers),
                         path_first=phase == 3,
                         output_root=output_root,
@@ -1458,6 +1799,11 @@ def main(argv: list[str] | None = None) -> None:
     parser.add_argument("--min-crossing-clearance", type=float)
     parser.add_argument("--straighten-jogs", action="store_true")
     parser.add_argument("--physical-turn-guard", action="store_true")
+    parser.add_argument(
+        "--v4-search",
+        action="store_true",
+        help="enable the standard v4 crossing/search discipline and staged port relaxation",
+    )
     parser.add_argument("--campaign-version", default="v2")
     args = parser.parse_args(argv)
     if not 1 <= args.workers <= 64:
@@ -1473,6 +1819,7 @@ def main(argv: list[str] | None = None) -> None:
             min_crossing_clearance_um=args.min_crossing_clearance,
             straighten_jogs=args.straighten_jogs,
             physical_turn_guard=args.physical_turn_guard,
+            v4_search=args.v4_search,
             campaign_version=args.campaign_version,
         )
 

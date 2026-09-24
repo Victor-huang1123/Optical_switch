@@ -1,0 +1,230 @@
+[
+  {
+    "input_side_SEs": [
+      "waksman_8x8_s0_w0_1",
+      "waksman_8x8_s0_w2_3",
+      "waksman_8x8_s0_w4_5",
+      "waksman_8x8_s0_w6_7"
+    ],
+    "local_choices": [
+      "normal",
+      "swap_children",
+      "mirror_y",
+      "swap_children+mirror_y"
+    ],
+    "logical_wires": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7
+    ],
+    "lower_child": "root.L",
+    "node_id": "root",
+    "output_side_SEs": [
+      "waksman_8x8_s4_w0_1",
+      "waksman_8x8_s4_w2_3",
+      "waksman_8x8_s4_w4_5"
+    ],
+    "physical_wire_y_locations": {
+      "0": 448.0,
+      "1": 384.0,
+      "2": 320.0,
+      "3": 256.0,
+      "4": 192.0,
+      "5": 128.0,
+      "6": 64.0,
+      "7": 0.0
+    },
+    "selected_embedding": "normal",
+    "size": 8,
+    "stage_range": [
+      0,
+      4
+    ],
+    "upper_child": "root.U"
+  },
+  {
+    "input_side_SEs": [
+      "waksman_8x8_s1_w0_2",
+      "waksman_8x8_s1_w4_6"
+    ],
+    "local_choices": [
+      "normal",
+      "swap_children",
+      "mirror_y",
+      "swap_children+mirror_y"
+    ],
+    "logical_wires": [
+      0,
+      2,
+      4,
+      6
+    ],
+    "lower_child": "root.U.L",
+    "node_id": "root.U",
+    "output_side_SEs": [
+      "waksman_8x8_s3_w0_2"
+    ],
+    "physical_wire_y_locations": {
+      "0": 448.0,
+      "2": 320.0,
+      "4": 192.0,
+      "6": 64.0
+    },
+    "selected_embedding": "normal",
+    "size": 4,
+    "stage_range": [
+      1,
+      3
+    ],
+    "upper_child": "root.U.U"
+  },
+  {
+    "input_side_SEs": [
+      "waksman_8x8_s2_w0_4"
+    ],
+    "local_choices": [
+      "normal",
+      "mirror_y"
+    ],
+    "logical_wires": [
+      0,
+      4
+    ],
+    "lower_child": null,
+    "node_id": "root.U.U",
+    "output_side_SEs": [],
+    "physical_wire_y_locations": {
+      "0": 448.0,
+      "4": 192.0
+    },
+    "selected_embedding": "normal",
+    "size": 2,
+    "stage_range": [
+      2,
+      2
+    ],
+    "upper_child": null
+  },
+  {
+    "input_side_SEs": [
+      "waksman_8x8_s2_w2_6"
+    ],
+    "local_choices": [
+      "normal",
+      "mirror_y"
+    ],
+    "logical_wires": [
+      2,
+      6
+    ],
+    "lower_child": null,
+    "node_id": "root.U.L",
+    "output_side_SEs": [],
+    "physical_wire_y_locations": {
+      "2": 320.0,
+      "6": 64.0
+    },
+    "selected_embedding": "normal",
+    "size": 2,
+    "stage_range": [
+      2,
+      2
+    ],
+    "upper_child": null
+  },
+  {
+    "input_side_SEs": [
+      "waksman_8x8_s1_w1_3",
+      "waksman_8x8_s1_w5_7"
+    ],
+    "local_choices": [
+      "normal",
+      "swap_children",
+      "mirror_y",
+      "swap_children+mirror_y"
+    ],
+    "logical_wires": [
+      1,
+      3,
+      5,
+      7
+    ],
+    "lower_child": "root.L.L",
+    "node_id": "root.L",
+    "output_side_SEs": [
+      "waksman_8x8_s3_w1_3"
+    ],
+    "physical_wire_y_locations": {
+      "1": 384.0,
+      "3": 256.0,
+      "5": 128.0,
+      "7": 0.0
+    },
+    "selected_embedding": "normal",
+    "size": 4,
+    "stage_range": [
+      1,
+      3
+    ],
+    "upper_child": "root.L.U"
+  },
+  {
+    "input_side_SEs": [
+      "waksman_8x8_s2_w1_5"
+    ],
+    "local_choices": [
+      "normal",
+      "mirror_y"
+    ],
+    "logical_wires": [
+      1,
+      5
+    ],
+    "lower_child": null,
+    "node_id": "root.L.U",
+    "output_side_SEs": [],
+    "physical_wire_y_locations": {
+      "1": 384.0,
+      "5": 128.0
+    },
+    "selected_embedding": "normal",
+    "size": 2,
+    "stage_range": [
+      2,
+      2
+    ],
+    "upper_child": null
+  },
+  {
+    "input_side_SEs": [
+      "waksman_8x8_s2_w3_7"
+    ],
+    "local_choices": [
+      "normal",
+      "mirror_y"
+    ],
+    "logical_wires": [
+      3,
+      7
+    ],
+    "lower_child": null,
+    "node_id": "root.L.L",
+    "output_side_SEs": [],
+    "physical_wire_y_locations": {
+      "3": 256.0,
+      "7": 0.0
+    },
+    "selected_embedding": "normal",
+    "size": 2,
+    "stage_range": [
+      2,
+      2
+    ],
+    "upper_child": null
+  }
+]

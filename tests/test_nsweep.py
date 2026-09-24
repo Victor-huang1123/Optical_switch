@@ -14,17 +14,28 @@ from mrr_switch_optimizer.analysis.nsweep import (
     verify_worst_il_witness,
 )
 from mrr_switch_optimizer.app.fabric_reports import fixed_fabric_geometry_hash
+from mrr_switch_optimizer.app.nsweep_campaign import (
+    METRIC_FIELDS,
+    _acceptance_tier,
+    _count_audit_violations,
+    _manufacturability_status,
+)
 from mrr_switch_optimizer.core.fabric import build_fabric_graph
 from mrr_switch_optimizer.core.models import LEGACY_V2_CELL_GEOMETRY
 from mrr_switch_optimizer.core.sparams import MOCK_S_TABLE, load_mrr_s_table
 from mrr_switch_optimizer.core.state_assignment import BenesLoopingStrategy, WaksmanStrategy
 from mrr_switch_optimizer.core.topology import PaddedBenesTopology, WaksmanTopology
 from mrr_switch_optimizer.routing.benes_template_layout import predicted_template_crossings
+from mrr_switch_optimizer.routing.crossing import merged_route_arm_clearances
 from mrr_switch_optimizer.routing.drc import _consecutive_bend_pairs_too_close
 from mrr_switch_optimizer.routing.envelope import build_envelope_cells, octave_envelope
 from mrr_switch_optimizer.routing.fabric import FixedFabricRoutingResult, route_fixed_fabric
 from mrr_switch_optimizer.routing.geometry import _direction, _manhattan
-from mrr_switch_optimizer.routing.types import PhysicalRoute, RoutingRules
+from mrr_switch_optimizer.routing.types import (
+    DRCViolation,
+    PhysicalRoute,
+    RoutingRules,
+)
 
 
 def _rules(**updates: object) -> RoutingRules:
@@ -40,6 +51,47 @@ def _rules(**updates: object) -> RoutingRules:
         drc_perpendicular_clearance=True,
         drc_bend_radius_legality=True,
         **updates,
+    )
+
+
+def test_phase5_crossing_clearance_acceptance_is_two_tier() -> None:
+    astar_tier = _acceptance_tier("astar", crossing_clearance_enabled=True)
+    template_tier = _acceptance_tier("template", crossing_clearance_enabled=True)
+
+    assert astar_tier[0:2] == ("astar_measurement_audit", "measurement_only")
+    assert astar_tier[3] == ("legacy_drc", "bend_radius_legality")
+    assert template_tier[0:2] == ("template_hard_gate", "hard_gate")
+    assert template_tier[3] == (
+        "legacy_drc",
+        "bend_radius_legality",
+        "crossing_clearance",
+    )
+    assert "crossing_clearance" in METRIC_FIELDS
+    assert "crossing_clearance_acceptance" in METRIC_FIELDS
+
+
+def test_crossing_clearance_is_counted_outside_legacy_core_drc() -> None:
+    counts = _count_audit_violations(
+        (
+            DRCViolation("crossing_clearance", "I0/I1", "crossing"),
+            DRCViolation("perpendicular_clearance", "I0/I2", "perpendicular"),
+            DRCViolation("same_net_min_spacing", "I0", "same net"),
+            DRCViolation("bend_radius_legality", "I1", "bend"),
+            DRCViolation("parallel_spacing", "I2/I3", "legacy core"),
+        )
+    )
+
+    assert counts == {
+        "legacy_drc": 1,
+        "same_net_min_spacing": 1,
+        "perpendicular_clearance": 1,
+        "crossing_clearance": 1,
+        "bend_radius_legality": 1,
+    }
+    assert _manufacturability_status("astar", counts) == "measurement_only"
+    assert (
+        _manufacturability_status("template", {name: 0 for name in counts})
+        == "all_clear"
     )
 
 
@@ -60,7 +112,7 @@ def _template(
         topology,
         build_fabric_graph(topology),
         cells,
-        _rules(),
+        _rules(min_crossing_clearance_um=10.0),
         x_start=envelope.x_start_um,
         x_end=envelope.x_end_um,
         wire_pitch_um=envelope.wire_pitch_um,
@@ -80,6 +132,34 @@ def test_g2_template_drc_is_clean(n_physical: int) -> None:
     result = _template(n_physical)
     assert not result.failed_edges
     assert not result.drc_violations
+
+
+@pytest.mark.parametrize("n_physical", [4, 8, 16])
+def test_g2_template_has_no_one_track_crossing_arm(n_physical: int) -> None:
+    result = _template(n_physical)
+    routes = {
+        route.input_port: route
+        for route in (
+            _physical_route(result, route_index)
+            for route_index in range(len(result.routes))
+        )
+    }
+    owner_to_wire = {
+        waveguide.owner_edge_id: waveguide.input_wire
+        for waveguide in result.graph.waveguides
+    }
+    arm_clearances = [
+        clearance
+        for crossing in result.crossings
+        for edge_id in (crossing.edge_a, crossing.edge_b)
+        for clearance in merged_route_arm_clearances(
+            routes[owner_to_wire[edge_id]],
+            crossing.location,
+        )
+    ]
+
+    assert min(arm_clearances) >= 10.0
+    assert 8.0 not in arm_clearances
 
 
 def test_template_straightening_flag_is_a_geometry_noop() -> None:
@@ -132,9 +212,9 @@ def test_g3_template_bends_are_legal_by_construction(n_physical: int) -> None:
 @pytest.mark.parametrize(
     ("n_physical", "golden"),
     [
-        (4, "508e3363248e31054b0d6bee57e8ea60630929ac0cf0c40147bc978d6e9eba25"),
-        (8, "17658e4a371cb742b2e61adef38de36ea05e8d56f8fe0550cc2668b135f885a8"),
-        (16, "31abbf1b443061ed055b6340b03ecf3845703865aa3abd0d1c615fe6cecf5db9"),
+        (4, "85ff74a15c329e751866a9407a351a1b845299cc83f4d6ed7d917a56cdf5fc93"),
+        (8, "c5ad40e124038391c6f1e9370af9c85b3e232445defec170e634db1b5093547a"),
+        (16, "5da7c24cd2794cf351904ff75e541f9682f2d1f64248835f27133f65f126fa6a"),
     ],
 )
 def test_g4_template_is_deterministic_and_has_no_astar(

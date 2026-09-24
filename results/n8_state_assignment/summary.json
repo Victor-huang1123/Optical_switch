@@ -1,0 +1,1807 @@
+{
+  "M": 17,
+  "N": 8,
+  "active_paths_evaluated": 1048576,
+  "all_assignment_wil_range_db": {
+    "maximum": 0.867873930248785,
+    "mean": 0.22910923865043623,
+    "median": 0.1792068732942651
+  },
+  "baseline_assignments_verified": 40320,
+  "conditional_gain_by_multiplicity": [
+    {
+      "bfs_optimal_fraction": 1,
+      "max_delta_wil_db": 0.0,
+      "mean_assignment_wil_range_db": 0.0,
+      "mean_delta_wil_db": 0.0,
+      "num_permutations": 8192,
+      "num_realizations": 1
+    },
+    {
+      "bfs_optimal_fraction": 0.658203125,
+      "max_delta_wil_db": 0.8013341139090402,
+      "mean_assignment_wil_range_db": 0.2021713380419444,
+      "mean_delta_wil_db": 0.0961612770316914,
+      "num_permutations": 14336,
+      "num_realizations": 2
+    },
+    {
+      "bfs_optimal_fraction": 0.4181315104166667,
+      "max_delta_wil_db": 0.7411250606674074,
+      "mean_assignment_wil_range_db": 0.31820708855921004,
+      "mean_delta_wil_db": 0.15523154125564648,
+      "num_permutations": 12288,
+      "num_realizations": 4
+    },
+    {
+      "bfs_optimal_fraction": 0.357421875,
+      "max_delta_wil_db": 0.835873930248785,
+      "mean_assignment_wil_range_db": 0.4448995715012262,
+      "mean_delta_wil_db": 0.21801574875324228,
+      "num_permutations": 2048,
+      "num_realizations": 5
+    },
+    {
+      "bfs_optimal_fraction": 0.2755681818181818,
+      "max_delta_wil_db": 0.835873930248785,
+      "mean_assignment_wil_range_db": 0.4069032464907999,
+      "mean_delta_wil_db": 0.22251049148142835,
+      "num_permutations": 2816,
+      "num_realizations": 8
+    },
+    {
+      "bfs_optimal_fraction": 0.09375,
+      "max_delta_wil_db": 0.7411250606674074,
+      "mean_assignment_wil_range_db": 0.5813852802624215,
+      "mean_delta_wil_db": 0.30431983282688235,
+      "num_permutations": 512,
+      "num_realizations": 16
+    },
+    {
+      "bfs_optimal_fraction": 0.125,
+      "max_delta_wil_db": 0.6463761910860315,
+      "mean_assignment_wil_range_db": 0.5825341246385664,
+      "mean_delta_wil_db": 0.3215376552325987,
+      "num_permutations": 128,
+      "num_realizations": 32
+    }
+  ],
+  "config": "B_db_placeholder",
+  "correctness_assertions": {
+    "all_bfs_in_exact_lut": true,
+    "all_bfs_realize_requested_permutation": true,
+    "all_opt_wil_le_bfs_plus_tolerance": true,
+    "all_state_evaluations_share_one_geometry": true,
+    "each_state_has_one_bijection": true,
+    "full_factorial_coverage": true,
+    "reference_exhaustive_evaluator_agrees": true,
+    "total_states_equal_2_power_M": true
+  },
+  "coverage_complete": true,
+  "evaluated_state_count": 131072,
+  "fraction_bfs_optimal": 0.6036210317460318,
+  "fraction_with_multiple_assignments": 0.7968253968253968,
+  "geometry": {
+    "audit_counts": {
+      "bend_radius_legality": 0,
+      "crossing_clearance": 0,
+      "legacy_drc": 0,
+      "perpendicular_clearance": 0,
+      "same_net_min_spacing": 5
+    },
+    "drc_counts": {},
+    "effective_rules": {
+      "allow_crossings": true,
+      "allow_foreign_outer_runway_transit": false,
+      "astar_heuristic_weight": 1.0,
+      "backtrack_penalty_um": 80.0,
+      "bend_loss_db_per_bend": 0.0,
+      "bend_placement_penalty_db": 0.0,
+      "bend_radius_um": 5.0,
+      "capped_ripup_bounded_only": true,
+      "corridor_guide_mode": "soft",
+      "cost_model": "db",
+      "crossing_loss_db_per_cross": 0.0,
+      "crossing_penalty_um": 20.0,
+      "db_tie_breaker_scale": 0.05,
+      "drc_bend_radius_legality": true,
+      "drc_perpendicular_clearance": false,
+      "drc_same_net_min_spacing": false,
+      "early_stop_stagnant_passes": 0,
+      "enforce_bend_spacing": true,
+      "explicit_crossings": true,
+      "fallback_alternatives_per_hop": 2,
+      "fallback_beam_width": 0,
+      "future_crossing_reservation": false,
+      "grid_margin_tracks": 20,
+      "grid_merge_tol_um": 3.5,
+      "grid_pitch_um": 8.0,
+      "hairpin_penalty_um": 200.0,
+      "hard_crossing_budget": false,
+      "hard_reserved_crossing_reservation": false,
+      "hard_source_crossing_reservation": false,
+      "jog_penalty_db": 0.0,
+      "legalize_port_access": true,
+      "local_repair_max_shift_tracks": 8,
+      "loss_aware_cost": false,
+      "max_astar_pops": 30000,
+      "max_ripup_passes": 5,
+      "min_crossing_clearance_um": 10.0,
+      "min_spacing_um": 4.0,
+      "mrr_keepout_um": 6.0,
+      "outward_repeated_crossing_scale": 0.25,
+      "physical_same_net_hairpin": false,
+      "physical_turn_guard": false,
+      "port_access_runway_um": 10.0,
+      "port_access_stagger_tracks": 0,
+      "port_approach_fallback": false,
+      "port_escape_um": 10.0,
+      "prop_loss_db_per_um": 0.002,
+      "remediation_window_expansion": false,
+      "repeated_crossing_loss_db": 0.0,
+      "repeated_crossing_penalty_um": 400.0,
+      "ripup_max_astar_pops": null,
+      "ripup_order_candidate_limit": 1,
+      "ripup_route_budget": 4,
+      "route_order_beam_max_astar_pops": 2000,
+      "route_order_beam_width": 0,
+      "route_window_max_detour_tracks": 4,
+      "source_hint_bounded_only": true,
+      "strict_port_access": false,
+      "turn_guard_um": 16.0,
+      "turn_timing_penalty_um": 48.0,
+      "waveguide_width_um": 0.45
+    },
+    "failed_edges": 0,
+    "layout_mode": "astar",
+    "loaded_cached_fabric": false,
+    "original_route_wall_seconds": 918.7271312847733,
+    "route_calls_this_run": 1,
+    "sha256": "5a67bc1635a61649f589fe024bb44f7be0d01b4606e60df39d053f9839b77427"
+  },
+  "gf2_instrumentation": {
+    "all_instrumented_states_match_baseline": true,
+    "example_mismatches": [
+      {
+        "bfs_trace_sum_local_nullity": 1,
+        "exact_num_realizations": 5,
+        "naive_product_local_counts": 2,
+        "naive_product_matches": false,
+        "permutation": "[0, 4, 2, 6, 1, 5, 3, 7]",
+        "root_nullity": 1
+      },
+      {
+        "bfs_trace_sum_local_nullity": 1,
+        "exact_num_realizations": 5,
+        "naive_product_local_counts": 2,
+        "naive_product_matches": false,
+        "permutation": "[0, 4, 2, 6, 1, 5, 7, 3]",
+        "root_nullity": 1
+      },
+      {
+        "bfs_trace_sum_local_nullity": 1,
+        "exact_num_realizations": 5,
+        "naive_product_local_counts": 2,
+        "naive_product_matches": false,
+        "permutation": "[0, 4, 2, 6, 3, 7, 1, 5]",
+        "root_nullity": 1
+      },
+      {
+        "bfs_trace_sum_local_nullity": 1,
+        "exact_num_realizations": 5,
+        "naive_product_local_counts": 2,
+        "naive_product_matches": false,
+        "permutation": "[0, 4, 2, 6, 3, 7, 5, 1]",
+        "root_nullity": 1
+      },
+      {
+        "bfs_trace_sum_local_nullity": 1,
+        "exact_num_realizations": 5,
+        "naive_product_local_counts": 2,
+        "naive_product_matches": false,
+        "permutation": "[0, 4, 2, 6, 5, 1, 3, 7]",
+        "root_nullity": 1
+      },
+      {
+        "bfs_trace_sum_local_nullity": 1,
+        "exact_num_realizations": 5,
+        "naive_product_local_counts": 2,
+        "naive_product_matches": false,
+        "permutation": "[0, 4, 2, 6, 5, 1, 7, 3]",
+        "root_nullity": 1
+      },
+      {
+        "bfs_trace_sum_local_nullity": 1,
+        "exact_num_realizations": 5,
+        "naive_product_local_counts": 2,
+        "naive_product_matches": false,
+        "permutation": "[0, 4, 2, 6, 7, 3, 1, 5]",
+        "root_nullity": 1
+      },
+      {
+        "bfs_trace_sum_local_nullity": 1,
+        "exact_num_realizations": 5,
+        "naive_product_local_counts": 2,
+        "naive_product_matches": false,
+        "permutation": "[0, 4, 2, 6, 7, 3, 5, 1]",
+        "root_nullity": 1
+      },
+      {
+        "bfs_trace_sum_local_nullity": 3,
+        "exact_num_realizations": 5,
+        "naive_product_local_counts": 8,
+        "naive_product_matches": false,
+        "permutation": "[0, 4, 2, 7, 1, 5, 3, 6]",
+        "root_nullity": 1
+      },
+      {
+        "bfs_trace_sum_local_nullity": 3,
+        "exact_num_realizations": 5,
+        "naive_product_local_counts": 8,
+        "naive_product_matches": false,
+        "permutation": "[0, 4, 2, 7, 1, 5, 6, 3]",
+        "root_nullity": 1
+      }
+    ],
+    "naive_product_matches": 38272,
+    "naive_product_mismatches": 2048,
+    "note": "Local ranks include fixed-value equations. Base cases construct no parity variables. The product along the one BFS recursion trace is only a diagnostic, not a global count.",
+    "num_recursive_calls": 282240,
+    "root_nullity_histogram": {
+      "0": 18432,
+      "1": 16896,
+      "2": 4608,
+      "3": 384
+    },
+    "sum_local_nullity_histogram": {
+      "0": 8192,
+      "1": 15360,
+      "2": 12288,
+      "3": 3840,
+      "4": 512,
+      "5": 128
+    }
+  },
+  "interesting_case_counts": {
+    "many_assignment_threshold": 8,
+    "many_assignments_flat_wil": 362,
+    "single_assignment": 8192
+  },
+  "loss_evaluator": "analysis.fabric_loss._evaluate_path_loss",
+  "max_delta_wil_db": 0.835873930248785,
+  "max_realizations": 32,
+  "max_relative_improvement_percent": 16.134782823178373,
+  "maximum_improvement_case": {
+    "assignment_wil_range_db": 0.835873930248785,
+    "bfs_cross_count": 5,
+    "bfs_state_bits": "00100010001010001",
+    "bfs_state_id": 70724,
+    "bfs_total_il_db": 30.556668962928427,
+    "bfs_wil_db": 5.180571312357628,
+    "bfs_worst_input": 1,
+    "bfs_worst_output": 3,
+    "bfs_worst_path": {
+      "input_port": 1,
+      "output_port": 3,
+      "steps": [
+        {
+          "in_port": "add",
+          "mrr_id": "waksman_8x8_s0_w0_1",
+          "out_port": "drop",
+          "pair": [
+            0,
+            1
+          ],
+          "stage": 0,
+          "state": 0,
+          "wire_in": 1,
+          "wire_out": 1
+        },
+        {
+          "in_port": "in",
+          "mrr_id": "waksman_8x8_s1_w1_3",
+          "out_port": "drop",
+          "pair": [
+            1,
+            3
+          ],
+          "stage": 1,
+          "state": 1,
+          "wire_in": 1,
+          "wire_out": 3
+        },
+        {
+          "in_port": "in",
+          "mrr_id": "waksman_8x8_s2_w3_7",
+          "out_port": "th",
+          "pair": [
+            3,
+            7
+          ],
+          "stage": 2,
+          "state": 0,
+          "wire_in": 3,
+          "wire_out": 3
+        },
+        {
+          "in_port": "add",
+          "mrr_id": "waksman_8x8_s3_w1_3",
+          "out_port": "drop",
+          "pair": [
+            1,
+            3
+          ],
+          "stage": 3,
+          "state": 0,
+          "wire_in": 3,
+          "wire_out": 3
+        },
+        {
+          "in_port": "add",
+          "mrr_id": "waksman_8x8_s4_w2_3",
+          "out_port": "drop",
+          "pair": [
+            2,
+            3
+          ],
+          "stage": 4,
+          "state": 0,
+          "wire_in": 3,
+          "wire_out": 3
+        }
+      ]
+    },
+    "bfs_worst_path_id": 28,
+    "delta_wil_db": 0.835873930248785,
+    "num_exact_optimal_states": 1,
+    "num_optimal_states": 1,
+    "num_realizations": 8,
+    "opt_cross_count": 5,
+    "opt_state_bits": "01001000100001100",
+    "opt_state_id": 24850,
+    "opt_total_il_db": 30.556668962928427,
+    "opt_wil_db": 4.344697382108843,
+    "opt_worst_input": 2,
+    "opt_worst_output": 0,
+    "opt_worst_path": {
+      "input_port": 2,
+      "output_port": 0,
+      "steps": [
+        {
+          "in_port": "in",
+          "mrr_id": "waksman_8x8_s0_w2_3",
+          "out_port": "drop",
+          "pair": [
+            2,
+            3
+          ],
+          "stage": 0,
+          "state": 1,
+          "wire_in": 2,
+          "wire_out": 3
+        },
+        {
+          "in_port": "add",
+          "mrr_id": "waksman_8x8_s1_w1_3",
+          "out_port": "drop",
+          "pair": [
+            1,
+            3
+          ],
+          "stage": 1,
+          "state": 0,
+          "wire_in": 3,
+          "wire_out": 3
+        },
+        {
+          "in_port": "in",
+          "mrr_id": "waksman_8x8_s2_w3_7",
+          "out_port": "th",
+          "pair": [
+            3,
+            7
+          ],
+          "stage": 2,
+          "state": 0,
+          "wire_in": 3,
+          "wire_out": 3
+        },
+        {
+          "in_port": "add",
+          "mrr_id": "waksman_8x8_s3_w1_3",
+          "out_port": "th",
+          "pair": [
+            1,
+            3
+          ],
+          "stage": 3,
+          "state": 1,
+          "wire_in": 3,
+          "wire_out": 1
+        },
+        {
+          "in_port": "add",
+          "mrr_id": "waksman_8x8_s4_w0_1",
+          "out_port": "th",
+          "pair": [
+            0,
+            1
+          ],
+          "stage": 4,
+          "state": 1,
+          "wire_in": 1,
+          "wire_out": 0
+        }
+      ]
+    },
+    "opt_worst_path_id": 58,
+    "path_loss_comparison": [
+      {
+        "bfs_loss": {
+          "bend_count": 17,
+          "bend_loss_db": 0.0,
+          "crossing_count": 9,
+          "crossing_loss_db": 0.0,
+          "insertion_loss_db": 2.9971996429460885,
+          "mrr_loss_db": 0.1641642673909558,
+          "path_length_um": 1416.5176877775664,
+          "propagation_loss_db": 2.833035375555133
+        },
+        "bfs_path": {
+          "input_port": 0,
+          "output_port": 2,
+          "steps": [
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s0_w0_1",
+              "out_port": "th",
+              "pair": [
+                0,
+                1
+              ],
+              "stage": 0,
+              "state": 0,
+              "wire_in": 0,
+              "wire_out": 0
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s1_w0_2",
+              "out_port": "th",
+              "pair": [
+                0,
+                2
+              ],
+              "stage": 1,
+              "state": 0,
+              "wire_in": 0,
+              "wire_out": 0
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s2_w0_4",
+              "out_port": "th",
+              "pair": [
+                0,
+                4
+              ],
+              "stage": 2,
+              "state": 0,
+              "wire_in": 0,
+              "wire_out": 0
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s3_w0_2",
+              "out_port": "drop",
+              "pair": [
+                0,
+                2
+              ],
+              "stage": 3,
+              "state": 1,
+              "wire_in": 0,
+              "wire_out": 2
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s4_w2_3",
+              "out_port": "th",
+              "pair": [
+                2,
+                3
+              ],
+              "stage": 4,
+              "state": 0,
+              "wire_in": 2,
+              "wire_out": 2
+            }
+          ]
+        },
+        "bfs_path_id": 2,
+        "delta_il_db": -1.0248318530717961,
+        "input": 0,
+        "opt_loss": {
+          "bend_count": 21,
+          "bend_loss_db": 0.0,
+          "crossing_count": 17,
+          "crossing_loss_db": 0.0,
+          "insertion_loss_db": 4.022031496017885,
+          "mrr_loss_db": 0.1641642673909558,
+          "path_length_um": 1928.9336143134642,
+          "propagation_loss_db": 3.8578672286269287
+        },
+        "opt_path": {
+          "input_port": 0,
+          "output_port": 2,
+          "steps": [
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s0_w0_1",
+              "out_port": "th",
+              "pair": [
+                0,
+                1
+              ],
+              "stage": 0,
+              "state": 0,
+              "wire_in": 0,
+              "wire_out": 0
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s1_w0_2",
+              "out_port": "drop",
+              "pair": [
+                0,
+                2
+              ],
+              "stage": 1,
+              "state": 1,
+              "wire_in": 0,
+              "wire_out": 2
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s2_w2_6",
+              "out_port": "th",
+              "pair": [
+                2,
+                6
+              ],
+              "stage": 2,
+              "state": 0,
+              "wire_in": 2,
+              "wire_out": 2
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s3_w0_2",
+              "out_port": "drop",
+              "pair": [
+                0,
+                2
+              ],
+              "stage": 3,
+              "state": 0,
+              "wire_in": 2,
+              "wire_out": 2
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s4_w2_3",
+              "out_port": "th",
+              "pair": [
+                2,
+                3
+              ],
+              "stage": 4,
+              "state": 0,
+              "wire_in": 2,
+              "wire_out": 2
+            }
+          ]
+        },
+        "opt_path_id": 6,
+        "output": 2
+      },
+      {
+        "bfs_loss": {
+          "bend_count": 26,
+          "bend_loss_db": 0.0,
+          "crossing_count": 17,
+          "crossing_loss_db": 0.0,
+          "insertion_loss_db": 5.180571312357628,
+          "mrr_loss_db": 0.1641642673909558,
+          "path_length_um": 2508.203522483336,
+          "propagation_loss_db": 5.016407044966672
+        },
+        "bfs_path": {
+          "input_port": 1,
+          "output_port": 3,
+          "steps": [
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s0_w0_1",
+              "out_port": "drop",
+              "pair": [
+                0,
+                1
+              ],
+              "stage": 0,
+              "state": 0,
+              "wire_in": 1,
+              "wire_out": 1
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s1_w1_3",
+              "out_port": "drop",
+              "pair": [
+                1,
+                3
+              ],
+              "stage": 1,
+              "state": 1,
+              "wire_in": 1,
+              "wire_out": 3
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s2_w3_7",
+              "out_port": "th",
+              "pair": [
+                3,
+                7
+              ],
+              "stage": 2,
+              "state": 0,
+              "wire_in": 3,
+              "wire_out": 3
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s3_w1_3",
+              "out_port": "drop",
+              "pair": [
+                1,
+                3
+              ],
+              "stage": 3,
+              "state": 0,
+              "wire_in": 3,
+              "wire_out": 3
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s4_w2_3",
+              "out_port": "drop",
+              "pair": [
+                2,
+                3
+              ],
+              "stage": 4,
+              "state": 0,
+              "wire_in": 3,
+              "wire_out": 3
+            }
+          ]
+        },
+        "bfs_path_id": 28,
+        "delta_il_db": 1.021415926535897,
+        "input": 1,
+        "opt_loss": {
+          "bend_count": 24,
+          "bend_loss_db": 0.0,
+          "crossing_count": 15,
+          "crossing_loss_db": 0.0,
+          "insertion_loss_db": 4.159155385821731,
+          "mrr_loss_db": 0.1641642673909558,
+          "path_length_um": 1997.4955592153879,
+          "propagation_loss_db": 3.9949911184307756
+        },
+        "opt_path": {
+          "input_port": 1,
+          "output_port": 3,
+          "steps": [
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s0_w0_1",
+              "out_port": "drop",
+              "pair": [
+                0,
+                1
+              ],
+              "stage": 0,
+              "state": 0,
+              "wire_in": 1,
+              "wire_out": 1
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s1_w1_3",
+              "out_port": "th",
+              "pair": [
+                1,
+                3
+              ],
+              "stage": 1,
+              "state": 0,
+              "wire_in": 1,
+              "wire_out": 1
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s2_w1_5",
+              "out_port": "th",
+              "pair": [
+                1,
+                5
+              ],
+              "stage": 2,
+              "state": 0,
+              "wire_in": 1,
+              "wire_out": 1
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s3_w1_3",
+              "out_port": "drop",
+              "pair": [
+                1,
+                3
+              ],
+              "stage": 3,
+              "state": 1,
+              "wire_in": 1,
+              "wire_out": 3
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s4_w2_3",
+              "out_port": "drop",
+              "pair": [
+                2,
+                3
+              ],
+              "stage": 4,
+              "state": 0,
+              "wire_in": 3,
+              "wire_out": 3
+            }
+          ]
+        },
+        "opt_path_id": 24,
+        "output": 3
+      },
+      {
+        "bfs_loss": {
+          "bend_count": 19,
+          "bend_loss_db": 0.0,
+          "crossing_count": 18,
+          "crossing_loss_db": 0.0,
+          "insertion_loss_db": 3.8166155694819865,
+          "mrr_loss_db": 0.1641642673909558,
+          "path_length_um": 1826.2256510455154,
+          "propagation_loss_db": 3.652451302091031
+        },
+        "bfs_path": {
+          "input_port": 2,
+          "output_port": 0,
+          "steps": [
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s0_w2_3",
+              "out_port": "th",
+              "pair": [
+                2,
+                3
+              ],
+              "stage": 0,
+              "state": 0,
+              "wire_in": 2,
+              "wire_out": 2
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s1_w0_2",
+              "out_port": "drop",
+              "pair": [
+                0,
+                2
+              ],
+              "stage": 1,
+              "state": 0,
+              "wire_in": 2,
+              "wire_out": 2
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s2_w2_6",
+              "out_port": "th",
+              "pair": [
+                2,
+                6
+              ],
+              "stage": 2,
+              "state": 0,
+              "wire_in": 2,
+              "wire_out": 2
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s3_w0_2",
+              "out_port": "th",
+              "pair": [
+                0,
+                2
+              ],
+              "stage": 3,
+              "state": 1,
+              "wire_in": 2,
+              "wire_out": 0
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s4_w0_1",
+              "out_port": "th",
+              "pair": [
+                0,
+                1
+              ],
+              "stage": 4,
+              "state": 0,
+              "wire_in": 0,
+              "wire_out": 0
+            }
+          ]
+        },
+        "bfs_path_id": 46,
+        "delta_il_db": -0.5280818126268567,
+        "input": 2,
+        "opt_loss": {
+          "bend_count": 21,
+          "bend_loss_db": 0.0,
+          "crossing_count": 13,
+          "crossing_loss_db": 0.0,
+          "insertion_loss_db": 4.344697382108843,
+          "mrr_loss_db": 0.20283015348191358,
+          "path_length_um": 2070.9336143134647,
+          "propagation_loss_db": 4.141867228626929
+        },
+        "opt_path": {
+          "input_port": 2,
+          "output_port": 0,
+          "steps": [
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s0_w2_3",
+              "out_port": "drop",
+              "pair": [
+                2,
+                3
+              ],
+              "stage": 0,
+              "state": 1,
+              "wire_in": 2,
+              "wire_out": 3
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s1_w1_3",
+              "out_port": "drop",
+              "pair": [
+                1,
+                3
+              ],
+              "stage": 1,
+              "state": 0,
+              "wire_in": 3,
+              "wire_out": 3
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s2_w3_7",
+              "out_port": "th",
+              "pair": [
+                3,
+                7
+              ],
+              "stage": 2,
+              "state": 0,
+              "wire_in": 3,
+              "wire_out": 3
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s3_w1_3",
+              "out_port": "th",
+              "pair": [
+                1,
+                3
+              ],
+              "stage": 3,
+              "state": 1,
+              "wire_in": 3,
+              "wire_out": 1
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s4_w0_1",
+              "out_port": "th",
+              "pair": [
+                0,
+                1
+              ],
+              "stage": 4,
+              "state": 1,
+              "wire_in": 1,
+              "wire_out": 0
+            }
+          ]
+        },
+        "opt_path_id": 58,
+        "output": 0
+      },
+      {
+        "bfs_loss": {
+          "bend_count": 22,
+          "bend_loss_db": 0.0,
+          "crossing_count": 11,
+          "crossing_loss_db": 0.0,
+          "insertion_loss_db": 3.7734390805076963,
+          "mrr_loss_db": 0.1738638886128183,
+          "path_length_um": 1799.7875959474388,
+          "propagation_loss_db": 3.599575191894878
+        },
+        "bfs_path": {
+          "input_port": 3,
+          "output_port": 4,
+          "steps": [
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s0_w2_3",
+              "out_port": "drop",
+              "pair": [
+                2,
+                3
+              ],
+              "stage": 0,
+              "state": 0,
+              "wire_in": 3,
+              "wire_out": 3
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s1_w1_3",
+              "out_port": "th",
+              "pair": [
+                1,
+                3
+              ],
+              "stage": 1,
+              "state": 1,
+              "wire_in": 3,
+              "wire_out": 1
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s2_w1_5",
+              "out_port": "drop",
+              "pair": [
+                1,
+                5
+              ],
+              "stage": 2,
+              "state": 1,
+              "wire_in": 1,
+              "wire_out": 5
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s4_w4_5",
+              "out_port": "th",
+              "pair": [
+                4,
+                5
+              ],
+              "stage": 4,
+              "state": 1,
+              "wire_in": 5,
+              "wire_out": 4
+            }
+          ]
+        },
+        "bfs_path_id": 76,
+        "delta_il_db": 0.28141592653589775,
+        "input": 3,
+        "opt_loss": {
+          "bend_count": 20,
+          "bend_loss_db": 0.0,
+          "crossing_count": 11,
+          "crossing_loss_db": 0.0,
+          "insertion_loss_db": 3.4920231539717985,
+          "mrr_loss_db": 0.17386388861281882,
+          "path_length_um": 1659.0796326794898,
+          "propagation_loss_db": 3.3181592653589798
+        },
+        "opt_path": {
+          "input_port": 3,
+          "output_port": 4,
+          "steps": [
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s0_w2_3",
+              "out_port": "th",
+              "pair": [
+                2,
+                3
+              ],
+              "stage": 0,
+              "state": 1,
+              "wire_in": 3,
+              "wire_out": 2
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s1_w0_2",
+              "out_port": "th",
+              "pair": [
+                0,
+                2
+              ],
+              "stage": 1,
+              "state": 1,
+              "wire_in": 2,
+              "wire_out": 0
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s2_w0_4",
+              "out_port": "drop",
+              "pair": [
+                0,
+                4
+              ],
+              "stage": 2,
+              "state": 1,
+              "wire_in": 0,
+              "wire_out": 4
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s4_w4_5",
+              "out_port": "th",
+              "pair": [
+                4,
+                5
+              ],
+              "stage": 4,
+              "state": 0,
+              "wire_in": 4,
+              "wire_out": 4
+            }
+          ]
+        },
+        "opt_path_id": 86,
+        "output": 4
+      },
+      {
+        "bfs_loss": {
+          "bend_count": 20,
+          "bend_loss_db": 0.0,
+          "crossing_count": 16,
+          "crossing_loss_db": 0.0,
+          "insertion_loss_db": 4.0476564757954145,
+          "mrr_loss_db": 0.18349721043643463,
+          "path_length_um": 1932.0796326794898,
+          "propagation_loss_db": 3.8641592653589796
+        },
+        "bfs_path": {
+          "input_port": 4,
+          "output_port": 1,
+          "steps": [
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s0_w4_5",
+              "out_port": "drop",
+              "pair": [
+                4,
+                5
+              ],
+              "stage": 0,
+              "state": 1,
+              "wire_in": 4,
+              "wire_out": 5
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s1_w5_7",
+              "out_port": "th",
+              "pair": [
+                5,
+                7
+              ],
+              "stage": 1,
+              "state": 0,
+              "wire_in": 5,
+              "wire_out": 5
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s2_w1_5",
+              "out_port": "th",
+              "pair": [
+                1,
+                5
+              ],
+              "stage": 2,
+              "state": 1,
+              "wire_in": 5,
+              "wire_out": 1
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s3_w1_3",
+              "out_port": "th",
+              "pair": [
+                1,
+                3
+              ],
+              "stage": 3,
+              "state": 0,
+              "wire_in": 1,
+              "wire_out": 1
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s4_w0_1",
+              "out_port": "drop",
+              "pair": [
+                0,
+                1
+              ],
+              "stage": 4,
+              "state": 0,
+              "wire_in": 1,
+              "wire_out": 1
+            }
+          ]
+        },
+        "bfs_path_id": 101,
+        "delta_il_db": 0.6160000000000005,
+        "input": 4,
+        "opt_loss": {
+          "bend_count": 20,
+          "bend_loss_db": 0.0,
+          "crossing_count": 20,
+          "crossing_loss_db": 0.0,
+          "insertion_loss_db": 3.431656475795414,
+          "mrr_loss_db": 0.18349721043643463,
+          "path_length_um": 1624.0796326794898,
+          "propagation_loss_db": 3.2481592653589795
+        },
+        "opt_path": {
+          "input_port": 4,
+          "output_port": 1,
+          "steps": [
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s0_w4_5",
+              "out_port": "th",
+              "pair": [
+                4,
+                5
+              ],
+              "stage": 0,
+              "state": 0,
+              "wire_in": 4,
+              "wire_out": 4
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s1_w4_6",
+              "out_port": "th",
+              "pair": [
+                4,
+                6
+              ],
+              "stage": 1,
+              "state": 0,
+              "wire_in": 4,
+              "wire_out": 4
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s2_w0_4",
+              "out_port": "th",
+              "pair": [
+                0,
+                4
+              ],
+              "stage": 2,
+              "state": 1,
+              "wire_in": 4,
+              "wire_out": 0
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s3_w0_2",
+              "out_port": "th",
+              "pair": [
+                0,
+                2
+              ],
+              "stage": 3,
+              "state": 0,
+              "wire_in": 0,
+              "wire_out": 0
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s4_w0_1",
+              "out_port": "drop",
+              "pair": [
+                0,
+                1
+              ],
+              "stage": 4,
+              "state": 1,
+              "wire_in": 0,
+              "wire_out": 1
+            }
+          ]
+        },
+        "opt_path_id": 91,
+        "output": 1
+      },
+      {
+        "bfs_loss": {
+          "bend_count": 20,
+          "bend_loss_db": 0.0,
+          "crossing_count": 20,
+          "crossing_loss_db": 0.0,
+          "insertion_loss_db": 3.828690210926319,
+          "mrr_loss_db": 0.154530945567339,
+          "path_length_um": 1837.07963267949,
+          "propagation_loss_db": 3.67415926535898
+        },
+        "bfs_path": {
+          "input_port": 5,
+          "output_port": 5,
+          "steps": [
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s0_w4_5",
+              "out_port": "th",
+              "pair": [
+                4,
+                5
+              ],
+              "stage": 0,
+              "state": 1,
+              "wire_in": 5,
+              "wire_out": 4
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s1_w4_6",
+              "out_port": "th",
+              "pair": [
+                4,
+                6
+              ],
+              "stage": 1,
+              "state": 0,
+              "wire_in": 4,
+              "wire_out": 4
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s2_w0_4",
+              "out_port": "drop",
+              "pair": [
+                0,
+                4
+              ],
+              "stage": 2,
+              "state": 0,
+              "wire_in": 4,
+              "wire_out": 4
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s4_w4_5",
+              "out_port": "drop",
+              "pair": [
+                4,
+                5
+              ],
+              "stage": 4,
+              "state": 1,
+              "wire_in": 4,
+              "wire_out": 5
+            }
+          ]
+        },
+        "bfs_path_id": 122,
+        "delta_il_db": -0.3659181873731434,
+        "input": 5,
+        "opt_loss": {
+          "bend_count": 18,
+          "bend_loss_db": 0.0,
+          "crossing_count": 16,
+          "crossing_loss_db": 0.0,
+          "insertion_loss_db": 4.194608398299462,
+          "mrr_loss_db": 0.11586505947638073,
+          "path_length_um": 2039.3716694115408,
+          "propagation_loss_db": 4.078743338823082
+        },
+        "opt_path": {
+          "input_port": 5,
+          "output_port": 5,
+          "steps": [
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s0_w4_5",
+              "out_port": "drop",
+              "pair": [
+                4,
+                5
+              ],
+              "stage": 0,
+              "state": 0,
+              "wire_in": 5,
+              "wire_out": 5
+            },
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s1_w5_7",
+              "out_port": "th",
+              "pair": [
+                5,
+                7
+              ],
+              "stage": 1,
+              "state": 0,
+              "wire_in": 5,
+              "wire_out": 5
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s2_w1_5",
+              "out_port": "drop",
+              "pair": [
+                1,
+                5
+              ],
+              "stage": 2,
+              "state": 0,
+              "wire_in": 5,
+              "wire_out": 5
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s4_w4_5",
+              "out_port": "drop",
+              "pair": [
+                4,
+                5
+              ],
+              "stage": 4,
+              "state": 0,
+              "wire_in": 5,
+              "wire_out": 5
+            }
+          ]
+        },
+        "opt_path_id": 110,
+        "output": 5
+      },
+      {
+        "bfs_loss": {
+          "bend_count": 13,
+          "bend_loss_db": 0.0,
+          "crossing_count": 10,
+          "crossing_loss_db": 0.0,
+          "insertion_loss_db": 3.335102317090622,
+          "mrr_loss_db": 0.08689879460728563,
+          "path_length_um": 1624.1017612416683,
+          "propagation_loss_db": 3.2482035224833368
+        },
+        "bfs_path": {
+          "input_port": 6,
+          "output_port": 6,
+          "steps": [
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s0_w6_7",
+              "out_port": "th",
+              "pair": [
+                6,
+                7
+              ],
+              "stage": 0,
+              "state": 0,
+              "wire_in": 6,
+              "wire_out": 6
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s1_w4_6",
+              "out_port": "drop",
+              "pair": [
+                4,
+                6
+              ],
+              "stage": 1,
+              "state": 0,
+              "wire_in": 6,
+              "wire_out": 6
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s2_w2_6",
+              "out_port": "drop",
+              "pair": [
+                2,
+                6
+              ],
+              "stage": 2,
+              "state": 0,
+              "wire_in": 6,
+              "wire_out": 6
+            }
+          ]
+        },
+        "bfs_path_id": 132,
+        "delta_il_db": 0.0,
+        "input": 6,
+        "opt_loss": {
+          "bend_count": 13,
+          "bend_loss_db": 0.0,
+          "crossing_count": 10,
+          "crossing_loss_db": 0.0,
+          "insertion_loss_db": 3.335102317090622,
+          "mrr_loss_db": 0.08689879460728563,
+          "path_length_um": 1624.1017612416683,
+          "propagation_loss_db": 3.2482035224833368
+        },
+        "opt_path": {
+          "input_port": 6,
+          "output_port": 6,
+          "steps": [
+            {
+              "in_port": "in",
+              "mrr_id": "waksman_8x8_s0_w6_7",
+              "out_port": "th",
+              "pair": [
+                6,
+                7
+              ],
+              "stage": 0,
+              "state": 0,
+              "wire_in": 6,
+              "wire_out": 6
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s1_w4_6",
+              "out_port": "drop",
+              "pair": [
+                4,
+                6
+              ],
+              "stage": 1,
+              "state": 0,
+              "wire_in": 6,
+              "wire_out": 6
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s2_w2_6",
+              "out_port": "drop",
+              "pair": [
+                2,
+                6
+              ],
+              "stage": 2,
+              "state": 0,
+              "wire_in": 6,
+              "wire_out": 6
+            }
+          ]
+        },
+        "opt_path_id": 132,
+        "output": 6
+      },
+      {
+        "bfs_loss": {
+          "bend_count": 12,
+          "bend_loss_db": 0.0,
+          "crossing_count": 2,
+          "crossing_loss_db": 0.0,
+          "insertion_loss_db": 3.577394353822673,
+          "mrr_loss_db": 0.08689879460728563,
+          "path_length_um": 1745.2477796076937,
+          "propagation_loss_db": 3.4904955592153875
+        },
+        "bfs_path": {
+          "input_port": 7,
+          "output_port": 7,
+          "steps": [
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s0_w6_7",
+              "out_port": "drop",
+              "pair": [
+                6,
+                7
+              ],
+              "stage": 0,
+              "state": 0,
+              "wire_in": 7,
+              "wire_out": 7
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s1_w5_7",
+              "out_port": "drop",
+              "pair": [
+                5,
+                7
+              ],
+              "stage": 1,
+              "state": 0,
+              "wire_in": 7,
+              "wire_out": 7
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s2_w3_7",
+              "out_port": "drop",
+              "pair": [
+                3,
+                7
+              ],
+              "stage": 2,
+              "state": 0,
+              "wire_in": 7,
+              "wire_out": 7
+            }
+          ]
+        },
+        "bfs_path_id": 154,
+        "delta_il_db": 0.0,
+        "input": 7,
+        "opt_loss": {
+          "bend_count": 12,
+          "bend_loss_db": 0.0,
+          "crossing_count": 2,
+          "crossing_loss_db": 0.0,
+          "insertion_loss_db": 3.577394353822673,
+          "mrr_loss_db": 0.08689879460728563,
+          "path_length_um": 1745.2477796076937,
+          "propagation_loss_db": 3.4904955592153875
+        },
+        "opt_path": {
+          "input_port": 7,
+          "output_port": 7,
+          "steps": [
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s0_w6_7",
+              "out_port": "drop",
+              "pair": [
+                6,
+                7
+              ],
+              "stage": 0,
+              "state": 0,
+              "wire_in": 7,
+              "wire_out": 7
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s1_w5_7",
+              "out_port": "drop",
+              "pair": [
+                5,
+                7
+              ],
+              "stage": 1,
+              "state": 0,
+              "wire_in": 7,
+              "wire_out": 7
+            },
+            {
+              "in_port": "add",
+              "mrr_id": "waksman_8x8_s2_w3_7",
+              "out_port": "drop",
+              "pair": [
+                3,
+                7
+              ],
+              "stage": 2,
+              "state": 0,
+              "wire_in": 7,
+              "wire_out": 7
+            }
+          ]
+        },
+        "opt_path_id": 154,
+        "output": 7
+      }
+    ],
+    "permutation": [
+      2,
+      3,
+      0,
+      4,
+      1,
+      5,
+      6,
+      7
+    ],
+    "relative_improvement_percent": 16.134782823178373
+  },
+  "mean_delta_wil_db": 0.11299870084849183,
+  "mean_delta_wil_db_when_bfs_not_optimal": 0.28507743825623766,
+  "mean_realizations": 3.250793650793651,
+  "mean_relative_improvement_percent": 2.273775945522078,
+  "median_delta_wil_db": 0.0,
+  "median_realizations": 2.0,
+  "min_realizations": 1,
+  "missing_permutations": [],
+  "mrr_bit_order": [
+    "waksman_8x8_s0_w0_1",
+    "waksman_8x8_s0_w2_3",
+    "waksman_8x8_s0_w4_5",
+    "waksman_8x8_s0_w6_7",
+    "waksman_8x8_s1_w0_2",
+    "waksman_8x8_s1_w4_6",
+    "waksman_8x8_s1_w1_3",
+    "waksman_8x8_s1_w5_7",
+    "waksman_8x8_s2_w0_4",
+    "waksman_8x8_s2_w2_6",
+    "waksman_8x8_s2_w1_5",
+    "waksman_8x8_s2_w3_7",
+    "waksman_8x8_s3_w0_2",
+    "waksman_8x8_s3_w1_3",
+    "waksman_8x8_s4_w0_1",
+    "waksman_8x8_s4_w2_3",
+    "waksman_8x8_s4_w4_5"
+  ],
+  "multiplicity_vs_assignment_wil_range_correlation": {
+    "pearson": 0.4411411569297267,
+    "spearman": 0.6159236699171232
+  },
+  "multiplicity_vs_gain_correlation": {
+    "pearson": 0.3216912705088908,
+    "spearman": 0.4724720305710727
+  },
+  "num_distinct_permutations_realized": 40320,
+  "num_missing_permutations": 0,
+  "num_permutations": 40320,
+  "num_permutations_bfs_is_not_optimal": 15982,
+  "num_permutations_bfs_is_optimal": 24338,
+  "num_permutations_where_tolerance_changes_optimum_count": 0,
+  "num_permutations_with_multiple_assignments": 32128,
+  "num_permutations_with_multiple_wil_optima": 18328,
+  "num_states": 131072,
+  "num_total_states": 131072,
+  "optimum_tie_policy": "strict minimum numeric WIL; then fewer CROSS, lower total IL, lexicographic state vector. num_optimal_states counts WIL equality within 1e-10 dB; num_exact_optimal_states records strict numeric equality.",
+  "permutation_with_max_improvement": [
+    2,
+    3,
+    0,
+    4,
+    1,
+    5,
+    6,
+    7
+  ],
+  "protected_directories_unchanged": true,
+  "realization_multiplicity_distribution": {
+    "1": 8192,
+    "2": 14336,
+    "4": 12288,
+    "5": 2048,
+    "8": 2816,
+    "16": 512,
+    "32": 128
+  },
+  "reference_evaluator_crosschecks": [
+    {
+      "absolute_difference_db": 0.0,
+      "cached_wil_db": 5.181320181939005,
+      "paths_checked": 5760,
+      "permutations_checked": 720,
+      "prefix": [
+        0,
+        1
+      ],
+      "reference_wil_db": 5.181320181939005,
+      "witness_input": 5,
+      "witness_permutation": [
+        0,
+        1,
+        2,
+        7,
+        4,
+        3,
+        5,
+        6
+      ]
+    },
+    {
+      "absolute_difference_db": 0.0,
+      "cached_wil_db": 5.094069051520382,
+      "paths_checked": 5760,
+      "permutations_checked": 720,
+      "prefix": [
+        3,
+        7
+      ],
+      "reference_wil_db": 5.094069051520382,
+      "witness_input": 5,
+      "witness_permutation": [
+        3,
+        7,
+        0,
+        1,
+        4,
+        2,
+        5,
+        6
+      ]
+    },
+    {
+      "absolute_difference_db": 0.0,
+      "cached_wil_db": 5.181320181939005,
+      "paths_checked": 5760,
+      "permutations_checked": 720,
+      "prefix": [
+        7,
+        6
+      ],
+      "reference_wil_db": 5.181320181939005,
+      "witness_input": 5,
+      "witness_permutation": [
+        7,
+        6,
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
+    }
+  ],
+  "relative_improvement_definition": "100 * (WIL_BFS - WIL_OPT) / WIL_BFS",
+  "runtime_seconds": {
+    "all_state_path_evaluation": 10.006307475967333,
+    "baseline_verification": 1.6339808308985084,
+    "deliverable_generation": 7.393534247996286,
+    "enumeration_and_coverage": 1.1806819520425051,
+    "gf2_instrumentation": 6.883299184963107,
+    "optimum_selection": 0.6438642221037298,
+    "reference_crosscheck": 0.7492063101381063,
+    "route_and_audit": 920.0150760030374,
+    "total": 948.5773441831116
+  },
+  "state_vector_order": "bit i / vector position i = mrr_bit_order[i]; 0=BAR, 1=CROSS",
+  "status": "complete",
+  "suboptimal_bfs_path_and_cross_observations": {
+    "bfs_critical_signal_path_changed": 15982,
+    "bfs_critical_signal_path_unchanged": 0,
+    "opt_fewer_cross": 342,
+    "opt_more_cross": 13140,
+    "same_cross_count": 2500,
+    "worst_input_changed": 13718,
+    "worst_input_unchanged": 2264
+  },
+  "tolerance_db": 1e-10,
+  "unique_physical_paths": 176
+}

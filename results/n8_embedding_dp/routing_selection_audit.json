@@ -1,0 +1,39 @@
+{
+  "all_required_priority_roles_present": true,
+  "unique_candidates": 24,
+  "maximum": 24,
+  "objective_best": {
+    "A": "e_2dc7ec51ea33",
+    "B": "e_1a30e83a0382",
+    "C": "e_1a30e83a0382",
+    "D": "e_86a531d2390c",
+    "E": "e_d0112ac00b04",
+    "F": "e_1a30e83a0382"
+  },
+  "F_top_5": [
+    "e_1a30e83a0382",
+    "e_4a7af52980b9",
+    "e_2dc7ec51ea33",
+    "e_695b5f4fafd4",
+    "e_88f1d4a39899"
+  ],
+  "random_best_3": [
+    "e_4a7af52980b9",
+    "e_1f075749476e",
+    "e_3afbd6fad098"
+  ],
+  "random_middle_3": [
+    "e_b3b2b769ff12",
+    "e_e447f56aaabf",
+    "e_f91d4aa39080"
+  ],
+  "greedy": "e_e398f7682f2b",
+  "proxy_and_queue_sha256": {
+    "candidates.json": "b14427f52f157117f1bcb999bbe8ee642cae5594ea46e27c0ca25683cdfec42e",
+    "routing_queue.json": "fde18fa2a7dd7053e1643a25f7b3cec5ac58418ae87c8f761966e870e62b1b7c",
+    "dp_stats.csv": "0a557c7f6bf7b8180878eedd280a5bcf522868149ffe35fca0b1dfe9883abb44",
+    "proxy_rankings.csv": "da6a81437d86d0d27a257941e19ea7f9b4c509036d82b745ef35bed21a161ccc",
+    "proxy_edges.csv": "ced65079d6ba75bdfe633bf8ad474cc14b7c1f6aec9587e17939ba3af8132c9e",
+    "stage1_complete.json": "48e02de8dbe11c53bdf32d13da6bf8c49f8a3f641dc062867c6364a1b8017f23"
+  }
+}

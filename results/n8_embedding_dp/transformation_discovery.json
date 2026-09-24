@@ -1,0 +1,24 @@
+{
+  "boundary_reversal": "Physical vertical boundary reversal is the enabled mirror_y, not a logical wire renaming.",
+  "enabled": [
+    "normal",
+    "equal-size recursive child placement swap",
+    "vertical subtree reflection including cell ports"
+  ],
+  "geometry_only": true,
+  "logical_port_roles_unchanged": true,
+  "rejected": [
+    {
+      "choice": "horizontal reflection / 180-degree SE rotation",
+      "reason": "Production router hardcodes port sides; transformed dx contradicts port_side and escape directions."
+    },
+    {
+      "choice": "unconjugated port-role or logical boundary relabeling",
+      "reason": "Changes named port connectivity / BAR-CROSS semantics; outside permitted geometry-only contract."
+    },
+    {
+      "choice": "unequal-size child slot exchange",
+      "reason": "No isomorphic slot bijection; excluded from this finite design space."
+    }
+  ]
+}

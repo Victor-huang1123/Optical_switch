@@ -108,6 +108,25 @@ def test_default_rules_preserve_waksman_n4_geometry_hash() -> None:
     )
 
 
+def test_crossing_outgoing_arm_state_rejects_turn_until_clear() -> None:
+    moves = neighbor_moves(
+        RouterState(1, 1, "E", crossing_arm_remaining_um=10.0),
+        (0.0, 8.0, 16.0),
+        (0.0, 8.0, 16.0),
+    )
+
+    assert {move.next_state.orientation for move in moves} == {"E"}
+    assert moves[0].next_state.crossing_arm_remaining_um == pytest.approx(2.0)
+
+    cleared = neighbor_moves(
+        moves[0].next_state,
+        (0.0, 8.0, 16.0, 24.0),
+        (0.0, 8.0, 16.0),
+    )
+    assert {move.next_state.orientation for move in cleared} == {"E"}
+    assert cleared[0].next_state.crossing_arm_remaining_um == 0.0
+
+
 def test_default_rules_preserve_waksman_n6_geometry_hash() -> None:
     result, _cells = _route_waksman(6)
 

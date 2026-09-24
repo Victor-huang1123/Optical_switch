@@ -1,0 +1,3 @@
+rule,edge_ids,message,x_um,y_um
+perpendicular_clearance,input:w1->waksman_6x6_s0_w0_1.add;input:w4->waksman_6x6_s0_w4_5.in,perpendicular waveguides approach closer than 4.000 um centerline-equivalent edge clearance without a true crossing (2.000 um),392.0,133.5
+perpendicular_clearance,input:w4->waksman_6x6_s0_w4_5.in;input:w5->waksman_6x6_s0_w4_5.add,perpendicular waveguides approach closer than 4.000 um centerline-equivalent edge clearance without a true crossing (1.500 um),368.0,185.75

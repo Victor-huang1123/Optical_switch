@@ -68,6 +68,25 @@ def test_crossing_clearance_accepts_exact_threshold() -> None:
     assert not validate_physical_routes(routes, {}, rules)
 
 
+def test_crossing_component_rules_ignore_mrr_local_contacts() -> None:
+    local = _physical(0, ((0.0, 0.0), (20.0, 0.0)))
+    local = replace(
+        local,
+        external_segments=(),
+        local_segments=local.external_segments,
+    )
+    external = _physical(1, ((5.0, -20.0), (5.0, 20.0)))
+    rules = RoutingRules(
+        min_spacing_um=0.0,
+        mrr_keepout_um=0.0,
+        min_crossing_clearance_um=10.0,
+    )
+
+    # The optical loss model still counts this contact elsewhere, but no
+    # standalone crossing cell was inserted for an MRR-internal segment.
+    assert not validate_physical_routes((local, external), {}, rules)
+
+
 def test_physical_turn_guard_bypasses_db_tie_scaling_only_when_enabled() -> None:
     legacy = RoutingRules(
         cost_model="db",
@@ -140,3 +159,78 @@ def test_straightener_preserves_edge_endpoints_and_removes_external_jog() -> Non
     assert straightened.routing.routes[0].waypoints[-1] == points[-1]
     assert straightened.routing.routes[0].edge_routes[0].waypoints[0] == points[0]
     assert straightened.routing.routes[0].edge_routes[0].waypoints[-1] == points[-1]
+
+
+def test_bend_slide_repairs_crossing_arm_with_bounded_loss() -> None:
+    point_sets = (
+        ((0.0, 0.0), (20.0, 0.0), (20.0, 20.0), (40.0, 20.0)),
+        ((15.0, -20.0), (15.0, 30.0)),
+    )
+    rules = RoutingRules(
+        min_spacing_um=0.0,
+        mrr_keepout_um=0.0,
+        min_crossing_clearance_um=10.0,
+        grid_pitch_um=8.0,
+        prop_loss_db_per_um=0.0002,
+        crossing_loss_db_per_cross=0.1,
+        bend_loss_db_per_bend=0.005,
+    )
+    physical = tuple(_physical(index, points) for index, points in enumerate(point_sets))
+    fabric_routes = tuple(
+        FabricRoute(
+            edge_id=f"e{index}",
+            covered_edge_ids=(f"e{index}",),
+            waypoints=route.waypoints,
+            length_um=route.length_um,
+            bend_count=route.bend_count,
+            external_segments=route.external_segments,
+            local_segments=(),
+            edge_routes=(
+                FabricEdgeRoute(
+                    f"e{index}",
+                    route.waypoints,
+                    route.length_um,
+                    route.bend_count,
+                ),
+            ),
+        )
+        for index, route in enumerate(physical)
+    )
+    graph = FabricGraph(
+        topology_name="slide_unit",
+        n_logical=2,
+        n_physical=2,
+        blocked_ports=(),
+        edges=(),
+        waveguides=tuple(
+            FabricWaveguide(
+                owner_edge_id=f"e{index}",
+                edge_ids=(f"e{index}",),
+                input_wire=index,
+                output_wire=index,
+                blocked_boundary=False,
+            )
+            for index in range(2)
+        ),
+    )
+    result = FixedFabricRoutingResult(
+        graph=graph,
+        routes=fabric_routes,
+        failed_edges=(),
+        drc_violations=(),
+        crossings=(),
+        rules=rules,
+    )
+    before = validate_physical_routes(physical, {}, rules)
+
+    straightened = straighten_fixed_fabric(result, {})
+
+    assert [violation.rule for violation in before] == [
+        "crossing_clearance",
+        "crossing_footprint",
+    ]
+    assert straightened.stats.bend_slides == 1
+    assert straightened.stats.crossing_arm_violations_removed == 1
+    assert straightened.stats.loss_proxy_delta_db <= 0.01
+    assert not straightened.routing.drc_violations
+    assert straightened.routing.routes[0].waypoints[1][0] == 28.0

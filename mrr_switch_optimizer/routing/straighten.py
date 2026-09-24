@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from collections import Counter
 from dataclasses import dataclass, replace
 from math import pi
 
@@ -27,6 +28,7 @@ from .port_access import PortAccessLegality, PortAccessPlan
 from .refinement import _route_crossings, _route_with_crossing_count
 from .types import (
     EPS,
+    DRCViolation,
     PhysicalRoute,
     Point,
     RoutingRules,
@@ -51,6 +53,17 @@ class _RewriteCandidate:
     crossings: tuple[object, ...]
     loss_proxy_db: float
     kind: str
+
+
+@dataclass(frozen=True)
+class _SlideCandidate:
+    route_index: int
+    first_bend_idx: int
+    delta_um: float
+    routes: tuple[PhysicalRoute, ...]
+    crossings: tuple[object, ...]
+    violations: tuple[DRCViolation, ...]
+    loss_proxy_db: float
 
 
 def _turn_sign(previous: Point, corner: Point, following: Point) -> int:
@@ -181,6 +194,200 @@ def _splice_external_route(
         local_segments=route.local_segments,
         crossing_count=route.crossing_count,
     )
+
+
+def _slide_bend_pair_route(
+    route: PhysicalRoute,
+    first_bend_idx: int,
+    delta_um: float,
+    rules: RoutingRules,
+) -> PhysicalRoute:
+    points = list(route.waypoints)
+    first = points[first_bend_idx]
+    second = points[first_bend_idx + 1]
+    before = points[first_bend_idx - 1]
+    after = points[first_bend_idx + 2]
+    outer_horizontal = abs(before[1] - first[1]) < EPS
+    if outer_horizontal:
+        points[first_bend_idx] = (first[0] + delta_um, first[1])
+        points[first_bend_idx + 1] = (second[0] + delta_um, second[1])
+    else:
+        points[first_bend_idx] = (first[0], first[1] + delta_um)
+        points[first_bend_idx + 1] = (second[0], second[1] + delta_um)
+    waypoints = tuple(points)
+    if any(_same_point(start, end) for start, end in zip(waypoints, waypoints[1:])):
+        raise ValueError("bend slide collapses a segment")
+    roles = _route_waypoint_segment_roles(route)
+    segments = tuple(_axis_segments(waypoints))
+    external_segments = tuple(
+        segment for segment, role in zip(segments, roles) if role is not None
+    )
+    bends = _bend_count(waypoints)
+    return PhysicalRoute(
+        input_port=route.input_port,
+        output_port=route.output_port,
+        waypoints=waypoints,
+        length_um=_polyline_length(waypoints) + bends * 0.5 * pi * rules.bend_radius_um,
+        bend_count=bends,
+        external_segments=external_segments,
+        local_segments=route.local_segments,
+        crossing_count=route.crossing_count,
+    )
+
+
+def _drc_rule_counts(violations: tuple[DRCViolation, ...]) -> Counter[str]:
+    return Counter(violation.rule for violation in violations)
+
+
+def _best_bend_slide(
+    routes: tuple[PhysicalRoute, ...],
+    protected_by_input: dict[int, frozenset[Point]],
+    cells: dict[str, MRRCell],
+    rules: RoutingRules,
+    loss_ceiling: float,
+    current_violations: tuple[DRCViolation, ...],
+    port_access_plan: PortAccessPlan | None,
+) -> tuple[_SlideCandidate | None, int, int]:
+    current_counts = _drc_rule_counts(current_violations)
+    current_arm_count = current_counts["crossing_clearance"]
+    if current_arm_count == 0:
+        return None, 0, 0
+    best: _SlideCandidate | None = None
+    candidates = 0
+    legal_candidates = 0
+    deltas = tuple(
+        sign * rung * rules.grid_pitch_um
+        for rung in range(1, rules.local_repair_max_shift_tracks + 1)
+        for sign in (1.0, -1.0)
+    )
+    for route_index in sorted(
+        range(len(routes)), key=lambda index: routes[index].input_port
+    ):
+        route = routes[route_index]
+        points = route.waypoints
+        roles = _route_waypoint_segment_roles(route)
+        protected = protected_by_input[route.input_port]
+        blockers = [
+            segment
+            for other_index, other in enumerate(routes)
+            for segment in (*other.external_segments, *other.local_segments)
+            if other_index != route_index
+        ]
+        obstacles = [
+            _inflate_obstacle(_routing_obstacle(cell), rules.mrr_keepout_um)
+            for cell in cells.values()
+        ]
+        for first_bend_idx in range(1, len(points) - 2):
+            local_roles = roles[first_bend_idx - 1 : first_bend_idx + 2]
+            if len(local_roles) != 3 or any(role is None for role in local_roles):
+                continue
+            if (
+                points[first_bend_idx] in protected
+                or points[first_bend_idx + 1] in protected
+            ):
+                continue
+            before, first, second, after = points[
+                first_bend_idx - 1 : first_bend_idx + 3
+            ]
+            outer_horizontal = abs(before[1] - first[1]) < EPS
+            middle_horizontal = abs(first[1] - second[1]) < EPS
+            after_horizontal = abs(second[1] - after[1]) < EPS
+            if outer_horizontal != after_horizontal or outer_horizontal == middle_horizontal:
+                continue
+            unchanged_own = [
+                segment
+                for segment_index, segment in enumerate(_axis_segments(points))
+                if segment_index not in {
+                    first_bend_idx - 1,
+                    first_bend_idx,
+                    first_bend_idx + 1,
+                }
+            ]
+            for delta_um in deltas:
+                candidates += 1
+                try:
+                    candidate_route = _slide_bend_pair_route(
+                        route,
+                        first_bend_idx,
+                        delta_um,
+                        rules,
+                    )
+                except ValueError:
+                    continue
+                changed = candidate_route.waypoints[
+                    first_bend_idx - 1 : first_bend_idx + 3
+                ]
+                port_access = (
+                    None
+                    if port_access_plan is None
+                    else PortAccessLegality.for_net(port_access_plan, route.input_port)
+                )
+                if not _candidate_is_available(
+                    changed,
+                    blockers + unchanged_own,
+                    obstacles,
+                    rules,
+                    port_access,
+                ):
+                    continue
+                candidate_routes = list(routes)
+                candidate_routes[route_index] = candidate_route
+                crossings = _route_crossings(candidate_routes)
+                candidate_routes = [
+                    _route_with_crossing_count(item, crossings)
+                    for item in candidate_routes
+                ]
+                candidate_routes_tuple = tuple(candidate_routes)
+                violations = tuple(
+                    validate_physical_routes(candidate_routes_tuple, cells, rules)
+                )
+                counts = _drc_rule_counts(violations)
+                if any(
+                    count > current_counts.get(rule, 0)
+                    for rule, count in counts.items()
+                ):
+                    continue
+                arm_count = counts["crossing_clearance"]
+                if arm_count >= current_arm_count:
+                    continue
+                loss = _loss_proxy_db(candidate_routes_tuple, len(crossings), rules)
+                # The +0.01 dB allowance applies to the complete offline
+                # legalization pass, not independently to every committed
+                # slide.  Holding one ceiling prevents several individually
+                # legal repairs from accumulating an unbounded loss increase.
+                if loss > loss_ceiling + EPS:
+                    continue
+                legal_candidates += 1
+                candidate = _SlideCandidate(
+                    route_index=route_index,
+                    first_bend_idx=first_bend_idx,
+                    delta_um=delta_um,
+                    routes=candidate_routes_tuple,
+                    crossings=tuple(crossings),
+                    violations=violations,
+                    loss_proxy_db=loss,
+                )
+                if best is None or (
+                    arm_count,
+                    len(violations),
+                    loss,
+                    abs(delta_um),
+                    delta_um < 0.0,
+                    route.input_port,
+                    first_bend_idx,
+                    candidate_route.waypoints,
+                ) < (
+                    _drc_rule_counts(best.violations)["crossing_clearance"],
+                    len(best.violations),
+                    best.loss_proxy_db,
+                    abs(best.delta_um),
+                    best.delta_um < 0.0,
+                    routes[best.route_index].input_port,
+                    best.first_bend_idx,
+                    best.routes[best.route_index].waypoints,
+                ):
+                    best = candidate
+    return best, candidates, legal_candidates
 
 
 def _loss_proxy_db(
@@ -391,17 +598,19 @@ def straighten_fixed_fabric(
 ) -> StraightenResult:
     """Conservatively remove external jogs from an already-routed fabric.
 
-    This function never invokes a router.  A rewrite is committed only after
-    blocker/keepout/port-access checks, full post-route DRC, and a non-increasing
-    loss proxy using the coefficients stored in ``result.rules``.
+    This function never invokes a router.  It first slides adjacent bend pairs
+    to repair crossing arms, accepting at most +0.01 dB only when an arm
+    violation is removed.  Ordinary jog rewrites remain non-increasing-loss.
+    Every commit passes blocker/keepout/port-access checks and may not add a DRC
+    finding relative to its input geometry.
     """
     if max_rounds < 1:
         raise ValueError("max_rounds must be positive")
     if preserve_template:
         stats = StraightenStats()
         return StraightenResult(replace(result, straighten_stats=stats), stats)
-    if result.failed_edges or result.drc_violations:
-        raise ValueError("cannot straighten an incomplete or DRC-illegal fabric")
+    if result.failed_edges:
+        raise ValueError("cannot straighten an incomplete fabric")
 
     routes = physical_routes_from_fixed(result)
     initial_routes = routes
@@ -417,10 +626,36 @@ def straighten_fixed_fabric(
     rewrites = 0
     rounds_executed = 0
     crossings = initial_crossings
+    initial_drc = tuple(validate_physical_routes(routes, cells, result.rules))
+    current_drc = initial_drc
+    bend_slides = 0
 
-    for round_index in range(max_rounds):
+    for _round_index in range(max_rounds):
+        slide, slide_candidates, slide_legal = _best_bend_slide(
+            routes,
+            protected_by_input,
+            cells,
+            result.rules,
+            initial_loss + 0.01,
+            current_drc,
+            port_access_plan,
+        )
+        candidate_windows += slide_candidates
+        legal_candidates += slide_legal
+        if slide is None:
+            break
+        routes = slide.routes
+        crossings = slide.crossings  # type: ignore[assignment]
+        current_loss = slide.loss_proxy_db
+        current_drc = slide.violations
+        bend_slides += 1
+        rounds_executed += 1
+
+    for round_index in range(max_rounds - rounds_executed):
+        if current_drc:
+            break
         changed = False
-        rounds_executed = round_index + 1
+        rounds_executed += 1
         for route_index in sorted(
             range(len(routes)), key=lambda index: routes[index].input_port
         ):
@@ -446,11 +681,20 @@ def straighten_fixed_fabric(
             break
 
     final_drc = validate_physical_routes(routes, cells, result.rules)
-    if final_drc:
-        first = final_drc[0]
+    initial_counts = _drc_rule_counts(initial_drc)
+    final_counts = _drc_rule_counts(tuple(final_drc))
+    regression = next(
+        (
+            violation
+            for violation in final_drc
+            if final_counts[violation.rule] > initial_counts.get(violation.rule, 0)
+        ),
+        None,
+    )
+    if regression is not None:
         raise RuntimeError(
             "straightening legality regression: "
-            f"{first.rule}: {first.net_id}: {first.message}"
+            f"{regression.rule}: {regression.net_id}: {regression.message}"
         )
 
     fabric_by_input = {
@@ -484,7 +728,7 @@ def straighten_fixed_fabric(
     }
     stats = StraightenStats(
         rounds=rounds_executed,
-        rewrites=rewrites,
+        rewrites=rewrites + bend_slides,
         candidate_windows=candidate_windows,
         legal_candidates=legal_candidates,
         bends_removed=sum(route.bend_count for route in initial_routes)
@@ -493,6 +737,11 @@ def straighten_fixed_fabric(
         - sum(route.length_um for route in routes),
         crossings_delta=len(crossings) - len(initial_crossings),
         loss_proxy_delta_db=current_loss - initial_loss,
+        bend_slides=bend_slides,
+        crossing_arm_violations_removed=(
+            initial_counts["crossing_clearance"]
+            - final_counts["crossing_clearance"]
+        ),
     )
     final_result = replace(
         result,

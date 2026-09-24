@@ -113,6 +113,9 @@ class RoutingRules:
     physical_turn_guard: bool = False
     backtrack_penalty_um: float = 80.0
     hairpin_penalty_um: float = 200.0
+    # Same-net hairpin/spacing proxies are physical search discipline in v4,
+    # not weak dB tie-break guidance.  Default-off preserves legacy hashes.
+    physical_same_net_hairpin: bool = False
     local_repair_max_shift_tracks: int = 8
     route_window_max_detour_tracks: int = 4
     # Global routing-grid margin beyond the outermost cells/IO tracks, in grid
@@ -158,6 +161,10 @@ class RoutingRules:
     enforce_bend_spacing: bool = False
     legalize_port_access: bool = False
     port_access_runway_um: float = 10.0
+    # Reserved-region escalation stages.  These are set only by the v4 campaign
+    # retry ladder and are serialized with the resulting case.
+    allow_foreign_outer_runway_transit: bool = False
+    port_access_stagger_tracks: int = 0
     drc_same_net_min_spacing: bool = False
     drc_perpendicular_clearance: bool = False
     drc_bend_radius_legality: bool = False
@@ -208,6 +215,8 @@ class StraightenStats:
     length_saved_um: float = 0.0
     crossings_delta: int = 0
     loss_proxy_delta_db: float = 0.0
+    bend_slides: int = 0
+    crossing_arm_violations_removed: int = 0
 
 @dataclass(frozen=True)
 class PhysicalRoutingResult:

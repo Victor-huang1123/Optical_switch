@@ -64,13 +64,14 @@ from .port_access import (
     hop_crossing_class,
     port_side,
 )
-from .port_access import port_access_conflict_detail
+from .port_access import port_access_conflict_detail, port_access_region_conflict
 from .refinement import (
     _braid_pair_count,
     _route_crossings,
     _route_with_crossing_count,
     _routing_candidate_score,
 )
+from .route_grid import CrossingFootprint, crossing_footprint_conflict
 from .types import (
     BEND_RADIUS_UM,
     DRCViolation,
@@ -1457,6 +1458,8 @@ def _foreign_port_access_guard_blockers(
     guards: list[OccupiedRouteSegment] = []
     for region in plan.reserved_regions:
         if region.owner_input == owner_input:
+            continue
+        if rules.allow_foreign_outer_runway_transit:
             continue
         if active_owner_inputs is not None and region.owner_input not in active_owner_inputs:
             continue
@@ -4752,8 +4755,27 @@ def _validate_source_detour_crossings(
     repeated_crossing_penalty_scale: float = 1.0,
 ) -> None:
     allowed_touch_points = segment
+    if rules.min_crossing_clearance_um is not None:
+        for footprint in _occupied_crossing_footprints(
+            occupied_segments,
+            rules.min_crossing_clearance_um,
+        ):
+            if crossing_footprint_conflict(segment, footprint, owner_input):
+                raise RoutingError(
+                    f"{candidate_label} enters crossing footprint at="
+                    f"({footprint.location[0]:.3f},{footprint.location[1]:.3f})"
+                )
     if port_access is not None:
         for region in port_access.plan.reserved_regions:
+            if rules.allow_foreign_outer_runway_transit:
+                if port_access_region_conflict(
+                    segment,
+                    region,
+                    owner_input,
+                    rules,
+                    allowed_touch_points=allowed_touch_points,
+                ) is None:
+                    continue
             if _orthogonal_crossing_point(segment, region.segment) is not None:
                 raise RoutingError(f"{candidate_label} crosses port access")
             contact = _segment_contact_point(segment, region.segment)
@@ -4799,11 +4821,12 @@ def _validate_source_detour_crossings(
             f"at=({location[0]:.3f},{location[1]:.3f}) "
             f"segment={_format_segment(segment)} crossed={_format_segment(crossed.segment)}"
         )
+    crossed_arm = _merged_occupied_arm(crossed, occupied_segments, location)
     clearance = _effective_spacing_threshold(
         rules.min_crossing_clearance_um or 0.0,
         rules.waveguide_width_um,
     )
-    for point in (*segment, *crossed.segment):
+    for point in (*segment, *crossed_arm):
         if _manhattan(location, point) < clearance - EPS:
             raise RoutingError(f"{candidate_label} crossing violates clearance")
     if crossed.owner_input is None:
@@ -4828,9 +4851,90 @@ def _validate_source_detour_crossings(
         f"I{owner_input}->I{crossed.owner_input}"
         f"@({location[0]:.3f},{location[1]:.3f})"
         f":{_format_segment(segment)}"
-        f"x{_format_segment(crossed.segment)}"
+        f"x{_format_segment(crossed_arm)}"
     )
     crossing_sources_by_pair[pair] = crossing_sources_by_pair.get(pair, ()) + (source,)
+
+
+def _merged_occupied_arm(
+    crossed: OccupiedRouteSegment,
+    occupied_segments: list[OccupiedRouteSegment],
+    location: Point,
+) -> Segment:
+    horizontal = abs(crossed.segment[0][1] - crossed.segment[1][1]) < EPS
+    candidates = [
+        item.segment
+        for item in occupied_segments
+        if item.kind == "external"
+        and item.owner_input == crossed.owner_input
+        and (
+            abs(item.segment[0][1] - item.segment[1][1]) < EPS
+        ) == horizontal
+        and (
+            abs(item.segment[0][1] - crossed.segment[0][1]) < EPS
+            if horizontal
+            else abs(item.segment[0][0] - crossed.segment[0][0]) < EPS
+        )
+    ]
+    if horizontal:
+        lo, hi = sorted((crossed.segment[0][0], crossed.segment[1][0]))
+        changed = True
+        while changed:
+            changed = False
+            for candidate in candidates:
+                candidate_lo, candidate_hi = sorted((candidate[0][0], candidate[1][0]))
+                if candidate_hi < lo - EPS or candidate_lo > hi + EPS:
+                    continue
+                new_lo, new_hi = min(lo, candidate_lo), max(hi, candidate_hi)
+                changed = changed or new_lo < lo - EPS or new_hi > hi + EPS
+                lo, hi = new_lo, new_hi
+        return ((lo, location[1]), (hi, location[1]))
+    lo, hi = sorted((crossed.segment[0][1], crossed.segment[1][1]))
+    changed = True
+    while changed:
+        changed = False
+        for candidate in candidates:
+            candidate_lo, candidate_hi = sorted((candidate[0][1], candidate[1][1]))
+            if candidate_hi < lo - EPS or candidate_lo > hi + EPS:
+                continue
+            new_lo, new_hi = min(lo, candidate_lo), max(hi, candidate_hi)
+            changed = changed or new_lo < lo - EPS or new_hi > hi + EPS
+            lo, hi = new_lo, new_hi
+    return ((location[0], lo), (location[0], hi))
+
+
+def _occupied_crossing_footprints(
+    occupied_segments: list[OccupiedRouteSegment],
+    side_um: float,
+) -> tuple[CrossingFootprint, ...]:
+    external = [item for item in occupied_segments if item.kind == "external"]
+    footprints: list[CrossingFootprint] = []
+    seen: set[tuple[Point, int, int]] = set()
+    for index, first in enumerate(external):
+        if first.owner_input is None:
+            continue
+        for second in external[index + 1 :]:
+            if second.owner_input is None or second.owner_input == first.owner_input:
+                continue
+            location = _orthogonal_crossing_point(first.segment, second.segment)
+            if location is None:
+                continue
+            first_horizontal = abs(first.segment[0][1] - first.segment[1][1]) < EPS
+            horizontal_owner = first.owner_input if first_horizontal else second.owner_input
+            vertical_owner = second.owner_input if first_horizontal else first.owner_input
+            key = (location, horizontal_owner, vertical_owner)
+            if key in seen:
+                continue
+            seen.add(key)
+            footprints.append(
+                CrossingFootprint(
+                    location,
+                    side_um,
+                    horizontal_owner,
+                    vertical_owner,
+                )
+            )
+    return tuple(footprints)
 
 def _occupied_external_for_segment(
     segment: Segment,

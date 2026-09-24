@@ -1,19 +1,25 @@
 {
   "N": 4,
-  "audit_counts_are_non_gating": true,
-  "campaign_acceptance": "failed_edges=0;legacy_drc=0;bend_radius_legality=0",
+  "acceptance_tier": "astar_measurement_audit",
+  "campaign_acceptance": "failed_edges=0;legacy_core_drc=0;bend_radius_legality=0;crossing_clearance=measurement_only;perpendicular_clearance=measurement_only",
   "case_key": "v3-mini:waksman:n4:B_db_placeholder:octave-p4-bbox28x22-dy5p5-w450-sp136-wp64-gp8-m20",
   "config": "B_db_placeholder",
   "constructive_strategy_pinned": true,
   "corridor_guide_mode": "soft",
+  "crossing_clearance_acceptance": "measurement_only",
   "envelope_id": "octave-p4-bbox28x22-dy5p5-w450-sp136-wp64-gp8-m20",
   "layout_mode": "astar",
   "max_astar_pops_rung": 30000,
+  "measurement_only_audits": [
+    "same_net_min_spacing",
+    "perpendicular_clearance",
+    "crossing_clearance"
+  ],
   "min_crossing_clearance_um": 10.0,
   "physical_turn_guard": false,
   "remediation": "none",
   "remediation_attempts": [],
-  "route_wall_s": 23.898151552071795,
+  "route_wall_s": 24.040373389143497,
   "rules": {
     "allow_crossings": true,
     "astar_heuristic_weight": 1.0,

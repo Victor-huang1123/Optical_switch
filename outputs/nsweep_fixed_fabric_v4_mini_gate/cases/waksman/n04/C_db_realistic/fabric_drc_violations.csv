@@ -1,0 +1,7 @@
+rule,edge_ids,message,x_um,y_um
+perpendicular_clearance,input:w0->waksman_4x4_s0_w0_1.in;input:w1->waksman_4x4_s0_w0_1.add,perpendicular waveguides approach closer than 4.000 um centerline-equivalent edge clearance without a true crossing (2.000 um),56.0,165.5
+perpendicular_clearance,input:w0->waksman_4x4_s0_w0_1.in;input:w1->waksman_4x4_s0_w0_1.add,perpendicular waveguides approach closer than 4.000 um centerline-equivalent edge clearance without a true crossing (2.000 um),192.0,133.5
+perpendicular_clearance,input:w1->waksman_4x4_s0_w0_1.add;input:w2->waksman_4x4_s0_w2_3.in,perpendicular waveguides approach closer than 4.000 um centerline-equivalent edge clearance without a true crossing (2.000 um),192.0,122.5
+perpendicular_clearance,input:w1->waksman_4x4_s0_w0_1.add;input:w2->waksman_4x4_s0_w2_3.in,perpendicular waveguides approach closer than 4.000 um centerline-equivalent edge clearance without a true crossing (2.000 um),192.0,69.5
+perpendicular_clearance,input:w2->waksman_4x4_s0_w2_3.in;input:w3->waksman_4x4_s0_w2_3.add,perpendicular waveguides approach closer than 4.000 um centerline-equivalent edge clearance without a true crossing (2.000 um),192.0,58.5
+perpendicular_clearance,input:w2->waksman_4x4_s0_w2_3.in;input:w3->waksman_4x4_s0_w2_3.add,perpendicular waveguides approach closer than 4.000 um centerline-equivalent edge clearance without a true crossing (2.000 um),56.0,37.5

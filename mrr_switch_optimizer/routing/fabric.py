@@ -201,22 +201,13 @@ def route_fixed_fabric(
     if not straighten_jogs or fixed_result.failed_edges:
         return fixed_result
 
-    non_clearance_drc = tuple(
-        violation
-        for violation in fixed_result.drc_violations
-        if violation.rule != "crossing_clearance"
-    )
-    if non_clearance_drc:
-        return fixed_result
     from .straighten import (
         physical_routes_from_fixed,
         straighten_fixed_fabric,
     )
 
-    straighten_rules = replace(rules, min_crossing_clearance_um=None)
     seed = replace(
         fixed_result,
-        rules=straighten_rules,
         drc_violations=(),
     )
     straightened = straighten_fixed_fabric(
@@ -225,7 +216,7 @@ def route_fixed_fabric(
         port_access_plan=build_port_access_plan(
             paths,
             cells,
-            straighten_rules,
+            rules,
             port_stub_um,
         ),
         max_rounds=10,

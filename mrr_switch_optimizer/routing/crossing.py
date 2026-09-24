@@ -12,6 +12,7 @@ from .geometry import (
     _segments_collinear_overlap,
 )
 from .route_grid import GridNodeOccupancy, RouteGrid
+from .port_access import port_access_region_conflict
 from .types import EPS, PhysicalRoute, Point, RoutingRules, Segment
 
 __all__ = [
@@ -30,6 +31,11 @@ __all__ = [
 class CrossingRule:
     min_clearance_um: float | None = None
     max_crossings_per_move: int = 1
+    # A* knows the already-travelled part of the candidate arm but not its
+    # future continuation.  It may defer only that forward arm; deterministic
+    # whole-polyline candidates retain the strict four-arm check.
+    candidate_entry_point: Point | None = None
+    defer_candidate_exit: bool = False
 
 
 @dataclass(frozen=True)
@@ -64,12 +70,14 @@ def legal_crossing_candidate(
     rules: RoutingRules,
     owner_input: int | None,
     crossing_rule: CrossingRule | None = None,
+    *,
+    candidate_arm_segment: Segment | None = None,
 ) -> CrossingCandidate | None:
     if route_grid is None:
         return None
     crossing_rule = crossing_rule or CrossingRule()
     hits = route_grid.segment_query(segment, rules)
-    if _has_port_access_geometric_hit(segment, hits):
+    if _has_port_access_geometric_hit(segment, hits, rules, owner_input):
         return None
     waveguide_hits = [
         hit
@@ -92,7 +100,8 @@ def legal_crossing_candidate(
     if _touches_endpoint(location, segment) or _touches_endpoint(location, hit.segment):
         return None
     clearance = crossing_rule.min_clearance_um or 0.0
-    if _clearance_to_segment_endpoints(location, segment) < clearance - EPS:
+    candidate_arm = candidate_arm_segment or segment
+    if not _candidate_arm_is_legal(location, candidate_arm, crossing_rule):
         return None
     if _clearance_to_segment_endpoints(location, hit.segment) < clearance - EPS:
         return None
@@ -100,7 +109,7 @@ def legal_crossing_candidate(
         owner_input=owner_input,
         crossed_input=hit.owner_input,
         location=location,
-        segment=segment,
+        segment=candidate_arm,
         crossed_segment=hit.segment,
     )
 
@@ -111,6 +120,8 @@ def endpoint_crossing_candidate(
     rules: RoutingRules,
     owner_input: int | None,
     crossing_rule: CrossingRule | None = None,
+    *,
+    candidate_arm_segment: Segment | None = None,
 ) -> CrossingCandidate | None:
     """Crossing candidate whose crossing lies at this move's start point.
 
@@ -126,7 +137,7 @@ def endpoint_crossing_candidate(
     if crossing_rule.max_crossings_per_move != 1:
         return None
     hits = route_grid.segment_query(segment, rules)
-    if _has_port_access_geometric_hit(segment, hits):
+    if _has_port_access_geometric_hit(segment, hits, rules, owner_input):
         return None
 
     candidates: list[CrossingCandidate] = []
@@ -150,12 +161,15 @@ def endpoint_crossing_candidate(
         clearance = crossing_rule.min_clearance_um or 0.0
         if _clearance_to_segment_endpoints(contact, hit.segment) < clearance - EPS:
             continue
+        candidate_arm = candidate_arm_segment or segment
+        if not _candidate_arm_is_legal(contact, candidate_arm, crossing_rule):
+            continue
         candidates.append(
             CrossingCandidate(
                 owner_input=owner_input,
                 crossed_input=hit.owner_input,
                 location=contact,
-                segment=segment,
+                segment=candidate_arm,
                 crossed_segment=hit.segment,
             )
         )
@@ -217,10 +231,20 @@ def crossing_budget_exceeded(
 def _has_port_access_geometric_hit(
     segment: Segment,
     hits: list[GridNodeOccupancy],
+    rules: RoutingRules,
+    owner_input: int | None,
 ) -> bool:
     for hit in hits:
         if hit.kind != "port_access" or hit.segment is None:
             continue
+        if rules.allow_foreign_outer_runway_transit and hit.region is not None:
+            if port_access_region_conflict(
+                segment,
+                hit.region,
+                owner_input,
+                rules,
+            ) is None:
+                continue
         if _segments_collinear_overlap(segment, hit.segment):
             return True
         if _orthogonal_crossing_point(segment, hit.segment) is not None:
@@ -236,3 +260,24 @@ def _touches_endpoint(point: Point, segment: Segment) -> bool:
 
 def _clearance_to_segment_endpoints(point: Point, segment: Segment) -> float:
     return min(_manhattan(point, segment[0]), _manhattan(point, segment[1]))
+
+
+def _candidate_arm_is_legal(
+    location: Point,
+    segment: Segment,
+    crossing_rule: CrossingRule,
+) -> bool:
+    clearance = crossing_rule.min_clearance_um or 0.0
+    if clearance <= EPS:
+        return True
+    if crossing_rule.candidate_entry_point is None:
+        return _clearance_to_segment_endpoints(location, segment) >= clearance - EPS
+    entry = crossing_rule.candidate_entry_point
+    if not _point_on_segment(entry, segment):
+        return False
+    if _manhattan(location, entry) < clearance - EPS:
+        return False
+    if crossing_rule.defer_candidate_exit:
+        return True
+    exit_point = segment[1] if _same_point(entry, segment[0]) else segment[0]
+    return _manhattan(location, exit_point) >= clearance - EPS

@@ -1,0 +1,1379 @@
+{
+  "method": "strategy-relative directed-path enumeration + witness proof",
+  "path_rank_table": [
+    {
+      "input_port": 3,
+      "insertion_loss_db": 4.043649304612891,
+      "output_port": 1,
+      "proof": "random witness (1 tries)",
+      "rank": 1,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        4,
+        0,
+        1,
+        2,
+        5
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 4.0429822476583706,
+      "output_port": 1,
+      "proof": "random witness (8 tries)",
+      "rank": 2,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        1,
+        4,
+        5,
+        0,
+        2
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.9866083982994622,
+      "output_port": 3,
+      "proof": "random witness (2 tries)",
+      "rank": 3,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        1,
+        2,
+        3,
+        0,
+        5
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 3.9859413413449425,
+      "output_port": 3,
+      "proof": "random witness (4 tries)",
+      "rank": 4,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        3,
+        5,
+        4,
+        2,
+        0
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.940690210926319,
+      "output_port": 1,
+      "proof": "random witness (2 tries)",
+      "rank": 5,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        2,
+        1,
+        3,
+        5,
+        0
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 3.940023153971799,
+      "output_port": 1,
+      "proof": "random witness (1 tries)",
+      "rank": 6,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        4,
+        5,
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.89935726788084,
+      "output_port": 2,
+      "proof": "random witness (1 tries)",
+      "rank": 7,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        5,
+        0,
+        2,
+        1,
+        3
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 3.8986902109263193,
+      "output_port": 2,
+      "proof": "random witness (4 tries)",
+      "rank": 8,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        2,
+        3,
+        5,
+        4,
+        0
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.8836493046128915,
+      "output_port": 3,
+      "proof": "random witness (1 tries)",
+      "rank": 9,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        0,
+        3,
+        4,
+        5,
+        2
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 3.882982247658371,
+      "output_port": 3,
+      "proof": "random witness (7 tries)",
+      "rank": 10,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        4,
+        5,
+        0,
+        1,
+        2
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.8510724023313117,
+      "output_port": 3,
+      "proof": "deterministic completion exhausted 120 leaves",
+      "rank": 11,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.8026902109263188,
+      "output_port": 0,
+      "proof": "random witness (1 tries)",
+      "rank": 12,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        4,
+        3,
+        0,
+        1,
+        5
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 3.8020231539717986,
+      "output_port": 0,
+      "proof": "random witness (1 tries)",
+      "rank": 13,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        0,
+        5,
+        4,
+        1,
+        3
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.796398174194268,
+      "output_port": 2,
+      "proof": "random witness (4 tries)",
+      "rank": 14,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        1,
+        2,
+        4,
+        3,
+        0
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 3.7957311172397477,
+      "output_port": 2,
+      "proof": "random witness (3 tries)",
+      "rank": 15,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        4,
+        5,
+        1,
+        3,
+        0
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.7638212719126893,
+      "output_port": 2,
+      "proof": "deterministic completion exhausted 120 leaves",
+      "rank": 16,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.7626155694819863,
+      "output_port": 1,
+      "proof": "deterministic completion exhausted 120 leaves",
+      "rank": 17,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.7481133086447405,
+      "output_port": 3,
+      "proof": "deterministic completion exhausted 120 leaves",
+      "rank": 18,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.718690210926319,
+      "output_port": 3,
+      "proof": "random witness (1 tries)",
+      "rank": 19,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        1,
+        0,
+        3,
+        4,
+        2
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 3.7049076062140376,
+      "output_port": 3,
+      "proof": "random witness (2 tries)",
+      "rank": 20,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        3,
+        2,
+        0,
+        5,
+        1
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.699731117239747,
+      "output_port": 0,
+      "proof": "random witness (1 tries)",
+      "rank": 21,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        5,
+        0,
+        4,
+        1,
+        2
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 3.699064060285227,
+      "output_port": 0,
+      "proof": "random witness (5 tries)",
+      "rank": 22,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        2,
+        5,
+        1,
+        3,
+        4
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 3.681274284390421,
+      "output_port": 3,
+      "proof": "random witness (1 tries)",
+      "rank": 23,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        2,
+        5,
+        1,
+        4,
+        3
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.6608621782261177,
+      "output_port": 2,
+      "proof": "deterministic completion exhausted 120 leaves",
+      "rank": 24,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.659656475795414,
+      "output_port": 1,
+      "proof": "deterministic completion exhausted 120 leaves",
+      "rank": 25,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.647731117239747,
+      "output_port": 1,
+      "proof": "random witness (3 tries)",
+      "rank": 26,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        0,
+        3,
+        1,
+        5,
+        4
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.643154214958169,
+      "output_port": 3,
+      "proof": "deterministic completion exhausted 120 leaves",
+      "rank": 27,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 3.617656475795415,
+      "output_port": 2,
+      "proof": "random witness (1 tries)",
+      "rank": 28,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        2,
+        1,
+        4,
+        5,
+        0
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 3.6164507733647104,
+      "output_port": 1,
+      "proof": "random witness (1 tries)",
+      "rank": 29,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        1,
+        4,
+        3,
+        5,
+        2
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 3.6019485125274655,
+      "output_port": 3,
+      "proof": "random witness (1 tries)",
+      "rank": 30,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        1,
+        0,
+        4,
+        2,
+        5
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 3.594023153971798,
+      "output_port": 2,
+      "proof": "random witness (2 tries)",
+      "rank": 31,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        1,
+        3,
+        0,
+        4,
+        2
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 3.5928174515410953,
+      "output_port": 1,
+      "proof": "random witness (3 tries)",
+      "rank": 32,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        0,
+        4,
+        3,
+        2,
+        1
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 3.5827720235531753,
+      "output_port": 3,
+      "proof": "random witness (5 tries)",
+      "rank": 33,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        5,
+        4,
+        2,
+        1,
+        3
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 3.5783151907038495,
+      "output_port": 3,
+      "proof": "random witness (4 tries)",
+      "rank": 34,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        5,
+        1,
+        0,
+        3,
+        4
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.5216564757954147,
+      "output_port": 0,
+      "proof": "deterministic completion exhausted 120 leaves",
+      "rank": 35,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 3.5146973821088427,
+      "output_port": 2,
+      "proof": "random witness (2 tries)",
+      "rank": 36,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        0,
+        1,
+        4,
+        3,
+        5
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 3.5134916796781397,
+      "output_port": 1,
+      "proof": "random witness (28 tries)",
+      "rank": 37,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        2,
+        4,
+        3,
+        5,
+        0
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.5003080195213263,
+      "output_port": 5,
+      "proof": "random witness (1 tries)",
+      "rank": 38,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        1,
+        2,
+        5,
+        3,
+        4
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 3.494023153971798,
+      "output_port": 3,
+      "proof": "random witness (5 tries)",
+      "rank": 39,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        3,
+        4,
+        1,
+        0,
+        2
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 3.4910640602852268,
+      "output_port": 2,
+      "proof": "random witness (2 tries)",
+      "rank": 40,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        5,
+        3,
+        1,
+        2,
+        0
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 3.4898583578545233,
+      "output_port": 1,
+      "proof": "random witness (4 tries)",
+      "rank": 41,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        0,
+        2,
+        5,
+        1,
+        4
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.4859413413449425,
+      "output_port": 2,
+      "proof": "random witness (9 tries)",
+      "rank": 42,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        3,
+        5,
+        2,
+        1,
+        4
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.4702333780769936,
+      "output_port": 3,
+      "proof": "random witness (3 tries)",
+      "rank": 43,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        2,
+        3,
+        5,
+        1,
+        4
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.4266973821088427,
+      "output_port": 1,
+      "proof": "deterministic completion exhausted 120 leaves",
+      "rank": 44,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 3.4230640602852267,
+      "output_port": 1,
+      "proof": "random witness (12 tries)",
+      "rank": 45,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        1,
+        4,
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.4186973821088427,
+      "output_port": 0,
+      "proof": "deterministic completion exhausted 120 leaves",
+      "rank": 46,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.4104053453767915,
+      "output_port": 2,
+      "proof": "deterministic completion exhausted 120 leaves",
+      "rank": 47,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.399274284390421,
+      "output_port": 1,
+      "proof": "random witness (1 tries)",
+      "rank": 48,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        3,
+        1,
+        0,
+        2,
+        4
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.397348925834754,
+      "output_port": 5,
+      "proof": "random witness (1 tries)",
+      "rank": 49,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        2,
+        5,
+        3,
+        4,
+        1
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.3946973821088426,
+      "output_port": 3,
+      "proof": "deterministic completion exhausted 120 leaves",
+      "rank": 50,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 3.3754916796781393,
+      "output_port": 0,
+      "proof": "random witness (5 tries)",
+      "rank": 51,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        0,
+        1,
+        2,
+        4,
+        5
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 3.3663151907038493,
+      "output_port": 1,
+      "proof": "random witness (1 tries)",
+      "rank": 52,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        4,
+        3,
+        0,
+        5,
+        1
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 3.3541432234040505,
+      "output_port": 5,
+      "proof": "random witness (1 tries)",
+      "rank": 53,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        5,
+        1,
+        4,
+        2,
+        0
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 3.351858357854523,
+      "output_port": 0,
+      "proof": "random witness (1 tries)",
+      "rank": 54,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        5,
+        1,
+        2,
+        4,
+        0
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 3.3500231539717986,
+      "output_port": 2,
+      "proof": "random witness (2 tries)",
+      "rank": 55,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        3,
+        1,
+        4,
+        5,
+        2
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 3.3343151907038493,
+      "output_port": 3,
+      "proof": "random witness (1 tries)",
+      "rank": 56,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        0,
+        5,
+        1,
+        3,
+        2
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.293640962566805,
+      "output_port": 4,
+      "proof": "random witness (1 tries)",
+      "rank": 57,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        1,
+        0,
+        4,
+        3,
+        5
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 3.272989418840893,
+      "output_port": 3,
+      "proof": "random witness (2 tries)",
+      "rank": 58,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        3,
+        2,
+        1,
+        4,
+        0
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 3.2725325859915677,
+      "output_port": 0,
+      "proof": "random witness (1 tries)",
+      "rank": 59,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        2,
+        4,
+        3,
+        5,
+        1
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.2612742843904217,
+      "output_port": 0,
+      "proof": "random witness (1 tries)",
+      "rank": 60,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        1,
+        5,
+        0,
+        2,
+        3
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 3.2612742843904208,
+      "output_port": 2,
+      "proof": "random witness (12 tries)",
+      "rank": 61,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        2,
+        3,
+        4,
+        1,
+        5
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 3.251184129717479,
+      "output_port": 5,
+      "proof": "random witness (1 tries)",
+      "rank": 62,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        4,
+        3,
+        2,
+        0,
+        1
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 3.2488992641679517,
+      "output_port": 0,
+      "proof": "random witness (2 tries)",
+      "rank": 63,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        2,
+        5,
+        4,
+        0,
+        3
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 3.245566321122472,
+      "output_port": 3,
+      "proof": "random witness (4 tries)",
+      "rank": 64,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        2,
+        4,
+        5,
+        0,
+        1
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.2374845084956156,
+      "output_port": 2,
+      "proof": "random witness (1 tries)",
+      "rank": 65,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        0,
+        2,
+        5,
+        1,
+        3
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 3.1850121624176806,
+      "output_port": 5,
+      "proof": "random witness (1 tries)",
+      "rank": 66,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        2,
+        0,
+        1,
+        3,
+        5
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.1782405492595167,
+      "output_port": 1,
+      "proof": "deterministic completion exhausted 120 leaves",
+      "rank": 67,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 3.1746072274359,
+      "output_port": 1,
+      "proof": "random witness (3 tries)",
+      "rank": 68,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        3,
+        5,
+        4,
+        2,
+        0
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.1619485125274656,
+      "output_port": 2,
+      "proof": "deterministic completion exhausted 120 leaves",
+      "rank": 69,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 3.117858357854523,
+      "output_port": 1,
+      "proof": "random witness (1 tries)",
+      "rank": 70,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        5,
+        2,
+        3,
+        1,
+        0
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 3.101566321122472,
+      "output_port": 2,
+      "proof": "random witness (2 tries)",
+      "rank": 71,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        3,
+        1,
+        5,
+        2,
+        0
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 3.0877610319990576,
+      "output_port": 4,
+      "proof": "random witness (1 tries)",
+      "rank": 72,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        2,
+        5,
+        3,
+        1,
+        4
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 3.082053068731109,
+      "output_port": 5,
+      "proof": "random witness (1 tries)",
+      "rank": 73,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        0,
+        3,
+        2,
+        5,
+        4
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 3.0565325859915675,
+      "output_port": 1,
+      "proof": "random witness (7 tries)",
+      "rank": 74,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        1,
+        3,
+        5,
+        4,
+        0
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.045184129717479,
+      "output_port": 4,
+      "proof": "random witness (1 tries)",
+      "rank": 75,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        0,
+        4,
+        5,
+        2,
+        1
+      ]
+    },
+    {
+      "input_port": 3,
+      "insertion_loss_db": 3.040240549259517,
+      "output_port": 0,
+      "proof": "deterministic completion exhausted 120 leaves",
+      "rank": 76,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 3.0402405492595155,
+      "output_port": 2,
+      "proof": "random witness (14 tries)",
+      "rank": 77,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        2,
+        5,
+        1,
+        4,
+        3
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 3.036607227435901,
+      "output_port": 0,
+      "proof": "random witness (1 tries)",
+      "rank": 78,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        0,
+        3,
+        4,
+        1,
+        2
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 3.0245325859915675,
+      "output_port": 3,
+      "proof": "random witness (9 tries)",
+      "rank": 79,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        0,
+        1,
+        5,
+        4,
+        2
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 3.0128174515410957,
+      "output_port": 0,
+      "proof": "random witness (2 tries)",
+      "rank": 80,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        1,
+        0,
+        5,
+        2,
+        4
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 3.0128174515410953,
+      "output_port": 2,
+      "proof": "random witness (2 tries)",
+      "rank": 81,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        5,
+        1,
+        4,
+        3,
+        0
+      ]
+    },
+    {
+      "input_port": 5,
+      "insertion_loss_db": 2.9798583578545235,
+      "output_port": 0,
+      "proof": "random witness (1 tries)",
+      "rank": 82,
+      "realizable": true,
+      "witness_permutation": [
+        3,
+        4,
+        1,
+        2,
+        5,
+        0
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.92347616644953,
+      "output_port": 4,
+      "proof": "random witness (1 tries)",
+      "rank": 83,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        4,
+        1,
+        2,
+        3,
+        0
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.8393041991497316,
+      "output_port": 4,
+      "proof": "random witness (1 tries)",
+      "rank": 84,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        3,
+        0,
+        2,
+        4,
+        1
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.808075753142241,
+      "output_port": 1,
+      "proof": "random witness (3 tries)",
+      "rank": 85,
+      "realizable": true,
+      "witness_permutation": [
+        1,
+        3,
+        2,
+        0,
+        5,
+        4
+      ]
+    },
+    {
+      "input_port": 2,
+      "insertion_loss_db": 2.7917837164101913,
+      "output_port": 0,
+      "proof": "deterministic completion exhausted 120 leaves",
+      "rank": 86,
+      "realizable": false,
+      "witness_permutation": null
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.7917837164101904,
+      "output_port": 2,
+      "proof": "random witness (2 tries)",
+      "rank": 87,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        1,
+        5,
+        0,
+        4,
+        3
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.788150394586574,
+      "output_port": 0,
+      "proof": "random witness (2 tries)",
+      "rank": 88,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        5,
+        2,
+        4,
+        1,
+        3
+      ]
+    },
+    {
+      "input_port": 4,
+      "insertion_loss_db": 2.7314015250051975,
+      "output_port": 0,
+      "proof": "random witness (1 tries)",
+      "rank": 89,
+      "realizable": true,
+      "witness_permutation": [
+        2,
+        4,
+        1,
+        3,
+        0,
+        5
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.675019333600204,
+      "output_port": 4,
+      "proof": "random witness (1 tries)",
+      "rank": 90,
+      "realizable": true,
+      "witness_permutation": [
+        4,
+        3,
+        5,
+        2,
+        1,
+        0
+      ]
+    },
+    {
+      "input_port": 1,
+      "insertion_loss_db": 2.6700757531422417,
+      "output_port": 0,
+      "proof": "random witness (20 tries)",
+      "rank": 91,
+      "realizable": true,
+      "witness_permutation": [
+        5,
+        0,
+        2,
+        3,
+        4,
+        1
+      ]
+    },
+    {
+      "input_port": 0,
+      "insertion_loss_db": 2.421618920292915,
+      "output_port": 0,
+      "proof": "random witness (2 tries)",
+      "rank": 92,
+      "realizable": true,
+      "witness_permutation": [
+        0,
+        2,
+        1,
+        3,
+        5,
+        4
+      ]
+    }
+  ],
+  "unrealizable_proofs_count": 16,
+  "witness_permutation": [
+    3,
+    4,
+    0,
+    1,
+    2,
+    5
+  ],
+  "worst_il_db": 4.043649304612891,
+  "worst_io_pair": [
+    3,
+    1
+  ]
+}

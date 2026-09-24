@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 from contextvars import ContextVar, Token
+from dataclasses import replace
 from heapq import heappop, heappush
 from math import ceil, floor, hypot, pi
 from typing import TYPE_CHECKING
@@ -54,7 +55,7 @@ from .port_access import (
     port_access_conflict,
     port_access_conflict_detail,
 )
-from .route_grid import RouteGrid
+from .route_grid import CrossingFootprint, RouteGrid, crossing_footprint_conflict
 from .types import (
     EPS,
     Obstacle,
@@ -317,6 +318,7 @@ def _astar_route(
         blockers,
         obstacles,
         port_access,
+        rules,
         occupied_segments=occupied_segments,
     )
     history_cost = history_cost or HistoryCost()
@@ -366,6 +368,10 @@ def _astar_route(
     ] = {
         start_key: dict(crossing_sources_by_pair)
     }
+    crossing_footprints_by_state: dict[
+        tuple[RouterState, tuple[tuple[int, int], ...]],
+        tuple[CrossingFootprint, ...],
+    ] = {start_key: ()}
     port_access_blocks: dict[str, int] = {}
     port_access_block_samples: dict[str, tuple[Segment, PortAccessRegion]] = {}
     window_blocks = 0
@@ -431,6 +437,8 @@ def _astar_route(
                 dst_label,
                 bend_spacing_um,
             ):
+                if state.crossing_arm_remaining_um > EPS:
+                    continue
                 return _reconstruct_astar_path_from_keys(
                     state_key,
                     prev,
@@ -443,6 +451,7 @@ def _astar_route(
         # earlier hops are cached per directed grid edge; partial-path checks
         # remain history-dependent.
         partial_segments = partial_segments_by_state.get(state_key, ())
+        current_footprints = crossing_footprints_by_state.get(state_key, ())
         state_crossing_counts = crossing_counts_by_state.get(
             state_key,
             crossing_count_by_pair,
@@ -460,8 +469,18 @@ def _astar_route(
         ):
             p0, p1 = move.segment
             segment = move.segment
+            owner_input = port_access.current_net_id if port_access is not None else None
             if routing_window is not None and not routing_window.contains_segment(segment):
                 window_blocks += 1
+                continue
+            if route_grid.crossing_footprint_conflict(segment, owner_input) is not None:
+                crossing_candidate_blocks += 1
+                continue
+            if any(
+                crossing_footprint_conflict(segment, footprint, owner_input)
+                for footprint in current_footprints
+            ):
+                crossing_candidate_blocks += 1
                 continue
             if current_segments_tuple:
                 if segment not in current_self_conflict_cache:
@@ -556,23 +575,31 @@ def _astar_route(
                 else:
                     segment_blocks += 1
                 continue
-            crossing_info = crossing_info_cache.get(segment)
+            next_partial_segments = _append_partial_segment(partial_segments, segment)
+            candidate_arm_segment = next_partial_segments[-1]
+            use_crossing_cache = rules.min_crossing_clearance_um is None
+            crossing_info = crossing_info_cache.get(segment) if use_crossing_cache else None
             if crossing_info is None:
+                crossing_clearance = (
+                    None
+                    if rules.min_crossing_clearance_um is None
+                    else _effective_spacing_threshold(
+                        rules.min_crossing_clearance_um,
+                        rules.waveguide_width_um,
+                    )
+                )
+                crossing_rule = CrossingRule(
+                    min_clearance_um=crossing_clearance,
+                    candidate_entry_point=candidate_arm_segment[0],
+                    defer_candidate_exit=crossing_clearance is not None,
+                )
                 crossing_candidate = legal_crossing_candidate(
                     segment,
                     route_grid,
                     rules,
                     port_access.current_net_id if port_access is not None else None,
-                    CrossingRule(
-                        min_clearance_um=(
-                            None
-                            if rules.min_crossing_clearance_um is None
-                            else _effective_spacing_threshold(
-                                rules.min_crossing_clearance_um,
-                                rules.waveguide_width_um,
-                            )
-                        )
-                    ),
+                    crossing_rule,
+                    candidate_arm_segment=candidate_arm_segment,
                 )
                 needs_endpoint_crossing = endpoint_crossing_required(
                     segment,
@@ -586,20 +613,13 @@ def _astar_route(
                         route_grid,
                         rules,
                         port_access.current_net_id if port_access is not None else None,
-                        CrossingRule(
-                            min_clearance_um=(
-                                None
-                                if rules.min_crossing_clearance_um is None
-                                else _effective_spacing_threshold(
-                                    rules.min_crossing_clearance_um,
-                                    rules.waveguide_width_um,
-                                )
-                            )
-                        ),
+                        crossing_rule,
+                        candidate_arm_segment=candidate_arm_segment,
                     )
                 raw_crossings = _segment_crossing_count(segment, blockers)
                 crossing_info = (crossing_candidate, needs_endpoint_crossing, raw_crossings)
-                crossing_info_cache[segment] = crossing_info
+                if use_crossing_cache:
+                    crossing_info_cache[segment] = crossing_info
             crossing_candidate, needs_endpoint_crossing, raw_crossings = crossing_info
             if rules.explicit_crossings and (
                 raw_crossings or needs_endpoint_crossing or crossing_candidate is not None
@@ -607,6 +627,12 @@ def _astar_route(
                 repeated_crossing = False
                 reserved_crossing = False
                 if crossing_candidate is None:
+                    crossing_candidate_blocks += 1
+                    continue
+                if route_grid.footprint_contains_point(crossing_candidate.location) or any(
+                    _point_in_crossing_footprint(crossing_candidate.location, footprint)
+                    for footprint in current_footprints
+                ):
                     crossing_candidate_blocks += 1
                     continue
                 if crossing_candidate.crossed_input in reserved_crossing_owners:
@@ -676,11 +702,11 @@ def _astar_route(
                 backtrack_penalty = _backtrack_penalty(p0, p1, src, dst, rules)
                 backtrack_penalty_cache[segment] = backtrack_penalty
             step_cost += _search_guidance_cost(backtrack_penalty, rules)
-            step_cost += _search_guidance_cost(
+            step_cost += _same_net_physical_cost(
                 _same_net_hairpin_penalty(segment, list(current_segments_tuple), rules),
                 rules,
             )
-            step_cost += _search_guidance_cost(hairpin_soft_penalty, rules)
+            step_cost += _same_net_physical_cost(hairpin_soft_penalty, rules)
             soft_penalty = soft_penalty_cache.get(segment)
             if soft_penalty is None:
                 soft_penalty = _soft_blocker_penalty(segment, soft_blockers, rules)
@@ -720,6 +746,44 @@ def _astar_route(
             next_cost = cost + step_cost
             next_crossing_score = crossing_score + step_crossings
             next_state = move.next_state
+            next_footprints = current_footprints
+            if crossing_candidate is not None and rules.min_crossing_clearance_um is not None:
+                clearance = _effective_spacing_threshold(
+                    rules.min_crossing_clearance_um,
+                    rules.waveguide_width_um,
+                )
+                remaining = max(
+                    0.0,
+                    clearance - _manhattan(crossing_candidate.location, p1),
+                )
+                next_state = replace(
+                    next_state,
+                    crossing_arm_remaining_um=round(
+                        max(next_state.crossing_arm_remaining_um, remaining),
+                        6,
+                    ),
+                )
+                if owner_input is not None and crossing_candidate.crossed_input is not None:
+                    candidate_horizontal = abs(
+                        crossing_candidate.segment[0][1]
+                        - crossing_candidate.segment[1][1]
+                    ) < EPS
+                    next_footprints = current_footprints + (
+                        CrossingFootprint(
+                            location=crossing_candidate.location,
+                            side_um=rules.min_crossing_clearance_um,
+                            horizontal_owner=(
+                                owner_input
+                                if candidate_horizontal
+                                else crossing_candidate.crossed_input
+                            ),
+                            vertical_owner=(
+                                crossing_candidate.crossed_input
+                                if candidate_horizontal
+                                else owner_input
+                            ),
+                        ),
+                    )
             next_counts = dict(state_crossing_counts)
             if crossing_candidate is not None:
                 pair = crossing_pair_key(
@@ -754,6 +818,7 @@ def _astar_route(
                 partial_segments,
                 segment,
             )
+            crossing_footprints_by_state[next_key] = next_footprints
             crossing_counts_by_state[next_key] = next_counts
             crossing_sources_by_state[next_key] = next_sources
             last_turns[next_key] = next_turns
@@ -919,6 +984,14 @@ def _search_guidance_cost(penalty_um: float, rules: RoutingRules) -> float:
     if rules.loss_aware_cost:
         return penalty_um * rules.prop_loss_db_per_um
     return penalty_um
+
+
+def _same_net_physical_cost(penalty_um: float, rules: RoutingRules) -> float:
+    if penalty_um <= EPS:
+        return 0.0
+    if rules.cost_model == "db" and rules.physical_same_net_hairpin:
+        return penalty_um
+    return _search_guidance_cost(penalty_um, rules)
 
 def _bend_placement_cost(
     bend_point: Point,
@@ -1221,6 +1294,7 @@ def _build_route_grid(
     blockers: list[Segment],
     obstacles: list[Obstacle],
     port_access: PortAccessLegality | None,
+    rules: RoutingRules,
     *,
     occupied_segments: list[OccupiedRouteSegment] | None = None,
 ) -> RouteGrid:
@@ -1233,15 +1307,16 @@ def _build_route_grid(
             grid.mark_port_access(region)
             port_segments.append(region.segment)
     if occupied_segments is not None:
-        for occupied in occupied_segments:
+        waveguides = [
+            occupied
+            for occupied in occupied_segments
             if occupied.kind == "external" and not any(
                 _same_segment(occupied.segment, port_segment)
                 for port_segment in port_segments
-            ):
-                grid.mark_route(
-                    -1 if occupied.owner_input is None else occupied.owner_input,
-                    (occupied.segment,),
-                )
+            )
+        ]
+        for owner_input, segments in _merged_owned_segments(waveguides).items():
+            grid.mark_route(owner_input, segments)
     else:
         waveguide_blockers = [
             segment
@@ -1249,7 +1324,48 @@ def _build_route_grid(
             if not any(_same_segment(segment, port_segment) for port_segment in port_segments)
         ]
         grid.mark_route(owner_input=-1, segments=waveguide_blockers)
+    if rules.min_crossing_clearance_um is not None:
+        grid.register_crossing_footprints(rules.min_crossing_clearance_um)
     return grid
+
+
+def _merged_owned_segments(
+    occupied_segments: list[OccupiedRouteSegment],
+) -> dict[int, tuple[Segment, ...]]:
+    by_owner: dict[int, list[Segment]] = {}
+    for occupied in occupied_segments:
+        if occupied.owner_input is None:
+            continue
+        by_owner.setdefault(occupied.owner_input, []).append(occupied.segment)
+    return {
+        owner: _merge_connected_collinear_segments(segments)
+        for owner, segments in by_owner.items()
+    }
+
+
+def _merge_connected_collinear_segments(segments: list[Segment]) -> tuple[Segment, ...]:
+    merged: list[Segment] = []
+    for segment in segments:
+        if not merged:
+            merged.append(segment)
+            continue
+        previous = merged[-1]
+        if (
+            _same_point(previous[1], segment[0])
+            and _direction(previous[0], previous[1]) == _direction(segment[0], segment[1])
+        ):
+            merged[-1] = (previous[0], segment[1])
+        else:
+            merged.append(segment)
+    return tuple(merged)
+
+
+def _point_in_crossing_footprint(point: Point, footprint: CrossingFootprint) -> bool:
+    half = 0.5 * footprint.side_um
+    return (
+        abs(point[0] - footprint.location[0]) <= half + EPS
+        and abs(point[1] - footprint.location[1]) <= half + EPS
+    )
 
 def _route_segment_available(
     segment: Segment,

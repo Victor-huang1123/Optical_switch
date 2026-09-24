@@ -203,10 +203,18 @@ def _region_conflict(
     owner = region.owner_input is not None and region.owner_input == current_net_id
     role = "owner" if owner else "foreign"
     if _segments_collinear_overlap(segment, rseg):
+        if not owner and _foreign_outer_runway_transit(segment, region, rules):
+            return None
         return f"port_access_overlap_{role}"
     crossing = _orthogonal_crossing_point(segment, rseg)
     if crossing is not None and owner:
         return "port_access_crossing_owner"
+    if (
+        crossing is not None
+        and not owner
+        and _foreign_outer_runway_transit(segment, region, rules)
+    ):
+        return None
     if crossing is not None and (not rules.allow_crossings or rules.strict_port_access):
         return f"port_access_crossing_{role}"
     if rules.strict_port_access and not owner:
@@ -216,6 +224,52 @@ def _region_conflict(
         ):
             return "port_access_touch_foreign"
     return None
+
+
+def port_access_region_conflict(
+    segment: Segment,
+    region: PortAccessRegion,
+    current_net_id: int | None,
+    rules: RoutingRules,
+    *,
+    allowed_touch_points: tuple[Point, ...] = (),
+) -> str | None:
+    return _region_conflict(
+        segment,
+        region,
+        current_net_id,
+        rules,
+        allowed_touch_points,
+    )
+
+
+def _foreign_outer_runway_transit(
+    segment: Segment,
+    region: PortAccessRegion,
+    rules: RoutingRules,
+) -> bool:
+    if not rules.allow_foreign_outer_runway_transit:
+        return False
+    route = region.segment[1]
+    runway_um = max(rules.port_access_runway_um, 2.0 * rules.bend_radius_um)
+    if region.port in {"add", "drop"}:
+        runway_um += rules.port_access_stagger_tracks * rules.grid_pitch_um
+    direction = -1.0 if region.side == "left" else 1.0
+    midpoint_x = route[0] - direction * 0.5 * runway_um
+    outer_lo, outer_hi = sorted((route[0], midpoint_x))
+    (x0, y0), (x1, y1) = segment
+    if abs(y0 - y1) < EPS and abs(y0 - route[1]) < EPS:
+        overlap_lo = max(min(x0, x1), outer_lo)
+        overlap_hi = min(max(x0, x1), outer_hi)
+        total_overlap_lo = max(min(x0, x1), min(region.segment[0][0], region.segment[1][0]))
+        total_overlap_hi = min(max(x0, x1), max(region.segment[0][0], region.segment[1][0]))
+        return (
+            overlap_hi >= overlap_lo - EPS
+            and total_overlap_lo >= outer_lo - EPS
+            and total_overlap_hi <= outer_hi + EPS
+        )
+    crossing = _orthogonal_crossing_point(segment, region.segment)
+    return crossing is not None and outer_lo - EPS <= crossing[0] <= outer_hi + EPS
 
 
 def port_access_conflict(
@@ -276,6 +330,7 @@ __all__ = [
     'reserved_segments_for_net',
     'port_access_conflict',
     'port_access_conflict_detail',
+    'port_access_region_conflict',
     '_port_escape_point',
     '_port_route_point',
     '_port_junction_orientation',
@@ -316,6 +371,8 @@ def _port_route_point(
         rules.port_access_runway_um,
         2.0 * rules.bend_radius_um,
     )
+    if port in {"add", "drop"}:
+        runway_um += rules.port_access_stagger_tracks * rules.grid_pitch_um
     if port_side(port) == "left":
         return escape_x - runway_um, escape_y
     return escape_x + runway_um, escape_y

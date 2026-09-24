@@ -24,13 +24,14 @@ from .geometry import (
     _shared_endpoint,
 )
 from .grid import _canonical_track
-from .refinement import _route_crossings
+from .route_grid import CrossingFootprint, crossing_footprint_conflict
 from .types import (
     DRCViolation,
     EPS,
     OwnedSegment,
     PhysicalRoute,
     Point,
+    RouteCrossing,
     RoutingError,
     RoutingRules,
     Segment,
@@ -196,7 +197,13 @@ def validate_physical_routes(
     )
     if effective_crossing_clearance is not None and effective_crossing_clearance > EPS:
         route_by_input = {route.input_port: route for route in routes}
-        for crossing in _route_crossings(routes):
+        # Crossing-arm and component-footprint rules apply to explicit crossing
+        # cells inserted by the external router.  Orthogonal contacts involving
+        # an MRR-local/internal segment remain part of the optical crossing-loss
+        # model, but they are not standalone crossing components and never pass
+        # through ``legal_crossing_candidate``.
+        crossings = _external_route_crossings(routes)
+        for crossing in crossings:
             arms_a = merged_route_arm_clearances(
                 route_by_input[crossing.net_a], crossing.location
             )
@@ -219,8 +226,100 @@ def validate_physical_routes(
                         crossing.location,
                     )
                 )
+        violations.extend(
+            _crossing_footprint_violations(
+                routes,
+                crossings,
+                crossing_clearance,
+            )
+        )
 
     return _dedupe_violations(violations)
+
+
+def _external_route_crossings(
+    routes: tuple[PhysicalRoute, ...] | list[PhysicalRoute],
+) -> tuple[RouteCrossing, ...]:
+    crossings: list[RouteCrossing] = []
+    seen: set[tuple[int, int, Point]] = set()
+    for index, first in enumerate(routes):
+        for second in routes[index + 1 :]:
+            low, high = sorted((first.input_port, second.input_port))
+            for first_segment in first.external_segments:
+                for second_segment in second.external_segments:
+                    location = _orthogonal_crossing_point(
+                        first_segment,
+                        second_segment,
+                    )
+                    if location is None:
+                        continue
+                    key = (low, high, location)
+                    if key in seen:
+                        continue
+                    seen.add(key)
+                    crossings.append(RouteCrossing(low, high, location))
+    return tuple(crossings)
+
+
+def _crossing_footprint_violations(
+    routes: tuple[PhysicalRoute, ...] | list[PhysicalRoute],
+    crossings: tuple[RouteCrossing, ...],
+    side_um: float,
+) -> list[DRCViolation]:
+    route_by_input = {route.input_port: route for route in routes}
+    violations: list[DRCViolation] = []
+    for crossing in crossings:
+        net_a = crossing.net_a
+        net_b = crossing.net_b
+        location = crossing.location
+        horizontal_owner = _crossing_horizontal_owner(
+            route_by_input[net_a],
+            route_by_input[net_b],
+            location,
+        )
+        vertical_owner = net_b if horizontal_owner == net_a else net_a
+        footprint = CrossingFootprint(
+            location=location,
+            side_um=side_um,
+            horizontal_owner=horizontal_owner,
+            vertical_owner=vertical_owner,
+        )
+        for route in routes:
+            for segment in (*route.external_segments, *route.local_segments):
+                if not crossing_footprint_conflict(
+                    segment,
+                    footprint,
+                    route.input_port,
+                ):
+                    continue
+                violations.append(
+                    DRCViolation(
+                        "crossing_footprint",
+                        f"I{route.input_port}",
+                        "waveguide segment or bend enters the ownerless crossing "
+                        f"footprint (side={side_um:.3f} um; crossing="
+                        f"I{net_a}/I{net_b})",
+                        location,
+                    )
+                )
+    return violations
+
+
+def _crossing_horizontal_owner(
+    first: PhysicalRoute,
+    second: PhysicalRoute,
+    location: Point,
+) -> int:
+    for route in (first, second):
+        for segment in (*route.external_segments, *route.local_segments):
+            if (
+                abs(segment[0][1] - segment[1][1]) < EPS
+                and min(segment[0][0], segment[1][0]) - EPS <= location[0]
+                <= max(segment[0][0], segment[1][0]) + EPS
+                and abs(segment[0][1] - location[1]) < EPS
+            ):
+                return route.input_port
+    return first.input_port
 
 def _validate_rules(rules: RoutingRules) -> None:
     if rules.grid_pitch_um <= 0.0:
@@ -255,6 +354,8 @@ def _validate_rules(rules: RoutingRules) -> None:
         raise ValueError("port_escape_um must be non-negative")
     if rules.port_access_runway_um < 0.0:
         raise ValueError("port_access_runway_um must be non-negative")
+    if rules.port_access_stagger_tracks < 0:
+        raise ValueError("port_access_stagger_tracks must be non-negative")
     if rules.bend_radius_um < 0.0:
         raise ValueError("bend_radius_um must be non-negative")
     if rules.crossing_penalty_um < 0.0:

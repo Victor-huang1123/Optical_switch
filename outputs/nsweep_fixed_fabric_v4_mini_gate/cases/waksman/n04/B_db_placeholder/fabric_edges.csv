@@ -1,0 +1,15 @@
+edge_id,kind,source,target,source_blocked,target_blocked
+input:w0->waksman_4x4_s0_w0_1.in,input,I0,waksman_4x4_s0_w0_1.in,False,False
+input:w1->waksman_4x4_s0_w0_1.add,input,I1,waksman_4x4_s0_w0_1.add,False,False
+input:w2->waksman_4x4_s0_w2_3.in,input,I2,waksman_4x4_s0_w2_3.in,False,False
+input:w3->waksman_4x4_s0_w2_3.add,input,I3,waksman_4x4_s0_w2_3.add,False,False
+stage:0:w0:waksman_4x4_s0_w0_1.th->waksman_4x4_s1_w0_2.in:w0,interstage,waksman_4x4_s0_w0_1.th,waksman_4x4_s1_w0_2.in,False,False
+stage:0:w1:waksman_4x4_s0_w0_1.drop->waksman_4x4_s1_w1_3.in:w1,interstage,waksman_4x4_s0_w0_1.drop,waksman_4x4_s1_w1_3.in,False,False
+stage:0:w2:waksman_4x4_s0_w2_3.th->waksman_4x4_s1_w0_2.add:w2,interstage,waksman_4x4_s0_w2_3.th,waksman_4x4_s1_w0_2.add,False,False
+stage:0:w3:waksman_4x4_s0_w2_3.drop->waksman_4x4_s1_w1_3.add:w3,interstage,waksman_4x4_s0_w2_3.drop,waksman_4x4_s1_w1_3.add,False,False
+stage:1:w0:waksman_4x4_s1_w0_2.th->waksman_4x4_s2_w0_1.in:w0,interstage,waksman_4x4_s1_w0_2.th,waksman_4x4_s2_w0_1.in,False,False
+stage:1:w1:waksman_4x4_s1_w1_3.th->waksman_4x4_s2_w0_1.add:w1,interstage,waksman_4x4_s1_w1_3.th,waksman_4x4_s2_w0_1.add,False,False
+output:waksman_4x4_s2_w0_1.th->w0,output,waksman_4x4_s2_w0_1.th,O0,False,False
+output:waksman_4x4_s2_w0_1.drop->w1,output,waksman_4x4_s2_w0_1.drop,O1,False,False
+output:waksman_4x4_s1_w0_2.drop->w2,output,waksman_4x4_s1_w0_2.drop,O2,False,False
+output:waksman_4x4_s1_w1_3.drop->w3,output,waksman_4x4_s1_w1_3.drop,O3,False,False

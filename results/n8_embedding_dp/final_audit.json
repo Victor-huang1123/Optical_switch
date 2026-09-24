@@ -1,0 +1,19 @@
+{
+  "accepted_routes": 2,
+  "all_route_rules_identical": true,
+  "completed_routes": 3,
+  "crosschecked_permutations": 4320,
+  "exact_permutations_per_accepted_candidate": 40320,
+  "exact_state_evaluations_per_accepted_candidate": 131072,
+  "no_candidate_rerouted": true,
+  "original_lut_path_cache_and_worst_sets_unchanged": true,
+  "priorities_preserved": true,
+  "production_prefix_crosschecks": 6,
+  "protected_sources_unchanged": true,
+  "route_attempts": 4,
+  "stage1_artifacts_unchanged": true,
+  "stage1_proxy_runtime_seconds": 17.03690650104545,
+  "timed_out_routes": 1,
+  "total_attempted_routing_runtime_seconds": 5302.358954331838,
+  "unattempted_candidates": 20
+}

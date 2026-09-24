@@ -1,0 +1,9 @@
+{
+  "command": "PYTHONDONTWRITEBYTECODE=1 MPLCONFIGDIR=/tmp/jchuang-tmp/n8_embedding_mpl python -u experiments/n8_waksman_embedding_dp.py",
+  "experiment_source_sha256": {
+    "codex_n8_embedding_dp_task.md": "560412689683d51a695f48f3cff70b1418b3fcd1648f3176163b43d852ab2bc5",
+    "experiments/n8_embedding_dp_report.py": "773b20d219a98d63f5b07e89351161365e6940905bb7a766057aa6c89c72426d",
+    "experiments/n8_waksman_embedding_dp.py": "43f61fe4e248affdc8a1ab9cb817c9816fb6ffd9c80f6e8fcdb58c89968ae402"
+  },
+  "python": "3.11.13 (main, Jul  1 2025, 15:28:08) [GCC 8.5.0 20210514 (Red Hat 8.5.0-26)]"
+}

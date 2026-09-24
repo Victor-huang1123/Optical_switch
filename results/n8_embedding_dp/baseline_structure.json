@@ -1,0 +1,1663 @@
+{
+  "cell_placement": {
+    "waksman_8x8_s0_w0_1": {
+      "center": [
+        85.0,
+        416.0
+      ],
+      "ports": {
+        "add": {
+          "dx": 8.0,
+          "dy": -5.5,
+          "kind": "add",
+          "phi": 0.0
+        },
+        "drop": {
+          "dx": -8.0,
+          "dy": -5.5,
+          "kind": "drop",
+          "phi": 0.0
+        },
+        "in": {
+          "dx": -8.0,
+          "dy": 5.5,
+          "kind": "in",
+          "phi": 0.0
+        },
+        "th": {
+          "dx": 8.0,
+          "dy": 5.5,
+          "kind": "th",
+          "phi": 0.0
+        }
+      }
+    },
+    "waksman_8x8_s0_w2_3": {
+      "center": [
+        85.0,
+        288.0
+      ],
+      "ports": {
+        "add": {
+          "dx": 8.0,
+          "dy": -5.5,
+          "kind": "add",
+          "phi": 0.0
+        },
+        "drop": {
+          "dx": -8.0,
+          "dy": -5.5,
+          "kind": "drop",
+          "phi": 0.0
+        },
+        "in": {
+          "dx": -8.0,
+          "dy": 5.5,
+          "kind": "in",
+          "phi": 0.0
+        },
+        "th": {
+          "dx": 8.0,
+          "dy": 5.5,
+          "kind": "th",
+          "phi": 0.0
+        }
+      }
+    },
+    "waksman_8x8_s0_w4_5": {
+      "center": [
+        85.0,
+        160.0
+      ],
+      "ports": {
+        "add": {
+          "dx": 8.0,
+          "dy": -5.5,
+          "kind": "add",
+          "phi": 0.0
+        },
+        "drop": {
+          "dx": -8.0,
+          "dy": -5.5,
+          "kind": "drop",
+          "phi": 0.0
+        },
+        "in": {
+          "dx": -8.0,
+          "dy": 5.5,
+          "kind": "in",
+          "phi": 0.0
+        },
+        "th": {
+          "dx": 8.0,
+          "dy": 5.5,
+          "kind": "th",
+          "phi": 0.0
+        }
+      }
+    },
+    "waksman_8x8_s0_w6_7": {
+      "center": [
+        85.0,
+        32.0
+      ],
+      "ports": {
+        "add": {
+          "dx": 8.0,
+          "dy": -5.5,
+          "kind": "add",
+          "phi": 0.0
+        },
+        "drop": {
+          "dx": -8.0,
+          "dy": -5.5,
+          "kind": "drop",
+          "phi": 0.0
+        },
+        "in": {
+          "dx": -8.0,
+          "dy": 5.5,
+          "kind": "in",
+          "phi": 0.0
+        },
+        "th": {
+          "dx": 8.0,
+          "dy": 5.5,
+          "kind": "th",
+          "phi": 0.0
+        }
+      }
+    },
+    "waksman_8x8_s1_w0_2": {
+      "center": [
+        253.0,
+        384.0
+      ],
+      "ports": {
+        "add": {
+          "dx": 8.0,
+          "dy": -5.5,
+          "kind": "add",
+          "phi": 0.0
+        },
+        "drop": {
+          "dx": -8.0,
+          "dy": -5.5,
+          "kind": "drop",
+          "phi": 0.0
+        },
+        "in": {
+          "dx": -8.0,
+          "dy": 5.5,
+          "kind": "in",
+          "phi": 0.0
+        },
+        "th": {
+          "dx": 8.0,
+          "dy": 5.5,
+          "kind": "th",
+          "phi": 0.0
+        }
+      }
+    },
+    "waksman_8x8_s1_w1_3": {
+      "center": [
+        253.0,
+        320.0
+      ],
+      "ports": {
+        "add": {
+          "dx": 8.0,
+          "dy": -5.5,
+          "kind": "add",
+          "phi": 0.0
+        },
+        "drop": {
+          "dx": -8.0,
+          "dy": -5.5,
+          "kind": "drop",
+          "phi": 0.0
+        },
+        "in": {
+          "dx": -8.0,
+          "dy": 5.5,
+          "kind": "in",
+          "phi": 0.0
+        },
+        "th": {
+          "dx": 8.0,
+          "dy": 5.5,
+          "kind": "th",
+          "phi": 0.0
+        }
+      }
+    },
+    "waksman_8x8_s1_w4_6": {
+      "center": [
+        253.0,
+        128.0
+      ],
+      "ports": {
+        "add": {
+          "dx": 8.0,
+          "dy": -5.5,
+          "kind": "add",
+          "phi": 0.0
+        },
+        "drop": {
+          "dx": -8.0,
+          "dy": -5.5,
+          "kind": "drop",
+          "phi": 0.0
+        },
+        "in": {
+          "dx": -8.0,
+          "dy": 5.5,
+          "kind": "in",
+          "phi": 0.0
+        },
+        "th": {
+          "dx": 8.0,
+          "dy": 5.5,
+          "kind": "th",
+          "phi": 0.0
+        }
+      }
+    },
+    "waksman_8x8_s1_w5_7": {
+      "center": [
+        253.0,
+        64.0
+      ],
+      "ports": {
+        "add": {
+          "dx": 8.0,
+          "dy": -5.5,
+          "kind": "add",
+          "phi": 0.0
+        },
+        "drop": {
+          "dx": -8.0,
+          "dy": -5.5,
+          "kind": "drop",
+          "phi": 0.0
+        },
+        "in": {
+          "dx": -8.0,
+          "dy": 5.5,
+          "kind": "in",
+          "phi": 0.0
+        },
+        "th": {
+          "dx": 8.0,
+          "dy": 5.5,
+          "kind": "th",
+          "phi": 0.0
+        }
+      }
+    },
+    "waksman_8x8_s2_w0_4": {
+      "center": [
+        421.0,
+        320.0
+      ],
+      "ports": {
+        "add": {
+          "dx": 8.0,
+          "dy": -5.5,
+          "kind": "add",
+          "phi": 0.0
+        },
+        "drop": {
+          "dx": -8.0,
+          "dy": -5.5,
+          "kind": "drop",
+          "phi": 0.0
+        },
+        "in": {
+          "dx": -8.0,
+          "dy": 5.5,
+          "kind": "in",
+          "phi": 0.0
+        },
+        "th": {
+          "dx": 8.0,
+          "dy": 5.5,
+          "kind": "th",
+          "phi": 0.0
+        }
+      }
+    },
+    "waksman_8x8_s2_w1_5": {
+      "center": [
+        421.0,
+        256.0
+      ],
+      "ports": {
+        "add": {
+          "dx": 8.0,
+          "dy": -5.5,
+          "kind": "add",
+          "phi": 0.0
+        },
+        "drop": {
+          "dx": -8.0,
+          "dy": -5.5,
+          "kind": "drop",
+          "phi": 0.0
+        },
+        "in": {
+          "dx": -8.0,
+          "dy": 5.5,
+          "kind": "in",
+          "phi": 0.0
+        },
+        "th": {
+          "dx": 8.0,
+          "dy": 5.5,
+          "kind": "th",
+          "phi": 0.0
+        }
+      }
+    },
+    "waksman_8x8_s2_w2_6": {
+      "center": [
+        421.0,
+        192.0
+      ],
+      "ports": {
+        "add": {
+          "dx": 8.0,
+          "dy": -5.5,
+          "kind": "add",
+          "phi": 0.0
+        },
+        "drop": {
+          "dx": -8.0,
+          "dy": -5.5,
+          "kind": "drop",
+          "phi": 0.0
+        },
+        "in": {
+          "dx": -8.0,
+          "dy": 5.5,
+          "kind": "in",
+          "phi": 0.0
+        },
+        "th": {
+          "dx": 8.0,
+          "dy": 5.5,
+          "kind": "th",
+          "phi": 0.0
+        }
+      }
+    },
+    "waksman_8x8_s2_w3_7": {
+      "center": [
+        421.0,
+        128.0
+      ],
+      "ports": {
+        "add": {
+          "dx": 8.0,
+          "dy": -5.5,
+          "kind": "add",
+          "phi": 0.0
+        },
+        "drop": {
+          "dx": -8.0,
+          "dy": -5.5,
+          "kind": "drop",
+          "phi": 0.0
+        },
+        "in": {
+          "dx": -8.0,
+          "dy": 5.5,
+          "kind": "in",
+          "phi": 0.0
+        },
+        "th": {
+          "dx": 8.0,
+          "dy": 5.5,
+          "kind": "th",
+          "phi": 0.0
+        }
+      }
+    },
+    "waksman_8x8_s3_w0_2": {
+      "center": [
+        589.0,
+        384.0
+      ],
+      "ports": {
+        "add": {
+          "dx": 8.0,
+          "dy": -5.5,
+          "kind": "add",
+          "phi": 0.0
+        },
+        "drop": {
+          "dx": -8.0,
+          "dy": -5.5,
+          "kind": "drop",
+          "phi": 0.0
+        },
+        "in": {
+          "dx": -8.0,
+          "dy": 5.5,
+          "kind": "in",
+          "phi": 0.0
+        },
+        "th": {
+          "dx": 8.0,
+          "dy": 5.5,
+          "kind": "th",
+          "phi": 0.0
+        }
+      }
+    },
+    "waksman_8x8_s3_w1_3": {
+      "center": [
+        589.0,
+        320.0
+      ],
+      "ports": {
+        "add": {
+          "dx": 8.0,
+          "dy": -5.5,
+          "kind": "add",
+          "phi": 0.0
+        },
+        "drop": {
+          "dx": -8.0,
+          "dy": -5.5,
+          "kind": "drop",
+          "phi": 0.0
+        },
+        "in": {
+          "dx": -8.0,
+          "dy": 5.5,
+          "kind": "in",
+          "phi": 0.0
+        },
+        "th": {
+          "dx": 8.0,
+          "dy": 5.5,
+          "kind": "th",
+          "phi": 0.0
+        }
+      }
+    },
+    "waksman_8x8_s4_w0_1": {
+      "center": [
+        757.0,
+        416.0
+      ],
+      "ports": {
+        "add": {
+          "dx": 8.0,
+          "dy": -5.5,
+          "kind": "add",
+          "phi": 0.0
+        },
+        "drop": {
+          "dx": -8.0,
+          "dy": -5.5,
+          "kind": "drop",
+          "phi": 0.0
+        },
+        "in": {
+          "dx": -8.0,
+          "dy": 5.5,
+          "kind": "in",
+          "phi": 0.0
+        },
+        "th": {
+          "dx": 8.0,
+          "dy": 5.5,
+          "kind": "th",
+          "phi": 0.0
+        }
+      }
+    },
+    "waksman_8x8_s4_w2_3": {
+      "center": [
+        757.0,
+        288.0
+      ],
+      "ports": {
+        "add": {
+          "dx": 8.0,
+          "dy": -5.5,
+          "kind": "add",
+          "phi": 0.0
+        },
+        "drop": {
+          "dx": -8.0,
+          "dy": -5.5,
+          "kind": "drop",
+          "phi": 0.0
+        },
+        "in": {
+          "dx": -8.0,
+          "dy": 5.5,
+          "kind": "in",
+          "phi": 0.0
+        },
+        "th": {
+          "dx": 8.0,
+          "dy": 5.5,
+          "kind": "th",
+          "phi": 0.0
+        }
+      }
+    },
+    "waksman_8x8_s4_w4_5": {
+      "center": [
+        757.0,
+        160.0
+      ],
+      "ports": {
+        "add": {
+          "dx": 8.0,
+          "dy": -5.5,
+          "kind": "add",
+          "phi": 0.0
+        },
+        "drop": {
+          "dx": -8.0,
+          "dy": -5.5,
+          "kind": "drop",
+          "phi": 0.0
+        },
+        "in": {
+          "dx": -8.0,
+          "dy": 5.5,
+          "kind": "in",
+          "phi": 0.0
+        },
+        "th": {
+          "dx": 8.0,
+          "dy": 5.5,
+          "kind": "th",
+          "phi": 0.0
+        }
+      }
+    }
+  },
+  "envelope": {
+    "cell_geometry": {
+      "bbox_height_um": 22.0,
+      "bbox_width_um": 28.0,
+      "d_min_th_um": 24.0,
+      "port_dx_um": 8.0,
+      "port_dy_um": 5.5,
+      "waveguide_width_um": 0.45
+    },
+    "grid_margin_tracks": 20,
+    "grid_pitch_um": 8.0,
+    "n_canvas": 8,
+    "stage_pitch_um": 168.0,
+    "wire_pitch_um": 64.0,
+    "x0_um": 85.0,
+    "x_start_um": 20.0
+  },
+  "fabric_graph": {
+    "blocked_ports": [],
+    "edges": [
+      {
+        "edge_id": "input:w0->waksman_8x8_s0_w0_1.in",
+        "kind": "input",
+        "source": {
+          "blocked": false,
+          "kind": "input",
+          "port": null,
+          "ref": "I0",
+          "wire": 0
+        },
+        "source_stage": null,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "in",
+          "ref": "waksman_8x8_s0_w0_1",
+          "wire": 0
+        },
+        "target_stage": 0
+      },
+      {
+        "edge_id": "input:w1->waksman_8x8_s0_w0_1.add",
+        "kind": "input",
+        "source": {
+          "blocked": false,
+          "kind": "input",
+          "port": null,
+          "ref": "I1",
+          "wire": 1
+        },
+        "source_stage": null,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "add",
+          "ref": "waksman_8x8_s0_w0_1",
+          "wire": 1
+        },
+        "target_stage": 0
+      },
+      {
+        "edge_id": "input:w2->waksman_8x8_s0_w2_3.in",
+        "kind": "input",
+        "source": {
+          "blocked": false,
+          "kind": "input",
+          "port": null,
+          "ref": "I2",
+          "wire": 2
+        },
+        "source_stage": null,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "in",
+          "ref": "waksman_8x8_s0_w2_3",
+          "wire": 2
+        },
+        "target_stage": 0
+      },
+      {
+        "edge_id": "input:w3->waksman_8x8_s0_w2_3.add",
+        "kind": "input",
+        "source": {
+          "blocked": false,
+          "kind": "input",
+          "port": null,
+          "ref": "I3",
+          "wire": 3
+        },
+        "source_stage": null,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "add",
+          "ref": "waksman_8x8_s0_w2_3",
+          "wire": 3
+        },
+        "target_stage": 0
+      },
+      {
+        "edge_id": "input:w4->waksman_8x8_s0_w4_5.in",
+        "kind": "input",
+        "source": {
+          "blocked": false,
+          "kind": "input",
+          "port": null,
+          "ref": "I4",
+          "wire": 4
+        },
+        "source_stage": null,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "in",
+          "ref": "waksman_8x8_s0_w4_5",
+          "wire": 4
+        },
+        "target_stage": 0
+      },
+      {
+        "edge_id": "input:w5->waksman_8x8_s0_w4_5.add",
+        "kind": "input",
+        "source": {
+          "blocked": false,
+          "kind": "input",
+          "port": null,
+          "ref": "I5",
+          "wire": 5
+        },
+        "source_stage": null,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "add",
+          "ref": "waksman_8x8_s0_w4_5",
+          "wire": 5
+        },
+        "target_stage": 0
+      },
+      {
+        "edge_id": "input:w6->waksman_8x8_s0_w6_7.in",
+        "kind": "input",
+        "source": {
+          "blocked": false,
+          "kind": "input",
+          "port": null,
+          "ref": "I6",
+          "wire": 6
+        },
+        "source_stage": null,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "in",
+          "ref": "waksman_8x8_s0_w6_7",
+          "wire": 6
+        },
+        "target_stage": 0
+      },
+      {
+        "edge_id": "input:w7->waksman_8x8_s0_w6_7.add",
+        "kind": "input",
+        "source": {
+          "blocked": false,
+          "kind": "input",
+          "port": null,
+          "ref": "I7",
+          "wire": 7
+        },
+        "source_stage": null,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "add",
+          "ref": "waksman_8x8_s0_w6_7",
+          "wire": 7
+        },
+        "target_stage": 0
+      },
+      {
+        "edge_id": "stage:0:w0:waksman_8x8_s0_w0_1.th->waksman_8x8_s1_w0_2.in:w0",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "th",
+          "ref": "waksman_8x8_s0_w0_1",
+          "wire": 0
+        },
+        "source_stage": 0,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "in",
+          "ref": "waksman_8x8_s1_w0_2",
+          "wire": 0
+        },
+        "target_stage": 1
+      },
+      {
+        "edge_id": "stage:0:w1:waksman_8x8_s0_w0_1.drop->waksman_8x8_s1_w1_3.in:w1",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "drop",
+          "ref": "waksman_8x8_s0_w0_1",
+          "wire": 1
+        },
+        "source_stage": 0,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "in",
+          "ref": "waksman_8x8_s1_w1_3",
+          "wire": 1
+        },
+        "target_stage": 1
+      },
+      {
+        "edge_id": "stage:0:w2:waksman_8x8_s0_w2_3.th->waksman_8x8_s1_w0_2.add:w2",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "th",
+          "ref": "waksman_8x8_s0_w2_3",
+          "wire": 2
+        },
+        "source_stage": 0,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "add",
+          "ref": "waksman_8x8_s1_w0_2",
+          "wire": 2
+        },
+        "target_stage": 1
+      },
+      {
+        "edge_id": "stage:0:w3:waksman_8x8_s0_w2_3.drop->waksman_8x8_s1_w1_3.add:w3",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "drop",
+          "ref": "waksman_8x8_s0_w2_3",
+          "wire": 3
+        },
+        "source_stage": 0,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "add",
+          "ref": "waksman_8x8_s1_w1_3",
+          "wire": 3
+        },
+        "target_stage": 1
+      },
+      {
+        "edge_id": "stage:0:w4:waksman_8x8_s0_w4_5.th->waksman_8x8_s1_w4_6.in:w4",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "th",
+          "ref": "waksman_8x8_s0_w4_5",
+          "wire": 4
+        },
+        "source_stage": 0,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "in",
+          "ref": "waksman_8x8_s1_w4_6",
+          "wire": 4
+        },
+        "target_stage": 1
+      },
+      {
+        "edge_id": "stage:0:w5:waksman_8x8_s0_w4_5.drop->waksman_8x8_s1_w5_7.in:w5",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "drop",
+          "ref": "waksman_8x8_s0_w4_5",
+          "wire": 5
+        },
+        "source_stage": 0,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "in",
+          "ref": "waksman_8x8_s1_w5_7",
+          "wire": 5
+        },
+        "target_stage": 1
+      },
+      {
+        "edge_id": "stage:0:w6:waksman_8x8_s0_w6_7.th->waksman_8x8_s1_w4_6.add:w6",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "th",
+          "ref": "waksman_8x8_s0_w6_7",
+          "wire": 6
+        },
+        "source_stage": 0,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "add",
+          "ref": "waksman_8x8_s1_w4_6",
+          "wire": 6
+        },
+        "target_stage": 1
+      },
+      {
+        "edge_id": "stage:0:w7:waksman_8x8_s0_w6_7.drop->waksman_8x8_s1_w5_7.add:w7",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "drop",
+          "ref": "waksman_8x8_s0_w6_7",
+          "wire": 7
+        },
+        "source_stage": 0,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "add",
+          "ref": "waksman_8x8_s1_w5_7",
+          "wire": 7
+        },
+        "target_stage": 1
+      },
+      {
+        "edge_id": "stage:1:w0:waksman_8x8_s1_w0_2.th->waksman_8x8_s2_w0_4.in:w0",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "th",
+          "ref": "waksman_8x8_s1_w0_2",
+          "wire": 0
+        },
+        "source_stage": 1,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "in",
+          "ref": "waksman_8x8_s2_w0_4",
+          "wire": 0
+        },
+        "target_stage": 2
+      },
+      {
+        "edge_id": "stage:1:w1:waksman_8x8_s1_w1_3.th->waksman_8x8_s2_w1_5.in:w1",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "th",
+          "ref": "waksman_8x8_s1_w1_3",
+          "wire": 1
+        },
+        "source_stage": 1,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "in",
+          "ref": "waksman_8x8_s2_w1_5",
+          "wire": 1
+        },
+        "target_stage": 2
+      },
+      {
+        "edge_id": "stage:1:w2:waksman_8x8_s1_w0_2.drop->waksman_8x8_s2_w2_6.in:w2",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "drop",
+          "ref": "waksman_8x8_s1_w0_2",
+          "wire": 2
+        },
+        "source_stage": 1,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "in",
+          "ref": "waksman_8x8_s2_w2_6",
+          "wire": 2
+        },
+        "target_stage": 2
+      },
+      {
+        "edge_id": "stage:1:w3:waksman_8x8_s1_w1_3.drop->waksman_8x8_s2_w3_7.in:w3",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "drop",
+          "ref": "waksman_8x8_s1_w1_3",
+          "wire": 3
+        },
+        "source_stage": 1,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "in",
+          "ref": "waksman_8x8_s2_w3_7",
+          "wire": 3
+        },
+        "target_stage": 2
+      },
+      {
+        "edge_id": "stage:1:w4:waksman_8x8_s1_w4_6.th->waksman_8x8_s2_w0_4.add:w4",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "th",
+          "ref": "waksman_8x8_s1_w4_6",
+          "wire": 4
+        },
+        "source_stage": 1,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "add",
+          "ref": "waksman_8x8_s2_w0_4",
+          "wire": 4
+        },
+        "target_stage": 2
+      },
+      {
+        "edge_id": "stage:1:w5:waksman_8x8_s1_w5_7.th->waksman_8x8_s2_w1_5.add:w5",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "th",
+          "ref": "waksman_8x8_s1_w5_7",
+          "wire": 5
+        },
+        "source_stage": 1,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "add",
+          "ref": "waksman_8x8_s2_w1_5",
+          "wire": 5
+        },
+        "target_stage": 2
+      },
+      {
+        "edge_id": "stage:1:w6:waksman_8x8_s1_w4_6.drop->waksman_8x8_s2_w2_6.add:w6",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "drop",
+          "ref": "waksman_8x8_s1_w4_6",
+          "wire": 6
+        },
+        "source_stage": 1,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "add",
+          "ref": "waksman_8x8_s2_w2_6",
+          "wire": 6
+        },
+        "target_stage": 2
+      },
+      {
+        "edge_id": "stage:1:w7:waksman_8x8_s1_w5_7.drop->waksman_8x8_s2_w3_7.add:w7",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "drop",
+          "ref": "waksman_8x8_s1_w5_7",
+          "wire": 7
+        },
+        "source_stage": 1,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "add",
+          "ref": "waksman_8x8_s2_w3_7",
+          "wire": 7
+        },
+        "target_stage": 2
+      },
+      {
+        "edge_id": "stage:2:w0:waksman_8x8_s2_w0_4.th->waksman_8x8_s3_w0_2.in:w0",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "th",
+          "ref": "waksman_8x8_s2_w0_4",
+          "wire": 0
+        },
+        "source_stage": 2,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "in",
+          "ref": "waksman_8x8_s3_w0_2",
+          "wire": 0
+        },
+        "target_stage": 3
+      },
+      {
+        "edge_id": "stage:2:w1:waksman_8x8_s2_w1_5.th->waksman_8x8_s3_w1_3.in:w1",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "th",
+          "ref": "waksman_8x8_s2_w1_5",
+          "wire": 1
+        },
+        "source_stage": 2,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "in",
+          "ref": "waksman_8x8_s3_w1_3",
+          "wire": 1
+        },
+        "target_stage": 3
+      },
+      {
+        "edge_id": "stage:2:w2:waksman_8x8_s2_w2_6.th->waksman_8x8_s3_w0_2.add:w2",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "th",
+          "ref": "waksman_8x8_s2_w2_6",
+          "wire": 2
+        },
+        "source_stage": 2,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "add",
+          "ref": "waksman_8x8_s3_w0_2",
+          "wire": 2
+        },
+        "target_stage": 3
+      },
+      {
+        "edge_id": "stage:2:w3:waksman_8x8_s2_w3_7.th->waksman_8x8_s3_w1_3.add:w3",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "th",
+          "ref": "waksman_8x8_s2_w3_7",
+          "wire": 3
+        },
+        "source_stage": 2,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "add",
+          "ref": "waksman_8x8_s3_w1_3",
+          "wire": 3
+        },
+        "target_stage": 3
+      },
+      {
+        "edge_id": "stage:3:w0:waksman_8x8_s3_w0_2.th->waksman_8x8_s4_w0_1.in:w0",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "th",
+          "ref": "waksman_8x8_s3_w0_2",
+          "wire": 0
+        },
+        "source_stage": 3,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "in",
+          "ref": "waksman_8x8_s4_w0_1",
+          "wire": 0
+        },
+        "target_stage": 4
+      },
+      {
+        "edge_id": "stage:3:w1:waksman_8x8_s3_w1_3.th->waksman_8x8_s4_w0_1.add:w1",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "th",
+          "ref": "waksman_8x8_s3_w1_3",
+          "wire": 1
+        },
+        "source_stage": 3,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "add",
+          "ref": "waksman_8x8_s4_w0_1",
+          "wire": 1
+        },
+        "target_stage": 4
+      },
+      {
+        "edge_id": "stage:3:w2:waksman_8x8_s3_w0_2.drop->waksman_8x8_s4_w2_3.in:w2",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "drop",
+          "ref": "waksman_8x8_s3_w0_2",
+          "wire": 2
+        },
+        "source_stage": 3,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "in",
+          "ref": "waksman_8x8_s4_w2_3",
+          "wire": 2
+        },
+        "target_stage": 4
+      },
+      {
+        "edge_id": "stage:3:w3:waksman_8x8_s3_w1_3.drop->waksman_8x8_s4_w2_3.add:w3",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "drop",
+          "ref": "waksman_8x8_s3_w1_3",
+          "wire": 3
+        },
+        "source_stage": 3,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "add",
+          "ref": "waksman_8x8_s4_w2_3",
+          "wire": 3
+        },
+        "target_stage": 4
+      },
+      {
+        "edge_id": "stage:2:w4:waksman_8x8_s2_w0_4.drop->waksman_8x8_s4_w4_5.in:w4",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "drop",
+          "ref": "waksman_8x8_s2_w0_4",
+          "wire": 4
+        },
+        "source_stage": 2,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "in",
+          "ref": "waksman_8x8_s4_w4_5",
+          "wire": 4
+        },
+        "target_stage": 4
+      },
+      {
+        "edge_id": "stage:2:w5:waksman_8x8_s2_w1_5.drop->waksman_8x8_s4_w4_5.add:w5",
+        "kind": "interstage",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "drop",
+          "ref": "waksman_8x8_s2_w1_5",
+          "wire": 5
+        },
+        "source_stage": 2,
+        "target": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "add",
+          "ref": "waksman_8x8_s4_w4_5",
+          "wire": 5
+        },
+        "target_stage": 4
+      },
+      {
+        "edge_id": "output:waksman_8x8_s4_w0_1.th->w0",
+        "kind": "output",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "th",
+          "ref": "waksman_8x8_s4_w0_1",
+          "wire": 0
+        },
+        "source_stage": 4,
+        "target": {
+          "blocked": false,
+          "kind": "output",
+          "port": null,
+          "ref": "O0",
+          "wire": 0
+        },
+        "target_stage": null
+      },
+      {
+        "edge_id": "output:waksman_8x8_s4_w0_1.drop->w1",
+        "kind": "output",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "drop",
+          "ref": "waksman_8x8_s4_w0_1",
+          "wire": 1
+        },
+        "source_stage": 4,
+        "target": {
+          "blocked": false,
+          "kind": "output",
+          "port": null,
+          "ref": "O1",
+          "wire": 1
+        },
+        "target_stage": null
+      },
+      {
+        "edge_id": "output:waksman_8x8_s4_w2_3.th->w2",
+        "kind": "output",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "th",
+          "ref": "waksman_8x8_s4_w2_3",
+          "wire": 2
+        },
+        "source_stage": 4,
+        "target": {
+          "blocked": false,
+          "kind": "output",
+          "port": null,
+          "ref": "O2",
+          "wire": 2
+        },
+        "target_stage": null
+      },
+      {
+        "edge_id": "output:waksman_8x8_s4_w2_3.drop->w3",
+        "kind": "output",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "drop",
+          "ref": "waksman_8x8_s4_w2_3",
+          "wire": 3
+        },
+        "source_stage": 4,
+        "target": {
+          "blocked": false,
+          "kind": "output",
+          "port": null,
+          "ref": "O3",
+          "wire": 3
+        },
+        "target_stage": null
+      },
+      {
+        "edge_id": "output:waksman_8x8_s4_w4_5.th->w4",
+        "kind": "output",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "th",
+          "ref": "waksman_8x8_s4_w4_5",
+          "wire": 4
+        },
+        "source_stage": 4,
+        "target": {
+          "blocked": false,
+          "kind": "output",
+          "port": null,
+          "ref": "O4",
+          "wire": 4
+        },
+        "target_stage": null
+      },
+      {
+        "edge_id": "output:waksman_8x8_s4_w4_5.drop->w5",
+        "kind": "output",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "drop",
+          "ref": "waksman_8x8_s4_w4_5",
+          "wire": 5
+        },
+        "source_stage": 4,
+        "target": {
+          "blocked": false,
+          "kind": "output",
+          "port": null,
+          "ref": "O5",
+          "wire": 5
+        },
+        "target_stage": null
+      },
+      {
+        "edge_id": "output:waksman_8x8_s2_w2_6.drop->w6",
+        "kind": "output",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "drop",
+          "ref": "waksman_8x8_s2_w2_6",
+          "wire": 6
+        },
+        "source_stage": 2,
+        "target": {
+          "blocked": false,
+          "kind": "output",
+          "port": null,
+          "ref": "O6",
+          "wire": 6
+        },
+        "target_stage": null
+      },
+      {
+        "edge_id": "output:waksman_8x8_s2_w3_7.drop->w7",
+        "kind": "output",
+        "source": {
+          "blocked": false,
+          "kind": "mrr",
+          "port": "drop",
+          "ref": "waksman_8x8_s2_w3_7",
+          "wire": 7
+        },
+        "source_stage": 2,
+        "target": {
+          "blocked": false,
+          "kind": "output",
+          "port": null,
+          "ref": "O7",
+          "wire": 7
+        },
+        "target_stage": null
+      }
+    ],
+    "n_logical": 8,
+    "n_physical": 8,
+    "topology_name": "waksman_8x8",
+    "waveguides": [
+      {
+        "blocked_boundary": false,
+        "edge_ids": [
+          "input:w0->waksman_8x8_s0_w0_1.in",
+          "stage:0:w0:waksman_8x8_s0_w0_1.th->waksman_8x8_s1_w0_2.in:w0",
+          "stage:1:w0:waksman_8x8_s1_w0_2.th->waksman_8x8_s2_w0_4.in:w0",
+          "stage:2:w0:waksman_8x8_s2_w0_4.th->waksman_8x8_s3_w0_2.in:w0",
+          "stage:3:w0:waksman_8x8_s3_w0_2.th->waksman_8x8_s4_w0_1.in:w0",
+          "output:waksman_8x8_s4_w0_1.th->w0"
+        ],
+        "input_wire": 0,
+        "output_wire": 0,
+        "owner_edge_id": "input:w0->waksman_8x8_s0_w0_1.in"
+      },
+      {
+        "blocked_boundary": false,
+        "edge_ids": [
+          "input:w1->waksman_8x8_s0_w0_1.add",
+          "stage:0:w1:waksman_8x8_s0_w0_1.drop->waksman_8x8_s1_w1_3.in:w1",
+          "stage:1:w1:waksman_8x8_s1_w1_3.th->waksman_8x8_s2_w1_5.in:w1",
+          "stage:2:w1:waksman_8x8_s2_w1_5.th->waksman_8x8_s3_w1_3.in:w1",
+          "stage:3:w1:waksman_8x8_s3_w1_3.th->waksman_8x8_s4_w0_1.add:w1",
+          "output:waksman_8x8_s4_w0_1.drop->w1"
+        ],
+        "input_wire": 1,
+        "output_wire": 1,
+        "owner_edge_id": "input:w1->waksman_8x8_s0_w0_1.add"
+      },
+      {
+        "blocked_boundary": false,
+        "edge_ids": [
+          "input:w2->waksman_8x8_s0_w2_3.in",
+          "stage:0:w2:waksman_8x8_s0_w2_3.th->waksman_8x8_s1_w0_2.add:w2",
+          "stage:1:w2:waksman_8x8_s1_w0_2.drop->waksman_8x8_s2_w2_6.in:w2",
+          "stage:2:w2:waksman_8x8_s2_w2_6.th->waksman_8x8_s3_w0_2.add:w2",
+          "stage:3:w2:waksman_8x8_s3_w0_2.drop->waksman_8x8_s4_w2_3.in:w2",
+          "output:waksman_8x8_s4_w2_3.th->w2"
+        ],
+        "input_wire": 2,
+        "output_wire": 2,
+        "owner_edge_id": "input:w2->waksman_8x8_s0_w2_3.in"
+      },
+      {
+        "blocked_boundary": false,
+        "edge_ids": [
+          "input:w3->waksman_8x8_s0_w2_3.add",
+          "stage:0:w3:waksman_8x8_s0_w2_3.drop->waksman_8x8_s1_w1_3.add:w3",
+          "stage:1:w3:waksman_8x8_s1_w1_3.drop->waksman_8x8_s2_w3_7.in:w3",
+          "stage:2:w3:waksman_8x8_s2_w3_7.th->waksman_8x8_s3_w1_3.add:w3",
+          "stage:3:w3:waksman_8x8_s3_w1_3.drop->waksman_8x8_s4_w2_3.add:w3",
+          "output:waksman_8x8_s4_w2_3.drop->w3"
+        ],
+        "input_wire": 3,
+        "output_wire": 3,
+        "owner_edge_id": "input:w3->waksman_8x8_s0_w2_3.add"
+      },
+      {
+        "blocked_boundary": false,
+        "edge_ids": [
+          "input:w4->waksman_8x8_s0_w4_5.in",
+          "stage:0:w4:waksman_8x8_s0_w4_5.th->waksman_8x8_s1_w4_6.in:w4",
+          "stage:1:w4:waksman_8x8_s1_w4_6.th->waksman_8x8_s2_w0_4.add:w4",
+          "stage:2:w4:waksman_8x8_s2_w0_4.drop->waksman_8x8_s4_w4_5.in:w4",
+          "output:waksman_8x8_s4_w4_5.th->w4"
+        ],
+        "input_wire": 4,
+        "output_wire": 4,
+        "owner_edge_id": "input:w4->waksman_8x8_s0_w4_5.in"
+      },
+      {
+        "blocked_boundary": false,
+        "edge_ids": [
+          "input:w5->waksman_8x8_s0_w4_5.add",
+          "stage:0:w5:waksman_8x8_s0_w4_5.drop->waksman_8x8_s1_w5_7.in:w5",
+          "stage:1:w5:waksman_8x8_s1_w5_7.th->waksman_8x8_s2_w1_5.add:w5",
+          "stage:2:w5:waksman_8x8_s2_w1_5.drop->waksman_8x8_s4_w4_5.add:w5",
+          "output:waksman_8x8_s4_w4_5.drop->w5"
+        ],
+        "input_wire": 5,
+        "output_wire": 5,
+        "owner_edge_id": "input:w5->waksman_8x8_s0_w4_5.add"
+      },
+      {
+        "blocked_boundary": false,
+        "edge_ids": [
+          "input:w6->waksman_8x8_s0_w6_7.in",
+          "stage:0:w6:waksman_8x8_s0_w6_7.th->waksman_8x8_s1_w4_6.add:w6",
+          "stage:1:w6:waksman_8x8_s1_w4_6.drop->waksman_8x8_s2_w2_6.add:w6",
+          "output:waksman_8x8_s2_w2_6.drop->w6"
+        ],
+        "input_wire": 6,
+        "output_wire": 6,
+        "owner_edge_id": "input:w6->waksman_8x8_s0_w6_7.in"
+      },
+      {
+        "blocked_boundary": false,
+        "edge_ids": [
+          "input:w7->waksman_8x8_s0_w6_7.add",
+          "stage:0:w7:waksman_8x8_s0_w6_7.drop->waksman_8x8_s1_w5_7.add:w7",
+          "stage:1:w7:waksman_8x8_s1_w5_7.drop->waksman_8x8_s2_w3_7.add:w7",
+          "output:waksman_8x8_s2_w3_7.drop->w7"
+        ],
+        "input_wire": 7,
+        "output_wire": 7,
+        "owner_edge_id": "input:w7->waksman_8x8_s0_w6_7.add"
+      }
+    ]
+  },
+  "physical_rules": {
+    "allow_crossings": true,
+    "allow_foreign_outer_runway_transit": false,
+    "astar_heuristic_weight": 1.0,
+    "backtrack_penalty_um": 80.0,
+    "bend_loss_db_per_bend": 0.0,
+    "bend_placement_penalty_db": 0.0,
+    "bend_radius_um": 5.0,
+    "capped_ripup_bounded_only": true,
+    "corridor_guide_mode": "soft",
+    "cost_model": "db",
+    "crossing_loss_db_per_cross": 0.0,
+    "crossing_penalty_um": 20.0,
+    "db_tie_breaker_scale": 0.05,
+    "drc_bend_radius_legality": true,
+    "drc_perpendicular_clearance": false,
+    "drc_same_net_min_spacing": false,
+    "early_stop_stagnant_passes": 0,
+    "enforce_bend_spacing": true,
+    "explicit_crossings": true,
+    "fallback_alternatives_per_hop": 2,
+    "fallback_beam_width": 0,
+    "future_crossing_reservation": false,
+    "grid_margin_tracks": 20,
+    "grid_merge_tol_um": 3.5,
+    "grid_pitch_um": 8.0,
+    "hairpin_penalty_um": 200.0,
+    "hard_crossing_budget": false,
+    "hard_reserved_crossing_reservation": false,
+    "hard_source_crossing_reservation": false,
+    "jog_penalty_db": 0.0,
+    "legalize_port_access": true,
+    "local_repair_max_shift_tracks": 8,
+    "loss_aware_cost": false,
+    "max_astar_pops": 30000,
+    "max_ripup_passes": 5,
+    "min_crossing_clearance_um": 10.0,
+    "min_spacing_um": 4.0,
+    "mrr_keepout_um": 6.0,
+    "outward_repeated_crossing_scale": 0.25,
+    "physical_same_net_hairpin": false,
+    "physical_turn_guard": false,
+    "port_access_runway_um": 10.0,
+    "port_access_stagger_tracks": 0,
+    "port_approach_fallback": false,
+    "port_escape_um": 10.0,
+    "prop_loss_db_per_um": 0.002,
+    "remediation_window_expansion": false,
+    "repeated_crossing_loss_db": 0.0,
+    "repeated_crossing_penalty_um": 400.0,
+    "ripup_max_astar_pops": null,
+    "ripup_order_candidate_limit": 1,
+    "ripup_route_budget": 4,
+    "route_order_beam_max_astar_pops": 2000,
+    "route_order_beam_width": 0,
+    "route_window_max_detour_tracks": 4,
+    "source_hint_bounded_only": true,
+    "strict_port_access": false,
+    "turn_guard_um": 16.0,
+    "turn_timing_penalty_um": 48.0,
+    "waveguide_width_um": 0.45
+  },
+  "stage_pairs": [
+    [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        5
+      ],
+      [
+        6,
+        7
+      ]
+    ],
+    [
+      [
+        0,
+        2
+      ],
+      [
+        4,
+        6
+      ],
+      [
+        1,
+        3
+      ],
+      [
+        5,
+        7
+      ]
+    ],
+    [
+      [
+        0,
+        4
+      ],
+      [
+        2,
+        6
+      ],
+      [
+        1,
+        5
+      ],
+      [
+        3,
+        7
+      ]
+    ],
+    [
+      [
+        0,
+        2
+      ],
+      [
+        1,
+        3
+      ]
+    ],
+    [
+      [
+        0,
+        1
+      ],
+      [
+        2,
+        3
+      ],
+      [
+        4,
+        5
+      ]
+    ]
+  ]
+}

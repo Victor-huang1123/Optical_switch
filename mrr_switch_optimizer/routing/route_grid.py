@@ -14,9 +14,19 @@ from .port_access import PortAccessRegion, port_access_conflict, PortAccessLegal
 from .types import EPS, Obstacle, Point, RoutingRules, Segment
 
 __all__ = [
+    "CrossingFootprint",
     "GridNodeOccupancy",
     "RouteGrid",
+    "crossing_footprint_conflict",
 ]
+
+
+@dataclass(frozen=True)
+class CrossingFootprint:
+    location: Point
+    side_um: float
+    horizontal_owner: int
+    vertical_owner: int
 
 
 @dataclass(frozen=True)
@@ -44,6 +54,7 @@ class RouteGrid:
         self.obstacles: list[Obstacle] = []
         self.port_access_regions: list[PortAccessRegion] = []
         self.waveguides: list[GridNodeOccupancy] = []
+        self.crossing_footprints: list[CrossingFootprint] = []
 
     def mark_obstacle(self, obstacle: Obstacle) -> None:
         self.obstacles.append(obstacle)
@@ -52,7 +63,7 @@ class RouteGrid:
         self.port_access_regions.append(region)
 
     def mark_route(self, owner_input: int, segments: tuple[Segment, ...] | list[Segment]) -> None:
-        for segment in segments:
+        for segment in _merge_connected_collinear_segments(tuple(segments)):
             self.waveguides.append(
                 GridNodeOccupancy(
                     kind="waveguide",
@@ -61,6 +72,52 @@ class RouteGrid:
                     segment=segment,
                 )
             )
+
+    def register_crossing_footprints(self, side_um: float) -> None:
+        if side_um <= EPS:
+            return
+        seen: set[tuple[Point, int, int]] = set()
+        for index, first in enumerate(self.waveguides):
+            if first.segment is None or first.owner_input is None:
+                continue
+            for second in self.waveguides[index + 1 :]:
+                if (
+                    second.segment is None
+                    or second.owner_input is None
+                    or second.owner_input == first.owner_input
+                ):
+                    continue
+                location = _orthogonal_crossing_point(first.segment, second.segment)
+                if location is None:
+                    continue
+                horizontal, vertical = (
+                    (first, second) if first.orientation == "H" else (second, first)
+                )
+                key = (location, horizontal.owner_input, vertical.owner_input)
+                if key in seen:
+                    continue
+                seen.add(key)
+                self.crossing_footprints.append(
+                    CrossingFootprint(
+                        location=location,
+                        side_um=side_um,
+                        horizontal_owner=horizontal.owner_input,
+                        vertical_owner=vertical.owner_input,
+                    )
+                )
+
+    def crossing_footprint_conflict(
+        self,
+        segment: Segment,
+        owner_input: int | None,
+    ) -> CrossingFootprint | None:
+        for footprint in self.crossing_footprints:
+            if crossing_footprint_conflict(segment, footprint, owner_input):
+                return footprint
+        return None
+
+    def footprint_contains_point(self, point: Point) -> bool:
+        return any(_point_in_footprint(point, footprint) for footprint in self.crossing_footprints)
 
     def segment_query(self, segment: Segment, rules: RoutingRules | None = None) -> list[GridNodeOccupancy]:
         hits: list[GridNodeOccupancy] = []
@@ -122,6 +179,26 @@ def _segment_orientation(segment: Segment) -> str:
     return "D"
 
 
+def _merge_connected_collinear_segments(
+    segments: tuple[Segment, ...],
+) -> tuple[Segment, ...]:
+    merged: list[Segment] = []
+    for segment in segments:
+        if not merged:
+            merged.append(segment)
+            continue
+        previous = merged[-1]
+        if (
+            _same_point(previous[1], segment[0])
+            and _segment_orientation(previous) == _segment_orientation(segment)
+            and _segment_orientation(segment) in {"H", "V"}
+        ):
+            merged[-1] = (previous[0], segment[1])
+        else:
+            merged.append(segment)
+    return tuple(merged)
+
+
 def _segment_touches_region(
     segment: Segment,
     other: Segment,
@@ -142,3 +219,60 @@ def _segment_touches_region(
     ):
         return True
     return any(_same_point(point, other_point) for point in segment for other_point in other)
+
+
+def crossing_footprint_conflict(
+    segment: Segment,
+    footprint: CrossingFootprint,
+    owner_input: int | None,
+) -> bool:
+    """Whether a segment illegally enters an inserted crossing component.
+
+    Only the two registered through arms may occupy the square.  In particular,
+    a bend, a third net, or the wrong arm of either crossing net is rejected.
+    """
+    if not _segment_intersects_footprint(segment, footprint):
+        return False
+    (x0, y0), (x1, y1) = segment
+    cx, cy = footprint.location
+    horizontal = abs(y0 - y1) < EPS
+    if (
+        horizontal
+        and owner_input == footprint.horizontal_owner
+        and abs(y0 - cy) < EPS
+    ):
+        return False
+    if (
+        not horizontal
+        and abs(x0 - x1) < EPS
+        and owner_input == footprint.vertical_owner
+        and abs(x0 - cx) < EPS
+    ):
+        return False
+    return True
+
+
+def _segment_intersects_footprint(
+    segment: Segment,
+    footprint: CrossingFootprint,
+) -> bool:
+    half = 0.5 * footprint.side_um
+    cx, cy = footprint.location
+    left, right = cx - half, cx + half
+    bottom, top = cy - half, cy + half
+    (x0, y0), (x1, y1) = segment
+    if abs(y0 - y1) < EPS:
+        lo, hi = sorted((x0, x1))
+        return bottom - EPS <= y0 <= top + EPS and hi >= left - EPS and lo <= right + EPS
+    if abs(x0 - x1) < EPS:
+        lo, hi = sorted((y0, y1))
+        return left - EPS <= x0 <= right + EPS and hi >= bottom - EPS and lo <= top + EPS
+    return False
+
+
+def _point_in_footprint(point: Point, footprint: CrossingFootprint) -> bool:
+    half = 0.5 * footprint.side_um
+    return (
+        abs(point[0] - footprint.location[0]) <= half + EPS
+        and abs(point[1] - footprint.location[1]) <= half + EPS
+    )

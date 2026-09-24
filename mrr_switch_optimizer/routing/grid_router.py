@@ -21,6 +21,10 @@ class RouterState:
     y_idx: int
     orientation: str = ""
     straight_run_um: float = 0.0
+    # Distance that must still be travelled without turning after an inserted
+    # crossing.  This is zero for the legacy/default router and is populated by
+    # the crossing-aware A* only when a clearance rule is active.
+    crossing_arm_remaining_um: float = 0.0
 
 
 @dataclass(frozen=True)
@@ -105,10 +109,12 @@ def neighbor_moves(
             and state.straight_run_um < bend_spacing_um - EPS
         ):
             continue
+        if turning and state.crossing_arm_remaining_um > EPS:
+            continue
+        step_length_um = _manhattan(current, point)
         if bend_spacing_um is None:
             straight_run_um = 0.0
         else:
-            step_length_um = _manhattan(current, point)
             straight_run_um = min(
                 bend_spacing_um,
                 step_length_um
@@ -120,6 +126,7 @@ def neighbor_moves(
             next_y,
             orientation,
             round(straight_run_um, 6),
+            round(max(0.0, state.crossing_arm_remaining_um - step_length_um), 6),
         )
         moves.append(
             NeighborMove(

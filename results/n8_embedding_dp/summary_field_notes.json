@@ -1,0 +1,12 @@
+{
+  "proxy_score": "Objective F proxy BFS global WIL in dB for every row, so scores remain comparable across selection objectives. Other objective scores are in proxy_rankings.csv.",
+  "dp_objective": "Objective responsible for first selecting this geometry; priority-role aliases are in routing_selection_audit.json and top_k.json.",
+  "method": "First selection role after deduplicating geometries. A geometry may also belong to another method; candidates.json records membership.",
+  "wrap_count": "Number of fixed edges with an endpoint facing away from its connection, measured from placement before routing; not a count of every incidental A* detour.",
+  "median_wil_db": "Median over per-permutation exact optimum-assignment WIL.",
+  "p90_wil_db": "90th percentile over per-permutation exact optimum-assignment WIL.",
+  "p99_wil_db": "99th percentile over per-permutation exact optimum-assignment WIL.",
+  "route_success": "Existing campaign admission: all edges routed, zero legacy/core DRC and zero bend-radius violations. Spacing/crossing audits retain campaign measurement-only status.",
+  "blank_loss_fields": "Awaiting Stage 3, or no accepted physical route; never interpreted as zero loss.",
+  "improvement_counts": "Reference optimum minus candidate optimum greater than 1e-10 dB on the supplied fixed worst sets."
+}

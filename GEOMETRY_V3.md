@@ -38,6 +38,13 @@ regressions, while giving v3 its own routable physical reference tier.
 - Template south/north wrap offsets are re-residued from 20/24 um to
   21.5/25.5 um. The independently checked P4/P8/P16 templates have zero DRC
   findings and a 10.5 um minimum consecutive-bend separation, above 2R=10 um.
+- The deterministic template's internal channel anchor now lands on the 20 um
+  inflated-keepout boundary. Each neighboring riser pair that crosses receives
+  a two-track (16 um) arm guard, and one track remains reserved beside the
+  target-cell wrap. P16's two overfull middle-channel classes use a bounded,
+  deterministic, crossing-count-preserving riser reorder; P4, P8, and the
+  other P16 channels keep their canonical order. This removes the former 8 um
+  arm class while preserving the canvas and the 14/60/232 crossing counts.
 - `envelope_id` includes `dy5p5-w450`; for example, the P8 ID is
   `octave-p8-bbox28x22-dy5p5-w450-sp168-wp64-gp8-m20`.
 
@@ -58,17 +65,42 @@ perpendicular-clearance audits, route-grid/search blockers, and crossing-arm
 clearance all use this convention. A v2 width of 0.0 recovers the original
 thresholds exactly.
 
+## Phase 5 crossing-clearance acceptance
+
+The v3 mini campaign uses two acceptance tiers at the configured 10.0 um
+crossing-arm clearance (9.55 um effective centerline threshold with the 0.45 um
+waveguide width):
+
+1. Waksman A* cases treat `crossing_clearance` and
+   `perpendicular_clearance` as measurement-only audits. Their hard acceptance
+   bar is zero failed edges, zero legacy/core DRC findings, and zero
+   `bend_radius_legality` findings. The campaign records each audit count; a
+   nonzero count is not reported as all-clear and does not reject the case.
+2. Padded-Benes template cases hard-gate `crossing_clearance` at 10.0 um. Any
+   crossing-arm violation is a template re-residue design-goal failure and
+   stops the campaign. Template same-net and perpendicular counts remain
+   visible beside the required crossing all-clear result.
+
+Every Phase 5 case records its acceptance tier and crossing-clearance policy in
+`config.json`; `metrics.csv` and `metrics.partial.csv` carry the tier, policy,
+and per-case `crossing_clearance` violation count.
+
 ## Independently derived template references
 
 | canvas | crossings | geometry SHA-256 | minimum bend separation |
 |---:|---:|---|---:|
-| 4 | 14 | `508e3363248e31054b0d6bee57e8ea60630929ac0cf0c40147bc978d6e9eba25` | 10.5 um |
-| 8 | 60 | `17658e4a371cb742b2e61adef38de36ea05e8d56f8fe0550cc2668b135f885a8` | 10.5 um |
-| 16 | 232 | `31abbf1b443061ed055b6340b03ecf3845703865aa3abd0d1c615fe6cecf5db9` | 10.5 um |
+| 4 | 14 | `85ff74a15c329e751866a9407a351a1b845299cc83f4d6ed7d917a56cdf5fc93` | 10.5 um |
+| 8 | 60 | `c5ad40e124038391c6f1e9370af9c85b3e232445defec170e634db1b5093547a` | 10.5 um |
+| 16 | 232 | `5da7c24cd2794cf351904ff75e541f9682f2d1f64248835f27133f65f126fa6a` | 10.5 um |
 
 The crossing counts remain 14/60/232. These hashes were regenerated from the
 emitted v3 geometries and independently checked twice by the deterministic G4
 gate; they were not copied from the survey's provisional reference points.
+The same G2 gate now enables the configured 10.0 um crossing-clearance rule,
+so its zero-finding result is a full-DRC claim rather than a legacy-core-only
+claim. The former P4 failures now have 16 um minimum arms; the template-wide
+minimum remains 10 um at the pre-existing output-wrap class, above the 9.55 um
+effective v3 threshold.
 
 ## Golden policy
 
